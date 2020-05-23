@@ -19,13 +19,13 @@ publish: true
 
 To display a Scatter Chart, you will need to:
 To display a Scatter Bubble Chart, you will need to:
-- Add a **RadCartesianChart** to your page.
-- Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
-- Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
-- Add at least one instance of **ScatterSeries**  to the chart's **series** property and set its **items** property to a collection of data items and the **xProperty** and **yProperty** to the names of the properties used to determine where to plot the scatter points.
+* Add a **RadCartesianChart** to your page.
+* Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
+* Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
+* Add at least one instance of **ScatterSeries**  to the chart's **series** property and set its **items** property to a collection of data items and the **xProperty** and **yProperty** to the names of the properties used to determine where to plot the scatter points.
 
 To illustrate this setup, let's create an example. First we will create a source with items:
- 
+
 #### Example 1: Define a source with data
 
 <snippet id='scatter-data-source'/>

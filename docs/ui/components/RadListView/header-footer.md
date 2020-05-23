@@ -10,8 +10,8 @@ publish: true
 # RadListView Header and Footer
 {% typedoc_link classes:RadListView %} can be configured to display two special kinds of elements at the beginning and at the end of the data item list: a header and a footer respectively. The contents of these elements are defined in a similar manner to the way content of standard list items is defined - via templates. For that purpose {% typedoc_link classes:RadListView %} exposes the following properties:
 
-- {% typedoc_link classes:RadListView,member:headerItemTemplate %}
-- {% typedoc_link classes:RadListView,member:footerItemTemplate %}
+* {% typedoc_link classes:RadListView,member:headerItemTemplate %}
+* {% typedoc_link classes:RadListView,member:footerItemTemplate %}
 
 Here's a simple example of how these properties are used:
 

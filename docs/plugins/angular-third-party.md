@@ -23,7 +23,7 @@ Most visual components have a simple markup interface: just a tag with zero or m
 
 Now, suppose you have a NativeScript UI plugin named `SimpleTag`:
 
-```TypeScript
+``` TypeScript
 export class SimpleTag extends ContentView {
     // ...
 }
@@ -31,14 +31,14 @@ export class SimpleTag extends ContentView {
 
 This is a fully-functional "vanilla" NativeScript component. To register it as a valid tag for Angular templates, you need to use the element registry API:
 
-```TypeScript
+``` TypeScript
 import {registerElement} from "nativescript-angular/element-registry";
 registerElement("third-party-view", () => require("./third-party-view").SimpleTag);
 ```
 
 That maps the `SimpleTag` class to the "third-party-view" tag name. You can now use it in templates:
 
-```TypeScript
+``` TypeScript
 @Component({
     selector: "simple-view-container",
     template: `
@@ -57,7 +57,7 @@ The problem with accepting `View` instances as a means of configuration is that 
 
 To illustrate this approach, we'll assume that we have a `<document-form>` component that displays a document with a form-like UI. It allows you to customize its title by setting a preconfigured title `View` instance.
 
-```TypeScript
+``` TypeScript
 @Component({
     selector: "document-form",
     template: ""
@@ -75,7 +75,7 @@ export class DocumentFormComponent {
 
 To support that on the Angular side, we need an Angular template nested inside the `document-form` tag. To make template discovery and manipulation easier, we associate it with a directive named `DocumentTitleDirective`. Here is what the client code looks like:
 
-```TypeScript
+``` TypeScript
 @Component({
     selector: "document-form-container",
     template: `
@@ -92,7 +92,7 @@ Note the standard Angular asterisk syntax, which is just shorthand for creating 
 
 The actual integration code is hosted in the directive implementation. It works with the Angular `TemplateRef` instance and uses the `ViewContainer` API to create and attach a view:
 
-```TypeScript
+``` TypeScript
 @Directive({
     selector: "[documentTitle]"
 })
@@ -122,7 +122,7 @@ export class DocumentTitleDirective {
 Two things in the code above need mentioning:
 
 1. Instantiated Angular views have a collection of root nodes that usually contain whitespace "text" nodes. We ignore those and get the first "real" element.
-2. Since our parent component is higher in the component tree, we can use the DI system and inject a reference to it in the directive constructor.
+1. Since our parent component is higher in the component tree, we can use the DI system and inject a reference to it in the directive constructor.
 
 ## Tips and Tricks
 
@@ -140,7 +140,7 @@ You can register any class for a given tag, and that gives you a valuable inject
 
 This approach is similar to the wrapper tag one since it is aimed at doing all component customization in code. Any directive can get a reference to its host tag by declaring an `ElementRef` constructor parameter and get the NativeScript `View` from that via the `ElementRef.nativeElement` property.
 
-The directive approach is especially useful when trying to build a cross-platform solution that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component. 
+The directive approach is especially useful when trying to build a cross-platform solution that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component.
 
 ## Summary
 

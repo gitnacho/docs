@@ -6,12 +6,14 @@ slug: docs-changelog
 ---
 
 ## Thank you Community!
-Hats off to the community contributors in the NativeScript organization. 
+
+Hats off to the community contributors in the NativeScript organization.
 Want to be the next NativeScript star? [Contribute](https://www.nativescript.org/contribute) to the open source repositories or join [the contribution contest](https://www.nativescript.org/blog/nativescript-first-time-contribution-contest-continued-and-extended)
 
 ## NativeScript
+
 Community contributors in [https://github.com/nativescript/NativeScript](https://github.com/nativescript/NativeScript)
- 
+
 [<img alt="ddfreiling" src="https://avatars0.githubusercontent.com/u/13132635?v=4&s=117" width="117">](https://github.com/ddfreiling) |[<img alt="vultix" src="https://avatars3.githubusercontent.com/u/5114062?v=4&s=117" width="117">](https://github.com/vultix) |[<img alt="slsumathi" src="https://avatars3.githubusercontent.com/u/9127075?v=4&s=117" width="117">](https://github.com/slsumathi) |[<img alt="sczerniawski" src="https://avatars2.githubusercontent.com/u/39490863?v=4&s=117" width="117">](https://github.com/sczerniawski) |[<img alt="pgrzeszczak" src="https://avatars0.githubusercontent.com/u/3300099?v=4&s=117" width="117">](https://github.com/pgrzeszczak) |
 :---: |:---: |:---: |:---: |:---: |
 [ddfreiling](https://github.com/ddfreiling) |[vultix](https://github.com/vultix) |[slsumathi](https://github.com/slsumathi) |[sczerniawski](https://github.com/sczerniawski) |[pgrzeszczak](https://github.com/pgrzeszczak) |
@@ -84,10 +86,10 @@ Community contributors in [https://github.com/nativescript/NativeScript](https:/
 :---: |:---: |:---: |:---: |
 [NathanaelA](https://github.com/NathanaelA) |[tzraikov](https://github.com/tzraikov) |[zh-m](https://github.com/zh-m) |[nsndeck](https://github.com/nsndeck) |
 
-
 ## nativescript-cli
+
 Community contributors in [https://github.com/nativescript/nativescript-cli](https://github.com/nativescript/nativescript-cli)
- 
+
 [<img alt="NathanaelA" src="https://avatars3.githubusercontent.com/u/850871?v=4&s=117" width="117">](https://github.com/NathanaelA) |[<img alt="thoys" src="https://avatars1.githubusercontent.com/u/607735?v=4&s=117" width="117">](https://github.com/thoys) |[<img alt="senk" src="https://avatars2.githubusercontent.com/u/710568?v=4&s=117" width="117">](https://github.com/senk) |[<img alt="roblav96" src="https://avatars1.githubusercontent.com/u/1457327?v=4&s=117" width="117">](https://github.com/roblav96) |[<img alt="PeterStaev" src="https://avatars0.githubusercontent.com/u/9464097?v=4&s=117" width="117">](https://github.com/PeterStaev) |
 :---: |:---: |:---: |:---: |:---: |
 [NathanaelA](https://github.com/NathanaelA) |[thoys](https://github.com/thoys) |[senk](https://github.com/senk) |[roblav96](https://github.com/roblav96) |[PeterStaev](https://github.com/PeterStaev) |
@@ -108,10 +110,10 @@ Community contributors in [https://github.com/nativescript/nativescript-cli](htt
 :---: |:---: |:---: |:---: |
 [tailsu](https://github.com/tailsu) |[KristinaKoeva](https://github.com/KristinaKoeva) |[tzraikov](https://github.com/tzraikov) |[ikoevska](https://github.com/ikoevska) |
 
-
 ## nativescript-angular
+
 Community contributors in [https://github.com/nativescript/nativescript-angular](https://github.com/nativescript/nativescript-angular)
- 
+
 [<img alt="ddfreiling" src="https://avatars0.githubusercontent.com/u/13132635?v=4&s=117" width="117">](https://github.com/ddfreiling) |[<img alt="zbarbuto" src="https://avatars3.githubusercontent.com/u/9100419?v=4&s=117" width="117">](https://github.com/zbarbuto) |[<img alt="vultix" src="https://avatars3.githubusercontent.com/u/5114062?v=4&s=117" width="117">](https://github.com/vultix) |[<img alt="sean-perkins" src="https://avatars2.githubusercontent.com/u/13732623?v=4&s=117" width="117">](https://github.com/sean-perkins) |[<img alt="PBartrina" src="https://avatars2.githubusercontent.com/u/14554908?v=4&s=117" width="117">](https://github.com/PBartrina) |
 :---: |:---: |:---: |:---: |:---: |
 [ddfreiling](https://github.com/ddfreiling) |[zbarbuto](https://github.com/zbarbuto) |[vultix](https://github.com/vultix) |[sean-perkins](https://github.com/sean-perkins) |[PBartrina](https://github.com/PBartrina) |
@@ -128,10 +130,10 @@ Community contributors in [https://github.com/nativescript/nativescript-angular]
 :---: |:---: |
 [NathanWalker](https://github.com/NathanWalker) |[nsndeck](https://github.com/nsndeck) |
 
-
 ## nativescript-dev-webpack
+
 Community contributors in [https://github.com/nativescript/nativescript-dev-webpack](https://github.com/nativescript/nativescript-dev-webpack)
- 
+
 [<img alt="ggodlewski" src="https://avatars3.githubusercontent.com/u/818238?v=4&s=117" width="117">](https://github.com/ggodlewski) |[<img alt="jolafrite" src="https://avatars3.githubusercontent.com/u/579224?v=4&s=117" width="117">](https://github.com/jolafrite) |[<img alt="pablocid" src="https://avatars0.githubusercontent.com/u/5692381?v=4&s=117" width="117">](https://github.com/pablocid) |[<img alt="rowandh" src="https://avatars1.githubusercontent.com/u/1941917?v=4&s=117" width="117">](https://github.com/rowandh) |[<img alt="academici" src="https://avatars2.githubusercontent.com/u/3863273?v=4&s=117" width="117">](https://github.com/academici) |
 :---: |:---: |:---: |:---: |:---: |
 [ggodlewski](https://github.com/ggodlewski) |[jolafrite](https://github.com/jolafrite) |[pablocid](https://github.com/pablocid) |[rowandh](https://github.com/rowandh) |[academici](https://github.com/academici) |
@@ -140,10 +142,10 @@ Community contributors in [https://github.com/nativescript/nativescript-dev-webp
 :---: |:---: |:---: |
 [DickSmith](https://github.com/DickSmith) |[naderio](https://github.com/naderio) |[PeterStaev](https://github.com/PeterStaev) |
 
-
 ## docs
+
 Community contributors in [https://github.com/nativescript/docs](https://github.com/nativescript/docs)
- 
+
 [<img alt="dyldawg" src="https://avatars1.githubusercontent.com/u/22238774?v=4&s=117" width="117">](https://github.com/dyldawg) |[<img alt="bangseongbeom" src="https://avatars1.githubusercontent.com/u/9026978?v=4&s=117" width="117">](https://github.com/bangseongbeom) |[<img alt="yjaaidi" src="https://avatars2.githubusercontent.com/u/2674658?v=4&s=117" width="117">](https://github.com/yjaaidi) |[<img alt="yavulan" src="https://avatars3.githubusercontent.com/u/7360866?v=4&s=117" width="117">](https://github.com/yavulan) |[<img alt="tsira" src="https://avatars1.githubusercontent.com/u/221682?v=4&s=117" width="117">](https://github.com/tsira) |
 :---: |:---: |:---: |:---: |:---: |
 [dyldawg](https://github.com/dyldawg) |[bangseongbeom](https://github.com/bangseongbeom) |[yjaaidi](https://github.com/yjaaidi) |[yavulan](https://github.com/yavulan) |[tsira](https://github.com/tsira) |
@@ -292,10 +294,10 @@ Community contributors in [https://github.com/nativescript/docs](https://github.
 :---: |:---: |
 [ikoevska](https://github.com/ikoevska) |[N3ll](https://github.com/N3ll) |
 
-
 ## android-runtime
+
 Community contributors in [https://github.com/nativescript/android-runtime](https://github.com/nativescript/android-runtime)
- 
+
 [<img alt="briandilley" src="https://avatars3.githubusercontent.com/u/1068495?v=4&s=117" width="117">](https://github.com/briandilley) |[<img alt="ddfreiling" src="https://avatars0.githubusercontent.com/u/13132635?v=4&s=117" width="117">](https://github.com/ddfreiling) |[<img alt="DickSmith" src="https://avatars0.githubusercontent.com/u/6675511?v=4&s=117" width="117">](https://github.com/DickSmith) |[<img alt="MCE-KobyBo" src="https://avatars2.githubusercontent.com/u/5745417?v=4&s=117" width="117">](https://github.com/MCE-KobyBo) |[<img alt="tailsu" src="https://avatars1.githubusercontent.com/u/730130?v=4&s=117" width="117">](https://github.com/tailsu) |
 :---: |:---: |:---: |:---: |:---: |
 [briandilley](https://github.com/briandilley) |[ddfreiling](https://github.com/ddfreiling) |[DickSmith](https://github.com/DickSmith) |[MCE-KobyBo](https://github.com/MCE-KobyBo) |[tailsu](https://github.com/tailsu) |
@@ -304,10 +306,10 @@ Community contributors in [https://github.com/nativescript/android-runtime](http
 :---: |:---: |:---: |:---: |:---: |
 [ishitatsuyuki](https://github.com/ishitatsuyuki) |[vbresults](https://github.com/vbresults) |[skarlatov](https://github.com/skarlatov) |[NathanaelA](https://github.com/NathanaelA) |[blagoev](https://github.com/blagoev) |
 
-
 ## ios-runtime
+
 Community contributors in [https://github.com/nativescript/ios-runtime](https://github.com/nativescript/ios-runtime)
- 
+
 [<img alt="jeduden" src="https://avatars0.githubusercontent.com/u/1117699?v=4&s=117" width="117">](https://github.com/jeduden) |[<img alt="PeterStaev" src="https://avatars0.githubusercontent.com/u/9464097?v=4&s=117" width="117">](https://github.com/PeterStaev) |[<img alt="roblav96" src="https://avatars1.githubusercontent.com/u/1457327?v=4&s=117" width="117">](https://github.com/roblav96) |[<img alt="speigg" src="https://avatars1.githubusercontent.com/u/507127?v=4&s=117" width="117">](https://github.com/speigg) |[<img alt="e2l3n" src="https://avatars1.githubusercontent.com/u/2971483?v=4&s=117" width="117">](https://github.com/e2l3n) |
 :---: |:---: |:---: |:---: |:---: |
 [jeduden](https://github.com/jeduden) |[PeterStaev](https://github.com/PeterStaev) |[roblav96](https://github.com/roblav96) |[speigg](https://github.com/speigg) |[e2l3n](https://github.com/e2l3n) |
@@ -316,10 +318,10 @@ Community contributors in [https://github.com/nativescript/ios-runtime](https://
 :---: |:---: |
 [KristinaKoeva](https://github.com/KristinaKoeva) |[fealebenpae](https://github.com/fealebenpae) |
 
-
 ## nativescript-background-http
+
 Community contributors in [https://github.com/nativescript/nativescript-background-http](https://github.com/nativescript/nativescript-background-http)
- 
+
 [<img alt="Icer2000" src="https://avatars0.githubusercontent.com/u/16884132?v=4&s=117" width="117">](https://github.com/Icer2000) |[<img alt="fthuin" src="https://avatars1.githubusercontent.com/u/7595324?v=4&s=117" width="117">](https://github.com/fthuin) |[<img alt="friedolinfoerder" src="https://avatars2.githubusercontent.com/u/2007941?v=4&s=117" width="117">](https://github.com/friedolinfoerder) |[<img alt="NathanaelA" src="https://avatars3.githubusercontent.com/u/850871?v=4&s=117" width="117">](https://github.com/NathanaelA) |[<img alt="timhill1989" src="https://avatars0.githubusercontent.com/u/41297360?v=4&s=117" width="117">](https://github.com/timhill1989) |
 :---: |:---: |:---: |:---: |:---: |
 [Icer2000](https://github.com/Icer2000) |[fthuin](https://github.com/fthuin) |[friedolinfoerder](https://github.com/friedolinfoerder) |[NathanaelA](https://github.com/NathanaelA) |[timhill1989](https://github.com/timhill1989) |
@@ -328,18 +330,18 @@ Community contributors in [https://github.com/nativescript/nativescript-backgrou
 :---: |:---: |:---: |:---: |:---: |
 [reinaldorauch](https://github.com/reinaldorauch) |[romulowspp](https://github.com/romulowspp) |[sud80](https://github.com/sud80) |[Daxito](https://github.com/Daxito) |[ignaciolarranaga](https://github.com/ignaciolarranaga) |
 
-
 ## nativescript-camera
+
 Community contributors in [https://github.com/nativescript/nativescript-camera](https://github.com/nativescript/nativescript-camera)
- 
+
 [<img alt="shiv19" src="https://avatars1.githubusercontent.com/u/9407019?v=4&s=117" width="117">](https://github.com/shiv19) |[<img alt="surdu" src="https://avatars3.githubusercontent.com/u/11520795?v=4&s=117" width="117">](https://github.com/surdu) |[<img alt="nsndeck" src="https://avatars3.githubusercontent.com/u/5665150?v=4&s=117" width="117">](https://github.com/nsndeck) |
 :---: |:---: |:---: |
 [shiv19](https://github.com/shiv19) |[surdu](https://github.com/surdu) |[nsndeck](https://github.com/nsndeck) |
 
-
 ## nativescript-imagepicker
+
 Community contributors in [https://github.com/nativescript/nativescript-imagepicker](https://github.com/nativescript/nativescript-imagepicker)
- 
+
 [<img alt="wbancer" src="https://avatars2.githubusercontent.com/u/1239898?v=4&s=117" width="117">](https://github.com/wbancer) |[<img alt="JakubPawlak" src="https://avatars1.githubusercontent.com/u/16610447?v=4&s=117" width="117">](https://github.com/JakubPawlak) |[<img alt="bnussey" src="https://avatars3.githubusercontent.com/u/7215297?v=4&s=117" width="117">](https://github.com/bnussey) |[<img alt="abhayastudios" src="https://avatars1.githubusercontent.com/u/1121217?v=4&s=117" width="117">](https://github.com/abhayastudios) |[<img alt="NathanaelA" src="https://avatars3.githubusercontent.com/u/850871?v=4&s=117" width="117">](https://github.com/NathanaelA) |
 :---: |:---: |:---: |:---: |:---: |
 [wbancer](https://github.com/wbancer) |[JakubPawlak](https://github.com/JakubPawlak) |[bnussey](https://github.com/bnussey) |[abhayastudios](https://github.com/abhayastudios) |[NathanaelA](https://github.com/NathanaelA) |
@@ -348,10 +350,10 @@ Community contributors in [https://github.com/nativescript/nativescript-imagepic
 :---: |:---: |:---: |:---: |
 [zh-m](https://github.com/zh-m) |[mailiam](https://github.com/mailiam) |[ignaciolarranaga](https://github.com/ignaciolarranaga) |[KallynGowdy](https://github.com/KallynGowdy) |
 
-
 ## nativescript-geolocation
+
 Community contributors in [https://github.com/nativescript/nativescript-geolocation](https://github.com/nativescript/nativescript-geolocation)
- 
+
 [<img alt="WilcoBreedt" src="https://avatars1.githubusercontent.com/u/19546850?v=4&s=117" width="117">](https://github.com/WilcoBreedt) |[<img alt="Liooo" src="https://avatars1.githubusercontent.com/u/1630378?v=4&s=117" width="117">](https://github.com/Liooo) |[<img alt="surdu" src="https://avatars3.githubusercontent.com/u/11520795?v=4&s=117" width="117">](https://github.com/surdu) |[<img alt="jgou" src="https://avatars2.githubusercontent.com/u/787929?v=4&s=117" width="117">](https://github.com/jgou) |[<img alt="akang" src="https://avatars1.githubusercontent.com/u/328619?v=4&s=117" width="117">](https://github.com/akang) |
 :---: |:---: |:---: |:---: |:---: |
 [WilcoBreedt](https://github.com/WilcoBreedt) |[Liooo](https://github.com/Liooo) |[surdu](https://github.com/surdu) |[jgou](https://github.com/jgou) |[akang](https://github.com/akang) |
@@ -364,10 +366,10 @@ Community contributors in [https://github.com/nativescript/nativescript-geolocat
 :---: |:---: |:---: |
 [manojdcoder](https://github.com/manojdcoder) |[bradmartin](https://github.com/bradmartin) |[nsndeck](https://github.com/nsndeck) |
 
-
 ## tns-core-modules-widgets
+
 Community contributors in [https://github.com/nativescript/tns-core-modules-widgets](https://github.com/nativescript/tns-core-modules-widgets)
- 
+
 [<img alt="DickSmith" src="https://avatars0.githubusercontent.com/u/6675511?v=4&s=117" width="117">](https://github.com/DickSmith) |[<img alt="hamdiwanis" src="https://avatars2.githubusercontent.com/u/11708544?v=4&s=117" width="117">](https://github.com/hamdiwanis) |[<img alt="NathanWalker" src="https://avatars2.githubusercontent.com/u/457187?v=4&s=117" width="117">](https://github.com/NathanWalker) |[<img alt="reinaldorauch" src="https://avatars2.githubusercontent.com/u/2676370?v=4&s=117" width="117">](https://github.com/reinaldorauch) |[<img alt="tzraikov" src="https://avatars1.githubusercontent.com/u/3244426?v=4&s=117" width="117">](https://github.com/tzraikov) |
 :---: |:---: |:---: |:---: |:---: |
 [DickSmith](https://github.com/DickSmith) |[hamdiwanis](https://github.com/hamdiwanis) |[NathanWalker](https://github.com/NathanWalker) |[reinaldorauch](https://github.com/reinaldorauch) |[tzraikov](https://github.com/tzraikov) |
@@ -375,5 +377,3 @@ Community contributors in [https://github.com/nativescript/tns-core-modules-widg
 [<img alt="vultix" src="https://avatars3.githubusercontent.com/u/5114062?v=4&s=117" width="117">](https://github.com/vultix) |[<img alt="NathanaelA" src="https://avatars3.githubusercontent.com/u/850871?v=4&s=117" width="117">](https://github.com/NathanaelA) |[<img alt="zh-m" src="https://avatars3.githubusercontent.com/u/17438369?v=4&s=117" width="117">](https://github.com/zh-m) |[<img alt="nsndeck" src="https://avatars3.githubusercontent.com/u/5665150?v=4&s=117" width="117">](https://github.com/nsndeck) |[<img alt="ddfreiling" src="https://avatars0.githubusercontent.com/u/13132635?v=4&s=117" width="117">](https://github.com/ddfreiling) |
 :---: |:---: |:---: |:---: |:---: |
 [vultix](https://github.com/vultix) |[NathanaelA](https://github.com/NathanaelA) |[zh-m](https://github.com/zh-m) |[nsndeck](https://github.com/nsndeck) |[ddfreiling](https://github.com/ddfreiling) |
-
-

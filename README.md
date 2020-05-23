@@ -22,19 +22,20 @@ The `master` branch contains the most up-to-date version of the NativeScript doc
 
 No, my friend. There are many other code repositories in the NativeScript world you might also be interested in contributing to:
 
-- [nativescript-cli](https://github.com/NativeScript/nativescript-cli) - This repo contains the NativeScript command-line interface, which lets you create, build, and run apps using the NativeScript framework. The CLI is written in TypeScript.
+* [nativescript-cli](https://github.com/NativeScript/nativescript-cli) - This repo contains the NativeScript command-line interface, which lets you create, build, and run apps using the NativeScript framework. The CLI is written in TypeScript.
 
-- [nativescript-angular](https://github.com/NativeScript/nativescript-angular) - This repository contains the TypeScript code that integrates Angular with NativeScript.
+* [nativescript-angular](https://github.com/NativeScript/nativescript-angular) - This repository contains the TypeScript code that integrates Angular with NativeScript.
 
-- [nativescript-vue](https://github.com/nativescript-vue) - This community-run project allows NativeScript to integrate with Vue.js.
+* [nativescript-vue](https://github.com/nativescript-vue) - This community-run project allows NativeScript to integrate with Vue.js.
 
-- [ios-runtime](https://github.com/NativeScript/ios-runtime) - This repo contains the NativeScript iOS runtime — the code that hosts NativeScript iOS apps, and allows JavaScript code to be executed on iOS devices. The iOS runtime is written in a fun mix of C++, Objective-C, and more.
+* [ios-runtime](https://github.com/NativeScript/ios-runtime) - This repo contains the NativeScript iOS runtime — the code that hosts NativeScript iOS apps, and allows JavaScript code to be executed on iOS devices. The iOS runtime is written in a fun mix of C++, Objective-C, and more.
 
-- [android-runtime](https://github.com/NativeScript/android-runtime) - This repo contains the NativeScript Android — the code that hosts NativeScript Android apps, and allows JavaScript code to be executed on Android devices. The Android runtime is written in a fun mix of C++ and Java.
+* [android-runtime](https://github.com/NativeScript/android-runtime) - This repo contains the NativeScript Android — the code that hosts NativeScript Android apps, and allows JavaScript code to be executed on Android devices. The Android runtime is written in a fun mix of C++ and Java.
 
 You can go check them out and help to expand their docs, add plugins to it and even fix bugs.
 
 ## About Jekyll
+
 This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). More info on how to control the template, table of content and the project structure, in general, can be found in the [Build README](build/README.md)
 
 ## Configuration
@@ -45,9 +46,9 @@ Most of the content in this repository is shared between the two environments, b
 
 1. If you would like a page to appear in a single environment, add an `environment: angular` or `environment: nativescript` property to that page's front matter. Pages marked with an `environment` property will appear in a single environment, and pages _not_ marked with an `environment` property will be shared across all environments.
 
-2. If you have a page that should appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
+1. If you have a page that should appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
 
-```md
+``` Markdown
 {% nativescript %}This paragraph appears only in the vanilla NativeScript documentation{% endnativescript %}
 
 This paragraph appears in both environments.
@@ -79,7 +80,7 @@ Start by cloning all required git repositories in some local folder (`ns-docs` i
 
 Open a console box (**Windows users should run a Git bash session!**) and clone the required git repositories:
 
-```bash
+``` Shell
 mkdir ns-docs
 cd ns-docs
 git clone https://github.com/NativeScript/docs.git
@@ -88,7 +89,7 @@ git clone https://github.com/NativeScript/nativescript-angular.git
 
 Optional:
 
-```bash
+``` Shell
 git clone https://github.com/NativeScript/NativeScript.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
@@ -99,34 +100,34 @@ git clone https://github.com/NativeScript/nativescript-ui-samples-angular.git
 git clone https://github.com/NativeScript/nativescript-ui-samples-vue.git
 ```
 
-> **NOTE**: `nativescript-ui-...` are private repositories used for building the API Reference for the NativeScript UI components.  
-> **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
+> **Note**: `nativescript-ui-...` are private repositories used for building the API Reference for the NativeScript UI components.
+> **Note**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
 
 Then, build the docker image by using the following command from the `ns-docs` folder:
 
-```bash
+``` Shell
 sudo docker build -t ns-docs:1.0 docs/build
 ```
 
-> **NOTE**: If you received some unauthorized error, make sure you are logged into docker from the CLI. Just execute `docker login` and follow the instruction. One thing to have in mind is that docker username is your email, but docker ID is what you see on the top right when you log in to https://hub.docker.com. When executing `docker login` you need to enter your Docker ID.
+> **Note**: If you received some unauthorized error, make sure you are logged into docker from the CLI. Just execute `docker login` and follow the instruction. One thing to have in mind is that docker username is your email, but docker ID is what you see on the top right when you log in to <https://hub.docker.com>. When executing `docker login` you need to enter your Docker ID.
 
 ### Building the documentation
 
 Start the docker image created in the previous step from the **ns-docs** folder:
 
-```bash
+``` Shell
 sudo docker run --rm -t -i -v $(pwd):/root -p 9192:9192 -t ns-docs:1.0
 ```
 
 Due to the [poor performance of mounted volumes on Mac OS](https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap) you may use the [`delegated`](https://docs.docker.com/docker-for-mac/osxfs-caching/#delegated) mount strategy:
 
-```bash
+``` Shell
 sudo docker run --rm -t -i -v $(pwd):/root:delegated -p 9192:9192 -t ns-docs:1.0
 ```
 
 ### Adding content
 
-Edit an article in some of the repositories and navigate to http://localhost:9192 on the host machine. Notice that it might take some time for the changes to be reflected in the browser.
+Edit an article in some of the repositories and navigate to <http://localhost:9192> on the host machine. Notice that it might take some time for the changes to be reflected in the browser.
 
 ### Making changes
 
@@ -227,7 +228,6 @@ The following is a list of all the people that have contributed to the NativeScr
 
 [<img alt="bangseongbeom" src="https://avatars1.githubusercontent.com/u/9026978?v=4&s=117" width="117">](https://github.com/bangseongbeom)
 
-<!-- Note: The table above get generated with the following commands -->
+<!-- **Note**: The table above get generated with the following commands -->
 <!-- npm install -g github-contributors-list -->
 <!-- githubcontrib --owner NativeScript --repo docs --cols 6 --sortOrder desc | pbcopy -->
-

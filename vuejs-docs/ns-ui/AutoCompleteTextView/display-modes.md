@@ -12,8 +12,8 @@ publish: true
 
 **RadAutoCompleteTextView** has two predefined display modes.
 
-- {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %}
-- {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}
+* {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %}
+* {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}
 
 Display mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:displayMode %} property of the **RadAutoCompleteTextView**. The default value is {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %}.
 
@@ -29,8 +29,8 @@ Tokens mode allows multiple choice of items, which are displayed as tokens.
 
 When **RadAutoCompleteTextView**'s `displayMode` is `Tokens`, you can apply two different behaviors for token arrangement.
 
-- {% typedoc_link enums:AutoCompleteLayoutMode,member:Horizontal %}
-- {% typedoc_link enums:AutoCompleteLayoutMode,member:Wrap %}
+* {% typedoc_link enums:AutoCompleteLayoutMode,member:Horizontal %}
+* {% typedoc_link enums:AutoCompleteLayoutMode,member:Wrap %}
 
 The layout mode of the tokens can be changed with the {% typedoc_link enums:RadAutoCompleteTextView,member:layoutMode %} property. The default value of this property is {% typedoc_link enums:AutoCompleteLayoutMode,member:Wrap %}.
 

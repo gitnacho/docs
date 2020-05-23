@@ -9,17 +9,17 @@ position: 4
 
 As explained in [How Extend Works](./how-extend-works.md), everytime you inherit from a class or implement an interface, the Runtime generates a new class. By default you don't have to specify a class name and NativeScript will pick one for you. This, however, has some important implications.
 
-### The Problem
+## The Problem
 
 Let's have a look the following code fragment:
 
-```javascript
+``` JavaScript
 function buttonFactory() {
-	var MyButton = new android.widget.Button.extend({
-    	setEnabled: function(enabled) {
-      		// do something
-    	}
-	});
+    var MyButton = new android.widget.Button.extend({
+        setEnabled: function(enabled) {
+              // do something
+        }
+    });
 }
 ```
 
@@ -33,20 +33,21 @@ The message tells us that we are trying to generate a class with an already exis
 
 Having in mind the full [extend syntax](./how-extend-works.md), we can take advantage of the first parameter to specify a unique class name each time when `extend` is called. The updated code would look like the following:
 
-```javascript
+``` JavaScript
 function buttonFactory(className) {
-	var MyButton = new android.widget.Button.extend(className, {
-    	setEnabled: function(enabled) {
-      		// do something
-    	}
-	});
+    var MyButton = new android.widget.Button.extend(className, {
+        setEnabled: function(enabled) {
+              // do something
+        }
+    });
 };
 
 var className = getUniqueClassName(...);
 var newButton = buttonFactory(className);
 ```
 
-> **Note:** Ideally, you will use extend only when needed, once per the <file, line number, column number> combination.
+> **Note**: Ideally, you will use extend only when needed, once per the <file, line number, column number> combination.
 
-# See Also
+## See Also
+
 * [How Extend Works](./how-extend-works.md)

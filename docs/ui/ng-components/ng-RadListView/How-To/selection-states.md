@@ -12,12 +12,12 @@ When using Item Selection with RadListView one would want to have a different vi
 
 ## Prerequisites
 For the purposes of this article, we need to have a {% typedoc_link classes:RadListView %} instance defined on our page with the following properties set:
-- {% typedoc_link classes:RadListView,member:selectionBehavior %} set to {% typedoc_link enums:ListViewSelectionBehavior,member:Press %}
-- {% typedoc_link classes:RadListView,member:multipleSelection %} set to `true`
+* {% typedoc_link classes:RadListView,member:selectionBehavior %} set to {% typedoc_link enums:ListViewSelectionBehavior,member:Press %}
+* {% typedoc_link classes:RadListView,member:multipleSelection %} set to `true`
 
 We also need to provide handlers and subscribe for the following events:
-- {% typedoc_link classes:RadListView,member:itemSelectedEvent %}
-- {% typedoc_link classes:RadListView,member:itemDeselectedEvent %}
+* {% typedoc_link classes:RadListView,member:itemSelectedEvent %}
+* {% typedoc_link classes:RadListView,member:itemDeselectedEvent %}
 
 ## Implementing Selection States
 ### The item 'model'
@@ -36,8 +36,8 @@ Essential part of the implementation of 'Item Selection States' is the template 
 ### Handling the 'itemSelected' and 'itemDeselected' Events
 The last part of the task is to update the `selected` property of the `DataItems` when the selection state is changed. This is done using the corresponding selection events exposed by {% typedoc_link classes:RadListView %}:
 
-- {% typedoc_link classes:RadListView,member:itemSelectedEvent %}
-- {% typedoc_link classes:RadListView,member:itemDeselectedEvent %}
+* {% typedoc_link classes:RadListView,member:itemSelectedEvent %}
+* {% typedoc_link classes:RadListView,member:itemDeselectedEvent %}
 
 The snippet demonstrates how these events are subscribed for:
 

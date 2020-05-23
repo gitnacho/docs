@@ -18,10 +18,11 @@ slug: e2e-testing-references
 The official demos of the [nativescript-dev-appium](https://github.com/NativeScript/nativescript-dev-appium#nativescript-dev-appium) plugin: [https://github.com/NativeScript/ns-dev-days-appium-plugin](https://github.com/NativeScript/ns-dev-days-appium-plugin).
 
 These tests demonstrate:
-- [template-hello-world-ts/e2e](https://github.com/NativeScript/ns-dev-days-appium-plugin/blob/master/template-hello-world-ts/e2e/) - *nativescript-dev-appium* basics: configurations, find strategies, locators, actions.
-- [template-hello-world-ng/e2e](https://github.com/NativeScript/ns-dev-days-appium-plugin/blob/master/template-hello-world-ng/e2e/) - the page object pattern with *nativescript-dev-appium*.
 
-**Tests used in the NativeScript Core CI**
+* [template-hello-world-ts/e2e](https://github.com/NativeScript/ns-dev-days-appium-plugin/blob/master/template-hello-world-ts/e2e/) - *nativescript-dev-appium* basics: configurations, find strategies, locators, actions.
+* [template-hello-world-ng/e2e](https://github.com/NativeScript/ns-dev-days-appium-plugin/blob/master/template-hello-world-ng/e2e/) - the page object pattern with *nativescript-dev-appium*.
+
+**Tests used in the NativeScript Core CI**:
 
 [NativeScript/e2e/modal-navigation](https://github.com/NativeScript/NativeScript/tree/master/e2e/modal-navigation) - uses "Don't keep activities", runs background (minimize/restore) app.
 

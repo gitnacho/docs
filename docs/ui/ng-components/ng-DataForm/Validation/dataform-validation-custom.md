@@ -26,13 +26,13 @@ If the validators provided by {% typedoc_link classes:RadDataForm %} don't fulfi
 
 In order to use you validator, you can add it to your `html` just like the other validators:
 
-#### Example 2: Use a custom validator in RadDataForm 
+#### Example 2: Use a custom validator in RadDataForm
 
 <snippet id='dataform-custom-validator-html'/>
 
 > Note that you will also need to import the custom validator and register it in order to be able to use it like the other validators:
 
-#### Example 3: Import the custom validator 
+#### Example 3: Import the custom validator
 
 <snippet id='angular-dataform-custom-validator-register'/>
 

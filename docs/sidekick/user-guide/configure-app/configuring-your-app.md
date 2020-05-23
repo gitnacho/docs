@@ -14,13 +14,11 @@ In {{ site.ns-sk }}, you can easily modify various application settings. In addi
 
 1. Launch {{ site.ns-sk }} and open your app.
 1. You can modify or configure various aspects of your app from the **Properties**, **Plugins**, **Assets** and **Services** sections.
-	* For more information about the **Properties** tab and its separate sections, see:
-		* [General Properties]({% slug general-properties %})
-		* [iOS Properties]({% slug ios-properties %})
-		* [Android Properties]({% slug android-properties %})
-	* For more information about the **Plugins** tab, see [Plugins Management]({% slug plugins-management %}).
-	* For more information about the **Assets** tab, see [Assets Management]({% slug assets-management %}).
-	* For more information about the **Services** tab and its separate sections, see:
-		*  [Enterprise Auth]({% slug enterprise-auth %})
-
-
+   + For more information about the **Properties** tab and its separate sections, see:
+     - [General Properties]({% slug general-properties %})
+     - [iOS Properties]({% slug ios-properties %})
+     - [Android Properties]({% slug android-properties %})
+   + For more information about the **Plugins** tab, see [Plugins Management]({% slug plugins-management %}).
+   + For more information about the **Assets** tab, see [Assets Management]({% slug assets-management %}).
+   + For more information about the **Services** tab and its separate sections, see:
+     - [Enterprise Auth]({% slug enterprise-auth %})

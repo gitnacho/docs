@@ -1,5 +1,5 @@
 ---
-title: Switch Accounts 
+title: Switch Accounts
 description: Learn how to switch between your available accounts in NativeScript Sidekick.
 position: 2
 publish: true

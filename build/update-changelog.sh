@@ -9,7 +9,6 @@ fi
 #Fetch the CHANGELOGs from the external repositories and push them to the current branch
 [[ "$1" == "changes" ]] && changes="true" || changes="false"
 
-
 if [[ "$changes" == "true" ]]; then
     # bin links break on Vagrant with Windows host filesystem.
     npm install --no-bin-links

@@ -10,7 +10,7 @@ publish: true
 
 # RadDataForm Styling
 
-If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will show you how to change the style of each editor, its label or the groups if grouping is enabled. 
+If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will show you how to change the style of each editor, its label or the groups if grouping is enabled.
 
 * [CSS](#css)
 * [Styling Editors](#styling-editors)
@@ -37,7 +37,7 @@ Here's the css that is used for the form in the above pictures:
 
 #### Example 1: Applying css with the RadDataForm type selector
 
-```CSS
+``` CSS
 RadDataForm {
 	background-color: #4CAF50;
 	color: #3F51B5;
@@ -58,7 +58,7 @@ The above example uses the `RadDataForm` and `PropertyEditor` selectors. Here's 
 
 #### Example 2: Applying css with the PropertyEditor, DataFormEditorLabel and DataFormEditorCore type selectors
 
-```CSS
+``` CSS
 PropertyEditor {
 	background-color: #00BCD4;
 	color: #303F9F;
@@ -136,7 +136,7 @@ This is the list of supported css properties for the different selectors:
 
 ## Styling Editors
 
-Here's another option to change the styles of RadDataForm - this time without css. In order to change the style of an editor, you can create an instance of {% typedoc_link classes:PropertyEditorStyle %} and set it to the {% typedoc_link classes:PropertyEditor %}'s {% typedoc_link classes:PropertyEditor,member:propertyEditorStyle %} property. 
+Here's another option to change the styles of RadDataForm - this time without css. In order to change the style of an editor, you can create an instance of {% typedoc_link classes:PropertyEditorStyle %} and set it to the {% typedoc_link classes:PropertyEditor %}'s {% typedoc_link classes:PropertyEditor,member:propertyEditorStyle %} property.
 
 Here's what you can update in editor through its style:
 
@@ -169,7 +169,7 @@ Note that in this example we make the change when `RadDataForm` is already loade
 
 ## Styling Group Headers
 
-In order to change the style of the header of a group, you need to create an instance of {% typedoc_link classes:GroupTitleStyle %} and set it to the {% typedoc_link classes:PropertyGroup %}'s 
+In order to change the style of the header of a group, you need to create an instance of {% typedoc_link classes:GroupTitleStyle %} and set it to the {% typedoc_link classes:PropertyGroup %}'s
 {% typedoc_link classes:PropertyGroup,member:titleStyle %} property. Here's what you can update in the header of a group through its style:
 
 * {% typedoc_link classes:DataFormStyleBase,member:fillColor %}: The color that will be used as background of the group header.

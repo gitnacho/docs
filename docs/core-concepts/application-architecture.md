@@ -20,6 +20,7 @@ The entry point for a core NativeScript application is declared in the app root 
 const application = require("tns-core-modules/application");
 application.run({ moduleName: "app-root" });
 ```
+
 ``` TypeScript
 // app.ts
 import * as application from "tns-core-modules/application";
@@ -27,7 +28,7 @@ application.run({ moduleName: "app-root" });
 ```
 
 > **Important:** Do not place any code after the `application.run()` method call as it will not be executed on iOS.
-
+>
 > **Important:** Prior to NativeScript 4.0.0 the `start()` method automatically created an underlying root `Frame` instance that wrapped your pages. The new `run()` method will set up the root element of the provided module as the application root element. This effectively means that apart from `Page` you can now have other roots of your app like `TabView` and `SideDrawer`. The `start()` method is now marked as deprecated.
 
 ## Application Modules
@@ -48,6 +49,7 @@ All functions that are exported by the business logic file are available for bin
     </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 // home-page.js
 function onPageLoaded(args) {
@@ -55,6 +57,7 @@ function onPageLoaded(args) {
 }
 exports.onPageLoaded = onPageLoaded;
 ```
+
 ``` TypeScript
 // home-page.ts
 import { EventData } from "tns-core-modules/data/observable";
@@ -63,6 +66,7 @@ export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
 }
 ```
+
 ``` CSS
 /* home-page.css */
 .page {
@@ -89,6 +93,7 @@ Here is an example of an app root module:
 <!-- app-root.xml -->
 <Frame loaded="onFrameLoaded" defaultPage="home-page" />
 ```
+
 ``` JavaScript
 // app-root.js
 function onFrameLoaded(args) {
@@ -96,6 +101,7 @@ function onFrameLoaded(args) {
 }
 exports.onFrameLoaded = onFrameLoaded;
 ```
+
 ``` TypeScript
 // app-root.ts
 import { EventData } from "tns-core-modules/data/observable";
@@ -114,7 +120,7 @@ These modules represent pages and are used by the `Frame` component to implement
 
 Navigation is covered in detail in the [navigation article]({% slug navigation %}).
 
-Page modules must always have the `Page` component at the root of their content. Below is a code sample of a page module. 
+Page modules must always have the `Page` component at the root of their content. Below is a code sample of a page module.
 
 ``` XML
 <!-- home-page.xml-->
@@ -124,6 +130,7 @@ Page modules must always have the `Page` component at the root of their content.
     </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 // home-page.js
 function onPageLoaded(args) {
@@ -131,6 +138,7 @@ function onPageLoaded(args) {
 }
 exports.onPageLoaded = onPageLoaded;
 ```
+
 ``` TypeScript
 // home-page.ts
 import { EventData } from "tns-core-modules/data/observable";
@@ -139,6 +147,7 @@ export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
 }
 ```
+
 ``` CSS
 /* home-page.css */
 .page {
@@ -158,6 +167,7 @@ application.setCssFileName("style.css");
 
 application.run({ moduleName: "main-page" });
 ```
+
 ``` TypeScript
 import * as application from "tns-core-modules/application";
 application.setCssFileName("style.css");
@@ -168,6 +178,7 @@ application.run({ moduleName: "main-page" });
 Styling is covered in detail in the [styling article]({% slug styling %}).
 
 ## Supporting Multiple Screens
+
 Mobile applications are running on different devices with different screen sizes and form factors. NativeScript provides a way to define different files (.js, .css, .xml, etc.) to be loaded based on the screen's size, platform, and orientation of the current device. The approach is somewhat similar to [multi screen support in Android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look:
 
 `<file-name>[.<qualifier>]*.<extension>`
@@ -175,6 +186,7 @@ Mobile applications are running on different devices with different screen sizes
 In the next section, we will go through the list of supported qualifiers.
 
 ### Screen Size Qualifiers
+
 All the values in screen size qualifiers are in density independent pixels (DP) &mdash; meaning it corresponds to the physical dimensions of the screen. The assumptions are that there are ~160 DP per inch. For example, according to Android guidelines, if the device's smaller dimension is more than 600 dp (~3.75 inches), it is probably a tablet.
 
 * `minWH<X>` - The smaller dimension (width or height) should be at least **X** dp.
@@ -184,7 +196,7 @@ All the values in screen size qualifiers are in density independent pixels (DP) 
 *Example (separate XML file for tablet and phone)*:
 
 * `main-page.minWH600.xml` - XML file to be used for tablet devices.
-* `main-page.xml` - XML to be used for phones. 
+* `main-page.xml` - XML to be used for phones.
 
 ### Platform Qualifiers
 
@@ -194,15 +206,16 @@ All the values in screen size qualifiers are in density independent pixels (DP) 
 *Example (platform specific files)*:
 
 * `app.android.css` - CSS styles for Android.
-* `app.ios.css` - CSS styles for iOS. 
+* `app.ios.css` - CSS styles for iOS.
 
-The platform qualifiers are executed during build time, while the others are executed during runtime. For example, the app.ios.css file will not be taken into consideration when building for the Android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size. 
+The platform qualifiers are executed during build time, while the others are executed during runtime. For example, the app.ios.css file will not be taken into consideration when building for the Android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size.
 
 ### Orientation Qualifiers
+
 * `land` - orientation is in landscape mode.
 * `port` - orientation is in portrait mode.
 
-> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
+> **Note**: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
 
 ## Data Binding
 
@@ -212,12 +225,14 @@ In the following example we set the `bindingContext` of the `Page` in its `loade
 
 ``` XML
 <!-- home-page.xml-->
+
 <Page class="page" loaded="onPageLoaded">
     <StackLayout>
         <Label text="{{ text }}"/>
     </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 // home-page.js
 const fromObject = require("tns-core-modules/data/observable").fromObject;
@@ -229,7 +244,9 @@ function onPageLoaded(args) {
 }
 exports.onPageLoaded = onPageLoaded;
 ```
+
 ``` TypeScript
+
 // home-page.ts
 import { EventData, fromObject } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";

@@ -49,11 +49,11 @@ In a NativeScript application you **cannot** use the Angular [`routerLink`](http
 * pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](/api-reference/interfaces/_ui_frame_.navigationtransition) object.
 * clearHistory - This attribute accepts a boolean value and indicates whether the navigation triggered by the `nsRouterLink` will clear the navigation history of the current outlet.
 
-```HTML
+``` HTML
 <Button text="Button" [nsRouterLink]="['/main']" pageTransition="slide" clearHistory="true"></Button>
 ```
 
-> **Note:** The NativeScript specific attributes work only on routes loaded in a `page-router-outlet`.
+> **Note**: The NativeScript specific attributes work only on routes loaded in a `page-router-outlet`.
 
 ### Router Extensions
 
@@ -63,7 +63,7 @@ The `RouterExtensions` class provides methods for imperative navigation, similar
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-	// ...
+    // ...
 })
 export class MainComponent {
 
@@ -100,7 +100,8 @@ You might want to perform some cleanup actions (e.g. unsubscribe from a service 
 The router configuration usually consists of the following steps:
 
 Create a `RouterConfig` object which maps paths to components and parameters:
-```TypeScript
+
+``` TypeScript
 export const routes = [
     { path: "login", component: LoginComponent },
     { path: "groceries", component: GroceryListComponent },
@@ -108,9 +109,9 @@ export const routes = [
 ];
 ```
 
-
 Use the `NativeScriptRouterModule` API to import your routes:
-```TypeScript
+
+``` TypeScript
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 @NgModule({
@@ -123,9 +124,9 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 export class GroceriesAppModule { }
 ```
 
-
 As usual, pass your module to the `bootstrapModule` function to start your app:
-```TypeScript
+
+``` TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 platformNativeScriptDynamic().bootstrapModule(GroceriesAppModule);
 ```
@@ -144,7 +145,7 @@ From a mobile navigation point of view and based on the schema, there are three 
 
 The combination of NativeScript and Angular is very powerful in terms of navigation options. Angular brings its own well known navigation mechanism with a router. NativeScript on the other hand provides access to the native mobile navigation patterns. Due to the nature of the integration between the two, you have a choice to use either of them or even a combination that suits your needs. In the following sections we will provide implementation examples to various mobile navigation patterns.
 
->**Note:** To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading) for detailed explanation and implementation steps. We won't use this feature in the following examples for the sake of simplicity.
+> **Note**: To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading) for detailed explanation and implementation steps. We won't use this feature in the following examples for the sake of simplicity.
 
 ## Angular Navigation
 
@@ -156,9 +157,11 @@ In mobile terms this is called the hub navigation pattern where you have a scree
 
 We are going to use a `router-outlet` combined with the `nsRouterLink` directive and the Angular `Location` class `back()` method. The code sample below demonstrates only two of the components. For a complete example visit the playground demo below.
 
->**Note:** Note that using the `router-outlet` means we cannot use the `ActionBar` widget. For iOS this means there will be no automatic native back button in it. On Android, the hardware back button won't back in your routes by default. It will close the app instead. We recommend that you use NativeScript's `page-router-outlet`. We will demonstrate this in the next sections.
+> **Note**: Note that using the `router-outlet` means we cannot use the `ActionBar` widget. For iOS this means there will be no automatic native back button in it. On Android, the hardware back button won't back in your routes by default. It will close the app instead. We recommend that you use NativeScript's `page-router-outlet`. We will demonstrate this in the next sections.
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -186,7 +189,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -222,7 +228,10 @@ import { SearchComponent } from "./search.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component } from "@angular/core";
 
 @Component({
@@ -231,12 +240,18 @@ import { Component } from "@angular/core";
 })
 export class AppComponent { }
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <GridLayout>
     <router-outlet></router-outlet>
 </GridLayout>
 ```
-``` hub.component.ts
+
+``` TypeScript
+// hub.component.ts
+
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -253,7 +268,10 @@ export class HubComponent implements OnInit {
     }
 }
 ```
-```hub.component.html
+
+``` HTML
+<!-- hub.component.html -->
+
 <ScrollView class="page">
     <StackLayout class="home-panel">
         <Label class="h1 text-center text-uppercase" text="hub"></Label>
@@ -263,7 +281,10 @@ export class HubComponent implements OnInit {
     </StackLayout>
 </ScrollView>
 ```
-``` featured.component.ts
+
+``` TypeScript
+// featured.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 
@@ -285,7 +306,10 @@ export class FeaturedComponent implements OnInit {
     }
 }
 ```
-```featured.component.html
+
+``` HTML
+<!-- featured.component.html -->
+
 <ScrollView class="page">
     <StackLayout class="home-panel">
         <Label class="h1 text-center text-uppercase" text="FEATURED"></Label>
@@ -307,7 +331,9 @@ Forward navigation can be also called downward navigation since you are going do
 
 Using a `page-router-outlet` comes with the added benefit of using the `ActionBar` widget in your component. On iOS, the widget automatically adds a back button when navigated to a second page. On Android, the `page-router-outlet` benefits from the hardware back button, which navigates back your components. Check out the playground demo below the code sample.
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -327,7 +353,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -355,7 +384,10 @@ import { ItemComponent } from "./item.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component } from "@angular/core";
 
 @Component({
@@ -364,10 +396,16 @@ import { Component } from "@angular/core";
 })
 export class AppComponent { }
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <page-router-outlet></page-router-outlet>
 ```
-``` featured.component.ts
+
+``` TypeScript
+// featured.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
@@ -385,16 +423,21 @@ export class FeaturedComponent implements OnInit {
     }
 }
 ```
-```featured.component.html
+
+``` HTML
+<!-- featured.component.html -->
+
 <ActionBar title="Featured" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
     <StackLayout class="home-panel">
         <Button class="btn btn-primary" text="Item" [nsRouterLink]="['/item']"></Button>
     </StackLayout>
-</ScrollView>
 ```
-``` item.component.ts
+
+``` TypeScript
+// item.component.ts
+
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -411,7 +454,10 @@ export class ItemComponent implements OnInit {
     }
 }
 ```
-```item.component.html
+
+``` HTML
+<!-- item.component.html -->
+
 <ActionBar title="Item" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -429,7 +475,9 @@ export class ItemComponent implements OnInit {
 
 It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation. To force a navigation back to the previous route, simply call the `back()` method of the `RouterExtensions`. Here is an example of how this can be done in the `item.component`:
 
-``` item.component.ts
+``` TypeScript
+// item.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
@@ -451,7 +499,10 @@ export class ItemComponent implements OnInit {
     }
 }
 ```
-```item.component.html
+
+``` HTML
+<!-- item.component.html -->
+
 <ActionBar title="Item" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -475,7 +526,9 @@ The most simple and straight forward way to implement lateral navigation is the 
 
 ![navigation-diagram-ng-hub](../img/navigation/navigation-diagram-ng-hub.png?raw=true)
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -503,7 +556,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -539,7 +595,10 @@ import { SearchComponent } from "./search.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component } from "@angular/core";
 
 @Component({
@@ -548,16 +607,22 @@ import { Component } from "@angular/core";
 })
 export class AppComponent { }
 ```
-```app.component.html
+
+``` TypeScript
+// app.component.html
+
 <page-router-outlet></page-router-outlet>
 ```
-``` hub.component.ts
+
+``` TypeScript
+// hub.component.ts
+
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: "Hub",
-	templateUrl: "./hub.component.html",
-	styleUrls: ['./hub.component.css']
+    selector: "Hub",
+    templateUrl: "./hub.component.html",
+    styleUrls: ['./hub.component.css']
 })
 export class HubComponent implements OnInit {
 
@@ -568,7 +633,10 @@ export class HubComponent implements OnInit {
     }
 }
 ```
-```hub.component.html
+
+``` HTML
+<!-- hub.component.html -->
+
 <ActionBar title="Hub" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -579,29 +647,34 @@ export class HubComponent implements OnInit {
     </StackLayout>
 </ScrollView>
 ```
-``` featured.component.ts
+
+``` TypeScript
+// featured.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-	selector: "Featured",
-	templateUrl: "./featured.component.html",
-	styleUrls: ['./featured.component.css']
+    selector: "Featured",
+    templateUrl: "./featured.component.html",
+    styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
 
-	constructor(private routerExtensions: RouterExtensions) {
-	}
+    constructor(private routerExtensions: RouterExtensions) {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 
-	goBack(): void {
-		this.routerExtensions.back();
-	}
+    goBack(): void {
+        this.routerExtensions.back();
+    }
 }
 ```
-```featured.component.html
+
+``` HTML
+<!-- featured.component.html -->
 <ActionBar title="Featured" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -629,7 +702,9 @@ The `BottomNavigation` widget also provides two important features connected to 
 
 Here is a code sample of the `BottomNavigation` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -659,7 +734,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -693,7 +771,9 @@ import { SearchComponent } from "./search.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
 import { Component } from "@angular/core";
 import { SelectedIndexChangedEventData } from "tns-core-modules/ui/tab-view";
 
@@ -709,7 +789,10 @@ export class AppComponent {
 
 }
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <BottomNavigation selectedIndex="1">
 
     <!-- The bottom tab UI is created via TabStrip (the container) and TabStripItem (for each tab)-->
@@ -743,7 +826,10 @@ export class AppComponent {
 
 </BottomNavigation>
 ```
-``` featured.component.ts
+
+``` TypeScript
+// featured.component.ts
+
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -760,7 +846,10 @@ export class FeaturedComponent implements OnInit {
     }
 }
 ```
-```featured.component.html
+
+``` HTML
+<!-- featured.component.html -->
+
 <ActionBar title="Featured" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -772,20 +861,19 @@ export class FeaturedComponent implements OnInit {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=U4Rmr9&v=2)
 
-
-> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabContentItem` tag without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the `TabContentItem` container and therefore, no `ActionBar`.
+> **Note**: In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabContentItem` tag without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the `TabContentItem` container and therefore, no `ActionBar`.
 
 ### Modal View Navigation
 
 Opening a new navigation controller as a full screen modal view is a very common mobile navigation pattern. In this context opening the modal view represents lateral navigation to a new feature. You can then leverage the embedded `page-router-outlet` to navigate forward and backward in this feature. Closing the modal will navigate laterally back to where the modal view was opened from. Below is a diagram that displays how the navigation schema can be implemented using modal views.
 
-> **Note:** Unlike the `BottomNavigation` component, the state of the modal view isn't kept when navigating away, i.e. closing the modal.
+> **Note**: Unlike the `BottomNavigation` component, the state of the modal view isn't kept when navigating away, i.e. closing the modal.
 
 ![navigation-diagram-ng-modal](../img/navigation/navigation-diagram-ng-modal.png?raw=true)
 
 Opening a modal view in NativeScript Angular is done by injecting the `ModalDialogService` in your component and using its `showModal()` method. This method has two parameters - a component and an options object. The component you pass to the `showModal()` method will become the root of the modal view UI container. The navigation to this component is lateral, not forward and you are navigating to it without the router. It doesn't have a corresponding route to it and you can't register it as a route in your routes config, but you have to register it manually as an Angular [Entry Component](https://angular.io/guide/entry-components) in your module.
 
->**Note:** Components that are registered as routes are automatically registered as entry components by Angular. You don't register them manually.
+> **Note**: Components that are registered as routes are automatically registered as entry components by Angular. You don't register them manually.
 
 Once the modal view is opened it will render the component's UI. To implement the diagram above, we have to implement forward navigation inside the modal. We do this by having a `page-router-outlet` in the component's template and using the `ngOnInit` hook of the component to navigate to the first route in the modal. We are also applying a name to the outlet, because we are going to have two modals, so their outlets will be siblings. In general, we recommend that you always name router outlets inside modal views.
 
@@ -795,7 +883,9 @@ Take a look at the [Modal View](/ui/ng-components/modal-view-ng) article for mor
 
 The following code sample demonstrates how you can implement the Search modal view and page from the diagram above. Check out the complete playground demo below the code sample.
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -827,7 +917,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -870,7 +963,10 @@ import { SearchRootComponent } from "./search-root.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component } from "@angular/core";
 import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-navigation";
 
@@ -881,10 +977,16 @@ import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-naviga
 export class AppComponent {}
 
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <page-router-outlet></page-router-outlet>
 ```
-``` featured.component.ts
+
+``` TypeScript
+// featured.component.ts
+
 import { Component, OnInit, ViewContainerRef } from "@angular/core";
 import { ModalDialogOptions, ModalDialogService } from "nativescript-angular/modal-dialog";
 
@@ -892,38 +994,41 @@ import { BrowseRootComponent } from "./browse-root.component";
 import { SearchRootComponent } from "./search-root.component";
 
 @Component({
-	selector: "Featured",
-	templateUrl: "./featured.component.html",
-	styleUrls: ['./featured.component.css']
+    selector: "Featured",
+    templateUrl: "./featured.component.html",
+    styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
 
-	constructor(private modalService: ModalDialogService, private vcRef: ViewContainerRef) {
-	}
+    constructor(private modalService: ModalDialogService, private vcRef: ViewContainerRef) {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 
-	openModalBrowse(): void {
-		const options: ModalDialogOptions = {
-			fullscreen: true,
-			viewContainerRef: this.vcRef
-		};
+    openModalBrowse(): void {
+        const options: ModalDialogOptions = {
+            fullscreen: true,
+            viewContainerRef: this.vcRef
+        };
 
-		this.modalService.showModal(BrowseRootComponent, options);
-	}
+        this.modalService.showModal(BrowseRootComponent, options);
+    }
 
-	openModalSearch(): void {
-		const options: ModalDialogOptions = {
-			fullscreen: true,
-			viewContainerRef: this.vcRef
-		};
+    openModalSearch(): void {
+        const options: ModalDialogOptions = {
+            fullscreen: true,
+            viewContainerRef: this.vcRef
+        };
 
-		this.modalService.showModal(SearchRootComponent, options);
-	}
+        this.modalService.showModal(SearchRootComponent, options);
+    }
 }
 ```
-```featured.component.html
+
+``` HTML
+<!-- featured.component.html -->
+
 <ActionBar title="Featured" class="action-bar"></ActionBar>
 
 <ScrollView class="page">
@@ -934,51 +1039,63 @@ export class FeaturedComponent implements OnInit {
     </StackLayout>
 </ScrollView>
 ```
-``` search-root.component.ts
+
+``` TypeScript
+// search-root.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-	selector: "SearchRoot",
-	templateUrl: "./search-root.component.html"
+    selector: "SearchRoot",
+    templateUrl: "./search-root.component.html"
 })
 export class SearchRootComponent implements OnInit {
 
-	constructor(private _routerExtensions: RouterExtensions, private activeRoute: ActivatedRoute) {
-	}
+    constructor(private _routerExtensions: RouterExtensions, private activeRoute: ActivatedRoute) {
+    }
 
-	ngOnInit(): void {
-		this._routerExtensions.navigate([{ outlets: { search: ["search"] } }], { relativeTo: this.activeRoute });
-	}
+    ngOnInit(): void {
+        this._routerExtensions.navigate([{ outlets: { search: ["search"] } }], { relativeTo: this.activeRoute });
+    }
 }
 ```
-```search-root.component.html
+
+``` HTML
+<!-- search-root.component.html -->
+
 <page-router-outlet name="search"></page-router-outlet>
 ```
-``` search.component.ts
+
+``` TypeScript
+// search.component.ts
+
 import { Component, OnInit } from "@angular/core";
 import { View } from "tns-core-modules/ui/core/view"
 
 @Component({
-	selector: "Search",
-	templateUrl: "./search.component.html",
-	styleUrls: ['./search.component.css']
+    selector: "Search",
+    templateUrl: "./search.component.html",
+    styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 
-	closeModal(scrollView: View): void {
-		scrollView.closeModal();
-	}
+    closeModal(scrollView: View): void {
+        scrollView.closeModal();
+    }
 }
 ```
-```search.component.html
+
+``` TypeScript
+// search.component.html
+
 <ActionBar title="Search" class="action-bar"></ActionBar>
 
 <ScrollView #scrollView class="page">
@@ -990,7 +1107,7 @@ export class SearchComponent implements OnInit {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=FP57db)
 
-> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`.
+> **Note**: In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`.
 
 ### SideDrawer Navigation
 
@@ -1005,7 +1122,9 @@ The simplest navigation pattern that you can implement is again the hub navigati
 
 The component itself doesn't provide navigation logic automatically like the `BottomNavigation`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers with two directives - `tkDrawerContent` houses the UI of the hidden side view and the `tkMainContent` holds the UI that will be shown on the screen. To implement the diagram above, you can embed a `page-router-outlet` in the main content container. In the hidden drawer content you can have three buttons. Each of them will navigate to one of the three features. Check out the complete playground demo below the code sample.
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -1031,7 +1150,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
@@ -1067,7 +1189,10 @@ import { SearchComponent } from "./search.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component, ViewChild } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
@@ -1097,7 +1222,10 @@ export class AppComponent {
     }
 }
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <RadSideDrawer #sideDrawer>
     <StackLayout tkDrawerContent class="sidedrawer-left">
         <StackLayout class="sidedrawer-header"></StackLayout>
@@ -1123,13 +1251,15 @@ export class AppComponent {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=MX1eUy)
 
-> **Note:** To implement the lateral navigation schema correctly in this case, we had to navigate to each side feature using the `clearHistory` option. This is to ensure that there will be no forward and backward navigation between features.
+> **Note**: To implement the lateral navigation schema correctly in this case, we had to navigate to each side feature using the `clearHistory` option. This is to ensure that there will be no forward and backward navigation between features.
 
 An alternative navigation pattern for the `SideDrawer` would be to have the main content hold only one feature and navigate to the other two laterally using modal views. See the playground demo below the code sample for complete example.
 
 ![navigation-diagram-ng-drawer](../img/navigation/navigation-diagram-ng-drawer.png?raw=true)
 
-``` app-routing.module.ts
+``` TypeScript
+// app-routing.module.ts
+
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
@@ -1158,7 +1288,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-``` app.module.ts
+
+``` TypeScript
+// app.module.ts
+
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
@@ -1203,7 +1336,10 @@ import { SearchRootComponent } from "./search-root.component";
 })
 export class AppModule { }
 ```
-``` app.component.ts
+
+``` TypeScript
+// app.component.ts
+
 import { Component, OnInit, ViewContainerRef, ViewChild } from "@angular/core";
 import { ModalDialogOptions, ModalDialogService } from "nativescript-angular/modal-dialog";
 import { RouterExtensions } from "nativescript-angular/router";
@@ -1246,7 +1382,10 @@ export class AppComponent {
     }
 }
 ```
-```app.component.html
+
+``` HTML
+<!-- app.component.html -->
+
 <RadSideDrawer #sideDrawer>
     <StackLayout tkDrawerContent class="sidedrawer-left">
         <StackLayout class="sidedrawer-header"></StackLayout>

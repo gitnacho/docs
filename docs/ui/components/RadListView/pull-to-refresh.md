@@ -28,8 +28,8 @@ As you can see, here we use the `timer` module part of the core NativeScript fra
 ## Styling the Pull-to-Refresh Indicator
 You can customize the foreground and background colors of the pull-to-refresh indicator. The customization is done via the {% typedoc_link classes:RadListView,member:PullToRefreshStyle %} property which accepts instances the {% typedoc_link classes:PullToRefreshStyle %} class. This class exposes the following properties:
 
-- {% typedoc_link classes:PullToRefreshStyle,member:indicatorColor %} - used to style the foreground color of the pull-to-refresh indicator
-- {% typedoc_link classes:PullToRefreshStyle,member:indicatorBackgroundColor %} - used to style the background color of the pull-to-refresh indicator
+* {% typedoc_link classes:PullToRefreshStyle,member:indicatorColor %} - used to style the foreground color of the pull-to-refresh indicator
+* {% typedoc_link classes:PullToRefreshStyle,member:indicatorBackgroundColor %} - used to style the background color of the pull-to-refresh indicator
 
 Here's a XML sample of how you can customize the indicator in your XML definition of {% typedoc_link classes:RadListView %}:
 

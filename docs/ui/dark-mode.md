@@ -22,7 +22,7 @@ Since release 6.2, NativeScript creates new applications with Force Dark functio
 
 Force Dark is enabled by setting `android:forceDarkAllowed` to `true` in the activity's theme. In particular, every project created by the NativeScript CLI 6.2 or later, contains the snippet below in the `<project>/app/App_Recoures/Android/src/main/res/values/styles.xml` file:
 
-```xml
+``` XML
     ...
 
     <!-- theme to use AFTER launch screen is loaded-->
@@ -41,11 +41,11 @@ Force Dark is enabled by setting `android:forceDarkAllowed` to `true` in the act
     ...
 ```
 
-> Important: Make sure to test your application carefully and thoroughly on both Light and Dark system appearance.
+> **Important**: Make sure to test your application carefully and thoroughly on both Light and Dark system appearance.
 
 If you want to update your project to opt in to Force Dark, it is needed to put the following line `<item name="android:forceDarkAllowed">true</item>` in the `<project>/app/App_Recoures/Android/src/main/res/values/styles.xml` file as shown above.
 
-> Note: Make sure that `uiMode` value is included in the `android:configChanges` attribute of the main application activity in the `<project>/app/App_Recoures/Android/src/main/AndroidManifest.xml` file. Ohterwise, application will crash on interacting after changing the system appearance. A complete values string would look like: `android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"`.
+> **Note**: Make sure that `uiMode` value is included in the `android:configChanges` attribute of the main application activity in the `<project>/app/App_Recoures/Android/src/main/AndroidManifest.xml` file. Ohterwise, application will crash on interacting after changing the system appearance. A complete values string would look like: `android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"`.
 
 ## Dark Mode for iOS
 
@@ -57,16 +57,16 @@ The support in NativeScript framework has come since version 6.2 where the compl
 
 However, if you need extra time to work on your application's Dark mode support, you can opt out by including the `UIUserInterfaceStyle` key in the application's the `<project>/app/App_Recoures/iOS/Info.plist` file:
 
-```xml
+``` XML
     ...
 
     <key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+    <string>Light</string>
 
     ...
 ```
 
-> Important: Make sure to test your application carefully and thoroughly on both Light and Dark system appearance.
+> **Important**: Make sure to test your application carefully and thoroughly on both Light and Dark system appearance.
 
 ## How Does It Work
 
@@ -76,7 +76,7 @@ Since version 6.2, NativeScript detects the system appearance of the running mob
 
 To illustrate this behavior, the sample CSS styles below will paint the Pages of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
 
-```css
+``` CSS
 .ns-light Page {
     background-color: lightblue;
 }
@@ -86,13 +86,11 @@ To illustrate this behavior, the sample CSS styles below will paint the Pages of
 }
 ```
 
-{% endnativescript %}
-
-{% angular %}
+{% endnativescript %}{% angular %}
 
 To illustrate this behavior, the sample CSS styles below will paint the elements with assigned `.my-class` class of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
 
-```css
+``` CSS
 .my-class {
     background-color: lightblue;
 }
@@ -102,7 +100,7 @@ To illustrate this behavior, the sample CSS styles below will paint the elements
 }
 ```
 
-> Note: as the `.ns-light` and `.ns-dark` classes are assigned the to the root view of the application, have in mind to use the [host-context](https://angular.io/guide/component-styles#host-context) selector.
+> **Note**: as the `.ns-light` and `.ns-dark` classes are assigned the to the root view of the application, have in mind to use the [host-context](https://angular.io/guide/component-styles#host-context) selector.
 
 {% endangular %}
 
@@ -112,4 +110,4 @@ In addition, the application module provides `systemAppearance` property and `sy
 
 The NativeScript Theme provides beautiful look and feel of your application for both Light and Dark system appearances. Please, refer to the Theme [repository](https://github.com/NativeScript/theme) for more information.
 
-> Note: make sure to use `@nativescript/theme` package version 2.2.0 or above.
+> **Note**: make sure to use `@nativescript/theme` package version 2.2.0 or above.

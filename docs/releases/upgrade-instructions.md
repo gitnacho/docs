@@ -16,7 +16,7 @@ To upgrade a NativeScript application you need to upgrade several things: Native
 The below command demonstrates how to upgrade your NativeScript tools known also as NativeScript CLI.
 You should first upgrade your `tns` (or `nativescript`) command, so go to a command prompt or bash/terminal prompt and type:
 
-```
+``` Shell
 npm install -g nativescript
 ```
 
@@ -24,15 +24,18 @@ This will automatically download needed files and will update your computer to t
 You can type `tns --version` to verify that the new version is installed.
 
 ## Migrate an existing project to {N} 6.0
+
 To migrate an existing NativeScript project to 6.0, you need just to run:
 
-```
+``` Shell
 tns migrate
 ```
+
 This command will perform all the required updates of packages and changes in the project that are required to adjust a 6.0 project with the latest requirements.
 
 > Node: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible version:
-```
+
+``` Shell
  node-sass
  typescript
  less
@@ -58,7 +61,7 @@ This command will perform all the required updates of packages and changes in th
  nativescript-cardview
 ```
 
-> Note: As soon as you find a problem with the core dependencies - please open an issue in the respective GitHub repository. If unsure, you can open it in the [nativescript/nativescript](https://github.com/nativescript/nativescript/issues) repository. If the problem is related to some of the external plugins, please contact the author by opening a new issue in the plugin's repository.
+> **Note**: As soon as you find a problem with the core dependencies - please open an issue in the respective GitHub repository. If unsure, you can open it in the [nativescript/nativescript](https://github.com/nativescript/nativescript/issues) repository. If the problem is related to some of the external plugins, please contact the author by opening a new issue in the plugin's repository.
 
 ## Upgrading the application
 
@@ -66,43 +69,44 @@ You should execute the **update** command in the root folder of your project to 
 
 >The **update** command is introduced in version 2.4 of NativeScript CLI. You should update NativeScript CLI before using this command.
 
-```
+``` Shell
 tns update
 ```
 
 In order to get the latest development release instead, pass **next** as argument:
 
-```
+``` Shell
 tns update next
 ```
 
 You can also switch to specific version by passing it to the command:
 
-```
+``` Shell
 tns update 2.3.0
 ```
-> **Note:** The command `tns update` is updating the `tns-core-modules`, `nativescript-dev-webpack`, and the runtimes (`tns-android` and `tns-ios`). The command is combining the next three commands in this article (`tns platform add`, `npm i tns-core-modules` and `npm i nativescript-dev-webpack --save-dev`). 
 
+> **Note**: The command `tns update` is updating the `tns-core-modules`, `nativescript-dev-webpack`, and the runtimes (`tns-android` and `tns-ios`). The command is combining the next three commands in this article (`tns platform add`, `npm i tns-core-modules` and `npm i nativescript-dev-webpack --save-dev`).
+>
+> **Note**: After updating the `nativescript-dev-webpack`, we must update our `webpack.config.js` as well. To do that we can execute the `update-ns-webpack`  automated script with the following line:
 
-> **Note:** After updating the `nativescript-dev-webpack`, we must update our `webpack.config.js` as well. To do that we can execute the `update-ns-webpack`  automated script with the following line: 
-```
+``` YAML
 ./node_modules/.bin/update-ns-webpack --deps --configs
 ```
-**Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js` and reapplying the code after using the `--configs` flag.
 
+**Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js` and reapplying the code after using the `--configs` flag.
 
 ## Upgrading platforms
 
 Follow those steps in order to get the latest versions of Android and/or iOS runtimes. Navigate to the root level folder where your project is, and then if you are working on a Android project, type:
 
-```
+``` Shell
 tns platform remove android
 tns platform add android
 ```
 
 and/or (if you are working on a iOS version on a Mac):
 
-```
+``` Shell
 tns platform remove ios
 tns platform add ios
 ```
@@ -113,7 +117,7 @@ The cross-platform modules are available as a npm package named [tns-core-module
 
 In order to use them in your project, you will have to explicitly install the package, for example (assuming you are still in your main app project folder from the steps above):
 
-```
+``` Shell
 npm install tns-core-modules@latest --save
 ```
 
@@ -127,20 +131,20 @@ Another place to find **tns-core-modules** package is [NativeScript Releases](ht
 
 The Webpack plugin is available as a npm package named [nativescript-dev-webpack](https://www.npmjs.com/package/nativescript-dev-webpack). To use the plugin in your project, you should explicitly install the package as `devDependency`.The initial installation of the plugin will install all related development dependencies and will create the default `webpack.config.js` file. If the `webpack.config.js` file is already existing it won't be overwritten by the installation of `nativescript-dev-webpack`.
 
-```
+``` Shell
 npm i nativescript-dev-webpack --save-dev
 ```
 
-> **Note:** From NativeScript 6.0, all project should be webpack compatible.
-
+> **Note**: From NativeScript 6.0, all project should be webpack compatible.
 
 ### Updating Webpack version and configuration
 
 When upgrading an existing version of the Webpack plugin, you should consider that the related development dependencies also have to be updated accordingly. To ease the process, the plugin provides an automated script for that purpose called `update-ns-webpack` located in `<project-folder>/node_modules/.bin` folder. The script comes with two flags:
-- `--deps` - this flag will update all related development dependencies.
-- `--configs` - this flag will update the default `webpack.config.js` file.
 
-```
+* `--deps` - this flag will update all related development dependencies.
+* `--configs` - this flag will update the default `webpack.config.js` file.
+
+``` Shell
 npm i nativescript-dev-webpack@latest --save-dev
 ./node_modules/.bin/update-ns-webpack --deps --configs
 ```
@@ -151,7 +155,7 @@ npm i nativescript-dev-webpack@latest --save-dev
 
 The Angular plugin is available as an npm package named [nativescript-angular](https://www.npmjs.com/package/nativescript-angular). To update the version of the plugin and the related dependency, the package should be explicitly installed, and the related Angular dependencies should be updated accordingly. To ease the update process, the plugin comes with an automated script `update-app-ng-deps` located in `<project-folder/node_modules/.bin>` folder.
 
-```
+``` Shell
 npm i nativescript-angular@latest --save
 ./node_modules/.bin/update-app-ng-deps
 npm i

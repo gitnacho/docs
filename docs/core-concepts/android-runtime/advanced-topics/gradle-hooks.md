@@ -10,26 +10,27 @@ slug: gradle-hooks
 NativeScript uses gradle to build android applications. The gradle build files are part of the application template that comes from the android runtime package. Sometimes, if you want to use any external plugins or libraries you need to add some code to the gradle files. There are several locations for gradle files that can be used for adding your code or gradle properties. They are applied in the build process in the following order:
 
 1. `App_Resources/Android/gradle.properties`
-2. `App_Resources/Android/buildscript.gradle`
-3. plugins' `buildscript.gradle`
-4. `App_Resources/Android/before-plugins.gradle`
-5. plugins' `include.gradle`
-6. `App_Resources/Android/app.gradle`
+1. `App_Resources/Android/buildscript.gradle`
+1. plugins' `buildscript.gradle`
+1. `App_Resources/Android/before-plugins.gradle`
+1. plugins' `include.gradle`
+1. `App_Resources/Android/app.gradle`
 
 ## gradle.properties
 
 In this file you can set various properties which could be used at a later point in the gradle script files. For example, if you want to define the variable `myCustomVariable` with a value `myCustomValue`, you would need to add the following in your `gradle.properties` file:
 
-```Groovy
+``` Groovy
 myCustomVariable=myCustomValue
 ```
+
 Then, in your gradle script file, you can access the property by accessing it on the `project` object as `project.myCustomVariable`.
 
 ## app.gradle
 
 In this file you can set the default Android configurations like `minSdkVersion` and `targetSdkVersion`. You can also add your native dependencies here. In most of the cases, this is the file which you should use when you need to add some gradle code in your application. The reason for applying `app.gradle` last is that it should be able to override any properties or settings that any plugin might have set.
 
-```Groovy
+``` Groovy
 android {
   defaultConfig {
     minSdkVersion 21
@@ -55,7 +56,7 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 
 This file can be used for many kinds of native project configuration, depending on the purpose of the plugin. You can find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
 
-```Groovy
+``` Groovy
 // optional elements
 dependencies {
     implementation "groupName:pluginName:ver"
@@ -66,11 +67,12 @@ dependencies {
 
 Sometimes you need to change something right before the execution of all the `include.gradle` files of your project's plugins. An example is setting `googlePlayServicesVersion` when you use **nativescript-google-maps-sdk** plugin. If you set the value with the following code in the `app.gradle` file:
 
-```Groovy
+``` Groovy
 ext {
   googlePlayServicesVersion = "10.0.1"
 }
 ```
+
 it will be too late for the plugin to receive it, as all plugins' `include.gradle`s will have been applied beforehand. So, the correct place to set this property will be in `before-plugins.gradle` instead.
 
 ## buildscript.gradle

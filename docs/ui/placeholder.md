@@ -14,7 +14,7 @@ The Placeholder allows you to add any native widget to your application. To do t
 
 ## main-page.xml
 
-```XML
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout>
     <Placeholder creatingView="creatingView"/>
@@ -24,7 +24,7 @@ The Placeholder allows you to add any native widget to your application. To do t
 
 ## main-page.**android**.js\main-page.**android**.ts
 
-```JavaScript
+``` JavaScript
 function creatingView(args) {
     var nativeView = new android.widget.TextView(args.context);
     nativeView.setSingleLine(true);
@@ -34,7 +34,7 @@ function creatingView(args) {
 }
 exports.creatingView = creatingView;
 ```
-```TypeScript
+``` TypeScript
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export function creatingView(args: CreateViewEventData) {
@@ -48,7 +48,7 @@ export function creatingView(args: CreateViewEventData) {
 
 ## main-page.**ios**.js\main-page.**ios**.ts
 
-```JavaScript
+``` JavaScript
 function creatingView(args) {
     var nativeView = new UILabel();
     nativeView.text = "Native";
@@ -56,7 +56,7 @@ function creatingView(args) {
 }
 exports.creatingView = creatingView;
 ```
-```TypeScript
+``` TypeScript
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export function creatingView(args: CreateViewEventData) {

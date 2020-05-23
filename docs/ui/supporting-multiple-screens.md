@@ -13,9 +13,9 @@ Mobile application run on different devices with different screen sizes and form
 `<file-name>[.<qualifier>]*.<extension>`
 
 NativeScript supports three different file qualifiers:
-- Platform qualifiers
-- Screen size qualifiers
-- Orientation qualifiers
+* Platform qualifiers
+* Screen size qualifiers
+* Orientation qualifiers
 
 > **Important:** The qualifiers for screen size and orientation are supported only in NativeScript Core applications. These qualifiers are not compatible with Angular. The platform qualifiers can be used in both NativeScript Core and NativeScript Angular applicaitons.
 
@@ -27,7 +27,7 @@ NativeScript supports three different file qualifiers:
 *Example(platform specific files)*:
 
 * `app.android.css` - CSS styles for Android.
-* `app.ios.css` - CSS styles for iOS. 
+* `app.ios.css` - CSS styles for iOS.
 
 The platform qualifiers are executed during build time, while the others - during run time. For example, the app.ios.css file will not be taken in consideration when building for android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size.
 
@@ -42,15 +42,15 @@ All the values in screen size qualifiers are in density independent pixels(dp) -
 *Example(separate XML file for tablet and phone)*:
 
 * `main-page.minWH600.xml` - XML file to be used for tablet devices.
-* `main-page.xml` - XML to be used for phones 
+* `main-page.xml` - XML to be used for phones
 
-> **Note:** Screen size qualifiers are not supported by Angular.
+> **Note**: Screen size qualifiers are not supported by Angular.
 
 ## Orientation Qualifiers
 
 * `land` - orientation is in landscape mode
 * `port` - orientation is in portrait mode
 
-> **Note:** Orientation qualifiers are not supported by Angular.
+> **Note**: Orientation qualifiers are not supported by Angular.
 
-> **Note:** All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger page reload and will not change the current page.
+> **Note**: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger page reload and will not change the current page.

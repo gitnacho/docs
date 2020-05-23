@@ -25,34 +25,36 @@ We are using `.scss` files to define our plugin styles. So make sure you run the
 
 As we mentioned above, the starting point for this article is the repository showing how to [build UI plugin]((https://github.com/NativeScript/nativescript-ui-plugin-custom)). Before you start defining style definitions to the custom button created in the example, open `my-button.common.ts` and add the following constructor to `MyButtonBase` class:
 
-```JavaScripts
+``` JavaScripts
 function MyButtonBase() {
     var _this = _super.call(this) || this;
     _this.className = "mybtn";
     return _this;
 }
 ```
-```TypeScript
+
+``` TypeScript
 constructor() {
     super();
     this.className = "mybtn";
-}  
+}
 ```
-This will add a `mybtn` class name to our custom button element. 
 
-> **NOTE**: If you want to customize font styles and color, make sure your custom component inherits from `TextBase` instead of `View`.
+This will add a `mybtn` class name to our custom button element.
+
+> **Note**: If you want to customize font styles and color, make sure your custom component inherits from `TextBase` instead of `View`.
 
 ## Implementation
 
-In this example we will implement two main skins of the NativeScript core theme - dark and light. Any other skin can be implemented in a similar way. 
+In this example we will implement two main skins of the NativeScript core theme - dark and light. Any other skin can be implemented in a similar way.
 
-Review [NativeScript Core Theme supported skins] ({ % https://github.com/NativeScript/theme/tree/master/app/scss/skins % }).
+Review [NativeScript Core Theme supported skins](https://github.com/NativeScript/theme/tree/master/app/scss/skins).
 
 ### Files Structure and Contents
 
 Add folder `scss` to your plugin source folder having the following structure:
 
-```
+``` SCSS
 scss
 ├── _mybutton.scss
 ├── _variables.scss
@@ -67,9 +69,10 @@ scss
     ├── _variables.dark.scss
     └── _variables.light.scss
 ```
+
 `_variables.scss` describes your plugin scss variables that will be used to specify different styles for the different theme skins or platforms. In our example it contains the following definitions:
 
-```
+``` SCSS
 $mybtn-color: $primary;
 $mybtn-background-color: $secondary;
 $mybtn-border-color: $btn-color;
@@ -77,13 +80,13 @@ $mybtn-border-width: 10;
 $mybtn-border-radius: 10;
 $mybtn-opacity: 1;
 
-``` 
+```
 
 You can see that variables `$primary`, `#secondary` and `$btn-color` are used. They are defined in the NativeScript core theme.
 
 `_mybutton.scss` describes the base style definition of the component class. In our case this is `mybtn`:
 
-```
+``` SCSS
 .mybtn {
   padding: 20;
   background-color: $mybtn-background-color;
@@ -94,7 +97,7 @@ You can see that variables `$primary`, `#secondary` and `$btn-color` are used. T
   text-align: center;
   text-decoration: none;
   text-transform: lowercase;
-  margin: 20; 
+  margin: 20;
   border-color: $mybtn-border-color;
   border-width: $mybtn-border-width;
   border-radius: $mybtn-border-radius;
@@ -104,12 +107,13 @@ You can see that variables `$primary`, `#secondary` and `$btn-color` are used. T
 
 ```
 
-For full list of css properties that you can use, you can refer to (Styling)[{ % styling % }].
+For full list of css properties that you can use, you can refer to [Styling]({% styling %}).
 
-`skins/_variables.light.scss` and `skins/_variables.dark.scss` override some of the variables depending on the theme skin - dark or light. More skin overrides can be added to this folder (i.e. sky, lime, etc...). 
+`skins/_variables.light.scss` and `skins/_variables.dark.scss` override some of the variables depending on the theme skin - dark or light. More skin overrides can be added to this folder (i.e. sky, lime, etc...).
 
 skins/_variables.light.scss:
-```
+
+``` SCSS
 @import '../../node_modules/nativescript-theme-core/scss/light';
 @import '../variables';
 
@@ -120,7 +124,8 @@ $mybtn-color: $white;
 ```
 
 skins/_variables.dark.scss:
-```
+
+``` SCSS
 @import '../../node_modules/nativescript-theme-core/scss/dark';
 @import '../variables';
 
@@ -133,7 +138,8 @@ $mybtn-color: $black;
 `platforms\_mybutton.android.scss` and `platforms\_mybutton.ios.scss` override some of the variables depending on the platform - iOS or Android.
 
 platforms\_mybutton.android.scss:
-````
+
+```` SCSS
 // Variables overrides for Android
 
 $mybtn-border-width: 5;
@@ -146,7 +152,8 @@ $mybtn-border-radius: 5;
 ````
 
 platforms\_mybutton.ios.scss:
-```
+
+``` SCSS
 // Variables overrides for ios
 
 $mybtn-border-width: 5;
@@ -167,10 +174,9 @@ The other files are the entry point for each combination of skin and platform:
 
 What you need to do in each of them is just import the corresponding skin and platform specific scss files. For example `mybutton.dark.android.scss` has the following content:
 
-```
+``` SCSS
 @import 'skins/variables.dark';
 @import 'platforms/mybutton.android';
-
 ```
 
 ### SCSS compilation
@@ -181,7 +187,7 @@ Once you have all your styles defined per skin and platform, you're ready to com
 
 This will do the compilation and save the result css files in a `css` folder. There you can find one file for each combination of skin and platform. In our example there will be four files:
 
-```
+``` CSS
 css
 ├── mybutton.dark.android.css
 ├── mybutton.dark.ios.css
@@ -193,21 +199,23 @@ css
 
 Now, the plugin from the example has 2 skins and is ready to be used along with NativeScript theme and dark and light skins. To use the dark skin of NativeScript theme in your app and apply it to your plugin, all you need to is add the following to `app.css`:
 
-```
+``` CSS
 @import 'nativescript-theme-core/css/core.dark.css';
 @import 'nativescript-ui-plugin-custom/css/mybutton.dark.css';
 ```
 
 For light skin, just import the corresponding `light` files to `app.css`.
 
-
 ## Screenshots
 
-_Dark skin on Android_
-![](./img/plugins/dark-android.png) 
-_Dark skin on iOS_
-![](./img/plugins/dark-ios.png)
-_Light skin on Android_
-![](./img/plugins/light-android.png) 
-_Light skin on iOS_
-![](./img/plugins/light-ios.png)
+_Dark skin on Android_:
+![dark-android](./img/plugins/dark-android.png)
+
+_Dark skin on iOS_:
+![dark-ios](./img/plugins/dark-ios.png)
+
+_Light skin on Android_:
+![light-android](./img/plugins/light-android.png)
+
+_Light skin on iOS_:
+![light-ios](./img/plugins/light-ios.png)

@@ -18,14 +18,15 @@ publish: true
 ## Setup
 
 To display a Scatter Chart, you will need to:
-- Add a **RadCartesianChart** to your page.
-- Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **tkCartesianHorizontalAxis** directive.
-- Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **tkCartesianVerticalAxis** directive.
-- Add at least one instance of **ScatterSeries** with the **tkCartesianSeries** directive and set its **items** property to a collection of data items and the **xProperty** and **yProperty** to the names of the properties used to determine where to plot the scatter points.
+
+* Add a **RadCartesianChart** to your page.
+* Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **tkCartesianHorizontalAxis** directive.
+* Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **tkCartesianVerticalAxis** directive.
+* Add at least one instance of **ScatterSeries** with the **tkCartesianSeries** directive and set its **items** property to a collection of data items and the **xProperty** and **yProperty** to the names of the properties used to determine where to plot the scatter points.
 
 To illustrate this setup, let's create an example. Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization. The service is a simple 'mock' of an backend call that will return an array of objects:
 
-#### Example 1: Define a data service
+### Example 1: Define a data service
 
 <snippet id='chart-angular-data-service'/>
 

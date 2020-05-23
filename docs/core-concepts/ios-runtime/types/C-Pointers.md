@@ -8,9 +8,10 @@ position: 8
 # C Pointers
 
 ## `interop.Pointer`
+
 This type represents a `void*`.
 
-```typescript
+``` TypeScript
 interface Pointer {
     /**
      * Creates a new pointer with the given offset.
@@ -39,68 +40,73 @@ interface Pointer {
 }
 
 /**
- * A pointer that will free the memory it points to automatically when garbage collected.
+* A pointer that will free the memory it points to automatically when garbage collected.
  */
 interface AdoptedPointer extends Pointer {
 }
 ```
 
 ## `interop.alloc`
-```typescript
+
+``` TypeScript
 /**
- * Allocates memory.
- * @param size The size in bytes.
- * @return A pointer that will free the memory when garbage collected
+* Allocates memory.
+* @param size The size in bytes.
+* @return A pointer that will free the memory when garbage collected
  */
 function alloc(size: number): AdoptedPointer;
 ```
 
 ## `interop.free`
-```typescript
+
+``` TypeScript
 /**
- * Releases the memory of a pointer.
- * The pointer should not be adopted.
- * @param ptr A pointer to the memory to free.
+* Releases the memory of a pointer.
+* The pointer should not be adopted.
+* @param ptr A pointer to the memory to free.
  */
 function free(ptr: Pointer): void;
 ```
 
 ## `interop.sizeof`
-```typescript
+
+``` TypeScript
 /**
- * Returns the size of the provided type.
- * @param type A class constructor (of Objective-C interface),
- * an instance (wrapper of Objective-C interface), struct constructor, struct instance,
- * reference, protocol, function (for c function), fundamental types.
+* Returns the size of the provided type.
+* @param type A class constructor (of Objective-C interface),
+* an instance (wrapper of Objective-C interface), struct constructor, struct instance,
+* reference, protocol, function (for c function), fundamental types.
  */
 function sizeof(type: any): number;
 ```
 
 ## `interop.handleof`
-```typescript
+
+``` TypeScript
 /**
- * From a JavaScript object gets a pointer to the backing native object.
- * @param instance A class constructor (of Objective-C interface),
- * an instance (wrapper of Objective-C interface), struct instance, reference,
- * protocol, function (for c function) or block.
- * @return The native pointer handle
+* From a JavaScript object gets a pointer to the backing native object.
+* @param instance A class constructor (of Objective-C interface),
+* an instance (wrapper of Objective-C interface), struct instance, reference,
+* protocol, function (for c function) or block.
+* @return The native pointer handle
  */
 function handleof(instance: any): Pointer;
 ```
 
 ## `interop.Reference`
-This type represents a `<type>*` or `<type>[]`. You can use it with the [runtime types](../types/Runtime-Types.md).
 
-```typescript
+This type represents a `<type> *` or `<type>[]`. You can use it with the [runtime types](../types/Runtime-Types.md).
+
+``` TypeScript
 /**
- * A type that wraps a pointer and allows read/write operations on its value.
+* A type that wraps a pointer and allows read/write operations on its value.
  */
 interface Reference<T> {
     value: T;
 }
 
 /**
- * A Reference constructor.
+* A Reference constructor.
  */
 var Reference: {
 
@@ -136,8 +142,8 @@ var Reference: {
 }
 
 /** A type for propagating an unmanaged object reference.
- * When you use this type, you become partially responsible for
- * keeping the object alive.
+* When you use this type, you become partially responsible for
+* keeping the object alive.
  */
 interface Unmanaged<T> {
     /**
@@ -166,14 +172,15 @@ You can pass [ArrayBuffers](https://developer.mozilla.org/en-US/docs/Web/JavaScr
 
 ### `NSString`
 
-```objective-c
+``` Objective-C
 @interface NSString : NSObject
-- (void)getCharacters:(unichar *)buffer;
+* (void)getCharacters:(unichar *)buffer;
 @end
 ```
 
 #### Raw pointers
-```javascript
+
+``` JavaScript
 var nsstring = NSString.stringWithString("test");
 
 // Calls the native C malloc function. You must call free when finished using it.
@@ -189,7 +196,8 @@ free(buffer); // Same as interop.free(buffer)
 ```
 
 #### Smart pointers
-```javascript
+
+``` JavaScript
 var nsstring = NSString.stringWithString("test");
 
 // The allocated memory will be deleted when the buffer and reference variables get garbage collected

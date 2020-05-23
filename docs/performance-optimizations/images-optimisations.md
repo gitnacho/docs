@@ -26,18 +26,18 @@ In contrast, when using `ImageSource` or Base64 encoded string, the Bitmap is tr
 As an additional feature for Android, NativeScript supports `decodeWidth` and `decodeHeight`. These properties will **downsample** your image so that it will take less memory.
 The goal is to avoid as much as possible out of memory exceptions caused by images being loaded into memory and at the same time display crispy images.
 
-> **Note:** Use `decodeWidth` and `decodeHeight` only when working with large photos and there are `Out of Memory` exceptions issues. With NativeScript 3.x.x and above, image optimizations were implemented and in the common scenarios, you should not worry about hitting OOM.
+> **Note**: Use `decodeWidth` and `decodeHeight` only when working with large photos and there are `Out of Memory` exceptions issues. With NativeScript 3.x.x and above, image optimizations were implemented and in the common scenarios, you should not worry about hitting OOM.
 
 When working with the decode properties, the following considerations should be taken:
 
-- The `decodeWidth` and `decodeHeight` properties accept **DIP** (device independent pixels) as measurement units. This means that image decoding will happen based on the device DPI.
+* The `decodeWidth` and `decodeHeight` properties accept **DIP** (device independent pixels) as measurement units. This means that image decoding will happen based on the device DPI.
 Devices with higher pixel density displays will decode their images larger out of the box so that they appear crispy. You can still set the properties in px if you so choose.
 
-- The `decodeWidth` and `decodeHeight` properties will now respect the `stretch` property value. If you set `stretch` to `aspectFill` or `aspectFit`, NativeScript will keep the aspect ratio while shrinking the image.
+* The `decodeWidth` and `decodeHeight` properties will now respect the `stretch` property value. If you set `stretch` to `aspectFill` or `aspectFit`, NativeScript will keep the aspect ratio while shrinking the image.
 
-- When `decodeWidth` and `decodeHeight` values are **not** set, the images will be decoded with the size of the device screen. This is an optimization as in most cases you probably want to see the whole of the image on your device screen. Note that if you still want the image to be decoded in full size (if you want to be able to zoom it for example), you can manually set `decodeWidth` and `decodeHeight`.
+* When `decodeWidth` and `decodeHeight` values are **not** set, the images will be decoded with the size of the device screen. This is an optimization as in most cases you probably want to see the whole of the image on your device screen. Note that if you still want the image to be decoded in full size (if you want to be able to zoom it for example), you can manually set `decodeWidth` and `decodeHeight`.
 
-- Image caching now takes into account the `decodeWidth` and `decodeHeight` values. Identical images with different decode property values will now be retrieved and saved separately in the cache. This results in better quality images. If you have a small version of the image in a master list and want to decode it with 100 x 100 DP, and then want to display it in 1000 x 1000 DP on the detail page, the detailed image will now not be blurry. This also means you can now control caching - using the same image with the same decode parameter values will still get the image from the cache.
+* Image caching now takes into account the `decodeWidth` and `decodeHeight` values. Identical images with different decode property values will now be retrieved and saved separately in the cache. This results in better quality images. If you have a small version of the image in a master list and want to decode it with 100 x 100 DP, and then want to display it in 1000 x 1000 DP on the detail page, the detailed image will now not be blurry. This also means you can now control caching - using the same image with the same decode parameter values will still get the image from the cache.
 
 > **Important**: The `decodeWidth` and `decodeHeight` properties will work only for Android. Setting them for our iOS images will not change the application behaviour in any way.
 
@@ -47,7 +47,7 @@ With [loadMode](/api-reference/modules/_ui_image_.html#loadmode) set to `async`,
 
 > **Tip**: Use `loadMode="async"` to prevent blocking of the UI while the image is loading.
 
-```XML
+``` XML
 <StackLayout>
     <Image src="{{ someExtremelyLargeImage }}" decodeWidth="400" decodeHeight="400" loadMode="async" />
     <Label text="With loadMode set to async the UI won't be blocked" textWrap="true" />
@@ -62,11 +62,8 @@ The `Image` module will use internal memory and disk cache, so when loaded the m
 
 > **Note**: The property `useCache` will work only for Android. Setting it for our iOS images will not change the application behaviour in any way.
 
-
 **API Reference for** [Image Module](/api-reference/modules/_ui_image_.html)
 
 **NativeScript Core Examples**  [Cookbook](http://docs.nativescript.org/cookbook/ui/image)
 
 **NativeScript Angular Examples**  [Code Samples](http://docs.nativescript.org/angular/code-samples/ui/image.html)
-
-

@@ -9,7 +9,7 @@ slug: building-ui-plugins-composite-components
 
 When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use existing {N} components as building blocks for a more complex UI component (composite), i.e. no explicit calls to native APIs. Thus you can even sometimes avoid using platform-specific files (like \*.ios.ts, \*.android.ts ...).
 
-## Bootstrap Your Plugin 
+## Bootstrap Your Plugin
 
 First things first - you start off from a regular plugin. You can check the [Building Plugins article]({%slug building-plugins%}) for reference.
 
@@ -17,7 +17,7 @@ First things first - you start off from a regular plugin. You can check the [Bui
 
 Let's say you want to build a simple meme generator component with three properties, which you can use like:
 
-```XML
+``` XML
     <ui:Meme imageSource="~/images/nativescript.png" topText="ROCK" bottomText="ROLL" />
 ```
 
@@ -26,12 +26,12 @@ Let's say you want to build a simple meme generator component with three propert
 ![](./img/plugins/ui-plugin-ns-preview.png)
 
 You can implement this by creating two files:
-- **meme.ts**: Contains properties, the implementation logic, and loads the UI.
-- **meme.xml**: Contains the UI and data bindings.
+* **meme.ts**: Contains properties, the implementation logic, and loads the UI.
+* **meme.xml**: Contains the UI and data bindings.
 
 In **meme.ts**, you need to declare a class with the name of the UI element that will be used in the app:
 
-```TypeScript
+``` TypeScript
 export class Meme extends GridLayout {
     constructor() {
         super();
@@ -45,19 +45,19 @@ export class Meme extends GridLayout {
 ```
 
 As you see, in the constructor, we load the UI from the **meme.xml** and set its **bindingContext** to **this**, so that we can bind the XML to the properties:
-```xml
-<GridLayout rows="auto,*, auto"> 
-    <Label row="0" text="{{ topText }}" fontSize="64" textWrap="true" 
+``` XML
+<GridLayout rows="auto,*, auto">
+    <Label row="0" text="{{ topText }}" fontSize="64" textWrap="true"
         horizontalAlignment="center" verticalAlignment="top"></Label>
-        
+
     <Image rowSpan="3" src="{{ imageSource }}" verticalAlignment="stretch"></Image>
 
-    <Label row="2" text="{{ bottomText }}" fontSize="64" textWrap="true" 
+    <Label row="2" text="{{ bottomText }}" fontSize="64" textWrap="true"
         horizontalAlignment="center" verticalAlignment="bottom"></Label>
 </GridLayout>
 ```
 The properties themselves are declared and registered in the .ts like:
-```TypeScript
+``` TypeScript
 export const topTextProperty = new Property<Meme, string>({ name: "topText", defaultValue: undefined });
 export const bottomTextProperty = new Property<Meme, string>({ name: "bottomText", defaultValue: undefined });
 export const imageSourceProperty = new Property<Meme, string>({ name: "imageSource", defaultValue: undefined });
@@ -69,7 +69,7 @@ topTextProperty.register(Meme);
 bottomTextProperty.register(Meme);
 ```
 
-For more details and the full source code of the described meme sample, check the [NativeScript ui-plugin sample repo](https://github.com/NativeScript/nativescript-ui-plugin). 
+For more details and the full source code of the described meme sample, check the [NativeScript ui-plugin sample repo](https://github.com/NativeScript/nativescript-ui-plugin).
 
 ## Make Your Plugin Angular-Compatible
 

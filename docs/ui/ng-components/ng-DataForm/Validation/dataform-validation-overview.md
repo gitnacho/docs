@@ -40,7 +40,7 @@ If you are using [JSON Metadata]({% slug dataform-start-properties-angular %} "D
 
 #### Example 2: How to add validators with JSON for a property
 
-```JSON
+``` JSON
 {
     "isReadOnly": false,
     "commitMode": "immediate",
@@ -51,7 +51,7 @@ If you are using [JSON Metadata]({% slug dataform-start-properties-angular %} "D
             "name": "username",
             "index": 0,
             "validators": [
-                { "name": "NonEmpty" }, 
+                { "name": "NonEmpty" },
                 { "name": "MaximumLength", "params": { "length": 10 } }
             ]
         },

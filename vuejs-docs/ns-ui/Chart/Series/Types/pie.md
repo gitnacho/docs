@@ -19,18 +19,19 @@ publish: true
 ## Setup
 
 To display a Pie Chart, you will need to:
- - Add **RadPieChart** to your page.
- - Add an instance of **PieSeries** with the **v-tkPieSeries** directive and set its **items** property to a collection of data items and its **valueProperty** to the name of the property used to determine where to determine the proportion between the splices.
- 
+
+* Add **RadPieChart** to your page.
+* Add an instance of **PieSeries** with the **v-tkPieSeries** directive and set its **items** property to a collection of data items and its **valueProperty** to the name of the property used to determine where to determine the proportion between the splices.
+
 To illustrate this setup, let's create an example. Just like with all vue 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
- #### Example 1: Define a collection of items
+### Example 1: Define a collection of items
 
- <snippet id='chart-get-pie-data-vue'/>
+<snippet id='chart-get-pie-data-vue'/>
 
- #### Example 2: Add chart to component's template
+### Example 2: Add chart to component's template
 
- <snippet id='chart-pieseries-selection-vue'/>
+<snippet id='chart-pieseries-selection-vue'/>
 
 #### Figure 1: Chart with PieSeries on Android (left) and iOS (right)
 
@@ -38,9 +39,9 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 ## Properties
 
--  {% typedoc_link classes:PieSeries,member:outerRadiusFactor %} - This property can increase and decrease the diameter of the series. By default, it occupies the whole plot area and is equal to 1. Setting the outerRadius to 0.9 will decrease the radius of the series by 10 percent. Similarly, the value 1.1 will increase it. Leaving the property with value 1 will make the donut fill the available space.
-- {% typedoc_link classes:PieSeries,member:expandRadius %} - This property defines the extent to which the selected pie segment is shifted. Again, this property is measured in percents. A value of 1.1 defines that the selected segment will expand by 10% of the pie radius.
-- {% typedoc_link classes:PieSeries,member:startAngle %} and {% typedoc_link classes:PieSeries,member:endAngle %} - These properties are used to define the pie range. The `startAngle` sets the angle in degrees from which the drawing of the pie segments will begin.
+* {% typedoc_link classes:PieSeries,member:outerRadiusFactor %} - This property can increase and decrease the diameter of the series. By default, it occupies the whole plot area and is equal to 1. Setting the outerRadius to 0.9 will decrease the radius of the series by 10 percent. Similarly, the value 1.1 will increase it. Leaving the property with value 1 will make the donut fill the available space.
+* {% typedoc_link classes:PieSeries,member:expandRadius %} - This property defines the extent to which the selected pie segment is shifted. Again, this property is measured in percents. A value of 1.1 defines that the selected segment will expand by 10% of the pie radius.
+* {% typedoc_link classes:PieSeries,member:startAngle %} and {% typedoc_link classes:PieSeries,member:endAngle %} - These properties are used to define the pie range. The `startAngle` sets the angle in degrees from which the drawing of the pie segments will begin.
 Its default value is 0. The `endAngle` determines whether the chart will appear as a full circle or a partial circle. Its default value is 360 degrees.
 
 ## References

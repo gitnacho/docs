@@ -10,10 +10,10 @@ publish: true
 # RadSideDrawer Location
 Depending on the application scenario, {% typedoc_link classes:RadSideDrawer %} can be configured to display at a specific location on the screen. This also changes the way the transition animation is applied. Setting the location can be done by setting the **drawerLocation** property to a value from the {% typedoc_link enums:SideDrawerLocation %} enumeration:
 
-- {% typedoc_link enums:SideDrawerLocation,member:Top %}
-- {% typedoc_link enums:SideDrawerLocation,member:Right %}
-- {% typedoc_link enums:SideDrawerLocation,member:Bottom %}
-- {% typedoc_link enums:SideDrawerLocation,member:Left %}
+* {% typedoc_link enums:SideDrawerLocation,member:Top %}
+* {% typedoc_link enums:SideDrawerLocation,member:Right %}
+* {% typedoc_link enums:SideDrawerLocation,member:Bottom %}
+* {% typedoc_link enums:SideDrawerLocation,member:Left %}
 
 Changing the drawer location is done by setting one of the four possible values to the {% typedoc_link classes:RadSideDrawer,member:drawerLocation %} property. The four location options are defined by the {% typedoc_link enums:SideDrawerLocation %} enum. Setting the {% typedoc_link classes:RadSideDrawer,member:drawerLocation %} property can be done both programmatically and via XML:
 

@@ -8,17 +8,19 @@ previous_url: /ui-images,/ui/ui-images,/ui/images
 ---
 
 # Working with Images from resource folders
-In this article, we will look at the specifics of adding Images in the App_Resources folder for both platforms. 
 
-> **Note:** NativeScript supports images encoded as `PNG` or `JPG` files.
+In this article, we will look at the specifics of adding Images in the App_Resources folder for both platforms.
 
-> **Note:**  Loading an image from the resource folders requires using the `res://` prefix. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density. The file extension is not included when referencing resource images.
+> **Note**: NativeScript supports images encoded as `PNG` or `JPG` files.
+>
+> **Note**:  Loading an image from the resource folders requires using the `res://` prefix. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density. The file extension is not included when referencing resource images.
 
 ## Generating the icon and adding them in the resources folders
 
 To achieve this, we should generate the icons via [NativeScript Image Builder](http://nsimage.brosteins.com/) or some other tool, which can be used for image edit. After we created the images for the required device screen densities, we should add them in the required folders, described below.
 
 ### Adding Android resources
+
 Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android\src\main\res` folder in your app:
 
 ![android resources](../img/resources/android-resources.png "android resources")
@@ -26,6 +28,7 @@ Android resources should be added to the corresponding `drawable-XXX` folders in
 The content of this directory will be copied inside the `platforms\android\res` when the app is prepared by the NativeScript CLI. More information about how to use drawable resources in Android can be found [here](http://developer.android.com/guide/practices/screens_support.html#DesigningResources).
 
 ### Adding iOS resources
+
 IOS resources should be added inside the `App_Resources\ios` folder in your app. You can use `@1x`, `@2x` and `@3x` suffixes to target devices with a specific screen scale. Here is a list of devices for each scale factor:
 
 * **@1x** - iPad 2 and iPad mini (1st Generation)
@@ -40,16 +43,18 @@ Once the NativeScript project is prepared (`tns prepare ios`) all the images wil
 
 ## Load images from a resource
 
-
 {% nativescript %}
-```XML
-<Image src="res://logo" stretch="none" /> 
+
+``` XML
+<Image src="res://logo" stretch="none" />
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
-<Image src="res://logo" stretch="none" ></Image> 
+
+{% endnativescript %}{% angular %}
+
+``` HTML
+<Image src="res://logo" stretch="none" ></Image>
 ```
+
 {% endangular %}
 
 You can manually create an [ImageSource instance from resource]({%ns_cookbook image-source#load-image-using-resource-name%}).
@@ -57,7 +62,8 @@ You can manually create an [ImageSource instance from resource]({%ns_cookbook im
 ## Loading icons in the TabView from the resources
 
 {% nativescript %}
-```XML
+
+``` XML
 <TabView id="tabViewContainer" iosIconRenderingMode="alwaysOriginal">
     <TabView.items>
         <TabViewItem title="Tab 1" iconSource="res://icon">
@@ -73,9 +79,10 @@ You can manually create an [ImageSource instance from resource]({%ns_cookbook im
     </TabView.items>
 </TabView>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <TabView iosIconRenderingMode="alwaysOriginal">
     <StackLayout *tabItem="{title: 'Tab 1', iconSource: 'res://icon'}">
         <StackLayout>
@@ -89,10 +96,9 @@ You can manually create an [ImageSource instance from resource]({%ns_cookbook im
     </StackLayout>
 </TabView>
 ```
-{% endangular %}
 
+{% endangular %}
 
 ## Changing the application icon
 
-In the latest NativeScript versions we can use the CLI for generating the application icon for Android and iOS based on the specified image and adding them automatically in the appropriate resource folders (`App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS). For achieving this, we use the `tns resources generate icons <path to image>` command. 
-
+In the latest NativeScript versions we can use the CLI for generating the application icon for Android and iOS based on the specified image and adding them automatically in the appropriate resource folders (`App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS). For achieving this, we use the `tns resources generate icons <path to image>` command.

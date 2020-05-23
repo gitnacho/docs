@@ -23,33 +23,33 @@ Let’s start by looking at the fields you need to provide to connect to your en
 There are a lot of fields by which you can configure the SAML-Redirect authentication service to suit your specific needs. However, below you will find only the ones that are required in order to ensure a working authentication in the NativeScript mobile app.
 
 <table>
-	<thead>
-		<tr>
-			<th style="width: 20%">Field name</th>
-			<th align="center">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>Name</code></td>
-			<td align="center">The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the <a href="https://console.kinvey.com/">Kinvey console</a>.</td>
-		</tr>
-		<tr>
-		<td><code>Provider URI</code></td>
-		<td align="center">This is the single sign on service URL where the request is initiated with the SAML authentication service that you are connecting to.</td>
-		</tr>
-		<tr>
-		<td><code>Certificate Text</code></td>
-		<td align="center">This is the Base64 text of the SAML signing certificate provided by the SAML authentication service.</td>
-		</tr>
-		<tr>
-		<td><code>Name ID Format URI</code></td>
-		<td align="center">This is optional depending on the requirements of your SAML authentication provider. In simple terms, this specifies the kind of user identifier that the service will provide. The default value (<code>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</code>) allows the provider to determine the format it will send the user identifier as we are not specifying a format (i.e. <code>unspecified</code>).</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th style="width: 20%">Field name</th>
+         <th align="center">Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>Name</code></td>
+         <td align="center">The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the <a href="https://console.kinvey.com/">Kinvey console</a>.</td>
+      </tr>
+      <tr>
+      <td><code>Provider URI</code></td>
+      <td align="center">This is the single sign on service URL where the request is initiated with the SAML authentication service that you are connecting to.</td>
+      </tr>
+      <tr>
+      <td><code>Certificate Text</code></td>
+      <td align="center">This is the Base64 text of the SAML signing certificate provided by the SAML authentication service.</td>
+      </tr>
+      <tr>
+      <td><code>Name ID Format URI</code></td>
+      <td align="center">This is optional depending on the requirements of your SAML authentication provider. In simple terms, this specifies the kind of user identifier that the service will provide. The default value (<code>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</code>) allows the provider to determine the format it will send the user identifier as we are not specifying a format (i.e. <code>unspecified</code>).</td>
+      </tr>
+   </tbody>
 </table>
 
-<br/>
+<br />
 Once all the fields are filled in appropriately, click the "Save Service" button to continue.
 
 ## Example - Azure Active Directory
@@ -62,38 +62,38 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 1. From within the [Azure portal](https://portal.azure.com), click on Azure Active Directory or click on +New and search for Azure Active Directory.
 
-	![Azure AD](../../img/enterprise-auth/AzureAD.png)
+   ![Azure AD](../../img/enterprise-auth/AzureAD.png)
 
-2. Choose the **App Registrations** option and **Enterprise applications**.
-	
-	![Enterprise applications](../../img/enterprise-auth/enterprise-applications.png)
+1. Choose the **App Registrations** option and **Enterprise applications**.
 
-3. Click **+ New application** and then choose **Non-gallery application**. Give your application a name (this can be whatever you like) and click **Add**.
+   ![Enterprise applications](../../img/enterprise-auth/enterprise-applications.png)
 
-  ![Non-gallery application](../../img/enterprise-auth/non-gallery-app.png)
+1. Click **+ New application** and then choose **Non-gallery application**. Give your application a name (this can be whatever you like) and click **Add**.
 
-4. Click on **Configure single sign-on**.
+   ![Non-gallery application](../../img/enterprise-auth/non-gallery-app.png)
 
-![Configure single sign-on](../../img/enterprise-auth/configure-single-sign-in.png)
+1. Click on **Configure single sign-on**.
 
-5. Choose **SAML-based Sign-on** from the drop down.
+   ![Configure single sign-on](../../img/enterprise-auth/configure-single-sign-in.png)
+
+1. Choose **SAML-based Sign-on** from the drop down.
 
   ![SAML-based sign-on](../../img/enterprise-auth/saml-based.png)
 
-6. Fill in the following values:
+1. Fill in the following values:
 
-  * For **Identifier** enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`.
-  * For **Reply URL** enter `https://auth.kinvey.com/v3/saml/assertion`.
-  * Click on **Show advanced URL settings**.
-  * For **Sign on URL** enter `https://auth.kinvey.com/`.
+   * For **Identifier** enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`.
+   * For **Reply URL** enter `https://auth.kinvey.com/v3/saml/assertion`.
+   * Click on **Show advanced URL settings**.
+   * For **Sign on URL** enter `https://auth.kinvey.com/`.
 
   ![Azure SAML settings](../../img/enterprise-auth/saml-settings-azure.png)
 
-7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version. (More details about managing signing certificates within Azure can be found in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).)
+1. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version. (More details about managing signing certificates within Azure can be found in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).)
 
   ![Base64 signing certificate](../../img/enterprise-auth/signing-certificate.png)
 
-8. Click the **Save** button to save your settings.
+1. Click the **Save** button to save your settings.
 
 In order to test the log in process, your Azure Active Directory application will need a user. To add a user, click on the **Assign a user for testing** option within Azure's enterprise application quick start guide. The easiest way to start is by adding your own user to the application.
 

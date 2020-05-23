@@ -8,11 +8,11 @@ slug: ensure-plugins-quality
 # Ensure Plugins Quality
 
 NativeScript plugins are the main building blocks for NativeScript applications. These building blocks should work properly installed into applications:
-- built for Android
-- built for iOS
 
-Ignoring any of these non-functional requirements could lead to an app that doesn’t work as expected. Throughout this article we'll be referring to the verification of those requirements as 'sanity checks' without writing a single line of test. 
+* built for Android
+* built for iOS
 
+Ignoring any of these non-functional requirements could lead to an app that doesn’t work as expected. Throughout this article we'll be referring to the verification of those requirements as 'sanity checks' without writing a single line of test.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ In order to ensure that your plugin runs reliably in any NativeScript applicatio
 
 All plugins should have a demo folder that contains a demo application showing how the plugin works. If your plugin is a user interface plugin, and you need to test the plugin in both Angular and non-Angular apps, you should have an additional demo-angular folder containing an Angular app you can test your plugin in. Refer to the article ["Supporting Angular in UI Plugins"]({% slug supporting-angular-in-ui-plugins %}) for more details.
 
-```
+``` Shell
 my-plugin
 ├── demo
 ├── demo-angular
@@ -28,35 +28,35 @@ my-plugin
      └── package.json
 ```
 
-> **NOTE**: It is very handy to have the plugin and demo application(s) in the same repository. The [NativeScript official plugin seed](https://github.com/NativeScript/nativescript-plugin-seed#plugin-folder-structure) defines this structure so if the plugin is based on it, the plugin’s source and the demo app are nicely organized.
+> **Note**: It is very handy to have the plugin and demo application(s) in the same repository. The [NativeScript official plugin seed](https://github.com/NativeScript/nativescript-plugin-seed#plugin-folder-structure) defines this structure so if the plugin is based on it, the plugin’s source and the demo app are nicely organized.
 
 In order to ease the process add the following scripts in your `package.json` file under `src` folder (the plugins source folder).
 
-```
+``` JSON
 "ngc": "node --max-old-space-size=8192 ./node_modules/.bin/ngc"
 ```
->**NOTE** In case the ngc command is not found, you need to install it: `npm install @angular/compiler-cli --save-dev`
 
-This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - https://github.com/angular/angular-cli/issues/5618.
+> **Note**: In case the ngc command is not found, you need to install it: `npm install @angular/compiler-cli --save-dev`
 
+This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - <https://github.com/angular/angular-cli/issues/5618>.
 
->**NOTE** The script above is needed only if the plugin implements some specific Angular wrappers for Angular support.
+> **Note**: The script above is needed only if the plugin implements some specific Angular wrappers for Angular support.
 
-```
+``` JSON
 "build": "npm i && tsc && npm run ngc"
 ```
 
-This script will install all NativeScript plugin’s dependencies, compile TypeScript files and initiate Ahead of Time (AOT) compilation. 
+This script will install all NativeScript plugin’s dependencies, compile TypeScript files and initiate Ahead of Time (AOT) compilation.
 
->**NOTE** The command `npm run ngc` is needed only if the plugin implements some specific Angular wrappers for Angular support. If this is not the case, it can be removed.
+> **Note**: The command `npm run ngc` is needed only if the plugin implements some specific Angular wrappers for Angular support. If this is not the case, it can be removed.
 
-```
+``` JSON
 "prepublishOnly": "npm run build"
 ```
 
 In the `package.json` under your `demo` and `demo-angular` folders add the following script:
 
-```
+``` JSON
 "build.plugin": "cd ../src && npm run build"
 ```
 
@@ -70,7 +70,7 @@ Refer to the [package.json](https://github.com/NativeScript/nativescript-faceboo
 
 The official [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) recommends TSLint rules defined in this [tslint.json](https://github.com/NativeScript/nativescript-plugin-seed/blob/master/tslint.json) file.
 
-```
+``` Shell
 my-plugin
 ├── demo
 ├── demo-angular
@@ -81,14 +81,14 @@ my-plugin
 
 TSLint could be easily incorporated into any NativeScript plugin by following these steps:
 
-1.    Add [tslint.json](https://github.com/NativeScript/nativescript-plugin-seed/blob/master/tslint.json) file on root level.
-2.    Add the following script in your plugin’s `src/package.json` file.
+1. Add [tslint.json](https://github.com/NativeScript/nativescript-plugin-seed/blob/master/tslint.json) file on root level.
+1. Add the following script in your plugin’s `src/package.json` file.
 
-```
-"ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'"
-```
+   ``` JSON
+   "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'"
+   ```
 
-This script executes the `tslint` command passing the tslint rules defined in `tslint.json` file. The installed `node_modules` will be excluded from the static analysis. 
+This script executes the `tslint` command passing the tslint rules defined in `tslint.json` file. The installed `node_modules` will be excluded from the static analysis.
 Having `tslint.json` on root level allows using the same TSLint rules for both demo apps by adding the same script.
 
 Now the command `npm run ci.tslint` will start a static analysis.
@@ -105,11 +105,11 @@ Read more details regarding [building project with NativeScript CLI](https://git
 
 ## Automate All Checks with Travis CI
 
-Travis CI is a great way to automate plugin’s sanity checks. It is free for open-source projects. More details can be found in [Travis CI documentation](https://docs.travis-ci.com/). Travis CI will boot a virtual machine and execute commands based on the provided configuration in your `.travis.yml` file. 
+Travis CI is a great way to automate plugin’s sanity checks. It is free for open-source projects. More details can be found in [Travis CI documentation](https://docs.travis-ci.com/). Travis CI will boot a virtual machine and execute commands based on the provided configuration in your `.travis.yml` file.
 
 First things first! Add an empty `.travis.yml` file on the root level of your plugin.
 
-```
+``` Shell
 my-plugin
 ├── demo
 ├── demo-angular
@@ -119,54 +119,59 @@ my-plugin
 └── .travis.yml
 ```
 
-> **NOTE**: If you use the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed), you have an initial `.travis.yml` file setup. 
+> **Note**: If you use the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed), you have an initial `.travis.yml` file setup.
 
 This sample uses [Build Matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix) to initiate several runs as a result of one and [Build Stages](https://docs.travis-ci.com/user/build-stages) to separate the execution into stages. The flow will be as follows:
-1.    Test for Readability, Maintainability and Functionality Errors
-2.    Build Demo Apps with Your Plugin Installed
+
+1. Test for Readability, Maintainability and Functionality Errors
+1. Build Demo Apps with Your Plugin Installed
 
 Each step starts after successful completion of the previous one. In this way, if there is a functional error, for example, the entire run will be terminated after the fall of the first step and the rest of the steps will not be executed. This behavior is controlled by [Build Stages](https://docs.travis-ci.com/user/build-stages).
 
-According to the [Build Lifecycle](https://docs.travis-ci.com/user/customizing-the-build#The-Build-Lifecycle) of each Travis CI build, `install` is the right phase to install any required dependencies. 
+According to the [Build Lifecycle](https://docs.travis-ci.com/user/customizing-the-build#The-Build-Lifecycle) of each Travis CI build, `install` is the right phase to install any required dependencies.
 
 Add following commands in the `install` phase in `.travis.yml` file:
 
 Install nativescript as a global node module.
+
+``` Shell
+npm install -g nativescript
 ```
-- npm install -g nativescript
-```
+
 Configures anonymous usage reporting for the NativeScript CLI. Read more about [CLI usage reporting](https://github.com/NativeScript/nativescript-cli/blob/master/docs/man_pages/general/usage-reporting.md).
 
+``` Shell
+tns usage-reporting disable
 ```
-- tns usage-reporting disable
-```
+
 Configures anonymous error reporting for the NativeScript CLI. Read more about [CLI error reporting](https://github.com/NativeScript/nativescript-cli/blob/master/docs/man_pages/general/error-reporting.md).
 
-```
-- tns error-reporting disable
+``` Shell
+tns error-reporting disable
 ```
 
 As a result the `install` phase should be:
 
-```
+``` YAML
 install:
-    - npm install -g nativescript
-    - tns usage-reporting disable
-    - tns error-reporting disable
+  + npm install -g nativescript
+  + tns usage-reporting disable
+  + tns error-reporting disable
 ```
+
 Refer to nativescript-facebook [.travis.yml file](https://github.com/NativeScript/nativescript-facebook/blob/doc/.travis.yml#L60-L62) to see this in reality.
 
 As we mentioned earlier, the plugin should be sanity checked on Android as well as on iOS. The Android specific requirements can be defined in `.travis.yml` file in `android` section:
 
-```
+``` YAML
 android:
   components:
-    - tools
-    - platform-tools
-    - build-tools-26.0.1
-    - android-26
-    - android-23
-    - extra-android-m2repository
+  + tools
+  + platform-tools
+  + build-tools-26.0.1
+  + android-26
+  + android-23
+  + extra-android-m2repository
 ```
 
 `tools` and `platform-tools` components define that the latest revision of Android SDK Tools will be installed. Read more about [Travis CI Environment for Android Project](https://docs.travis-ci.com/user/languages/android/#Overview).
@@ -180,49 +185,53 @@ android:
 Let's add the required stages using the [Build Matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix).
 
 Add the following snippet at the beginning of `.travis.yml` file:
-```
+
+``` YAML
 matrix:
   include:
 ```
+
 Then add the required stages:
 
 ### 1. Test for Readability, Maintainability and Functionality Errors
 
-```
-- stage: "Lint"
+``` YAML
+* stage: "Lint"
   language: node_js
   os: linux
   node_js: "10"
   script: cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint && cd ../demo-angular && npm run ci.tslint
 ```
+
 The machine that is going to be provisioned will be Linux with nodejs v10 installed on it as well as  OpenJDK v8. Finally the `ci.tslint` script will be executed for the plugin's code and for the demo apps.
 
 ### 2. Build Demo Apps with Your Plugin Installed
 
-```
-- stage: "Build"
-  env: 
-    - BuildAndroid="26"
+``` YAML
+* stage: "Build"
+  env:
+  + BuildAndroid="26"
   language: android
   os: linux
   jdk: openjdk8
   before_install: nvm install 6.10.3
   script: cd demo && npm run ci.android.build && cd ../demo-angular && npm run ci.android.build
-- os: osx
-  env: 
-    - BuildiOS="11"
-    - Xcode="9.1"
+* os: osx
+  env:
+  + BuildiOS="11"
+  + Xcode="9.1"
   osx_image: xcode9.1
-  language: node_js 
+  language: node_js
   node_js: "10"
   jdk: openjdk8
   script: cd demo && npm run ci.ios.build && cd ../demo-angular && npm run ci.ios.build
 ```
+
 The scripts (`ci.android.build` and `ci.ios.build`) that are executed to build for iOS and Android are located in [package.json](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/package.json#L49) file of any of the demo apps.
 
 If everything is configured properly, the sanity checks will execute on every code change. The result, and whether the checks pass or not, will look like this:
 
-![](./img/plugins/travis-ci.png)
+![travis-ci](./img/plugins/travis-ci.png)
 
 The main benefit of having sanity checks in place for your NativeScript plugins is that you can develop without spending additional time to ensure your changes don't break existing applications depending on your plugin.
 

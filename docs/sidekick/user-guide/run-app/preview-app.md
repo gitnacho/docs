@@ -18,11 +18,11 @@ Use Sidekick in combination with the NativeScript Playground and Preview apps to
 
 The Preview app has several limitations, which you can overcome by [building and deploying your app on a connected device]({% slug deploy-on-device %}).
 
-* **Plugins**<br /> The Preview app comes with a predefined set of [NativeScript plugins](https://market.nativescript.org/). If your app needs to utilize a plugin that is not present in the Preview app, you will see a warning message and your app might not work as expected.
-* **Resources**<br /> The Preview app comes with predefined set of resources, such as app icons, splash screens, and image files. If you need to work with additional files in your application’s `App_Resources` folder, you need to switch to the full setup workflow.
-* **Debugging**<br /> The Preview app does not allow you to use many of NativeScript’s [debugging tools]({% slug cli-basics %}) - for example, the [integration with the Chrome DevTools]({% slug chrome-devtools %}).
-* **Unit Tests**<br /> The Preview app does not allow you to use [NativeScript’s unit testing workflows]({% slug unit-testing %}).
-* **Lazy Loading**<br /> The Preview app cannot run NativeScript apps that use [Angular’s lazy loading technique]({% slug lazy-loading %}) for loading modules.
+* **Plugins**<br />The Preview app comes with a predefined set of [NativeScript plugins](https://market.nativescript.org/). If your app needs to utilize a plugin that is not present in the Preview app, you will see a warning message and your app might not work as expected.
+* **Resources**<br />The Preview app comes with predefined set of resources, such as app icons, splash screens, and image files. If you need to work with additional files in your application’s `App_Resources` folder, you need to switch to the full setup workflow.
+* **Debugging**<br />The Preview app does not allow you to use many of NativeScript’s [debugging tools]({% slug cli-basics %}) - for example, the [integration with the Chrome DevTools]({% slug chrome-devtools %}).
+* **Unit Tests**<br />The Preview app does not allow you to use [NativeScript’s unit testing workflows]({% slug unit-testing %}).
+* **Lazy Loading**<br />The Preview app cannot run NativeScript apps that use [Angular’s lazy loading technique]({% slug lazy-loading %}) for loading modules.
 
 ## Procedure
 

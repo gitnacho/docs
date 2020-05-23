@@ -13,8 +13,8 @@ By default when using the {% typedoc_link classes:RadListView %} in order for th
 
 ## Using multiple item templates
 In order to setup the {% typedoc_link classes:RadListView %} to use different templates for its items representation you will need to:
-- Create a function or pass a string representation of a "property" by which the template for each business object will be determined. This is done by setting the {% typedoc_link classes:RadListView,member:itemTemplateSelector%} property
-- Create multiple separate `template`, add them to the {% typedoc_link classes:RadListView,member:itemTemplates%} collection property and set their `key` to the desired unique template identifier. The `key` is what will be used to do the comparison in the {% typedoc_link classes:RadListView,member:itemTemplateSelector%} 
+* Create a function or pass a string representation of a "property" by which the template for each business object will be determined. This is done by setting the {% typedoc_link classes:RadListView,member:itemTemplateSelector%} property
+* Create multiple separate `template`, add them to the {% typedoc_link classes:RadListView,member:itemTemplates%} collection property and set their `key` to the desired unique template identifier. The `key` is what will be used to do the comparison in the {% typedoc_link classes:RadListView,member:itemTemplateSelector%}
 
 #### Example 1: Setting up `itemTemplateSelector` and `itemTemplates`
 
@@ -32,4 +32,3 @@ Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
 * [Multiple Item Templates Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/multiple-templates)
-

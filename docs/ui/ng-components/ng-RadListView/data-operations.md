@@ -33,9 +33,9 @@ To enable filtering in the {% typedoc_link classes:RadListView %} simply set its
 #### __Example 1: Implementing grouping, filtering and sorting__
 
 In this example we are going to enable all of the data operations on the same RadListView with the following criteria:
-- Filter the business objects which `name` property contains the string "Special Item"
-- Sort the business objects by the value of their `id` property
-- Group the business objects by the value of their `category` property
+* Filter the business objects which `name` property contains the string "Special Item"
+* Sort the business objects by the value of their `id` property
+* Group the business objects by the value of their `category` property
 
 <snippet id='listview-angular-multiple-operations-html'/>
 <snippet id='listview-angular-multiple-operations-code'/>

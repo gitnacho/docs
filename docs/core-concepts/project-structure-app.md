@@ -9,9 +9,10 @@ previous_url: /structure
 # Project Structure
 
 {% nativescript %}
+
 The default structure of a blank NativeScript project consists of a root folder that contains the `app`, `platforms` and `node_modules` directories, and a `package.json` configuration file.
 
-```
+``` Shell
 myApplication/
 └── app
     ├── App_Resources
@@ -20,12 +21,12 @@ myApplication/
 ├── platforms
 └── package.json
 ```
-{% endnativescript %}
 
-{% angular %}
+{% endnativescript %}{% angular %}
+
 The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongst which the most important is the `package.json`.
 
-```
+``` Shell
 myApplication/
 ├── App_Resources
 └── src
@@ -38,6 +39,7 @@ myApplication/
 ├── tsconfig.json
 └── ...
 ```
+
 {% endangular%}
 
 There are several other directories and configuration files that can be present in your project based on the initial template, the programming language (JavaScript or TypeScript) or the plugins that you are using in your application. This article covers the files and folders that are always present in a NativeScript project, as well as some of the more common ones that you may encounter while developing your app.
@@ -50,16 +52,21 @@ In the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangul
 
 You can develop shared functionality or design in common files. To indicate that a file is common, make sure that the file name does not contain a `.android.` or `.ios.` string.
 
-{% nativescript %}In the `app` folder, you will also find the `App_Resources` directory.{% endnativescript %}
+{% nativescript %}
 
-> **NOTE** The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular%}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
+In the `app` folder, you will also find the `App_Resources` directory.
+
+{% endnativescript %}
+
+> **Note**: The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular%}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
 
 ### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
 This is a secondary `package.json` file in which you can specify the entry point file of the app and to configure the behavior of the NativeScript runtimes. Below is an example of a basic secondary `package.json` file.
 
 {% nativescript %}
-```JSON
+
+``` JSON
 {
     "main": "app.js",
     "discardUncaughtJsExceptions": true,
@@ -72,9 +79,10 @@ This is a secondary `package.json` file in which you can specify the entry point
     }
 }
 ```
-{% endnativescript %}
-{% angular %}
-```JSON
+
+{% endnativescript %}{% angular %}
+
+``` JSON
 {
     "main": "main.js",
     "discardUncaughtJsExceptions": true,
@@ -87,8 +95,8 @@ This is a secondary `package.json` file in which you can specify the entry point
     }
 }
 ```
-{% endangular %}
 
+{% endangular %}
 
 #### Discarding JavaScript Exceptions Called from Native
 
@@ -98,7 +106,7 @@ All discarded exceptions can be processed in the app by either subscribing to th
 
 For example:
 
-```JS
+``` JavaScript
 var application = require("application");
 
 application.on(application.discardedErrorEvent, function (args) {
@@ -136,7 +144,7 @@ The `App_Resources` folder contains the platform-specific resources of the appli
 
 The `platforms` directory is created when you start a build or add a target platform to your project. The NativeScript tooling creates a new subdirectory with the respective platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs of the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory to the platform-specific subdirectory for each target platform.
 
-> **IMPORTANT:** Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory during the `prepare <Platform>` process.
+> **Important**: Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory during the `prepare <Platform>` process.
 
 ## The **package.json** File
 
@@ -150,7 +158,7 @@ The root `package.json` also contains several NativeScript-specific properties w
 
 Here is an example of a basic main `package.json` file:
 
-```JSON
+``` JSON
 {
     "nativescript": {
         "id": "org.nativescript.myApplication",
@@ -197,32 +205,37 @@ Let's assume the project is located at `/d/work/myApplication`.
 * The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`. CLI will look for `webpack.config.js` file as the `webpackConfigPath` is not set and it will not override any pods versions as `overridePods` is false by default.
 
 * The second option is to specify only the app directory. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/code/src/App_Resources`.
-    ```JSON
-    {
-        "appPath": "code/src"
-    }
-    ```
+
+  ``` JSON
+  {
+      "appPath": "code/src"
+  }
+  ```
 
 * The third option is to specify only the app resources directory. The example given below will result in an app located at `/d/work/myApplication/app` and resources at `/d/work/myApplication/resources`.
-    ```JSON
-    {
-        "appResourcesPath": "resources"
-    }
-    ```
+
+  ``` JSON
+  {
+      "appResourcesPath": "resources"
+  }
+  ```
 
 * The fourth option is to specify both the app folder and resources directories. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/resources`.
-    ```JSON
-    {
-        "appPath": "code/src",
-        "appResourcesPath": "resources"
-    }
-    ```
+
+  ``` JSON
+  {
+      "appPath": "code/src",
+      "appResourcesPath": "resources"
+  }
+  ```
+
 * You can set all of the properties:
-    ```JSON
-    {
-        "appPath": "code/src",
-        "appResourcesPath": "resources",
-        "webpackConfigPath": "my-custom.webpack.config.js",
-        "overridePods": true
-    }
-    ```
+
+  ``` JSON
+  {
+      "appPath": "code/src",
+      "appResourcesPath": "resources",
+      "webpackConfigPath": "my-custom.webpack.config.js",
+      "overridePods": true
+  }
+  ```

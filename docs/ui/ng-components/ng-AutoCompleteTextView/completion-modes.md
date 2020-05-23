@@ -10,10 +10,10 @@ publish: true
 
 # RadAutoCompleteTextView Completion Modes
 
-**RadAutoCompleteTextView** has two modes for filtering suggestions. 
+**RadAutoCompleteTextView** has two modes for filtering suggestions.
 
-- {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
-- {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
+* {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
+* {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
 
 The completion mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:completionMode %} property of the RadAutoCompleteTextView. The default value is {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}.
 
@@ -27,11 +27,13 @@ The next code snippet shows how you can change the `completionMode`:
 In `StartsWith` mode the autocomplete shows only suggestions that start with the typed phrase.
 
 ## Contains Mode
+
 In `Contains` mode the autocomplete shows the suggestions that contain the typed phrase, but not necessarily in the beginning.
 The completion mode `Contains` is not intended to work with the `Append` and  `SuggestAppend`  suggest modes.
 Since these suggest modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing.
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

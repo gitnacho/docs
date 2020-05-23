@@ -9,16 +9,16 @@ position: 30
 
 Here is a sample iOS native application's implementation in Objective-C versus NativeScript:
 
-```objective-c
+``` Objective-C
 #import <UIKit/UIKit.h>
 
 // RootViewController
 @interface RootViewController : UIViewController
-- (void)viewDidLoad;
+* (void)viewDidLoad;
 @end
 
 @implementation RootViewController
-- (void)viewDidLoad {
+* (void)viewDidLoad {
     [super viewDidLoad];
 
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, 60)];
@@ -37,7 +37,7 @@ Here is a sample iOS native application's implementation in Objective-C versus N
 @end
 
 @implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+* (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[RootViewController alloc] init];
@@ -53,7 +53,8 @@ int main(int argc, char * argv[]) {
     }
 }
 ```
-```javascript
+
+``` JavaScript
 var RootViewController = UIViewController.extend({
     viewDidLoad() {
         UIViewController.prototype.viewDidLoad.apply(this, arguments);

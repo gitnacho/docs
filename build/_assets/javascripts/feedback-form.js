@@ -1,9 +1,9 @@
 $(document).ready(function () {
-	
+
 		var Feedback = {};
-	
+
 		var $window = $(window);
-	
+
 		var defaultFormValues = {
 			email: "",
 			inaccurateContent: false,
@@ -25,7 +25,7 @@ $(document).ready(function () {
 			checkboxArea.find("span.k-tooltip-validation").remove();
 			checkboxArea.find("textarea").removeClass("k-invalid");
 		});
-	
+
 		var formIsProcessing = false;
 		//Util functions
 		var generateUUID = function () {
@@ -34,7 +34,7 @@ $(document).ready(function () {
 				return v.toString(16);
 			});
 		};
-	
+
 		var getCookieByName = function (name) {
 			//This is very crude, but necessary because currently there is some kind of url rewriting going on
 			//so the cookies are set for a base path but then additional navigation is done with url rewriting
@@ -45,7 +45,7 @@ $(document).ready(function () {
 			var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
 			if (match) return match[1];
 		};
-	
+
 		//Init utility variables
 		var rawLocationObject = $(location);
 		var currentPath = rawLocationObject[0].origin + rawLocationObject[0].pathname;
@@ -53,7 +53,7 @@ $(document).ready(function () {
 		var formPopupNotification = $("#feedback-form-popup-container").kendoNotification({
 			appendTo: "#feedback-form-window"
 		}).data("kendoNotification");
-	
+
 		var setCookieByName = function (name, value) {
 			var cookieUUID = getCookieByName("uuid");
 			if (!cookieUUID) {
@@ -67,7 +67,7 @@ $(document).ready(function () {
 			}
 			document.cookie = name + "=" + value + ";";
 		};
-	
+
 		//Feedback menu controls
 		var feedbackButtonsContainer = $("#feedback-buttons-container");
 		var feedbackSubmittedContainer = $("#feedback-submitted-container");
@@ -80,13 +80,13 @@ $(document).ready(function () {
 				feedbackSubmittedContainer.show();
 			}
 		};
-	
+
 		if (getCookieByName("yesNoFeedback")) {
 			toggleFeedbackButtons(false);
 		} else {
 			toggleFeedbackButtons(true);
 		}
-	
+
 		//FORM
 		//Init the form popup window
 		var win = $("#feedback-form-window").kendoWindow({
@@ -116,7 +116,7 @@ $(document).ready(function () {
 			}
 			return isModelDefault;
 		};
-	
+
 		var isFormModelSatisfied = function (key, formValue) {
 			var value = formModel[key];
 			if (value) {
@@ -139,9 +139,9 @@ $(document).ready(function () {
 					return !isFormModelEmpty();
 				}
 			}
-	
+
 		}).data("kendoValidator");
-	
+
 		var emailValidator = $("#feedback-email-input").kendoValidator({
 			validateOnBlur: false,
 			messages: {
@@ -175,7 +175,7 @@ $(document).ready(function () {
 				}
 			}
 		}).data("kendoValidator");
-	
+
 		// text validation is disabled for the new design of the form. In order to enable it
 		// it must be reworked!!!
 		var textAreaValidator = function (selector, formModelKey) {
@@ -222,7 +222,7 @@ $(document).ready(function () {
 				}
 			}).data("kendoValidator");
 		};
-	
+
 		feedbackForm.submit(function (e) {
 			e.preventDefault();
 			//if form is processing do nothing.
@@ -237,7 +237,7 @@ $(document).ready(function () {
 				formIsProcessing = false;
 				return;
 			}
-	
+
 			if ((!formModel.outdatedSample || (formModel.outdatedSample && textAreaValidator("#feedback-code-sample-text-input", "outdatedSample").validate())) &&
 				(!formModel.otherMoreInformation || (formModel.otherMoreInformation && textAreaValidator("#feedback-more-information-text-input", "otherMoreInformation").validate())) &&
 				(!formModel.textErrors || (formModel.textErrors && textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate())) &&
@@ -269,17 +269,17 @@ $(document).ready(function () {
             formIsProcessing = false;
         }
 		});
-	
+
 		//Attach to close button inside form window
 		$("#form-close-button").click(function () {
 			win.close();
 		});
-	
+
 		//Attach to submit button inside form window
 		$("#form-submit-button").click(function () {
 			feedbackForm.submit();
 		});
-	
+
 		//Init buttons
 		$("#yesButton").click(function () {
 			setCookieByName("yesNoFeedback", "Yes");
@@ -295,7 +295,6 @@ $(document).ready(function () {
 			win.center().open();
 		});
 
-
 		var windowHeight = $window.height();
 		var headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 		var footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
@@ -305,7 +304,7 @@ $(document).ready(function () {
 		var showingFeedbackBar = false;
 		var scrollFold = $window.scrollTop() + windowHeight;
 		var feedbackPinned = false;
-	
+
 		function updateVariables() {
 			windowHeight = $window.height();
 			headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
@@ -314,30 +313,30 @@ $(document).ready(function () {
 			feedbackOffsetTop = document.body.scrollHeight - footerHeight;
 			scrollFold = $window.scrollTop() + windowHeight;
 		}
-	
+
 		Feedback = $.extend(Feedback, {
-	
+
 			init: function() {
-	
+
 				Feedback._events();
-	
+
 				Feedback.adjustArticleHeight();
 				Feedback.adjustNavigationPosition();
 
 				if (shouldOverlayFeedback) {
-	
+
 					showingFeedbackBar = true;
-	
+
 					window.setTimeout(function() {
 						showingFeedbackBar = false;
 						Feedback.toggleFeedback();
 						Feedback.adjustNavigationPosition();
 					}, 30000);
 				}
-	
+
 			},
-	
-	
+
+
 			// #region events
 			_events: function() {
 				$window.scroll(Feedback._window_scroll);
@@ -346,15 +345,15 @@ $(document).ready(function () {
 			},
 			_window_scroll: function() {
 				updateVariables();
-	
+
 				scrollFold = $window.scrollTop() + windowHeight;
-	
+
 				Feedback.toggleFeedback();
 				Feedback.adjustNavigationPosition();
 			},
 			_window_resize: function() {
 				updateVariables();
-	
+
 				Feedback.adjustArticleHeight();
 				Feedback.toggleFeedback();
 				Feedback.adjustNavigationPosition();
@@ -364,16 +363,16 @@ $(document).ready(function () {
 				Feedback.adjustNavigationPosition();
 			},
 			// #endregion
-	
-	
+
+
 			// #region adjusters
 			adjustNavigationPosition: function() {
 				var bottom = 0;
-	
+
 				if (!window.matchMedia('(max-width: 1200px)').matches) {
 					bottom = Math.max(feedbackPinned ? $("#feedback-section").outerHeight() : 0, scrollFold - feedbackOffsetTop );
 				}
-	
+
 				$("#page-nav").css("bottom", bottom);
 			},
 			adjustArticleHeight: function() {
@@ -392,8 +391,8 @@ $(document).ready(function () {
 				}
 			},
 			// #endregion
-	
-	
+
+
 			// #region feedback bar
 			pinFeedback: function() {
 				feedbackPinned = true;
@@ -409,9 +408,9 @@ $(document).ready(function () {
 				Feedback.unpinFeedback();
 			}
 			// #endregion
-	
+
 		});
 
 		Feedback.init();
-	
+
 	});

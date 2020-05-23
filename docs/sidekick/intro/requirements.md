@@ -14,9 +14,9 @@ slug: requirements
 
 | Platform &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Requirements           |
 |:----------------------------------------|:-----------------------|
-| `Windows`   | Windows 7 Service Pack 1 and later versions are supported.<br /> Only x64 (amd64) binaries are provided for Windows.|
-| `macOS`     | macOS 10.13 (High Sierra) and later versions are supported. <br /> Only 64-bit binaries are provided for macOS.      |
-| `Linux`     | Ubuntu 16.04 and later LTS versions are supported. <br /> Only x64 (amd64) binaries are provided for Linux.         |
+| `Windows`   | Windows 7 Service Pack 1 and later versions are supported.<br />Only x64 (amd64) binaries are provided for Windows.|
+| `macOS`     | macOS 10.13 (High Sierra) and later versions are supported.<br />Only 64-bit binaries are provided for macOS.      |
+| `Linux`     | Ubuntu 16.04 and later LTS versions are supported.<br />Only x64 (amd64) binaries are provided for Linux.         |
 
 <p></p>
 
@@ -31,9 +31,12 @@ slug: requirements
 <p></p>
 
 ## Additional Requirements
+
 ### Install Instructions:
+
 Please follow this article for in-depth instruction on install Nativescript CLI: [Link](https://docs.nativescript.org/angular/start/quick-setup).
-* **Node.js**<br /> To run {{ site.sk }}, you need the latest [Node.js LTS](https://github.com/nodejs/LTS#lts-schedule) version.
-* **{{site.ns-cli}}**<br /> To run {{ site.sk }}, you need to have [the latest version](https://www.npmjs.com/package/nativescript) of the {{site.ns-cli}} installed on your machine.
-* **iTunes**<br /> To deploy on a connected iOS device, you need the latest official version of [iTunes](https://www.apple.com/itunes/download/).
-* **Drivers for Android devices**<br /> To deploy on a connected Android device, you need the appropriate device drivers.
+
+* **Node.js**<br />To run {{ site.sk }}, you need the latest [Node.js LTS](https://github.com/nodejs/LTS#lts-schedule) version.
+* **{{site.ns-cli}}**<br />To run {{ site.sk }}, you need to have [the latest version](https://www.npmjs.com/package/nativescript) of the {{site.ns-cli}} installed on your machine.
+* **iTunes**<br />To deploy on a connected iOS device, you need the latest official version of [iTunes](https://www.apple.com/itunes/download/).
+* **Drivers for Android devices**<br />To deploy on a connected Android device, you need the appropriate device drivers.

@@ -26,7 +26,7 @@ If the validators provided by {% typedoc_link classes:RadDataForm %} don't fulfi
 
 In order to use your validator, you can add it to your `xml` just like the other validators:
 
-#### Example 2: Use a custom validator in RadDataForm 
+#### Example 2: Use a custom validator in RadDataForm
 
 <snippet id='dataform-custom-validator-xml'/>
 

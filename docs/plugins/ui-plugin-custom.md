@@ -9,12 +9,11 @@ slug: building-ui-plugins-custom-components
 
 Whenever needed UI can be shown by a plugin just by exposing a custom component, e.g. some platform-specific functionality that renders UI itself. To demonstrate that, this article explains how to create a simple button plugin.
 
-
 ## Prerequisites
 
 The article contains information applicable to apps built with NativeScript 3.x.x or newer version
 
-## Bootstrap Your Plugin 
+## Bootstrap Your Plugin
 
 First things first - you start off from a regular plugin. You can check the [Building Plugins article]({%slug building-plugins%}) for reference.
 
@@ -22,27 +21,29 @@ First things first - you start off from a regular plugin. You can check the [Bui
 
 Let's say you want to build a simple button which you can use like:
 
-```XML
+``` XML
     <ui:MyButton text="MyButton1" tap="onTap" />
 ```
 
-This can be accomplished by wrapping the platform-specific buttons (iOS's UIButton and Android's android.widget.Button) and expose it from a common MyButton class.   
+This can be accomplished by wrapping the platform-specific buttons (iOS's UIButton and Android's android.widget.Button) and expose it from a common MyButton class.
 
 You can implement this by creating four files:
 
-- **my-button.d.ts** - holds the declarations of MyButton class, its properties "text" and "myOpacity", enables auto-complete in some IDEs. 
-- **my-button.common.ts** - contains the logic accessible from the apps.
-- **my-button.ios.ts** - holds the iOS-specific logic for creation of the native view (UIButton)
-- **my-button.android.ts** - holds the Android-specific logic for creation of the native view (android.widget.Button)
+* **my-button.d.ts** - holds the declarations of MyButton class, its properties "text" and "myOpacity", enables auto-complete in some IDEs.
+* **my-button.common.ts** - contains the logic accessible from the apps.
+* **my-button.ios.ts** - holds the iOS-specific logic for creation of the native view (UIButton)
+* **my-button.android.ts** - holds the Android-specific logic for creation of the native view (android.widget.Button)
 
 This file holds type definitions for the common logic that will be imported in the app that is using the plugin.
-_my-button.d.ts_
-```TypeScript
+
+_my-button.d.ts_:
+
+``` TypeScript
 import { View, Style, Property, CssProperty, EventData } from "tns-core-modules/ui/core/view";
 
 export class MyButton extends View {
     // static field used from component-builder module to find events on controls.
-    static tapEvent: string; 
+    static tapEvent: string;
 
     // Defines the text property.
     text: string;
@@ -59,8 +60,10 @@ export const myOpacityProperty: CssProperty<Style, number>;
 ```
 
 In the following way you create the common logic:
-_my-button.common.ts_
-```TypeScript
+
+_my-button.common.ts_:
+
+``` TypeScript
 import { MyButton as ButtonDefinition } from "./my-button";
 import { View, Style, Property, CssProperty, isIOS } from "tns-core-modules/ui/core/view";
 
@@ -104,11 +107,11 @@ textProperty.register(MyButtonBase);
 
 // Defines 'myOpacity' property on Style class.
 myOpacityProperty.register(Style);
- 
-// If set to true - nativeView will be kept in memory and reused when some other instance 
+
+// If set to true - nativeView will be kept in memory and reused when some other instance
 // of type MyButtonBase needs nativeView. Set to true only if you are sure that you can reset the
-// nativeView to its initial state. When true will improve application performance. 
-MyButtonBase.prototype.recycleNativeView = false; 
+// nativeView to its initial state. When true will improve application performance.
+MyButtonBase.prototype.recycleNativeView = false;
 ```
 
 You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({%slug properties%}).
@@ -116,17 +119,19 @@ You see "text" and "myOpacity" properties are defined in this file and also recy
 ## Platform-specific Code
 
 Writing the platform-specific implementations, the following overrides need to be considered:
-- `createNativeView` - you override this method, create and return your nativeView 
-- `initNativeView` - in this method you setup listeners/handlers to the nativeView 
-- `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
 
-_my-button.android.ts_
-```TypeScript
+* `createNativeView` - you override this method, create and return your nativeView
+* `initNativeView` - in this method you setup listeners/handlers to the nativeView
+* `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
+
+_my-button.android.ts_:
+
+``` TypeScript
 import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 let clickListener: android.view.View.OnClickListener;
 
-// NOTE: ClickListenerImpl is in function instead of directly in the module because we 
+// **Note**: ClickListenerImpl is in function instead of directly in the module because we
 // want this file to be compatible with V8 snapshot. When V8 snapshot is created
 // JS is loaded into memory, compiled & saved as binary file which is later loaded by
 // Android runtime. Thus when snapshot is created we don't have Android runtime and
@@ -194,14 +199,14 @@ export class MyButton extends MyButtonBase {
     /**
      * Clean up references to the native view and resets nativeView to its original state.
      * If you have changed nativeView in some other way except through setNative callbacks
-     * you have a chance here to revert it back to its original state 
+     * you have a chance here to revert it back to its original state
      * so that it could be reused later.
      */
     disposeNativeView(): void {
         // Remove reference from native view to this instance.
         (<any>this.nativeView).owner = null;
 
-        // If you want to recycle nativeView and have modified the nativeView 
+        // If you want to recycle nativeView and have modified the nativeView
         // without using Property or CssProperty (e.g. outside our property system - 'setNative' callbacks)
         // you have to reset it to its initial state here.
         super.disposeNativeView();
@@ -228,10 +233,11 @@ export class MyButton extends MyButtonBase {
 }
 ```
 
-> **NOTE**: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
- 
-_my-button.ios.ts_
-```TypeScript
+> **Note**: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
+
+_my-button.ios.ts_:
+
+``` TypeScript
 import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 // class that handles all native 'tap' callbacks
@@ -283,14 +289,14 @@ export class MyButton extends MyButtonBase {
     /**
      * Clean up references to the native view and resets nativeView to its original state.
      * If you have changed nativeView in some other way except through setNative callbacks
-     * you have a chance here to revert it back to its original state 
+     * you have a chance here to revert it back to its original state
      * so that it could be reused later.
      */
     disposeNativeView(): void {
         // Remove reference from native listener to this instance.
         (<any>this.nativeView).owner = null;
-        
-        // If you want to recycle nativeView and have modified the nativeView 
+
+        // If you want to recycle nativeView and have modified the nativeView
         // without using Property or CssProperty (e.g. outside our property system - 'setNative' callbacks)
         // you have to reset it to its initial state here.
         super.disposeNativeView();
@@ -313,12 +319,11 @@ export class MyButton extends MyButtonBase {
         return this.nativeView.alpha = value;
     }
 }
-``` 
+```
 
 In the above mentioned implementations we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
 
-For more details and the full source code of the described MyButton sample, check the [NativeScript UI Plugin (Custom button component) repo](https://github.com/NativeScript/nativescript-ui-plugin-custom). 
-
+For more details and the full source code of the described MyButton sample, check the [NativeScript UI Plugin (Custom button component) repo](https://github.com/NativeScript/nativescript-ui-plugin-custom).
 
 ## Make Your Plugin Angular-Compatible
 

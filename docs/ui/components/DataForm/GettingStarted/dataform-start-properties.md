@@ -66,7 +66,7 @@ You can also use json with a list of property annotations which will be used to 
 
 #### Example 3: Sample JSON metadata for RadDataForm
 
-```JSON
+``` JSON
 {
     "isReadOnly": false,
     "commitMode": "Immediate",
@@ -136,7 +136,7 @@ Here's a list with the acceptable keys inside the `propertyAnnotations` array:
 * **readOnly**: A boolean value indicating whether the editor for this property will be in read only mode or it will allow editing.
 * **required**: A boolean value specifying whether the current property is required for the entity to be saved (for example email in a registration form).
 * **hintText**: A text that will be shown inside the editor when the its value is `null`.
-* **valuesProvider**: A comma-separated list with values that are acceptable for values of the editor of this property. 
+* **valuesProvider**: A comma-separated list with values that are acceptable for values of the editor of this property.
 * **editor**: A {% typedoc_link classes:PropertyEditor %} that allows you to specify the type of the editor that will be used for this property. More information in the [article about editors]({% slug dataform-editors-overview %} "Editors in Data Form for NS").
 * **editorParams**: A list of key-value pairs that allows you to setup the editor that is used. The acceptable keys are `step` (used when the editor is of type {% typedoc_link enums:DataFormEditorType,member:Stepper %}), `min` and `max` (used when the editor is of type {% typedoc_link enums:DataFormEditorType,member:Stepper %} or {% typedoc_link enums:DataFormEditorType,member:Slider %}).
 

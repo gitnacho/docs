@@ -34,12 +34,12 @@ During the measure pass, each `View` is measured to retrieve its desired size. T
 
 During the layout pass, each `View` is placed in a specific layout slot. This slot is determined by the desired size of the view (retrieved from the measure pass) and the following properties:
 
-- marginTop
-- marginRight
-- marginBottom
-- marginLeft
-- horizontalAlignment
-- verticalAlignment
+* marginTop
+* marginRight
+* marginBottom
+* marginLeft
+* horizontalAlignment
+* verticalAlignment
 
 ## Layout Properties
 
@@ -106,10 +106,10 @@ Since version 5.0 NativeScript provides a default handling mechanism for the iOS
 Internally, the workflow is as follows:
 
 1. Measure pass - all components are measured in the safe area portion of the screen.
-2. Layout pass - all components are laid out in full screen, but are inset to the safe area boundaries.
-3. Layout pass - if the component borders the safe area, it is adjusted and expanded to the edges of the screen.
+1. Layout pass - all components are laid out in full screen, but are inset to the safe area boundaries.
+1. Layout pass - if the component borders the safe area, it is adjusted and expanded to the edges of the screen.
 
-> **NOTE**: The above workflow can lead to containers being laid out with a bigger size than initially declared in the markup. You can prevent this behavior by setting the `iosOverflowSafeArea` property below to `false`.
+> **Note**: The above workflow can lead to containers being laid out with a bigger size than initially declared in the markup. You can prevent this behavior by setting the `iosOverflowSafeArea` property below to `false`.
 
 ### iosOverflowSafeArea Property
 

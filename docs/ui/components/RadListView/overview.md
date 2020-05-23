@@ -9,9 +9,9 @@ publish: true
 ---
 # RadListView Overview
 {% typedoc_link classes:RadListView %} for NativeScript is a virtualizing list component that provides the most popular features associated with scenarios where a list of items is used. All these features are embedded in one control with the idea to save developer time and provide better experience. The control's main features include:
-- item animations
-- different layouts and orientations
-- smart defaults for many gestures - select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe or loading more items only when needed.
+* item animations
+* different layouts and orientations
+* smart defaults for many gestures - select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe or loading more items only when needed.
 
 #### __Figure 1: RadListView in action__
 ![RadListView: Overview](../../img/ns_ui/list-view-overview_2.png "iOS") ![RadListView: Overview](../../img/ns_ui/list-view-overview_3.png "iOS")
@@ -22,9 +22,9 @@ publish: true
 
 {% typedoc_link classes:RadListView %} supports three different item layout strategies that are commonly used on mobile apps:
 
-- **list** - items are stacked - either horizontally or vertically, depending on the scrolling orientation
-- **grid** - items are arranged in columns or rows - depending on the scrolling orientation
-- **staggered grid** - items are ordered in a staggered grid formation - either in rows or columns, depending on the scrolling orientation
+* **list** - items are stacked - either horizontally or vertically, depending on the scrolling orientation
+* **grid** - items are arranged in columns or rows - depending on the scrolling orientation
+* **staggered grid** - items are ordered in a staggered grid formation - either in rows or columns, depending on the scrolling orientation
 
 All layouts are virtualized and optimized for the mobile environment.
 

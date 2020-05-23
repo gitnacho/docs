@@ -17,7 +17,7 @@ Creating a certificate signing request (CSR) is a prerequisite for creating a ce
 ## Procedure
 
 1. Start {{ site.ns-sk }}.
-1. In the main menu bar, click **Tools** &#8594; **Certificate Signing Request**. 
+1. In the main menu bar, click **Tools** &#8594; **Certificate Signing Request**.
 1. Specify name, email and country.
 1. Click **Create CSR**.
 1. Specify name and download location for the `CSR` file and confirm the download by clicking **Save**.

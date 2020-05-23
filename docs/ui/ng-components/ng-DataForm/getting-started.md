@@ -21,7 +21,7 @@ tns plugin add nativescript-ui-dataform
 ## Adding a RadDataForm to Your Component's template
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIDataFormModule %} from the *nativescript-ui-dataform* plugin has been imported in an `ngModule` in your app. For example:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],

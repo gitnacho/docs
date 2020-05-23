@@ -23,7 +23,7 @@ Let’s look at how it works.
 
 As a first step, [create a new app]({% slug create-app-from-template %}) using the Enterprise Auth template.
 
-![](../../img/enterprise-auth/sidekick-templates.png)
+![sidekick-templates](../../img/enterprise-auth/sidekick-templates.png)
 
 Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app and when it's done, you should head to the [Kinvey Console](https://console.kinvey.com) to create and configure the actual Auth service.
 
@@ -51,17 +51,17 @@ Each authentication service requires a different set of values needed to make th
 
 After you’ve completed the authentication setup, your last step is to run your app and see your new authentication workflow in action.
 
-> **TIP**: If you haven’t run an app on a device using NativeScript Sidekick before, check out our documentation on [running your app]({% slug deploy-on-device %}).
+> **Tip** If you haven’t run an app on a device using NativeScript Sidekick before, check out our documentation on [running your app]({% slug deploy-on-device %}).
 
 After Sidekick deploys your new app to your device(s) you should see an app that looks like this.
 
-![](../../img/enterprise-auth/template-in-action.png)
+![template-in-action](../../img/enterprise-auth/template-in-action.png)
 
 When you tap the **Log in** button, if all went well, you should be prompted to authenticate with your enterprise authentication provider. In the case of our Microsoft Azure-based example, the app prompts the user to authenticate with their Microsoft account.
 
-![](../../img/enterprise-auth/app-auth-screen.png)
+![app-auth-screen](../../img/enterprise-auth/app-auth-screen.png)
 
-> **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
+> **Note**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
 
 And that’s it! You’ve now successfully built an app that can connect to an enterprise authentication provider.
 

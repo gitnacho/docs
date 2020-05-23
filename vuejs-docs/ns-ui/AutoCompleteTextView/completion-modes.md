@@ -12,8 +12,8 @@ publish: true
 
 **RadAutoCompleteTextView** has two modes for filtering suggestions.
 
-- {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
-- {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
+* {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
+* {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
 
 The completion mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:completionMode %} property of the **RadAutoCompleteTextView**. The default value is {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}.
 

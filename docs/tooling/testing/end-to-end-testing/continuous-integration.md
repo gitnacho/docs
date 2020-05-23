@@ -11,11 +11,10 @@ slug: e2e-testing-continuous-integration
 
 Once you have a set of tests, it's good to run them on a regular basis or when a new code is added to the code base. This is where the Continuous Integrations(CI) comes into play. There are different platforms that can be used for CI - some require local installation, others are public and free for open-source projects. To mention some of them:
 
-- [Jenkins](https://jenkins.io/)
-- [Travis CI](https://travis-ci.org/)
-- [Circle CI](https://circleci.com/)
-- [SauceLabs](https://saucelabs.com/)
-
+* [Jenkins](https://jenkins.io/)
+* [Travis CI](https://travis-ci.org/)
+* [Circle CI](https://circleci.com/)
+* [SauceLabs](https://saucelabs.com/)
 
 A descriptive real example of CI you can find in [Plugin UI Tests]({% slug plugin-ui-tests %}#continuous-integration) article that demonstrates step by step all the needed actions.
 

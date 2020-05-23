@@ -45,13 +45,13 @@ view1.className = "example";
 
 ## Animatable properties
 
-CSS animations support the same animatable properties used in code-based animations: 
+CSS animations support the same animatable properties used in code-based animations:
 
-- **opacity**
-- **background-color**: Corresponds with the backgroundColor.
-- **transform: translate**: Corresponds with translateX and translateY properties. 
-- **transform: scale**: Corresponds with scaleX and scaleY properties.
-- **transform: rotate**: Corresponds with the rotate property.
+* **opacity**
+* **background-color**: Corresponds with the backgroundColor.
+* **transform: translate**: Corresponds with translateX and translateY properties.
+* **transform: scale**: Corresponds with scaleX and scaleY properties.
+* **transform: rotate**: Corresponds with the rotate property.
 
 > You cannot set a single x or y field in scale and translate. If you set only x in translate, y will be assumed 0; If you set only y in scale, x will be assumed 1.
 
@@ -61,18 +61,18 @@ A CSS animation is defined by using the animation property and its sub-propertie
 
 The following list presents all animation properties:
 
-- **animation-name**: Specifies the name of the @keyframes rule that should be used.
-- **animation-delay**: Specifies the time between the style is applied and the beginning of the animation.
-- **animation-duration**: The length of the animation in seconds.
-- **animation-iteration-count**: Specifies how many times the animation should be played. Default is 1. To repeat an animation forever, use infinite.
-- **animation-timing-function**: Defines how the animation transitions through keyframes by establishing acceleration curves.
-- **animation-fill-mode**: Configures what values are applied by the animation after it is executing.
-- **animation-direction**: Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
-- **animation**: The shorthand property allows setting all animation properties in a single line.
+* **animation-name**: Specifies the name of the @keyframes rule that should be used.
+* **animation-delay**: Specifies the time between the style is applied and the beginning of the animation.
+* **animation-duration**: The length of the animation in seconds.
+* **animation-iteration-count**: Specifies how many times the animation should be played. Default is 1. To repeat an animation forever, use infinite.
+* **animation-timing-function**: Defines how the animation transitions through keyframes by establishing acceleration curves.
+* **animation-fill-mode**: Configures what values are applied by the animation after it is executing.
+* **animation-direction**: Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
+* **animation**: The shorthand property allows setting all animation properties in a single line.
 
 ## Animation keyframes
 
-To set multiple points at which an element should undergo a transition, use the **@keyframes** rule, shown in __Example 2__. It includes the animation name, any animation breakpoints, and the properties intended to be animated. 
+To set multiple points at which an element should undergo a transition, use the **@keyframes** rule, shown in __Example 2__. It includes the animation name, any animation breakpoints, and the properties intended to be animated.
 
 __Example 2: How to use **@keyframes** rule.__
 
@@ -164,13 +164,13 @@ animation-iteration-count: infinite;
 
 The **animation-timing-function** property specifies the speed curve of the animation. It can have one of the following values:
 
-- **ease**: Specifies an animation with a slow start, then fast, then end slowly (this is the default).
-- **linear**: Specifies an animation with the same speed from start to end.
-- **ease-in**: Specifies an animation with a slow start.
-- **ease-out**: Specifies an animation with a slow end.
-- **ease-in-out**: Specifies an animation with a slow start and slow end.
-- **spring**: Specifies a spring animation.
-- **cubic-bezier(n,n,n,n)**: Lets you define your own values in a cubic-bezier function, as shown in __Example 8__.
+* **ease**: Specifies an animation with a slow start, then fast, then end slowly (this is the default).
+* **linear**: Specifies an animation with the same speed from start to end.
+* **ease-in**: Specifies an animation with a slow start.
+* **ease-out**: Specifies an animation with a slow end.
+* **ease-in-out**: Specifies an animation with a slow start and slow end.
+* **spring**: Specifies a spring animation.
+* **cubic-bezier(n,n,n,n)**: Lets you define your own values in a cubic-bezier function, as shown in __Example 8__.
 
 __Example 8: How to specify the speed curve using cubic-bezier function.__
 
@@ -266,7 +266,7 @@ __Example 13: How to trigger animation on element special state__
 
 __Example 14: How to animate view's width and height.__
 {% nativescript %}
-```XML
+``` XML
 <GridLayout rows="* *" columns="*" class="home-panel">
         <StackLayout row="0">
             <Label text="{N}" class="big-label first-view" textWrap="true" />
@@ -276,7 +276,7 @@ __Example 14: How to animate view's width and height.__
         </StackLayout>
 </GridLayout>
 ```
-```CSS
+``` CSS
 .first-view {
     animation-name: example-width;
     animation-duration: 5s;
@@ -302,7 +302,7 @@ __Example 14: How to animate view's width and height.__
 [Demo](https://play.nativescript.org/?template=play-js&id=xe3lMf)
 {% endnativescript %}
 {% angular %}
-```HTML
+``` HTML
 <GridLayout rows="* *" columns="*" class="home-panel">
     <StackLayout row="0">
         <Label text="{N}" class="big-label first-view" textWrap="true" ></Label>
@@ -312,7 +312,7 @@ __Example 14: How to animate view's width and height.__
     </StackLayout>
 </GridLayout>
 ```
-```CSS
+``` CSS
 .first-view {
     animation-name: example-width;
     animation-duration: 5s;
@@ -344,11 +344,11 @@ The simplest way to trigger a CSS animation is by changing the element **classNa
 
 __Example 15: How to trigger CSS animation__
 
-```JavaScript
+``` JavaScript
 var view = page.getViewById("view");
 view.className = "transparent";
 ```
-```TypeScript
+``` TypeScript
 let view = page.getViewById<viewModule.View>("view");
 view.className = "transparent";
 ```

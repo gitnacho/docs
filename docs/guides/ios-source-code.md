@@ -13,7 +13,7 @@ For the Objective-C/Swift symbols to be accessible by the Nativescript runtimes 
 
 The first task is done by the NativeScript CLI by adding the source files to the generated *.xcodeproj*. For the second one the Metadata Generator needs to find a [module.modulemap](https://clang.llvm.org/docs/Modules.html) of the compiled modules.
 
-**Note:** For *.swift* files *module.modulemap* is not required.
+**Note**: For *.swift* files *module.modulemap* is not required.
 
 In order to satisfy the above constraints the developer has to:
 
@@ -21,6 +21,6 @@ In order to satisfy the above constraints the developer has to:
 
 **2)** Create a modulemap for the Objective-C files
 
-**Note:** Swift classes need to be accessible from the Objective-C runtime in order to be used from NativeScript. This can be done by using the *@objc* attribute or by inheriting *NSObject*.
+**Note**: Swift classes need to be accessible from the Objective-C runtime in order to be used from NativeScript. This can be done by using the *@objc* attribute or by inheriting *NSObject*.
 
 You can find a detailed walkthrough on how to use native source code in NativeScript [here](https://www.nativescript.org/blog/adding-objective-c-code-to-a-nativescript-app).

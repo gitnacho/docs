@@ -14,14 +14,16 @@ User interface testing exercises your app's UI likewise your users do without an
 The main characteristics that distinguish UI tests we will talk about in this article are two. The first is that the tests are [Appium](http://appium.io/) based and the second is that we will use [TypeScript](https://www.typescriptlang.org/) to write them. Considering these two distinguishing marks we have to install:
 
 * [nativescript-dev-appium](https://github.com/NativeScript/nativescript-dev-appium) plugin in your demo app
-    ```
-    npm install --save-dev nativescript-dev-appium
-    ```
-    
+
+  ``` Shell
+  npm install --save-dev nativescript-dev-appium
+  ```
+
 * [Appium](http://appium.io/) globally
-    ```
-    npm install -g appium
-    ```
+
+  ``` Shell
+  npm install -g appium
+  ```
 
 More about `nativescript-dev-appium` plugin you can find in its [repository](https://github.com/NativeScript/nativescript-dev-appium) documentation, but in short it depends on Appium to communicate with device/emulator, uses [Appium JavaScript client library](https://www.npmjs.com/package/wd) and [Mocha](https://mochajs.org/) testing framework. Before we continue, take a moment and familiarize yourself with fore-mentioned tools unknown to you.
 
@@ -29,7 +31,7 @@ More about `nativescript-dev-appium` plugin you can find in its [repository](htt
 
 By installing [nativescript-dev-appium](https://github.com/NativeScript/nativescript-dev-appium) plugin in your demo app it creates `e2e` folder where our starting point is.
 
-```
+``` Shell
 my-plugin
 ├── demo
 |   └── app
@@ -40,12 +42,13 @@ my-plugin
 There you will find a sample testing file using [Mocha "BDD" interface](https://mochajs.org/#bdd) which is nice to begin with, but let's see some real example that we will be able to run later on. We will use [NativeScript Facebook plugin's](https://github.com/NativeScript/nativescript-facebook) UI tests for that purpose. The location of the tests stays the same so let's take a look at [them](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/e2e/test.e2e.ts).
 Let's review most notable lines of code and explain them.
 
-```javascript
+``` JavaScript
 import { AppiumDriver, createDriver, SearchOptions } from "nativescript-dev-appium";
 ```
+
 We start by loading our plugin's modules that will be further used to initialize our driver and provide us some helpful functions.
 
-```javascript
+``` JavaScript
 describe("Facebook tests", async function () { // define test suite
     ...
 
@@ -65,6 +68,7 @@ describe("Facebook tests", async function () { // define test suite
     });
     ...
 ```
+
 Here, we define our suite and set a custom [timeout](https://mochajs.org/#timeouts) for each element to be found. The timeout setting for the whole execution is located in the [mocha.opts](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/e2e/config/mocha.opts) configuration file so if needed it can be adjusted there. We use some bigger value as we run the tests in [Sauce Labs](https://saucelabs.com/) and it takes a bit more time than a local execution.
 
 [Sauce Labs](https://saucelabs.com/) is a cloud-based platform for automated testing of web and mobile applications. It provides us an access to mobile emulators and simulators needed for our test execution. This way we don't have to take care of a testing environment which is great. Additionally, our testing results are public and that increases the transparency of plugin's state and how it has been tested.
@@ -73,7 +77,7 @@ Going further, two types of [Mocha hooks](https://mochajs.org/#hooks) are notice
 
 It is time for our tests implementation. Let's review the first test.
 
-```javascript
+``` JavaScript
 it("should log in via original button", async function () {
         if (isAndroid) {
             var userNameLabelElement = "[@text='Nativescript User']";
@@ -127,13 +131,13 @@ It is time for the fun part - test execution. Before we get to the command that 
 
 In order to execute the tests for those environments we will use the command for local execution. Before that we have to navigate to `demo` folder.
 
-> **NOTE**: Before running the tests we have to build our app for each platform `tns build android` and `tns build ios`. Additionally, we have to be sure that the same emulator and simulator described in the capabilities we use are available and running on our system.
+> **Note**: Before running the tests we have to build our app for each platform `tns build android` and `tns build ios`. Additionally, we have to be sure that the same emulator and simulator described in the capabilities we use are available and running on our system.
 
-```
+``` Shell
 npm run e2e -- --runType android23
 ```
 
-```
+``` Shell
 npm run e2e -- --runType sim103iPhone6
 ```
 
@@ -147,17 +151,17 @@ We use [Sauce Labs](https://saucelabs.com/) cloud based platform to run our UI t
 
 There are two basic changes we have to do before the integration becomes a reality. The first is to upload our application package to Sauce Labs storage as our tests require it. This is done using a `curl` request in the `Build` stage respectively for iOS and Android.
 
-> **NOTE**: Requests depend on `SAUCE_USER` and `SAUCE_KEY` environment variables that have to be [added in Travis CI](https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings) in advance. You can obtain them as described in [Sauce Labs documentation](https://wiki.saucelabs.com/display/DOCS/The+Sauce+Labs+Account+Profile+User+Interface).
+> **Note**: Requests depend on `SAUCE_USER` and `SAUCE_KEY` environment variables that have to be [added in Travis CI](https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings) in advance. You can obtain them as described in [Sauce Labs documentation](https://wiki.saucelabs.com/display/DOCS/The+Sauce+Labs+Account+Profile+User+Interface).
 
-```yml
-- stage: "Build"
+``` YAML
+* stage: "Build"
 ...
 script:
         ...
-    - "curl -u $SAUCE_USER:$SAUCE_KEY -X POST -H 'Content-Type: application/octet-stream' $ANDROID_SAUCE_STORAGE --data-binary @$ANDROID_PACKAGE_FOLDER/$ANDROID_PACKAGE"
-- os: osx
+  + "curl -u $SAUCE_USER:$SAUCE_KEY -X POST -H 'Content-Type: application/octet-stream' $ANDROID_SAUCE_STORAGE --data-binary @$ANDROID_PACKAGE_FOLDER/$ANDROID_PACKAGE"
+* os: osx
      ...
-      script: 
+      script:
         ...
         - cd $IOS_PACKAGE_FOLDER && zip -r $IOS_PACKAGE demo.app
         - "curl -u $SAUCE_USER:$SAUCE_KEY -X POST -H 'Content-Type: application/octet-stream' $IOS_SAUCE_STORAGE --data-binary @$IOS_PACKAGE_FOLDER/$IOS_PACKAGE"
@@ -168,9 +172,9 @@ For iOS, we have to zip any `*.app` package before uploading it to Sauce Labs st
 
 The second change is adding our UI tests stage.
 
-```yml
-- stage: "UI Tests"
-      env: 
+``` YAML
+* stage: "UI Tests"
+      env:
       - Android="23"
       language: node_js
       os: linux
@@ -179,12 +183,12 @@ The second change is adding our UI tests stage.
         - npm i -g appium
         - cd demo && npm i
         - travis_retry npm run e2e -- --runType android23 --sauceLab --reuseDevice --appPath $ANDROID_PACKAGE
-    - os: linux
-      env: 
+  + os: linux
+      env:
         - iOS="10"
-      language: node_js 
+      language: node_js
       node_js: "8"
-      script: 
+      script:
         - npm i -g appium
         - cd demo && npm i
         - travis_wait travis_retry npm run e2e -- --runType sim103iPhone6 --sauceLab --reuseDevice --appPath $IOS_PACKAGE
@@ -192,12 +196,13 @@ The second change is adding our UI tests stage.
 
 It takes care to setup two Linux machines and executes the tests in Sauce Labs using the proper [command](https://github.com/NativeScript/nativescript-dev-appium#options) for each platform:
 
-```
+``` Shell
 npm run e2e -- --runType android23 --sauceLab --reuseDevice --appPath $ANDROID_PACKAGE
-``` 
+```
+
 and
 
-```
+``` Shell
 npm run e2e -- --runType sim103iPhone6 --sauceLab --reuseDevice --appPath $IOS_PACKAGE
 ```
 

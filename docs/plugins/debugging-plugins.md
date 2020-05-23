@@ -8,7 +8,7 @@ publish: true
 
 # Debugging Plugins
 
-Live sync debugging updates your demo/test app automatically in the simulator/device whenever you make a change in the plugin source code. Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
+Live sync debugging updates your demo/test app automatically in the simulator/device whenever you make a change in the plugin source code. Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}).
 
 ## Setup
 
@@ -42,15 +42,15 @@ If you did not create your plugin using the [NativeScript plugin seed](https://g
 To enable local live sync debugging of your plugin in a demo/test app:
 
 1. `cd /your-demo-or-test-folder`
-2. `tns plugin add ../relative-path-to/your-plugin/src`
+1. `tns plugin add ../relative-path-to/your-plugin/src`
 
 If you are using npm 5 then this will automatically `npm link` your demo/test app's node_modules folder to point to your plugin's source code.
 
 If you are using npm 4 then this will have copied your plugin's files instead of linking directly to them. You will need to manually perform the following additional step(s):
 
-3. `npm link ../relative-path-to/your-plugin/src`
+1. `npm link ../relative-path-to/your-plugin/src`
 
-Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or `your-plugin/src` and the changes will automatically update in the demo/test app. 
+Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or `your-plugin/src` and the changes will automatically update in the demo/test app.
 
 ## Debugging
 
@@ -63,17 +63,17 @@ You may want to disable debugging your local code if you are done developing or 
 To disable local live sync debugging of your plugin and install your public plugin in a demo/test app:
 
 1. `cd /your-demo-or-test-folder`
-2. `tns plugin remove your-plugin`
+1. `tns plugin remove your-plugin`
 
 If you are using npm 5 then this will automatically call `npm unlink`.
 
 If you are using npm 4 then you will need to perform the following additional step(s):
 
-3. `npm unlink your-plugin`
+1. `npm unlink your-plugin`
 
 Now, add back the dependency to your public plugin:
 
-4. `tns plugin add your-plugin`
+1. `tns plugin add your-plugin`
 
 ## Limitations
 

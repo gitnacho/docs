@@ -25,7 +25,7 @@ Debug an app deployed on a connected device, Android emulator, or the iOS simula
 1. Click on the **Start Debugger** button (bug icon) next to the respective device.
 1. Use the newly opened Developer Tools dialog to debug your app.
 
-> **NOTE**: For more detailed information about the debugging of NativeScript apps with the Chrome DevTools, see [Chrome DevTools Debugging](https://docs.nativescript.org/tooling/chrome-devtools).
+> **Note**: For more detailed information about the debugging of NativeScript apps with the Chrome DevTools, see [Chrome DevTools Debugging](https://docs.nativescript.org/tooling/chrome-devtools).
 
 ## Next Steps
 

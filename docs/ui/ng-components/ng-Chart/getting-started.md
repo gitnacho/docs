@@ -21,7 +21,7 @@ In this article, you will learn to start using NativeScript UI Chart: how to ini
 
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-chart
 ```
 
@@ -29,7 +29,7 @@ tns plugin add nativescript-ui-chart
 
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIChartModule %} from the *nativescript-ui-chart* plugin has been imported in an `ngModule` in your app. For example:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
@@ -49,7 +49,7 @@ Let's start with the `Component` in which we will place our RadChart instance. W
 
 The service is a simple 'mock' of an backend call that will return an array of objects. Inside that service we have a single function which returns an array:
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='chart-angular-data-service'/>
 
@@ -70,9 +70,10 @@ After the axes are set we need to add the series which we will show in the chart
 
 The `DataService` and `Country` are custom modules used for example purposes so make sure you import them accordingly from your project's folder structure.
 
-#### Example 2: Code of component
+### Example 2: Code of component
 
 <snippet id='chart-angular-line-series-component'/>
+
 <snippet id='chart-angular-line-series'/>
 
 This will produce a page showing a Chart that will look like this:

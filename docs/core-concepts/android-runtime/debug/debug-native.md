@@ -17,12 +17,14 @@ Since {N} version 4.0 you can open your `<app_name>/platforms/android` folder in
 ## Setting up the project for native debugging
 
 Once you have your project up and running you can open the `<app-name>/platforms/android` in Android Studio.
->Note: be sure you're using ^4.0 version of the Android Runtime if you want the following steps to work.
+
+> **Note**: be sure you're using ^4.0 version of the Android Runtime if you want the following steps to work.
 
 After you've open the project in Android Studio find the `settings.gradle` file which should look like this:
->Note: Before opening the project in Android Studio, you need to run at least `tns prepare android`!
 
-```
+> **Note**: Before opening the project in Android Studio, you need to run at least `tns prepare android`!
+
+``` JavaScript
 rootProject.name = "com.example.yourprojectname"
 include ':app'//, ':runtime', ':runtime-binding-generator'
 
@@ -31,10 +33,11 @@ include ':app'//, ':runtime', ':runtime-binding-generator'
 
 file("google-services.json").renameTo(file("./app/google-services.json"))
 ```
+
 Uncomment the `:runtime` and `':runtime-binding-generator` sub-projects. You can either define **ANDROID_RUNTIME_HOME** environment variable pointing to the path where you've cloned the [android runtime repository](https://github.com/NativeScript/android-runtime) or replace **${System.env.ANDROID_RUNTIME_HOME}** with that path.
 After all the changes the `settings.gradle` should look like this:
 
-```
+``` JavaScript
 rootProject.name = "com.example.yourprojectname"
 include ':app', ':runtime', ':runtime-binding-generator'
 
@@ -44,7 +47,7 @@ project(':runtime-binding-generator').projectDir = new File('/c/your/android-run
 file("google-services.json").renameTo(file("./app/google-services.json"))
 ```
 
->Note the `project(':runtime').projectDir` should point to an already cloned and set-up android-runtime repo.
+> Note the `project(':runtime').projectDir` should point to an already cloned and set-up android-runtime repo.
 
 That's all, now you can debug the Java part of the runtime. Just put a break point and hit `debug`.
 
@@ -62,14 +65,16 @@ You can set a debug break point inside the c++ code and hit debug.
 
 It's a bit more tricky to debug your application as you're used to through the CLI and chrome-dev-tools.
 First of all you need to have the `adb` command available in the terminal. Either that or access it through an environment variable like so:
+
 * `$ANDROID_HOME/platform-tools/adb` for unix
 * `%ANDROID_HOME%\platform-tools\adb` for windows
 
 ### Adb forward
+
 In order for chrome-dev-tools to connect to your application it needs to have a named socket set up. Usually the CLI takes care of this, but as we mentioned we won't be using the CLI for building or for debugging. In order to set up this named socket you need to run:
 
-```
- adb forward tcp:<local-host-port> localabstract:<application-full-name>-inspectorServer
+``` Shell
+adb forward tcp:<local-host-port> localabstract:<application-full-name>-inspectorServer
 ```
 
 `<local-host-port>`: the port where chrome-dev-tools will connect locally
@@ -77,17 +82,17 @@ In order for chrome-dev-tools to connect to your application it needs to have a 
 
 Example command:
 
-```
+``` Shell
 adb forward tcp:40000 localabstract:com.tns.testapplication-inspectorServer
 ```
 
->Note: This is a one time command and needs to be reran only if adb-server is killed.
+> **Note**: This is a one time command and needs to be reran only if adb-server is killed.
 
 ### Open Google Chrome with debug url
 
 Usually the CLI provides this link so you can open it in Google Chrome, so it's not that different from the normal debug flow.
 
-```
+``` Shell
 chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:<local-host-port>
 ```
 
@@ -97,7 +102,7 @@ Open this link in Google Chrome and it will automatically connect to your runnin
 If it doesn't connect right away, you'll get a button to `Reconnect`. This will happen when you try to connect chrome-dev-tools before the application has started.
 If you want to stop early in the execution you can put a `debugger;` statement in your JavaScript code.
 
->Note: always start the application before trying to if through Google Chrome.
+> **Note**: always start the application before trying to if through Google Chrome.
 
 Now you can debug both the Android Runtime && Android Runtime Binging Generator through Android Studio and your business logic through Chrome-Dev-Tools.
 
@@ -112,19 +117,20 @@ To resolve this problem you need to set the Compile SDK Version properties of yo
 
 If you have already ran `tns run android` before following those steps, once you hit debug you might get the "Error while Installing APK" error. The solution is to delete the problematic folder created from the CLI so it doesn't get in the way of Android Studio.
 
-```
+``` Shell
 adb root && adb shell "rm -rf /data/local/tmp/<application-full-name>"`
 ```
 
 Example command:
 
-```
+``` Shell
 adb root && adb shell "rm -rf /data/local/tmp/org.nativescript.aaa"
 ```
 
 After the folder is deleted successfully from the device, just run/debug again from Android Studio.
 
 ## See Also
+
 * [Google Chrome DevTools reference](https://developer.chrome.com/devtools/index).
 * [JavaScript debugging](https://developer.chrome.com/devtools/docs/javascript-debugging).
 * [debugger; statement](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/debugger)

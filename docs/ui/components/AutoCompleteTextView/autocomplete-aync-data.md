@@ -36,7 +36,7 @@ property to e function which accepts one parameter (the typed text).
 In this function define a promise, load the remote data in it and then return the promise.
 
 Later on the autocomplete will invoke the `loadSuggestionsAsync` function and when the promise is resolved,
-it will use the returned items to complete it's population. 
+it will use the returned items to complete it's population.
 
 <snippet id='autocomplete-async-model'/>
 
@@ -45,4 +45,3 @@ Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
 * [Remote Data Fetch Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/remote-data-fetch)
-

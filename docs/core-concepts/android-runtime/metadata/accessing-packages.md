@@ -10,7 +10,7 @@ slug: accessing-android-apis
 
 One of NativeScript's strongest capabilities is the access to Android (also referred to as __'Java/Kotlin'__ or __'native'__) APIs inside JavaScript/TypeScript. That's possible thanks to build-time generated [Metadata](./overview.md) chunks which hold the information about the public classes from the Android SDK, Android support libraries, and any other Android libraries which may be imported into your Android NativeScript project.
 
-> Note: 'Android classes' and 'Java/Kotlin classes' are used interchangeably throughout the article to refer to classes in the Java/Kotlin programming language. 
+> **Note**: 'Android classes' and 'Java/Kotlin classes' are used interchangeably throughout the article to refer to classes in the Java/Kotlin programming language.
 
 ## Access Android Packages
 
@@ -25,7 +25,7 @@ In order to access a particular class in JavaScript/TypeScript the full package 
 
 The above is accessed in JavaScript like:
 
-```javascript
+``` JavaScript
 const javaLangPkg = java.lang;
 const androidPkg = android;
 const androidViewPkg = android.view;
@@ -39,24 +39,23 @@ const View = android.view.View;
 const Object = javaLangPkg.Object; // === java.lang.Object;
 ```
 
-To find out the package name of an Android class, refer to the [Android SDK Reference](https://developer.android.com/reference/packages.html), or to the supplied API Reference of a plugin, when importing 3rd-party Android components into your project. 
+To find out the package name of an Android class, refer to the [Android SDK Reference](https://developer.android.com/reference/packages.html), or to the supplied API Reference of a plugin, when importing 3rd-party Android components into your project.
 
 For example, if you need to work with the Google API for Google Maps, after following the installation guide, you may need to access packages from the plugin like `com.google.android.gms.maps`, which you can find a reference for at [Google APIs for Android Reference](https://developers.google.com/android/reference/com/google/android/gms/maps/package-summary)
 
-> **Note:** To have access and Intellisense for the native APIs with **NativeScript + TypeScript** or **NativeScript + Angular** projects, you have to add a dev dependency to `tns-platform-declarations`. More details about accessing native APIs with TypeScript can be found [here]({% slug access-native-apis %}#intellisense-and-access-to-native-apis-via-typescript).
-
-
-> **Note:** **(Experimental)** Alternatively, to get Intellisense for the native APIs based on the available Android Platform SDK and imported Android Support packages (added by default to your Android project), supply the `--androidTypings` flag with your `tns run | build android` command. The resulting `android.d.ts` file can then be used to provide auto-completion.
-
-
-> **Note:** You cannot use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built against the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation. See [metadata limitations](./overview.md).
+> **Note**: To have access and Intellisense for the native APIs with **NativeScript + TypeScript** or **NativeScript + Angular** projects, you have to add a dev dependency to `tns-platform-declarations`. More details about accessing native APIs with TypeScript can be found [here]({% slug access-native-apis %}#intellisense-and-access-to-native-apis-via-typescript).
+>
+> **Note**: **(Experimental)** Alternatively, to get Intellisense for the native APIs based on the available Android Platform SDK and imported Android Support packages (added by default to your Android project), supply the `--androidTypings` flag with your `tns run | build android` command. The resulting `android.d.ts` file can then be used to provide auto-completion.
+>
+> **Note**: You cannot use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built against the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation. See [metadata limitations](./overview.md).
 
 ## Access Android Classes
+
 Classes ([See OOP](https://docs.oracle.com/javase/tutorial/java/concepts/)) are the schematics to producing building blocks (Objects) in Android, as such, they are used to represent almost everything you see, as well as what you don't see, in an Android application - the Android layouts are objects built from classes, the buttons and text views also have class representations. Classes in Java and Kotlin have unique identifiers denoted by the full package name (see above), followed by the actual class name (usually capitalized - see above - 'View')
 
 Accessing classes in Android you would normally add an `import` statement at the beginning of the Java/Kotlin file, to allow referring to the class only by its name. If the developer decides, they may be as expressive as possible by using the full class identifier too:
 
-```Java
+``` Java
 package my.awesome.application;
 
 import android.view.View;
@@ -71,7 +70,8 @@ public class ... {
 ```
 
 Accessing Android classes, in the JavaScript/TypeScript of a NativeScript application, is kept as close to the original Java syntax as the JavaScript language allows:
-```javascript
+
+``` JavaScript
 function arbitraryFunction(context) { // 'context' is a JavaScript wrapper (Proxy - see below) for the underlying android.content.Context Java instance
     const View = android.view.View;
 
@@ -84,20 +84,24 @@ function arbitraryFunction(context) { // 'context' is a JavaScript wrapper (Prox
 ```
 
 ## Proxies
+
 The JavaScript objects that lie behind the Android APIs are called *Proxies*. There are two types of proxies:
 
 ### Package Proxy
+
 Provides access to the classes, interfaces, constants and enumerations within each package. See `java.lang`.
 
 ### Class Proxy
+
 Represents a thin wrapper over a class or an interface and provides access to its methods and fields. From a JavaScript perspective this type of proxy may be considered as a constructor function. For example `android.view.View` is a class proxy.
 
 The result of the constructor calls (`new ...()`) will create native `android.view.View` instances on the Android side and a special hollow Object on the JavaScript side. This special object knows how to invoke methods and access fields on the corresponding native instance. For example we may retrieve the path value of the above created `File` using the corresponding `File` class API like:
 
 ## Access Methods, Fields and Constants
+
 Thanks to the 'proxying' system, Java/Kotlin methods and fields can be accessed through the JavaScript wrappers of the native instances. For example, you may retrieve the result of a method call to the Java instance:
 
-```javascript
+``` JavaScript
 const javaObj = new java.lang.Object();
 const javaObjHashCode = javaObj.hashCode(); // result is `int` in Java, marshalled to a JavaScript number
 
@@ -105,7 +109,8 @@ console.log(javaObjHashCode); // prints out the hashCode number
 ```
 
 Public and private members, as well as static fields of an instance, or Java/Kotlin classes can also be accessed. The [android.view.View](https://developer.android.com/reference/android/view/View.html) class will be used below:
-```javascript
+
+``` JavaScript
 const context = ...; // retrieve context
 const newView = new android.view.View(context);
 
@@ -121,13 +126,16 @@ const randomViewId = android.view.View.generateViewId(); // static method call t
 ```
 
 ## Extend Classes and Interfaces
+
 For a comprehensive guide on extending classes and implementing interfaces through JavaScript/TypeScript check out [the dedicated article](../binding-generator/extend-class-interface.md).
 
 ## Full-fledged Example
+
 Let's take a sample Android code, and transcribe it to JavaScript/TypeScript.
 
 The following code (courtesy of [startandroid.ru](http://startandroid.ru/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html)) creates an Android layout, and adds a couple Button and TextView elements:
-```Java
+
+``` Java
 public class MainActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
@@ -137,9 +145,9 @@ public class MainActivity extends Activity {
         LinearLayout linLayout = new LinearLayout(this);
         // specifying vertical orientation
         linLayout.setOrientation(LinearLayout.VERTICAL);
-        // creating LayoutParams  
-        LayoutParams linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT); 
-        // set LinearLayout as a root element of the screen 
+        // creating LayoutParams
+        LayoutParams linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        // set LinearLayout as a root element of the screen
         setContentView(linLayout, linLayoutParam);
 
         LayoutParams lpView = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -173,7 +181,8 @@ public class MainActivity extends Activity {
     }
 }
 ```
-```kotlin
+
+``` Kotlin
 class MainKotlinActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -217,7 +226,8 @@ class MainKotlinActivity: Activity() {
     }
 }
 ```
-```javascript
+
+``` JavaScript
 const MainActivity = android.app.Activity.extend("my.application.name.MainActivity", {
     onCreate: function (savedInstanceState) {
         super.onCreate(savedInstance);
@@ -227,8 +237,8 @@ const MainActivity = android.app.Activity.extend("my.application.name.MainActivi
         // specifying vertical orientation
         linLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
         // creating LayoutParams - accessing static class LayoutParams of LinearLayout
-        let linLayoutParam = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.MATCH_PARENT); 
-        // set LinearLayout as a root element of the screen 
+        let linLayoutParam = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.MATCH_PARENT);
+        // set LinearLayout as a root element of the screen
         this.setContentView(linLayout, linLayoutParam);
 
         let lpView = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -262,7 +272,8 @@ const MainActivity = android.app.Activity.extend("my.application.name.MainActivi
     }
 });
 ```
-```typescript
+
+``` TypeScript
 @JavaProxy("my.application.name.MainActivity");
 class MainActivity extends android.app.Activity {
     constructor() {
@@ -279,8 +290,8 @@ class MainActivity extends android.app.Activity {
         // specifying vertical orientation
         linLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
         // creating LayoutParams - accessing static class LayoutParams of LinearLayout
-        let linLayoutParam = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.MATCH_PARENT); 
-        // set LinearLayout as a root element of the screen 
+        let linLayoutParam = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.MATCH_PARENT);
+        // set LinearLayout as a root element of the screen
         this.setContentView(linLayout, linLayoutParam);
 
         let lpView = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -316,7 +327,8 @@ class MainActivity extends android.app.Activity {
 ```
 
 The NativeScript code can further be shortened, and it starts to look a lot like Java:
-```javascript
+
+``` JavaScript
 const LinearLayout = android.widget.LinearLayout;
 const LayoutParams = android.widget.LinearLayout.LayoutParams;
 const TextView = android.widget.TextView;
@@ -331,9 +343,9 @@ const MainActivity = android.app.Activity.extend("my.application.name.MainActivi
         let linLayout = new LinearLayout(this);
         // specifying vertical orientation
         linLayout.setOrientation(LinearLayout.VERTICAL);
-        // creating LayoutParams  
-        let linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT); 
-        // set LinearLayout as a root element of the screen 
+        // creating LayoutParams
+        let linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        // set LinearLayout as a root element of the screen
         setContentView(linLayout, linLayoutParam);
 
         let lpView = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -367,7 +379,8 @@ const MainActivity = android.app.Activity.extend("my.application.name.MainActivi
     }
 });
 ```
-```typescript
+
+``` TypeScript
 const LinearLayout = android.widget.LinearLayout;
 const LayoutParams = android.widget.LinearLayout.LayoutParams;
 const TextView = android.widget.TextView;
@@ -389,9 +402,9 @@ class MainActivity extends android.app.Activity {
         let linLayout = new LinearLayout(this);
         // specifying vertical orientation
         linLayout.setOrientation(LinearLayout.VERTICAL);
-        // creating LayoutParams  
-        let linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT); 
-        // set LinearLayout as a root element of the screen 
+        // creating LayoutParams
+        let linLayoutParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        // set LinearLayout as a root element of the screen
         setContentView(linLayout, linLayoutParam);
 
         let lpView = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -425,7 +438,9 @@ class MainActivity extends android.app.Activity {
     }
 });
 ```
+
 ## See Also
+
 * [Metadata Overview and Limitations](./overview.md)
 * [Extending Classes and Interfaces](../generator/extend-class-interface.md)
 * [Execution Flow](../advanced-topics/execution-flow.md)

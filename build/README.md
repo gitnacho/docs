@@ -68,14 +68,16 @@ You can organize your help topics in directories. The directory and filename wil
 
 Your markdown file must start with the so called "front matter". This is some metadata used by jekyll and the documentation. Here is an example.
 
-         ---
-         title: Getting started
-         page_title: Getting started with Kendo UI
-         description: Installation and getting started instructions for Kendo UI
-         position: 0
-         slug: getting-started
-         previous_url: /introduction/start
-         ---
+``` Markdown
+---
+title: Getting started
+page_title: Getting started with Kendo UI
+description: Installation and getting started instructions for Kendo UI
+position: 0
+slug: getting-started
+previous_url: /introduction/start
+---
+```
 
 The supported attributes are:
 
@@ -117,7 +119,7 @@ By default directories come before the files which don't have `position` set. Th
 
 For example we want the `introduction/getting-started` directory to appear as `Getting Started` in the TOC. Open `_config.yml` and find the `navigation` attribute. Add a new item:
 
-```
+``` YAML
 navigation
 -
    introduction/getting-started
@@ -125,7 +127,8 @@ navigation
 ```
 
 Directories appear alphabetically sorted by default. You can change their position again from `_config.yml`.
-```
+
+``` YAML
 navigation
 -
    introduction/getting-started

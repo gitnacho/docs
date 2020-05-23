@@ -13,19 +13,19 @@ The current implementaion of NativeScript for Android utilizes both V8 and Dalvi
 
 Every NativeScript for Android app is comprised of two managed heaps - one for Java/Kotlin (Dalvik/ART VM) and another for JavaScript (V8). Every time when an app executes JavaScript code as follows
 
-```javascript
+``` JavaScript
 var file = new java.io.File("somefile");
 ```
 
 it creates two objects - one in the JavaScript heap and another in the Java heap. The JavaScript object serves only as a proxy to the actual Java object. Thus the size of the JavaScript object is very small. Suppose the app has to execute the following line
 
-```javascript
+``` JavaScript
 let success = file.delete();
 ```
 
 The only information we need is some sort of `id` in order to find the corresponding Java object and call `delete()` on it. Currently we use `int32` for the `id`. So practically, we can think of `file` as
 
-```JavaScript
+``` JavaScript
 let file = { javaObjectId: 123 };
 ```
 
@@ -40,7 +40,8 @@ By default during a V8 GC pass the Android runtime performs an automatic travers
 Basically, this algorithm makes sure that no Java/Kotlin instances will be prematurely collected by the Android Runtime GC, while they are still being used by the JavaScript side. JavaScript code, however, can be structured in such a way that this additional step becomes unneeded. The only case when it is required is when there are no other references to the Java/Kotlin instance than the scope and the scope is the only thing that takes care to keep it alive.
 
 There's a `app/package.json` option which apps can set in order to disable `MarkReachableObjects`:
-```JSON
+
+``` JSON
 {
   "android": {
     "markingMode": "none"
@@ -65,7 +66,7 @@ The default Android project template is configured to [expose global `gc()` func
 
 You can use `gcThrottleTime` parameter to notify NativeScript runtime to trigger GC in the JavaScript heap during GC in the Java heap. The value of this parameter is measured in milliseconds. The value of `0` (zero) disables this parameter.
 
-```JSON
+``` JSON
 {
   "android": {
     "v8Flags": "--expose_gc",
@@ -80,7 +81,7 @@ Here is how it works. When a GC happens for the Java heap NativeScript runtime w
 
 The previous strategy (using `gcThrottleTime` parameter) may not work for all scenarios. For example, if your app allocates large Java/Kotlin objects in a loop then using `gcThrottleTime` parameter may not be enough to prevent your app from `OutOfMemoryError`. For such scenario we provide the pair `memoryCheckInterval` and `freeMemoryRatio` which may help.  The value of `memoryCheckInterval` parameter is measured in milliseconds and the value of `0` (zero) disables this approach. The value of `freeMemoryRatio` is measured in percentage (from `0.0` to `1.0`) where the value of `0.0` disables this approach.
 
-```JSON
+``` JSON
 {
   "android": {
     "v8Flags": "--expose_gc",

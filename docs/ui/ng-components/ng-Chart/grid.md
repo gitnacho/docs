@@ -22,24 +22,24 @@ The grid lines and the stripes between them are controlled by the {% typedoc_lin
 
 ## Properties
 
-- {% typedoc_link classes:RadCartesianChartGrid,member:verticalLinesVisible %} - Determines whether the grid lines associated with the vertical axis will be visible.
-- {% typedoc_link classes:RadCartesianChartGrid,member:horizontalLinesVisible %} - Determines whether the grid lines associated with the horizontal axis will be visible.
+* {% typedoc_link classes:RadCartesianChartGrid,member:verticalLinesVisible %} - Determines whether the grid lines associated with the vertical axis will be visible.
+* {% typedoc_link classes:RadCartesianChartGrid,member:horizontalLinesVisible %} - Determines whether the grid lines associated with the horizontal axis will be visible.
 
-- {% typedoc_link classes:RadCartesianChartGrid,member:verticalStripLinesVisible %} - Determines whether the alternating fills between the vertical grid lines are visible or not.
-- {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStripLinesVisible %} - Determines whether the alternating fills between the horizontal grid lines are visible or not.
+* {% typedoc_link classes:RadCartesianChartGrid,member:verticalStripLinesVisible %} - Determines whether the alternating fills between the vertical grid lines are visible or not.
+* {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStripLinesVisible %} - Determines whether the alternating fills between the horizontal grid lines are visible or not.
 
-- {% typedoc_link classes:RadCartesianChartGrid,member:verticalStrokeWidth %} - Determines the width of the stroke used to paint the vertical grid lines.
-- {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStrokeWidth %} - Determines the width of the stroke used to paint the horizontal grid lines.
+* {% typedoc_link classes:RadCartesianChartGrid,member:verticalStrokeWidth %} - Determines the width of the stroke used to paint the vertical grid lines.
+* {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStrokeWidth %} - Determines the width of the stroke used to paint the horizontal grid lines.
 
-- {% typedoc_link classes:RadCartesianChartGrid,member:verticalStrokeColor %} - Determines the color used to draw the vertical lines of the grid.
-- {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStrokeColor %} - Determines tthe color used to draw the horizontal lines of the grid.
+* {% typedoc_link classes:RadCartesianChartGrid,member:verticalStrokeColor %} - Determines the color used to draw the vertical lines of the grid.
+* {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStrokeColor %} - Determines tthe color used to draw the horizontal lines of the grid.
 
-- {% typedoc_link classes:RadCartesianChartGrid,member:verticalStripLineColor %} - Determines the color used to paint the fills between the vertical grid lines.
-- {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStripLineColor %} - Determines the color used to paint the fills between the horizontal grid lines.
+* {% typedoc_link classes:RadCartesianChartGrid,member:verticalStripLineColor %} - Determines the color used to paint the fills between the vertical grid lines.
+* {% typedoc_link classes:RadCartesianChartGrid,member:horizontalStripLineColor %} - Determines the color used to paint the fills between the horizontal grid lines.
 
 To better illustrate the Grid capabilities, let's add the following properties to the grid:
 
-#### Example 1: Grid Styling
+### Example 1: Grid Styling
 
 <snippet id='chart-angular-grid-styling'/>
 

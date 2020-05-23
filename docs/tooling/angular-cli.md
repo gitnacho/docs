@@ -23,7 +23,7 @@ In order to use the Angular CLI in a NativeScript project, you need both the **A
 
 You can either install them globally, which would allow you to create new projects:
 
-```bash
+``` Shell
 npm i -g @angular/cli
 npm i -g @nativescript/schematics
 ```
@@ -32,7 +32,7 @@ npm i -g @nativescript/schematics
 
 Or you could install them as a part of each project:
 
-```bash
+``` Shell
 npm i --save-dev @angular/cli
 npm i --save-dev @nativescript/schematics
 ```
@@ -43,8 +43,8 @@ All Angular projects created with the **NativeScript CLI 5.0** come preconfigure
 
 This is done by added:
 
--   the **@nativescript/schematics** node module to **package.json**
--   an **angular.json** file configured to work with **@nativescript/schematics**
+*   the **@nativescript/schematics** node module to **package.json**
+*   an **angular.json** file configured to work with **@nativescript/schematics**
 
 However, you will still need to have the **Angular CLI** installed either [globally](./angular-cli#global-installation) or [locally](./angular-cli#local-installation).
 
@@ -54,7 +54,7 @@ For projects created with the NativeScript CLI v4 or older, you will need to
 
 To introduce the Angular CLI to an **existing** NativeScript Angular Project, you need to add an **angular.json** file (which is used by the Angular CLI to understand the structure of the project) to the root of the project. The **angular.json** file should have the following content:
 
-```json
+``` JSON
 {
     "version": 1,
     "cli": {
@@ -76,20 +76,20 @@ The **defaultCollection** is where you specify that you want to use the **Native
 
 You could update:
 
--   **my-project-name** to match the name of your project, but that is not absolutely necessary,
--   **prefix** to match the prefix for your component selectors (i.e. `"prefix": "app"` => `selector: 'app-home'`).
+*   **my-project-name** to match the name of your project, but that is not absolutely necessary,
+*   **prefix** to match the prefix for your component selectors (i.e. `"prefix": "app"` => `selector: 'app-home'`).
 
 ## New Project
 
 To create a new NativeScript Angular project with the Angular CLI, you need to call the `ng new` command with the `--collection=@nativescript/schematics` parameter. Like this:
 
-```bash
+``` Shell
 ng new --collection=@nativescript/schematics my-mobile-app
 ```
 
 or with the `-c` shorthand:
 
-```shorthand
+``` Shellorthand
 ng new -c=@nativescript/schematics my-mobile-app
 ```
 
@@ -110,7 +110,7 @@ You can specify the following options when generating new applications:
 
 Here is an example on how you could provide a different value for each of the flags:
 
-```bash
+``` Shell
 ng new -c=@nativescript/schematics my-app-name --prefix=my --no-theme --style=scss --no-webpack
 ```
 
@@ -118,7 +118,7 @@ ng new -c=@nativescript/schematics my-app-name --prefix=my --no-theme --style=sc
 
 You can create a new **code-sharing project**, which allows you to build for both web and mobile, by providing a `--shared` flag. Like this:
 
-```bash
+``` Shell
 ng new -c=@nativescript/schematics my-app-name --prefix=my --no-theme --style=scss --no-webpack
 ```
 
@@ -139,7 +139,7 @@ To generate a new component, you need to use the **component schematic**. Like t
 ng generate component my-name
 ```
 
-```short
+``` Shellort
 ng g c my-name
 ```
 
@@ -147,11 +147,11 @@ ng g c my-name
 
 In a NativeScript Only project (_not code-sharing_), this command:
 
--   creates component files:
+*   creates component files:
     _ **my-name.component.ts** - a class file,
     _ **my-name.component.html** - a template file, \* and **my-name.component.css** or **my-name.component.scss** - a style file,
--   adds the component to the **AppModule Providers**,
--   adds `moduleId: module.id` to the `@Component` decorator - which is the **modification introduced** by the NativeScript Schematics.
+*   adds the component to the **AppModule Providers**,
+*   adds `moduleId: module.id` to the `@Component` decorator - which is the **modification introduced** by the NativeScript Schematics.
 
 The component files should be generated in the **app/my-name** folder, like this:
 
@@ -167,12 +167,12 @@ app
 
 In a Code-Sharing Project, this command:
 
--   creates **shared** and **platform-specific** component files:
+*   creates **shared** and **platform-specific** component files:
     _ **my-name.component.ts** - a **shared** class file,
     _ **my-name.component.html** - a **web-specific** template file,
     _ **my-name.component.html** - a **NativeScript-specific** template file,
     _ **my-name.component.css** - a **web-specific** style file, \* and **my-name.component.tns.css** - a **NativeScript-specific** style file,
--   adds the component to the **AppModule Providers** of both:
+*   adds the component to the **AppModule Providers** of both:
     _ **app.module.ts** - the **web-specific** AppModule file,
     _ and **app.module.tns.ts** - the **nativescript-specific** AppModule file.
 
@@ -197,7 +197,7 @@ To generate a new module, you need to use the **module schematic**. Like this:
 ng generate module my-name
 ```
 
-```short
+``` Shellort
 ng g m my-name
 ```
 
@@ -221,8 +221,8 @@ export class MyNameModule { }
 
 The most notable changes introduced by the NativeScript Schematics, are:
 
--   the import of the **NativeScriptCommonModule**, as opposed to the **CommonModule** used by the Angular web projects,
--   and the inclusions of the **NO_ERRORS_SCHEMA** schema, which is required to allow using the NativeScript specific selectors (i.e. **StackLayout**).
+*   the import of the **NativeScriptCommonModule**, as opposed to the **CommonModule** used by the Angular web projects,
+*   and the inclusions of the **NO_ERRORS_SCHEMA** schema, which is required to allow using the NativeScript specific selectors (i.e. **StackLayout**).
 
 The module file should be generated in the **src/app/my-name** folder, like this:
 
@@ -236,9 +236,9 @@ app
 
 In a Code-Sharing Project, this command creates:
 
--   **my-name.module.ts** - a **web-specific** module file, which imports the **CommonModule**
--   **my-name.module.tns.ts** - a **NativeScript-specific** module file, which imports the **NativeScriptCommonModule** and includes the **NO_ERRORS_SCHEMA** schema,
--   and **my-name.common.ts** - a **shared** file with constants that allow you to easily share the declarations for the components, providers and routes used by both modules.
+*   **my-name.module.ts** - a **web-specific** module file, which imports the **CommonModule**
+*   **my-name.module.tns.ts** - a **NativeScript-specific** module file, which imports the **NativeScriptCommonModule** and includes the **NO_ERRORS_SCHEMA** schema,
+*   and **my-name.common.ts** - a **shared** file with constants that allow you to easily share the declarations for the components, providers and routes used by both modules.
 
 The module files should be generated in the **src/app/my-name** folder, like this:
 
@@ -257,7 +257,7 @@ You can also generate components inside other modules. This works the same for t
 
 To do that just provide the module name before the component name, like this:
 
-```bash
+``` Shell
 ng g m pets
 ng g c pets/cat
 ng g c pets/dog
@@ -266,8 +266,8 @@ ng g c pets/dog
 These three commands will:
 
 1. Generate a **pets module**.
-2. Generate a **cat component** inside the pets module and it will add it to the pets module declarations.
-3. Generate a **dog component** inside the pets module and it will add it to the pets module declarations.
+1. Generate a **cat component** inside the pets module and it will add it to the pets module declarations.
+1. Generate a **dog component** inside the pets module and it will add it to the pets module declarations.
 
 ## Additional Template Generators
 

@@ -12,15 +12,15 @@ publish: true
 This article explains how to create a simple RadSideDrawer with Angular. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 > The `RadSideDrawer` is designed to be placed as a single child in your component's HTML.
- This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML. 
+ This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML.
  For example:
- ```HTML
+ ``` HTML
  <ActionBar></ActionBar> <!-- ActionBar can be used with RadSideDrawer on the root level -->
  <RadSideDrawer></RadSideDrawer> <!-- RadSideDrawer should be single child (not counting ActionBar)-->
- <!-- 
+ <!--
     It is NOT allowed to have other elements on the root level with RadSideDrawer
     <StackLayout></StackLayout>
- -->    
+ -->
  ```
 
 ## Installation
@@ -33,7 +33,7 @@ tns plugin add nativescript-ui-sidedrawer
 ## Initialization
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUISideDrawerModule %} from the *nativescript-ui-sidedrawer* plugin has been imported in an `ngModule` in your app. For example:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
@@ -53,13 +53,13 @@ export class SideDrawerExamplesModule { }
 
 The RadSideDrawer consists of two visual parts:
 
-- `mainContent` - the visual elements displayed in the host view where the drawer is shown.
-- `drawerContent` - the visual elements displayed in the side drawer.
+* `mainContent` - the visual elements displayed in the host view where the drawer is shown.
+* `drawerContent` - the visual elements displayed in the side drawer.
 
 Defining `mainContent` and `drawerContent`  with Angular is done with the corresponding directives:
 
-- `TKMainContent` - used with the `tkMainContent` selector
-- `TKDrawerContent` - used with the `tkDrawerContent` selector
+* `TKMainContent` - used with the `tkMainContent` selector
+* `TKDrawerContent` - used with the `tkDrawerContent` selector
 
 The following code snippet is a simple template with a basic setup for RadSideDrawer.
 

@@ -10,7 +10,7 @@ publish: true
 
 # RadDataForm Styling
 
-If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will show you how to change the style of each editor, its label or the groups if grouping is enabled. 
+If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will show you how to change the style of each editor, its label or the groups if grouping is enabled.
 
 * [CSS](#css)
 * [Styling Editors](#styling-editors)
@@ -29,7 +29,7 @@ The easiest way to change the styles in RadDataForm is to apply [css styles](htt
 
 > Please note that currently the group headers can't be styles with CSS.
 
-#### Figure 1: RadDataForm with applied css on Android (left) and iOS (right)
+### Figure 1: RadDataForm with applied css on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Styling-04-Android](../../img/ns_ui/dataform-styling-04-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-04-iOS](../../img/ns_ui/dataform-styling-04-ios.png "Styling of RadDataForm in iOS")
 
@@ -37,20 +37,20 @@ Here's the css that is used for the form in the above pictures:
 
 #### Example 1: Applying css with the RadDataForm type selector
 
-```CSS
+``` CSS
 RadDataForm {
-	background-color: #4CAF50;
-	color: #3F51B5;
-	padding: 5;
-	margin: 5;
-	border-color: #303F9F;
-	border-width: 5;
-	border-radius: 5;
+    background-color: #4CAF50;
+    color: #3F51B5;
+    padding: 5;
+    margin: 5;
+    border-color: #303F9F;
+    border-width: 5;
+    border-radius: 5;
 }
 
 PropertyEditor {
-	background-color: transparent;
-	separator-color: #303F9F;
+    background-color: transparent;
+    separator-color: #303F9F;
 }
 ```
 
@@ -58,52 +58,52 @@ The above example uses the `RadDataForm` and `PropertyEditor` selectors. Here's 
 
 #### Example 2: Applying css with the PropertyEditor, DataFormEditorLabel and DataFormEditorCore type selectors
 
-```CSS
+``` CSS
 PropertyEditor {
-	background-color: #00BCD4;
-	color: #303F9F;
-	border-color: #303F9F;
-	border-width: 5;
-	border-radius: 5;
-	margin: 10;
-	padding: 10;
-	font-size: 14;
+    background-color: #00BCD4;
+    color: #303F9F;
+    border-color: #303F9F;
+    border-width: 5;
+    border-radius: 5;
+    margin: 10;
+    padding: 10;
+    font-size: 14;
 }
 
 PropertyEditor:focus {
-	background-color: #303F9F;
+    background-color: #303F9F;
 }
 
 DataFormEditorLabel {
-	color:#212121;
-	background-color: white;
-	font-style: italic;
-	padding: 10;
-	margin: 10;
-	border-color: #303F9F;
-	border-width: 5;
-	border-radius: 5;
-	width: 150;
-	position: left;
+    color:#212121;
+    background-color: white;
+    font-style: italic;
+    padding: 10;
+    margin: 10;
+    border-color: #303F9F;
+    border-width: 5;
+    border-radius: 5;
+    width: 150;
+    position: left;
 }
 
 DataFormEditorCore {
-	margin: 10;
-	padding: 10;
-	background-color: white;
-	border-color: #303F9F;
-	border-width: 5;
-	border-radius: 5;
-	font-family: 'Times New Roman', Times, serif;
+    margin: 10;
+    padding: 10;
+    background-color: white;
+    border-color: #303F9F;
+    border-width: 5;
+    border-radius: 5;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 PropertyEditor[type='Email'] {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 EntityProperty[name='name'] DataFormEditorLabel {
-	width: 0;
-	visibility: collapsed;
+    width: 0;
+    visibility: collapsed;
 }
 ```
 
@@ -138,9 +138,9 @@ This is the list of supported css properties for the different selectors:
 
 In order to change the style of an editor, you need to follow these steps:
 
-- Declare the `TKEntityProperty` and set the `tkPropertyGroupProperties` inline directive to it in your HTML.
-- Between its tags declare an `TKPropertyEditor` and set the `tkEntityPropertyEditor` inline directive to it.
-- Finally between the `TKPropertyEditor` tags declare the `TKPropertyEditorStyle` and set the `tkPropertyEditorStyle` inline directive to it
+* Declare the `TKEntityProperty` and set the `tkPropertyGroupProperties` inline directive to it in your HTML.
+* Between its tags declare an `TKPropertyEditor` and set the `tkEntityPropertyEditor` inline directive to it.
+* Finally between the `TKPropertyEditor` tags declare the `TKPropertyEditorStyle` and set the `tkPropertyEditorStyle` inline directive to it
 
 Here's what you can update in editor through its style:
 
@@ -161,11 +161,11 @@ Here's what you can update in editor through its style:
 
 If you need to make changes to the styles runtime, you can get access the current style of an editor through the `TKEntityProperty`. Here's an example of how to change the `fillColor` for the editor of the property `name`.
 
-#### Figure 3: RadDataForm with some of the editor's styling properties changed on Android (left) and iOS (right)
+### Figure 3: RadDataForm with some of the editor's styling properties changed on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Styling-01-Android](../../img/ns_ui/dataform-styling-01-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](../../img/ns_ui/dataform-styling-01-ios.png "Styling of RadDataForm in iOS")
 
-#### Example 3: Changing the fillColor of an editor
+### Example 3: Changing the fillColor of an editor
 
 <snippet id='angular-dataform-getting-started-runtime-change'/>
 
@@ -185,7 +185,7 @@ In order to change the style of the header of a group, you need to create an ins
 
 If you need to make changes to the styles runtime, you can get access the current style of a group title through the {% typedoc_link classes:PropertyGroup %}. Here's an example of how to change the `labelTextColor` for the group `Main Info`.
 
-#### Example 4: Changing the labelTextColor of a group header
+### Example 4: Changing the labelTextColor of a group header
 
 <snippet id='angular-dataform-groups-code'/>
 
@@ -197,25 +197,25 @@ Note that in this example we make the change when `RadDataForm` is already loade
 
 ## Styling Native Components
 
-#### Figure 3: RadDataForm with editors' colors updated independently on Android (left) and iOS (right)
+### Figure 3: RadDataForm with editors' colors updated independently on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Styling-02-Android](../../img/ns_ui/dataform-styling-02-android.png "Advanced Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](../../img/ns_ui/dataform-styling-02-ios.png "Advanced Styling of RadDataForm in iOS")
 
 If you need to provide a more customized styling which is not covered by the above properties, you can always fine-tune the native editors for each platform. In order to do this, you can use the `editorUpdate` event in `RadDataForm`. First you can use the `propertyName` from the passed arguments with the events to determine if the currently updated editor is the one you want to customize:
 
-#### Example 6: Apply styling based on the name of a property
+### Example 6: Apply styling based on the name of a property
 
 <snippet id='angular-dataform-styling-propertyname'/>
 
 If you want the customization to reflect all editors of specific editor type you can do the check through the `EntityProperty` that you can get with `RadDataForm`'s {% typedoc_link classes:RadDataForm,member:getPropertyByName %} method. Then you can check the editor type:
 
-#### Example 7: Apply styling based on the type of an editor
+### Example 7: Apply styling based on the type of an editor
 
 <snippet id='dataform-styling-editortype'/>
 
 If the currently updating editor is the one we want to customize we can access the native editor through the {% typedoc_link classes:DataFormEventArgs,member:editor %} property of the arguments passed with the event. Then depending on the platform, we can access the actual view of the editor with the `getEditorView()` method on Android and with the `editor` property on iOS. Here's an example of changing the style of the {% typedoc_link enums:DataFormEditorType,member:Slider %} editor independently on each platform:
 
-#### Example 8: Change the colors of native Slider editor on each platform
+### Example 8: Change the colors of native Slider editor on each platform
 
 <snippet id='angular-dataform-styling-advanced'/>
 
@@ -250,7 +250,7 @@ Now that you know how to access the core editor view and what its type is you ca
 
 This is achieved again by using the `editorUpdate` event in `RadDataForm` and the native editor taken from the parameters of the event arguments:
 
-#### Example 9: Change the editor background of native editors on each platform
+### Example 9: Change the editor background of native editors on each platform
 
 <snippet id='angular-dataform-background-update'/>
 

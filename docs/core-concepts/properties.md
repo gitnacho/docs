@@ -20,7 +20,7 @@ The implementation of all property classes can be found under `tns-core-modules/
 
 `Property` is a simple wrapper around [`Object.defineProperty`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) with some additional callbacks like `valueChange`, `valueConverter` and `equalityComparer`. When you define property you specify the owning type and the type of the property:
 
-```TypeScript
+``` TypeScript
 export const textProperty = new Property<MyButtonBase, string>({
     name: "text",
     defaultValue: "",
@@ -41,14 +41,14 @@ The flag `affectsLayout` should be `true` *(mainly for iOS)* when setting that p
 > **Note**: In the platform specific implementation use `getDefault` and `setNative` symbols from the property object (example: textProperty), to define how this property is applied to native views.
 > The `getDefault` method is called just once before the first call to `setNative` so that we know what is the default native value for this property. The value that you return will be passed to `setNative` method when we decide to recycle the native view. Recycling the native view of control is done only if `recycleNativeView` field is set to true.
 
-
 ### CssProperty Class
 
 The `CssProperty` is very similar to `Property` type with two small differences:
-- you have to additionally specify `cssName` which will be used to set this property through CSS
-- its value can be set from inline styles, page CSS or application CSS
 
-```TypeScript
+* you have to additionally specify `cssName` which will be used to set this property through CSS
+* its value can be set from inline styles, page CSS or application CSS
+
+``` TypeScript
 export const myOpacityProperty = new CssProperty<Style, number>({
     name: "myOpacity",
     cssName: "my-opacity",
@@ -65,13 +65,13 @@ export const myOpacityProperty = new CssProperty<Style, number>({
 myOpacityProperty.register(Style);
 ```
 
-> **Note:** For CSS properties that could be animated via keyframe animations, you can use the extended `CssAnimationProperty` which comes with the optional `keyframe` parameter.
+> **Note**: For CSS properties that could be animated via keyframe animations, you can use the extended `CssAnimationProperty` which comes with the optional `keyframe` parameter.
 
 ### InheritedCssProperty Class
 
 The `InheritedCssProperty` is a property defined on Style type. These are inheritable CSS properties that could be set in CSS and propagates value on its children. These are properties like FontSize, FontWeight, Color, etc.
 
-```TypeScript
+``` TypeScript
 export const selectedBackgroundColorProperty = new InheritedCssProperty<Style, Color>({
     name: "selectedBackgroundColor",
     cssName: "selected-background-color",
@@ -85,19 +85,23 @@ selectedBackgroundColorProperty.register(Style);
 
 The shorthand property provides the capability to provide shorthand syntax rules for your CSS properties.
 For example, instead of the explicit side-by-side syntax for all four margins
-```CSS
+
+``` CSS
 margin-top:  0;
 margin-right: 10;
 margin-bottom: 0;
 margin-left: 10;
 ```
+
 The user would want to use the shorthand syntax for `margin` as follows:
-```CSS
+
+``` CSS
 margin: 0 10 0 10;
 ```
 
 Creating the shorthand `margin` property would require to have all CSS properties defined. This way, you could use them to set the syntax rule in our shorthand property getter.
-```TypeScript
+
+``` TypeScript
 const marginProperty = new ShorthandProperty<Style, string | PercentLength>({
     name: "margin",
     cssName: "margin",
@@ -130,9 +134,9 @@ marginBottomProperty.register(Style);
 
 The `CoercibleProperty` is a property that extends the base Property class by providing the capability to be coercible. For better illustration when a property might need to be coercible let's assume that we are working on `selectedIndex` property of some UI element that can hold different number of `items`. The base case would suggest that the `selectedIndex` would vary within the number of items, but what would cover the case where the items are changed dynamically (and the `selectedIndex` is not within the length range)? This is the case that can be handled by a property that can coerce the value.
 
-
 Creating the `selectedIndex` as coercible property dependent on the number of items
-```TypeScript
+
+``` TypeScript
 export const selectedIndexProperty = new CoercibleProperty<SegmentedBarBase, number>({
     name: "selectedIndex", defaultValue: -1,
     valueChanged: (target, oldValue, newValue) => {
@@ -164,7 +168,8 @@ selectedIndexProperty.register(SegmentedBarBase);
 ```
 
 When setting the `items` property we will coerce the `selectedIndex`
-```TypeScript
+
+``` TypeScript
 [itemsProperty.setNative](value: SegmentedBarItem[]) {
     this.nativeViewProtected.clearAllTabs();
 
@@ -180,13 +185,14 @@ When setting the `items` property we will coerce the `selectedIndex`
 ### Registering the Property
 
 After a property is defined it needs to be registered on a type like this:
-```JavaScript
+
+``` JavaScript
 textProperty.register(MyButtonBase);
 ```
 
 The `CssProperties` should be registered on the `Style` class like this:
 
-```JavaScript
+``` JavaScript
 // Augmenting Style definition so it includes our myOpacity property
 declare module "tns-core-modules/ui/styling/style" {
     interface Style {
@@ -200,13 +206,13 @@ myOpacityProperty.register(Style);
 
 The registration defines that property for the type passed on to `register` method.
 
-> Note: Make sure that put your `register` call **after** your class definition or you will get an exception.
+> **Note**: Make sure that put your `register` call **after** your class definition or you will get an exception.
 
 ### Value Change Event
 
 To get notification when some property value change a **propertyNameChange** has to be specified as eventName to `addEventListener` method.
 
-```TypeScript
+``` TypeScript
 textField.addEventListener('textChange', handler...)
 ```
 
@@ -214,16 +220,15 @@ textField.addEventListener('textChange', handler...)
 
 Use `nativeView` instead of `ios` and `android` properties. The `ios` and `android` properties are left for compatibility. However, all view-lifecycle methods and native property callbacks (explained below) should work with the `nativeView` property.
 
-
 ## Views Lifecycle and Recycling
 
 NativeScript 3.0 introduced nativeView recycling. With nativeView recycling is aimed to reduce instantiation of native views which is really expensive operation in Android. In order to be able to recycle it, we need all properties exposed from the View to be of our property system.
 
 We have method that gets the default value for a property which is get the first time a property value is changed. Once we know that our View is not needed anymore we will reset the native view to its original state and put it in a map where some future Views of the same type could reuse it. There are 3 new important methods:
 
-- `createNativeView` - you override this method, create and return your nativeView
-- `initNativeView` - in this method you setup listeners/handlers to the nativeView
-- `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
+* `createNativeView` - you override this method, create and return your nativeView
+* `initNativeView` - in this method you setup listeners/handlers to the nativeView
+* `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
 
 In Android, avoid access to native types in the root of the module (note that `ClickListener` is declared and implemented in a function which is called at runtime). This is specific for the V8 snapshot feature which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
 
@@ -234,56 +239,64 @@ In this implementation, we use singleton listener (for Android - `clickListener`
 There are two methods that allow you to traverse view-hierarchy. Both of them accept a `callback` function that is called for each child. The callback should return a boolean value - if it is falsy the iteration will break. This is particularly useful if you are searching for a specific view and you want to stop iterating as soon as you have found it.
 
 For getting View children use:
-```
+
+``` JavaScript
 public eachChildView(callback: (child: View) => boolean): void
 ```
+
 This method was previously known as `_eachChildView()`. It will return `View` descendants only. For example TabView returns the view of each TabViewItem because is TabViewItem is of type ViewBase.
 
 Getting ViewBase children use:
-```
+
+``` JavaScript
 public eachChild(callback: (child: ViewBase) => boolean): void;
 ```
+
 This method will return all views including `ViewBase`. It is used by the property system to apply native setters, propagate inherited properties, apply styles, etc. In the case of TabView – this method will return TabViewItems as well so that they could be styled through CSS.
 
 ### View Class Common Methods
 
 Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) and comes with a set of methods created to ease the UI development. Methods related to measuring and positioning should be called in `navigatedTo` event of the current `Page` to ensure that all layout measuring has passed.
 
- - [`getViewById`](/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
+* [`getViewById`](/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
 
- ```XML
- <Page navigatedTo="onNavigatedTo">
-    <StackLayout id="myStack">
-        <Label text="Tap the button" />
-        <Button text="TAP" tap="{{ onTap }}" />
-        <Label id="myLabel" text="{{ message }}" />
-    </StackLayout>
- </Page>
- ```
- ```TypeScript
- export function onNavigatedTo(args: EventData) {
-    const page = <Page>args.object;
-    let stack = <StackLayout>page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
-    let label = <Label>stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
- }
- ```
- ```JavaScript
- function onNavigatedTo(args) {
-    const page = args.object;
-    let stack = page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
-    let label = stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
- }
- exports.onNavigatedTo = onNavigatedTo;
- ```
+``` XML
+<Page navigatedTo="onNavigatedTo">
+   <StackLayout id="myStack">
+       <Label text="Tap the button" />
+       <Button text="TAP" tap="{{ onTap }}" />
+       <Label id="myLabel" text="{{ message }}" />
+   </StackLayout>
+</Page>
+```
+
+``` TypeScript
+export function onNavigatedTo(args: EventData) {
+   const page = <Page>args.object;
+   let stack = <StackLayout>page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
+   let label = <Label>stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
+}
+```
+
+``` JavaScript
+function onNavigatedTo(args) {
+   const page = args.object;
+   let stack = page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
+   let label = stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
+}
+exports.onNavigatedTo = onNavigatedTo;
+```
 
 > **Angular Specific Note**: In Angular to use `getViewById` for root search, we might need to inject native `Page` object.
 > As an alternative, in Angular, we can get reference to the native elements using the `ViewChild` directive and the `nativeElement` property.
->  ```HTML
+>
+> ``` HTML
 > <StackLayout #myNgStack id="myStackId">
 >     <Label text="Using ViewChild against getViewById" />
 > </StackLayout>
 >  ```
->  ```TypeScript
+>
+>  ``` TypeScript
 >  import { ViewChild, ElementRef } from "@angular/core";
 >  export class MyComponent {
 >     @ViewChild("myNgStack") stackRef: ElementRef;
@@ -297,54 +310,61 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
 >  }
 >  ```
 
- - [`getActualSize`](/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](/api-reference/interfaces/_ui_core_view_.size).
+* [`getActualSize`](/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](/api-reference/interfaces/_ui_core_view_.size).
 
- ```TypeScript
- let stackSize: Size = stack.getActualSize();
- let stackWidth = stackSize.width; // e.g. 411.42857142857144 DIP
- let stackHeight = stackSize.height; // e.g. 603.4285714285714 DIP
- ```
- ```JavaScript
- let stackSize = stack.getActualSize();
- let stackWidth = stackSize.width;
- let stackHeight = stackSize.height;
- ```
+  ``` TypeScript
+  let stackSize: Size = stack.getActualSize();
+  let stackWidth = stackSize.width; // e.g. 411.42857142857144 DIP
+  let stackHeight = stackSize.height; // e.g. 603.4285714285714 DIP
+  `  ``
 
- - [`getLocationInWindow`](/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
- ```TypeScript
- let locationInWindow: Point = stack.getLocationInWindow();
- let locationWindowX = locationInWindow.x; // e.g. 10
- let locationWindowY = locationInWindow.y; // e.g. 80
- ```
- ```JavaScript
- let locationInWindow = stack.getLocationInWindow();
- let locationWindowX = locationInWindow.x;
- let locationWindowY = locationInWindow.y;
- ```
+  ``` JavaScript
+  let stackSize = stack.getActualSize();
+  let stackWidth = stackSize.width;
+  let stackHeight = stackSize.height;
+  ```
 
-  - [`getLocationOnScreen`](/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
- ```TypeScript
- let locationOnScreen : Point = stack.getLocationOnScreen();
- let locScreenX = locationOnScreen.x; // e.g. 10
- let locScreenY = locationOnScreen.y; // e.g. 67.42857142857143
- ```
- ```JavaScript
- var locationOnScreen = stack.getLocationOnScreen();
- var locScreenX = locationOnScreen.x;
- var locScreenY = locationOnScreen.y;
- ```
+* [`getLocationInWindow`](/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
 
-  - [`getLocationRelativeTo`](/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
- ```TypeScript
- let labelLocationRelativeToStack: Point = label.getLocationRelativeTo(stack);
- let labelRelativeX = labelLocationRelativeToStack.x;
- let labelRelativeY = labelLocationRelativeToStack.y;
- ```
- ```JavaScript
- let labelLocationRelativeToStack = label.getLocationRelativeTo(stack);
- let labelRelativeX = labelLocationRelativeToStack.x;
- let labelRelativeY = labelLocationRelativeToStack.y;
- ```
+  ``` TypeScript
+  let locationInWindow: Point = stack.getLocationInWindow();
+  let locationWindowX = locationInWindow.x; // e.g. 10
+  let locationWindowY = locationInWindow.y; // e.g. 80
+  ```
+
+  ``` JavaScript
+  let locationInWindow = stack.getLocationInWindow();
+  let locationWindowX = locationInWindow.x;
+  let locationWindowY = locationInWindow.y;
+  ```
+
+* [`getLocationOnScreen`](/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
+
+  ``` TypeScript
+  let locationOnScreen : Point = stack.getLocationOnScreen();
+  let locScreenX = locationOnScreen.x; // e.g. 10
+  let locScreenY = locationOnScreen.y; // e.g. 67.42857142857143
+  ```
+
+  ``` JavaScript
+  var locationOnScreen = stack.getLocationOnScreen();
+  var locScreenX = locationOnScreen.x;
+  var locScreenY = locationOnScreen.y;
+  ```
+
+* [`getLocationRelativeTo`](/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
+
+  ``` TypeScript
+  let labelLocationRelativeToStack: Point = label.getLocationRelativeTo(stack);
+  let labelRelativeX = labelLocationRelativeToStack.x;
+  let labelRelativeY = labelLocationRelativeToStack.y;
+  ```
+
+  ``` JavaScript
+  let labelLocationRelativeToStack = label.getLocationRelativeTo(stack);
+  let labelRelativeX = labelLocationRelativeToStack.x;
+  let labelRelativeY = labelLocationRelativeToStack.y;
+  ```
 
 [View](/api-reference/classes/_ui_core_view_.view)
 [Properties module](/api-reference/modules/_ui_core_properties_.html)

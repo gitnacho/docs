@@ -17,10 +17,10 @@ This article explains how to use the events provided by the **RadSideDrawer** wi
 The **RadSideDrawer** allows you to receive events and execute code when sideDrawer's state is changed.
 There are four events that the drawer fires:
 
-- `drawerOpening`
-- `drawerOpened`
-- `drawerClosing`
-- `drawerClosed` 
+* `drawerOpening`
+* `drawerOpened`
+* `drawerClosing`
+* `drawerClosed`
 
 In order to receive these events you need to subscribe for them in the XML where you define the **RadSideDrawer**
 
@@ -29,8 +29,3 @@ In order to receive these events you need to subscribe for them in the XML where
 Then you need to provide the actual methods that will be executed when the events are fired.
 
 <snippet id='sidedrawer-angular-callbacks-definition'/>
-
-
- 
-
-

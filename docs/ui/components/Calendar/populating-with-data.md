@@ -14,10 +14,10 @@ RadCalendar allows you to define a list of events for a particular date. This is
 ## The CalendarEvent Class
 Feeding events into {% typedoc_link classes:RadCalendar %} is done via instances of the {% typedoc_link classes:CalendarEvent %} class. The {% typedoc_link classes:CalendarEvent %} class is model describing a single event. It exposes properties allowing you to specify things like:
 
-- start time of the event
-- end time of the event
-- whether the event is an 'all-day' event
-- title of the event, etc.
+* start time of the event
+* end time of the event
+* whether the event is an 'all-day' event
+* title of the event, etc.
 
 To create instances of the {% typedoc_link classes:CalendarEvent %} class you need to import the `calendar` module into your `.ts` file as shown below:
 
@@ -50,9 +50,9 @@ Then you can use the new type to populate the list of items that will be bound t
 ## Event View Modes
 The events for each date cell are shown as dots (iOS) or squares with a summary (Android). **RadCalendar** allows you to show more information about the events by changing the **eventsViewMode** property. The default value is **None** meaning that there will be no additional event reperesentation coming out-of-the-box and the detailed information about events could be added through an additional **ListView** added below the **RadCalendar** and populated with information about events in a selected date. There are other event modes - **Inline** and **Popover** that present similar information within the calendar. Here are the available event view modes:
 
-- {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
-- {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar
-- {% typedoc_link enums:CalendarEventsViewMode,member:Popover %} - event details are displayed in a popup over the calendar
+* {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
+* {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar
+* {% typedoc_link enums:CalendarEventsViewMode,member:Popover %} - event details are displayed in a popup over the calendar
 
 > All of these values are exposed by the {% typedoc_link enums:CalendarEventsViewMode %} enum defined in the calendar module.
 
@@ -65,4 +65,3 @@ Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
 * [Populating With Data Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/calendar/app/calendar/populating-with-data)
-

@@ -10,7 +10,7 @@ publish: true
 
 # Chart Series Styling
 
-If you followed the [series overview]({% slug chart-series-overview-angular %} "Chart Series Overview") section, you know what type of series is most suitable for the chart you need to create. This article will show you how to change the style of these series including their stroke, fill and labels. 
+If you followed the [series overview]({% slug chart-series-overview-angular %} "Chart Series Overview") section, you know what type of series is most suitable for the chart you need to create. This article will show you how to change the style of these series including their stroke, fill and labels.
 
 * [Using Series Properties](#using-series-properties)
 * [Styling with CSS](#styling-with-css)
@@ -24,11 +24,11 @@ If you followed the [series overview]({% slug chart-series-overview-angular %} "
 
 The chart has its predefined palettes that provide an automatic selection of colors for the different series that are used. When you need to change these colors you can set the corresponding properties of each series:
 
-- **fillColor** - Determines the color used to fill the series. Applicable for series which use only one color for fill: BarSeries, RangeBarSeries, BubbleSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
-- **strokeColor** - Determines the color used to fill the series. Applicable for series which use only one color for stroke:  BarSeries, RangeBarSeries, BubbleSeries, LineSeries, SplineSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
-- **strokeWidth** - Determines the color used to fill the series. Applicable for all series
-- **fillColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: CandlestickSeries, PieSeries, DonutSeries
-- **strokeColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: OhlcSeries, CandlestickSeries, PieSeries, DonutSeries
+* **fillColor** - Determines the color used to fill the series. Applicable for series which use only one color for fill: BarSeries, RangeBarSeries, BubbleSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
+* **strokeColor** - Determines the color used to fill the series. Applicable for series which use only one color for stroke:  BarSeries, RangeBarSeries, BubbleSeries, LineSeries, SplineSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
+* **strokeWidth** - Determines the color used to fill the series. Applicable for all series
+* **fillColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: CandlestickSeries, PieSeries, DonutSeries
+* **strokeColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: OhlcSeries, CandlestickSeries, PieSeries, DonutSeries
 
 > Note that the PieSeries and DonutSeries will draw their slices by using consecutive colors from the provided list, while the OhlcSeries and CandlestickSeries will only use the first two colors from the provided list. The first to draw the bullish points (whose close value is higher than their open value) and the second to draw the bearish points (whose close value is lower than their open value).
 
@@ -36,9 +36,9 @@ The chart has its predefined palettes that provide an automatic selection of col
 
 All of the above properties can also be applied through [css](https://docs.nativescript.org/angular/ui/styling). Here's an example to style a chart with BarSeries:
 
-#### Example 1: Apply BarSeries styles through CSS
+### Example 1: Apply BarSeries styles through CSS
 
-```CSS
+``` CSS
 BarSeries {
     fill-color: #C8A1FF;
     stroke-color: white;
@@ -60,7 +60,7 @@ Here's another example that demonstrate how to apply a list of colors to a chart
 
 #### Example 2: Apply CandlestickSeries styles through CSS
 
-```CSS
+``` CSS
 CandlestickSeries {
     stroke-width: 1;
     stroke-colors: #464D57,#464D57;
@@ -82,15 +82,15 @@ Information about styling the labels of the series in NativeScript UI Chart is a
 
 Another option for styling of the chart series is to use Palettes. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette can contain multiple {% typedoc_link classes:PaletteEntry %} instances. When declaring the {% typedoc_link classes:Palette %} instances, set their {% typedoc_link classes:Palette,member:seriesName%} and set the **`tkCartesianPalette`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePalette`** for {% typedoc_link classes:RadPieChart %}). Also for each {% typedoc_link classes:PaletteEntry %} instance set the **`tkCartesianPaletteEntry`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePaletteEntry`** for {% typedoc_link classes:RadPieChart %}). Each **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
 
-- {% typedoc_link classes:PaletteEntry,member:fillColor%}
-- {% typedoc_link classes:PaletteEntry,member:strokeColor%}
-- {% typedoc_link classes:PaletteEntry,member:strokeWidth%}
+* {% typedoc_link classes:PaletteEntry,member:fillColor%}
+* {% typedoc_link classes:PaletteEntry,member:strokeColor%}
+* {% typedoc_link classes:PaletteEntry,member:strokeWidth%}
 
 To better illustrate the usage of Palettes, we will use a scenario with three series of different kind which are customized. Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:
 
-#### Example 3: Define a data service
+### Example 3: Define a data service
 
 <snippet id='chart-angular-data-service'/>
 
@@ -117,9 +117,9 @@ The images below demonstrates the result of applying this palette to the Bar ser
 
 ## Styling Selected State
 
-If you want to specify additional style for selected state of the series you need to define a new Palette with the corresponding `seriesName` and `seriesState` property set to *Selected* value as it is shown in the following example: 
+If you want to specify additional style for selected state of the series you need to define a new Palette with the corresponding `seriesName` and `seriesState` property set to *Selected* value as it is shown in the following example:
 
-#### Example 6: Selected State Palette
+### Example 6: Selected State Palette
 
 <snippet id='chart-angular-styling-series-selection'/>
 
@@ -129,7 +129,7 @@ In this example the second palette values will be used when the series or data p
 
 By default, the provided palettes (or the default colors) are applied per series, i.e. the first PaletteEntry from a palette will be applied to each of the items in the series. The {% typedoc_link classes:CartesianSeries,member:paletteMode%} property can be used to change the way the palette is applied, i.e. the first PaletteEntry from the palette to be applied to the first item in the series, the second PaletteEntry to the second item, etc. You can choose from the following `paletteMode` values: {% typedoc_link enums:ChartSeriesPaletteMode,member:Series%} or {% typedoc_link enums:ChartSeriesPaletteMode,member:Item%} depending on how you want the palette to be applied. Here's how to change the `paletteMode` for `BarSeries`:
 
-#### Example 7: Styling different bars
+### Example 7: Styling different bars
 
 <snippet id='chart-angular-styling-bars'/>
 

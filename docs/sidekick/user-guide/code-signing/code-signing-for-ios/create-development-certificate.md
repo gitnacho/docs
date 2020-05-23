@@ -1,6 +1,6 @@
 ---
 title: Create a Certificate for Development
-description: Learn how to create a development certificate in the iOS Dev Center. 
+description: Learn how to create a development certificate in the iOS Dev Center.
 position: 3
 publish: true
 slug: create-development-certificate

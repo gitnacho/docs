@@ -25,10 +25,10 @@ In the snippet above we are creating a simple ListView with a registered handler
 <snippet id='listview-item-loading-model'/>
 
 The `args` object exposes the following important properties:
-- `itemIndex` - the data source index of the item currently being visualized
-- `view` - the {N} view that represents the visual container for the item
-- `ios` (iOS specific) - exposes the native iOS cell used to visualize the item
-- `android` (Android specific) - exposes the native Android View used to visualize the item
+* `itemIndex` - the data source index of the item currently being visualized
+* `view` - the {N} view that represents the visual container for the item
+* `ios` (iOS specific) - exposes the native iOS cell used to visualize the item
+* `android` (Android specific) - exposes the native Android View used to visualize the item
 
 This structure gives us complete freedom to change and customize the appearance of every single item. In this particular case we are applying one set of styles for items with even indexes and another for items with odd indexes. This is the final result:
 

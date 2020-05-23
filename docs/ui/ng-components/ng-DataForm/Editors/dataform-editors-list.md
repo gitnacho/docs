@@ -12,19 +12,19 @@ publish: true
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors overview]({% slug dataform-editors-overview-angular %} "Editors Overview in RadDataForm for NativeScript") page outlined the main features of the editors in `RadDataForm`. This article will demonstrate the supported editors and show you how to use them.
 
-- [Complete List](#complete-list)
-- [Editors by Usage](#editors-by-usage)
+* [Complete List](#complete-list)
+* [Editors by Usage](#editors-by-usage)
 
-    - [Simple Text](#simple-text)
-    - [Numeric](#numeric)
-    - [True or False](#true-or-false)
-    - [Date and Time](#date-and-time)
-    - [Input from Predefined Lists](#input-from-predefined-lists)
-    - [Input with AutoComplete Suggestions](#input-with-autocomplete-suggestions)
-    - [View Only](#view-only)
+  + [Simple Text](#simple-text)
+  + [Numeric](#numeric)
+  + [True or False](#true-or-false)
+  + [Date and Time](#date-and-time)
+  + [Input from Predefined Lists](#input-from-predefined-lists)
+  + [Input with AutoComplete Suggestions](#input-with-autocomplete-suggestions)
+  + [View Only](#view-only)
 
-- [Custom Editors](#custom-editors)
-- [References](#references)
+* [Custom Editors](#custom-editors)
+* [References](#references)
 
 ## Complete List
 
@@ -62,17 +62,11 @@ The following editors can be used for properties of type `string`:
 
 ![NativeScriptUI-DataForm-Editors-Text-Android](../../../img/ns_ui/dataform-editors-list-01-android.png "Text Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Text-iOS](../../../img/ns_ui/dataform-editors-list-01-ios.png "Text Editor in DataForm in iOS")
 
-
-
-
-* **Password**: Masks the entered text.
+* **Password**: Masks the entered text
 
 #### Figure 2: Password editor on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-Password-Android](../../../img/ns_ui/dataform-editors-list-02-android.png "Password Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Password-iOS](../../../img/ns_ui/dataform-editors-list-02-ios.png "Password Editor in DataForm in iOS")
-
-
-
 
 * **Phone**: Uses phone optimized keyboard.
 
@@ -80,17 +74,11 @@ The following editors can be used for properties of type `string`:
 
 ![NativeScriptUI-DataForm-Editors-Phone-Android](../../../img/ns_ui/dataform-editors-list-03-android.png "Phone Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Phone-iOS](../../../img/ns_ui/dataform-editors-list-03-ios.png "Phone Editor in DataForm in iOS")
 
-
-
-
 * **Email**: Uses email optimized keyboard.
 
 #### Figure 4: Email editor on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-Email-Android](../../../img/ns_ui/dataform-editors-list-04-android.png "Email Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Email-iOS](../../../img/ns_ui/dataform-editors-list-04-ios.png "Email Editor in DataForm in iOS")
-
-
-
 
 * **MultilineText**: Supports more than one line.
 
@@ -108,26 +96,17 @@ The following editors can be used for properties of type `number`:
 
 ![NativeScriptUI-DataForm-Editors-Number-Android](../../../img/ns_ui/dataform-editors-list-06-android.png "Number Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Number-iOS](../../../img/ns_ui/dataform-editors-list-06-ios.png "Number Editor in DataForm in iOS")
 
-
-
-
 * **Decimal**: For input of numbers from the keyboard, supports decimal values. It is default for floating-point `number` properties on Android.
 
 #### Figure 7: Decimal editor on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-Decimal-Android](../../../img/ns_ui/dataform-editors-list-07-android.png "Decimal Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Decimal-iOS](../../../img/ns_ui/dataform-editors-list-07-ios.png "Decimal Editor in DataForm in iOS")
 
-
-
-
 * **Stepper**: For choosing a number by tapping on buttons to increase or decrease it. It is default for `number` properties on iOS.
 
 #### Figure 8: Stepper editor on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-Stepper-Android](../../../img/ns_ui/dataform-editors-list-08-android.png "Stepper Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Stepper-iOS](../../../img/ns_ui/dataform-editors-list-08-ios.png "Stepper Editor in DataForm in iOS")
-
-
-
 
 * **Slider**: For choosing a number by sliding between the minimum and maximum values. It is default for floating-point `number` properties on iOS.
 
@@ -155,9 +134,6 @@ The **DatePicker** and **TimePicker** editors can be used to pick a date or time
 
 ![NativeScriptUI-DataForm-Editors-DatePicker-Android](../../../img/ns_ui/dataform-editors-list-11-android.png "DatePicker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-DatePicker-iOS](../../../img/ns_ui/dataform-editors-list-11-ios.png "DatePicker Editor in DataForm in iOS")
 
-
-
-
 * **TimePicker**: For picking a time from a clock.
 
 #### Figure 12: TimePicker editor on Android (left) and iOS (right)
@@ -174,17 +150,11 @@ The following editors can be used for properties of any type but they need to ha
 
 ![NativeScriptUI-DataForm-Editors-Picker-Android](../../../img/ns_ui/dataform-editors-list-13-android.png "Picker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Picker-iOS](../../../img/ns_ui/dataform-editors-list-13-ios.png "Picker Editor in DataForm in iOS")
 
-
-
-
 * **SegmentedEditor**: For picking a value from a horizontal list.
 
 #### Figure 14: SegmentedEditor editor on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-SegmentedEditor-Android](../../../img/ns_ui/dataform-editors-list-14-android.png "SegmentedEditor Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-SegmentedEditor-iOS](../../../img/ns_ui/dataform-editors-list-14-ios.png "SegmentedEditor Editor in DataForm in iOS")
-
-
-
 
 * **List**: For picking a value from a vertical list.
 

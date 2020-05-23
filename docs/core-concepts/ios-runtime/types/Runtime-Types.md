@@ -6,11 +6,13 @@ position: 10
 ---
 
 # Runtime Types
+
 These types can be used with the [Objective-C subclassing API](../how-to/ObjC-Subclassing.md) or with the [C pointers API](C-Pointers.md).
 
 You can use any type to cast a [`Pointer`](C-Pointers.md) to the selected type.
 
 ## Primitive Types
+
 * `interop.types.void`
 * `interop.types.bool`
 * `interop.types.int8`
@@ -31,16 +33,21 @@ You can use any type to cast a [`Pointer`](C-Pointers.md) to the selected type.
 * `interop.types.selector`
 
 ## C Structures Types
+
 You can use the [struct constructor](C-Structures.md) as a type.
 
 ## Objective-C Objects
+
 You can use the [class constructor](ObjC-Classes.md) as a type.
 
 ## `interop.types.ReferenceType`
+
 You can create new reference types, passing the inner type as argument.
 
 ## `interop.types.FunctionReferenceType`
+
 You can create new function reference types, passing the return type and parameter types as arguments.
 
 ## `interop.types.BlockType`
+
 You can create new block types, passing the return type and parameter types as arguments.

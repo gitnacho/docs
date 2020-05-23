@@ -15,16 +15,16 @@ To apply custom style to the cells that are displayed at the top you can use the
 
 The `dayEventsViewStyle` should be used with a  `DayEventsViewStyle` instance which has properties for the following styling options:
 
-- `backgroundColor` -  defines the background color for the view with the events
-- `timeLabelFormat` -  defines the format used to display the time labels in the timeline
-- `timeLabelTextColor` -  defines the text color used to display the time labels in the timeline
-- `timeLabelTextSize` -  defines the text size used to display the time labels in the timeline
+* `backgroundColor` -  defines the background color for the view with the events
+* `timeLabelFormat` -  defines the format used to display the time labels in the timeline
+* `timeLabelTextColor` -  defines the text color used to display the time labels in the timeline
+* `timeLabelTextSize` -  defines the text size used to display the time labels in the timeline
 
 The `allDayEventsViewStyle` should be used with a  `AllDayEventsViewStyle` instance which has properties for the following styling options:
 
-- `backgroundColor` - defines the background color for the area where all day events are presented
-- `allDayText` - defines the text that notifies that the top area contains all day events
-- `allDayTextIsVisible` - defines wether the text that notifies that the top area contains all day events should be visible
+* `backgroundColor` - defines the background color for the area where all day events are presented
+* `allDayText` - defines the text that notifies that the top area contains all day events
+* `allDayTextIsVisible` - defines wether the text that notifies that the top area contains all day events should be visible
 
 
 ## Example

@@ -21,7 +21,7 @@ tns plugin add nativescript-ui-listview
 ## Adding a RadListView to your template
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIListViewModule %} from the *nativescript-ui-listview* plugin has been imported in an `ngModule` in your app. For example:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 @NgModule({

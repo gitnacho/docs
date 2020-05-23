@@ -48,7 +48,7 @@ NativeScript with plain JavaScript:
 * Set path to the project: e.g. `/home/userName/debug-android-runtime/platforms/android`
 * Open the project
 
-> Note: Tested with Android Studio 2.3.3, 3.0.0, 3.0.1
+> **Note**: Tested with Android Studio 2.3.3, 3.0.0, 3.0.1
 > If you don't need to debug the Android runtime, at this point you can already build your app using Android Studio by running the `:app` project play button.
 
 ## Add Android Runtime module library as a dependency

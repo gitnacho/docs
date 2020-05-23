@@ -15,19 +15,19 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 The `debug` command builds and deploys a new package on a connected device or emulator. By default, it also starts to track for changes the `app` folder,  meaning that it will automatically livesync changes in code as soon as they are saved. In order to apply the changes, the CLI will automatically restart the application after each sync.
 
-> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `Info.plist` or any of the resources folders) trigger a rebuild after which live syncing is resumed.
+> **Note**: Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `Info.plist` or any of the resources folders) trigger a rebuild after which live syncing is resumed.
 
 For security reasons, the debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI generates a URL which is printed on the screen instead. **You need to manually copy it in Google Chrome's address bar to start debugging.**
 
 To start the debugger for Android, run the following command:
 
-```Bash
+``` Shell
 tns debug android
 ```
 
 To start the debugger for iOS, run the following command:
 
-```Bash
+``` Shell
 tns debug ios
 ```
 

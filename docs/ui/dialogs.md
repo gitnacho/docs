@@ -18,35 +18,36 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Login](#login)
 * [Action](#action)
 {% angular %}* [Custom dialog](#custom-dialog)
-  * [Showing custom dialog](#showing-custom-dialog)
-  * [Passing parameters](#passing-parameters)
-  * [Returning a result](#returning-a-result)
+  + [Showing custom dialog](#showing-custom-dialog)
+  + [Passing parameters](#passing-parameters)
+  + [Returning a result](#returning-a-result)
 {% endangular %}
 
-> **NOTE**: You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
-
-> **TIP**: You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=zJ51uY) to see all of this article’s examples in action on your device.
+> **Note**: You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
+>
+> **Tip** You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=zJ51uY) to see all of this article’s examples in action on your device.
 
 ## Alert
 
-**Web browser style**
+**Web browser style**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.alert("Your message").then(function() {
     console.log("Dialog closed!");
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.alert("Your message").then(()=> {
     console.log("Dialog closed!");
 });
 ```
 
-**Using an options object**
+**Using an options object**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.alert({
     title: "Your title",
@@ -56,7 +57,8 @@ dialogs.alert({
     console.log("Dialog closed!");
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.alert({
     title: "Your title",
@@ -72,24 +74,25 @@ dialogs.alert({
 
 ## Confirm
 
-**Web browser style**
+**Web browser style**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.confirm("Your message").then(function (result) {
     console.log("Dialog result: " + result);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.confirm("Your message").then(result => {
     console.log("Dialog result: " + result);
 });
 ```
 
-**Using an options object**
+**Using an options object**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.confirm({
     title: "Your title",
@@ -102,7 +105,8 @@ dialogs.confirm({
     console.log("Dialog result: " + result);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.confirm({
     title: "Your title",
@@ -123,16 +127,17 @@ dialogs.confirm({
 
 ## Prompt
 
-**Web browser style**
+**Web browser style**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 // Second argument is optional.
 dialogs.prompt("Your message", "Default text").then(function (r) {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 // Second argument is optional.
 dialogs.prompt("Your message", "Default text").then(r => {
@@ -140,9 +145,9 @@ dialogs.prompt("Your message", "Default text").then(r => {
 });
 ```
 
-**Using an options object**
+**Using an options object**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 // inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
 dialogs.prompt({
@@ -157,7 +162,8 @@ dialogs.prompt({
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 // inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
 dialogs.prompt({
@@ -172,6 +178,7 @@ dialogs.prompt({
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
+
 > The dialog result argument is an object with two properties: result and text (entered text). The result property is __true__ if the dialog is closed with the OK button, __false__ if closed with the Cancel button or undefined if closed with a neutral button.
 
 ![prompt-ios](./img/modules/dialogs/prompt-ios.png "prompt-ios")
@@ -179,16 +186,17 @@ dialogs.prompt({
 
 ## Login
 
-**Web browser style**
+**Web browser style**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 // User name and password arguments are optional.
 dialogs.login("Your message", "User name label text", "Password label text").then(function (r) {
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 // User name and password arguments are optional.
 dialogs.login("Your message", "User name label text", "Password label text").then(r => {
@@ -196,9 +204,9 @@ dialogs.login("Your message", "User name label text", "Password label text").the
 });
 ```
 
-**Using an options object**
+**Using an options object**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.login({
     title: "Your title",
@@ -212,7 +220,8 @@ dialogs.login({
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.login({
     title: "Your title",
@@ -234,9 +243,9 @@ dialogs.login({
 
 ## Action
 
-**Web browser style**
+**Web browser style**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
     console.log("Dialog result: " + result);
@@ -247,7 +256,8 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
     }
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(result => {
     console.log("Dialog result: " + result);
@@ -259,9 +269,9 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
 });
 ```
 
-**Using an options object**
+**Using an options object**:
 
-```JavaScript
+``` JavaScript
 var dialogs = require("tns-core-modules/ui/dialogs");
 dialogs.action({
     message: "Your message",
@@ -276,7 +286,8 @@ dialogs.action({
     }
 });
 ```
-```TypeScript
+
+``` TypeScript
 import * as dialogs from "tns-core-modules/ui/dialogs";
 dialogs.action({
     message: "Your message",
@@ -291,12 +302,14 @@ dialogs.action({
     }
 });
 ```
+
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
 
 ![action-ios](./img/modules/dialogs/action-ios.png "action-ios")
 ![action-android](./img/modules/dialogs/action-android.png "action-android")
 
 {% angular %}
+
 ## Custom dialog
 
 You can also create dialogs with custom content. All the needed types live inside the `nativescript-angular/modal-dialog` module.
@@ -359,7 +372,7 @@ let options: ModalDialogOptions = {
 this.modalService.showModal(DialogContent, options)
 ```
 
-> **TIP:** By design on iPhone, a modal page appears only in full screen.
+> **Tip**: By design on iPhone, a modal page appears only in full screen.
 
 Inside the `DialogContent` component, you can get the parameters by injecting a `ModalDialogParams`:
 
@@ -393,7 +406,8 @@ export class DialogContent {
 
 The `params.context` is the same object as `options.context` passed to the `showModal` method.
 
-> **NOTE:** The component used for the modal content(`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
+> **Note**: The component used for the modal content(`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
+>
 > ``` Typescript
 > @NgModule({
 >     declarations: [CustomDialogTest, DialogContent],
@@ -429,4 +443,5 @@ public show(fullscreen: boolean) {
         .then((dialogResult: string) => this.result = dialogResult)
 }
 ```
+
 {% endangular %}

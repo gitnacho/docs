@@ -34,7 +34,7 @@ tns plugin add nativescript-ui-dataform
 
 Then, in order to add a {% typedoc_link classes:RadDataForm %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:df="nativescript-ui-dataform"`.
+* `xmlns:df="nativescript-ui-dataform"`.
 
 #### Example 2: Add RadDataForm to a Page
 

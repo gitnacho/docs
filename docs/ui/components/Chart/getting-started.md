@@ -39,7 +39,7 @@ Now we can create a new page where we will put the Chart instance. First we will
 
 Then, in order to add a chart instance in a page of the application, you need to define the following XML namespace:
 
-- `xmlns:chart="nativescript-ui-chart"`.
+* `xmlns:chart="nativescript-ui-chart"`.
 
 The next step is to add the chart to the page. In this case we will use the **RadCartesianChart** type. For an example with **RadPieChart** you can refer to the PieSeries [article]({% slug chart-series-pie %} "Read more about PieSeries")
 

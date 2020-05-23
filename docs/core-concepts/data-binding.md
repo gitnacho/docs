@@ -46,13 +46,14 @@ First, the **source** object is created with a **textSource** property. A consta
 ``` JavaScript
 const fromObject = require("tns-core-modules/data/observable").fromObject;
 const source = fromObject({
-	textSource: "Text set via twoWay binding"
+    textSource: "Text set via twoWay binding"
 });
 ```
+
 ``` TypeScript
 import { fromObject } from "tns-core-modules/data/observable";
 const source = fromObject({
-	textSource: "Text set via twoWay binding"
+    textSource: "Text set via twoWay binding"
 });
 ```
 
@@ -67,6 +68,7 @@ const targetTextField = new TextField();
 const Label = require("tns-core-modules/ui/label").Label;
 const targetLabel = new Label();
 ```
+
 ``` TypeScript
 // create the TextField
 import { TextField } from "tns-core-modules/ui/text-field";
@@ -76,41 +78,44 @@ const targetTextField = new TextField();
 import { Label } from "tns-core-modules/ui/label";
 const targetLabel = new Label();
 ```
+
 After that, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
- _Example 1: Binding label text property._
+ _Example 1: Binding label text property_:
+
 ``` JavaScript
 // binding the TextField
 const textFieldBindingOptions = {
-	sourceProperty: "textSource",
-	targetProperty: "text",
-	twoWay: true
+    sourceProperty: "textSource",
+    targetProperty: "text",
+    twoWay: true
 };
 targetTextField.bind(textFieldBindingOptions, source);
 
 // binding the Label
-	const labelBindingOptions = {
-	sourceProperty: "textSource",
-	targetProperty: "text",
-	twoWay: false
+    const labelBindingOptions = {
+    sourceProperty: "textSource",
+    targetProperty: "text",
+    twoWay: false
 };
 targetLabel.bind(labelBindingOptions, source);
 ```
+
 ``` TypeScript
 import { BindingOptions } from "tns-core-modules/ui/core/bindable";
 // binding the TextField
 const textFieldBindingOptions: BindingOptions = {
-	sourceProperty: "textSource",
-	targetProperty: "text",
-	twoWay: true
+    sourceProperty: "textSource",
+    targetProperty: "text",
+    twoWay: true
 };
 targetTextField.bind(textFieldBindingOptions, source);
 
 // binding the Label
 const labelBindingOptions: BindingOptions = {
-	sourceProperty: "textSource",
-	targetProperty: "text",
-	twoWay: false
+    sourceProperty: "textSource",
+    targetProperty: "text",
+    twoWay: false
 };
 targetLabel.bind(labelBindingOptions, source);
 ```
@@ -121,13 +126,13 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<TextField text="{{ textSource }}" />
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <TextField text="{{ textSource }}" />
+{%endraw%}    </StackLayout>
 </Page>
 ```
 
-> Note: When creating UI elements with an XML declaration, the data binding is two-way by default.
+> **Note**: When creating UI elements with an XML declaration, the data binding is two-way by default.
 
 ## Binding source
 
@@ -140,6 +145,7 @@ page.bindingContext = source;
 //or
 stackLayout.bindingContext = source;
 ```
+
 ``` TypeScript
 page.bindingContext = source;
 //or
@@ -150,28 +156,31 @@ stackLayout.bindingContext = source;
 
 There is an option to bind a function to execute on a specific event (MVVM command like). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
-_Example 2: Binding function on button tap event._
+_Example 2: Binding function on button tap event_:
+
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<Button text="Test Button For Binding" tap="{{ onTap }}" />
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <Button text="Test Button For Binding" tap="{{ onTap }}" />
+{%endraw%}    </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 source.set("onTap", function(eventData) {
-	console.log("button is tapped!");
-});
-page.bindingContext = source;
-```
-``` TypeScript
-source.set("onTap", function(eventData) {
-	console.log("button is tapped!");
+    console.log("button is tapped!");
 });
 page.bindingContext = source;
 ```
 
-> Note: Be aware that if there is a button with an event handler function **onTap** within the page code-behind ([more info about XML declarations]({%slug ui-basics %}), and **onTap** function within the **bindingContext** object, then there **will not** be two event handlers hooked up for that button. For executing the function in the code behind, the following syntax should be used in the XML - **tap="onTap"** and for the function from the bindingContext - **tap="\{\{ onTap \}\}"**.
+``` TypeScript
+source.set("onTap", function(eventData) {
+    console.log("button is tapped!");
+});
+page.bindingContext = source;
+```
+
+> **Note**: Be aware that if there is a button with an event handler function **onTap** within the page code-behind ([more info about XML declarations]({%slug ui-basics %}), and **onTap** function within the **bindingContext** object, then there **will not** be two event handlers hooked up for that button. For executing the function in the code behind, the following syntax should be used in the XML - **tap="onTap"** and for the function from the bindingContext - **tap="\{\{ onTap \}\}"**.
 
 ### Binding to a plain object
 
@@ -179,18 +188,20 @@ A very common case is to provide a list (array) of plain elements (numbers, date
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=lH8vY6) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=Jf8Kel).
 
-_Example 3: Bind ListView to a property of the bindingContext_
+_Example 3: Bind ListView to a property of the bindingContext_:
+
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<ListView items="{{ items }}" height="200">
-			<ListView.itemTemplate>
-				<Label text="{{ $value }}" />
-			</ListView.itemTemplate>
-		</ListView>
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <ListView items="{{ items }}" height="200">
+            <ListView.itemTemplate>
+                <Label text="{{ $value }}" />
+            </ListView.itemTemplate>
+        </ListView>
+{%endraw%}    </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 const fromObject = require("tns-core-modules/data/observable").fromObject;
 
@@ -210,6 +221,7 @@ function onNavigatingTo(args) {
     page.bindingContext = source;
 }
 ```
+
 ``` TypeScript
 import { EventData, fromObject } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
@@ -237,7 +249,8 @@ Another common case in working with bindings is requesting access to the parent 
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=X6lrBN) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=Zjfypk).
 
-_Example 4: Creating ListView child items based on the itemTemplate._
+_Example 4: Creating ListView child items based on the itemTemplate_:
+
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
     <GridLayout rows="*" >{%raw%}
@@ -258,6 +271,7 @@ _Example 4: Creating ListView child items based on the itemTemplate._
     {%endraw%}</GridLayout>
 </Page>
 ```
+
 ``` JavaScript
 const fromObject = require("tns-core-modules/data/observable").fromObject;
 
@@ -275,6 +289,7 @@ function onNavigatingTo(args) {
 }
 exports.onNavigatingTo = onNavigatingTo;
 ```
+
 ``` TypeScript
 import { EventData, fromObject } from "tns-core-modules/data/observable";
 import { Button } from "tns-core-modules/ui/button";
@@ -307,12 +322,12 @@ You can create a custom expression for bindings. Custom expressions could help i
 </Page>
 ```
 
-> Note: Binding expression could be used without explicitly named `source property` ( TextField text="{{ sourceProperty + ' some static text' }}" ). In that case `$value` is used as a `source property`. However this could lead to problems when a nested property should be observed for changes (e.g. `item.nestedProp`). `$value` represents `bindingContext` and when any property of the `bindingContext` is changed expression will be evaluated. Since `nestedProp` is not a property of the `bindingContext` in `item.nestedProp` then there will be no propertyChange listener attached and changes to `nestedProp` will not be populated to UI. So it is a good practice to specify which property should be used as `source property` in order to eliminate such issues.
+> **Note**: Binding expression could be used without explicitly named `source property` ( TextField text="{{ sourceProperty + ' some static text' }}" ). In that case `$value` is used as a `source property`. However this could lead to problems when a nested property should be observed for changes (e.g. `item.nestedProp`). `$value` represents `bindingContext` and when any property of the `bindingContext` is changed expression will be evaluated. Since `nestedProp` is not a property of the `bindingContext` in `item.nestedProp` then there will be no propertyChange listener attached and changes to `nestedProp` will not be populated to UI. So it is a good practice to specify which property should be used as `source property` in order to eliminate such issues.
 
 The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes. The second parameter is the expression that will be evaluated. The third parameter states whether the binding is two-way or not. As mentioned earlier, XML declaration creates a two-way binding by default, so in the example, the third parameter could be omitted. Keeping the other two properties means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted; if you do that, then the custom expression will be evaluated every time the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated.
 
-
 ### Supported expressions
+
 NativeScript supports different kind of expressions including:
 
 | Feature | Example | Description |
@@ -329,12 +344,13 @@ NativeScript supports different kind of expressions including:
 | function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources`. The value of the `var1` and `varN` will be used as parameter(s). |
 | filters | `expression \| filter1(param1, ...) | filter 2` | A filter is an object or a function that is applied to the value of the expression. Within the context of binding, this feature is used as converters. For more information, see the dedicated topic [Using Converters in Bindings](#using-converters-in-bindings).|
 
-> Note: Special characters need to be escaped as follows:
-> - `"   &quot;`
-> - `'   &apos;`
-> - `<   &lt;`
-> - `>   &gt;`
-> - `&   &amp;`
+> **Note**: Special characters need to be escaped as follows:
+>
+> * `"   &quot;`
+> * `'   &apos;`
+> * `<   &lt;`
+> * `>   &gt;`
+> * `&   &amp;`
 
 ## Using converters in bindings
 
@@ -342,14 +358,16 @@ Speaking of a two-way binding, there is a common problem - having different ways
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=UaYAiT) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=aqnOXs).
 
-_Example 5: Handle textField date input and formatted in accordance preferences._
+_Example 5: Handle textField date input and formatted in accordance preferences_:
+
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<TextField text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}" />
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <TextField text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}" />
+{%endraw%}    </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 const fromObject = require("tns-core-modules/data/observable").fromObject;
 
@@ -388,6 +406,7 @@ function onNavigatingTo(args) {
 }
 exports.onNavigatingTo = onNavigatingTo;
 ```
+
 ``` TypeScript
 import { EventData, fromObject } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
@@ -433,14 +452,16 @@ Note the special operator (|) within the expression. The above code snippet (bot
 
 A converter can accept not only static custom parameters, but any value from the `bindingContext`. For example:
 
-_Example 6: Converting the new date input to a valid Date object._
+_Example 6: Converting the new date input to a valid Date object_:
+
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<TextField text="{{ testDate, testDate | dateConverter(dateFormat) }}" />
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <TextField text="{{ testDate, testDate | dateConverter(dateFormat) }}" />
+{%endraw%}    </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 const fromObject = require("tns-core-modules/data/observable").fromObject;
 
@@ -472,13 +493,14 @@ function onNavigatingTo(args) {
   const page = args.object;
   const viewModel = fromObject({
     dateConverter,
-	dateFormat: "DD.MM.YYYY",
+    dateFormat: "DD.MM.YYYY",
     testDate: new Date()
   });
 
   page.bindingContext = viewModel;
 }
 ```
+
 ``` TypeScript
 import { EventData, fromObject } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
@@ -511,29 +533,32 @@ export function onNavigatingTo(args: EventData) {
     const page = <Page>args.object;
     const viewModel = fromObject({
         dateConverter,
-		dateFormat: "DD.MM.YYYY",
+        dateFormat: "DD.MM.YYYY",
         testDate: new Date()
     });
 
     page.bindingContext = viewModel;
 }
 ```
+
 Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper conversion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So you could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=BQsFeq) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=GxXeCS).
 
-_Example 7: Adding converters in the application module resources._
+_Example 7: Adding converters in the application module resources_:
+
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<ListView items="{{ items }}" height="200">
-			<ListView.itemTemplate>
-				<Label text="{{ itemDate | dateConverter(dateFormat) }}" />
-			</ListView.itemTemplate>
-		</ListView>
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <ListView items="{{ items }}" height="200">
+            <ListView.itemTemplate>
+                <Label text="{{ itemDate | dateConverter(dateFormat) }}" />
+            </ListView.itemTemplate>
+        </ListView>
+{%endraw%}    </StackLayout>
 </Page>
 ```
+
 ``` JavaScript
 const appModule = require("tns-core-modules/application");
 const fromObject = require("tns-core-modules/data/observable").fromObject;
@@ -567,6 +592,7 @@ function onNavigatingTo(args) {
 }
 exports.onNavigatingTo = onNavigatingTo;
 ```
+
 ``` TypeScript
 import * as application from "tns-core-modules/application";
 import { EventData, fromObject } from "tns-core-modules/data/observable";
@@ -600,7 +626,8 @@ export function onNavigatingTo(args: EventData) {
     page.bindingContext = viewModel;
 }
 ```
-> Note: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function.
+
+> **Note**: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function.
 
 ## Stop binding
 
@@ -609,12 +636,12 @@ Generally there is no need to stop binding explicitly since a Binding object use
 ``` JavaScript
 targetTextField.unbind("text");
 ```
+
 ``` TypeScript
 targetTextField.unbind("text");
 ```
 
 **API Reference for** [Binding](/api-reference/classes/_ui_core_bindable_.binding).
-
 
 ### See also
 

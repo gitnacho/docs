@@ -12,13 +12,13 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-W58JDD');</script>
         <!-- End Google Tag Manager -->
-        <!-- Optimize Page Hiding Snippet --> 
-        <style>.async-hide { opacity: 0 !important} </style> 
-        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date; 
-        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')}; 
-        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c; 
-        })(window,document.documentElement,'async-hide','dataLayer',4000, 
-        {'GTM-W58JDD':true});</script> 
+        <!-- Optimize Page Hiding Snippet -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',4000,
+        {'GTM-W58JDD':true});</script>
         <!-- end Optimize Page Hiding Snippet -->
         <title>{% if page.titletag %}{{page.titletag}}{% else %}{{page.title}}{% endif %} - NativeScript Docs</title>
         <link rel="preload" href="{{site.baseurl}}/{{page.category}}.json" as="script">
@@ -62,4 +62,3 @@
         {{ content }}
     </body>
 </html>
-

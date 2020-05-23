@@ -15,8 +15,8 @@ Pull-to-refresh allows you to implement a mechanism for refreshing ListView's co
 To enable the pull-to-refresh feature you need to follow the steps outlined below:
 
 1. Set the `pullToRefresh` property on `RadListView` to true.
-2. Provide a handler for the `pullToRefreshInitiated` which is fired when the end user requests a data refresh.
-3. Call the `notifyPullToRefreshFinished()` method on `RadListView` when the data request has been finished and the list has been updated.
+1. Provide a handler for the `pullToRefreshInitiated` which is fired when the end user requests a data refresh.
+1. Call the `notifyPullToRefreshFinished()` method on `RadListView` when the data request has been finished and the list has been updated.
 
 The following template demonstrates a simple scenario in which the pull-to-refresh feature is used:
 

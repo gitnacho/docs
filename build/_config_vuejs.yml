@@ -22,7 +22,6 @@ source: ./
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
 
-
 ## The product name
 productName: "NativeScript VueJS"
 
@@ -98,6 +97,6 @@ navigation:
         position: 70
         title: "RadGauge"
 gems:
-    - jekyll-unsanitize
+  + jekyll-unsanitize
 # Feedback Form Google Sheet ID
 ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA

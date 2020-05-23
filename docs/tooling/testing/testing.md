@@ -20,18 +20,18 @@ Before writing and running unit tests, verify that you have completed the follow
 
 1. [Install and configure the NativeScript CLI on your system.]({% slug quick-start %}#the-nativescript-cli)
 1. If you don't have any projects, create a new project and navigate to the directory of the newly created directory.
-	
-	```Shell
+
+	``` Shell
 	tns create projectName
 	cd projectName
 	```
 1. If you want to create tests for an existing directory, navigate to the directory of the project.
 
-	```Shell
+	``` Shell
 	cd existingProjectDirectory
 	```
 
-> **TIP:** You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
+> **Tip**: You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
 
 ## Configure Your Project
 
@@ -39,7 +39,7 @@ The NativeScript CLI lets you choose between three widely popular unit testing f
 
 To initialize your project for unit testing, run the following command and, when prompted, use the keyboard arrows to select the framework that you want to use.
 
-```Shell
+``` Shell
 tns test init
 ```
 
@@ -91,11 +91,11 @@ describe("Hello World Sample Test:", function() {
   });
 });
 ```
-```Jasmine 
+```Jasmine
 // (Angular w/TypeScript)
-// As our intention is to test an Angular component that contains annotations 
+// As our intention is to test an Angular component that contains annotations
 // we need to include the reflect-metadata dependency.
-import "reflect-metadata"; 
+import "reflect-metadata";
 
 // A sample Jasmine test
 describe("A suite", function() {
@@ -124,7 +124,7 @@ QUnit.test("Hello World Sample Test:", function (assert) {
 	assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
 });
 ```
-{% angular %} 
+{% angular %}
 ## TestBed Integration
 
 To use TestBed you have to alter your `karma.conf.js` to:
@@ -217,12 +217,12 @@ Before running your tests, verify that your development machine and your testing
 
 * The Android native emulators on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
 
-	```Shell
+	``` Shell
 	tns device
 	```
 * The physical devices on which you want to run your tests must be connected to your development machine. To verify that your machine recognizes the devices, run the following command.
 
-	```Shell
+	``` Shell
 	tns device
 	```
 * The physical devices on which you want to run your tests must be able to resolve the IP of your development machine. To verify that the device can access the Karma server, connect the device and the development machine to the same Wi-Fi network or establish USB or Bluetooth tethering between the device and the development machine.
@@ -232,19 +232,19 @@ Before running your tests, verify that your development machine and your testing
 
 To execute your test suite on any connected Android devices or running Android emulators, run the following command.
 
-```Shell
+``` Shell
 tns test android
 ```
 
 To execute your test suite on connected iOS devices, run the following command.
 
-```Shell
+``` Shell
 tns test ios
 ```
 
 To execute your test suite in the iOS Simulator, run the following command.
 
-```Shell
+``` Shell
 tns test ios --emulator
 ```
 
@@ -257,7 +257,7 @@ Each execution of `$ tns test` consists of the following steps, performed automa
 1. The NativeScript unit test runner uses the embedded network configuration to try to connect to the Karma server on the development machine.
 1. When the connection between the NativeScript unit test runner and the Karma server is established, the test runner begins the execution of the unit tests.
 1. When the execution completes, the NativeScript unit test runner reports the results to the Karma server.
-1. The Karma server reports the results on the command line. 
+1. The Karma server reports the results on the command line.
 
 ### Re-Run Tests on Code Change
 
@@ -265,13 +265,13 @@ The NativeScript can continuously monitor your code for changes and when such ch
 
 To enable this behavior, run your `$ tns test` command with the `--watch` flag. For example:
 
-```Shell
+``` Shell
 tns test android --watch
 tns test ios --watch
 tns test ios --emulator --watch
 ```
 
-The NativeScript CLI remains active and re-runs tests on code change. To unlock the console, press `Ctrl+C` to stop the process. 
+The NativeScript CLI remains active and re-runs tests on code change. To unlock the console, press `Ctrl+C` to stop the process.
 
 ### Configure the Karma Server
 

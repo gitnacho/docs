@@ -22,7 +22,7 @@ To add an **event handler** means setting a function (method) that executes when
 
 The example below shows how to add an event listener by using the short (using `on`) and the full syntax (using `addEventListener`). There is a third optional parameter that represents the `this` argument. The code shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax, or you can declare the event handler in XML.
 
-> **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
+> **Tip** All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
 
 ``` JavaScript
 const Label = require("tns-core-modules/ui/label").Label;
@@ -38,6 +38,7 @@ testLabel.on("tap", onTap, this);
 // Adding a listener with the full syntax
 testLabel.addEventListener("tap", onTap, this);
 ```
+
 ``` TypeScript
 import { Label, EventData } from "tns-core-modules/ui/label";
 const testLabel = new Label();
@@ -58,7 +59,7 @@ testLabel.addEventListener("tap", onTap, this);
 
 Another option to set an event handler is to use an XML declaration. You need a code-behind file to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using).
 
-```XML
+``` XML
 <!-- main-page.xml -->
 <Page>
   <StackLayout>
@@ -66,14 +67,16 @@ Another option to set an event handler is to use an XML declaration. You need a 
   </StackLayout>
 </Page>
 ```
-```JavaScript
+
+``` JavaScript
 // main-page.js
 function onTouch(args) {
   console.log("Touch arguments: ", args);
 }
 exports.onTouch = onTouch;
 ```
-```TypeScript
+
+``` TypeScript
 // main-page.ts
 export function onTouch(args: TouchGestureEventData) {
   console.log("Touch arguments", args);
@@ -84,8 +87,9 @@ export function onTouch(args: TouchGestureEventData) {
 
 Often in NativeScript, the MVVM pattern is used with a separate view model that provides the binding context for your views. In such cases, the event handlers must be provided via the binding context syntax.
 
-_JavaScript example_
-```JavaScript
+_JavaScript example_:
+
+``` JavaScript
 // main-view-model.js
 const observableModule = require("tns-core-modules/data/observable");
 
@@ -100,7 +104,8 @@ function HomeViewModel() {
 }
 module.exports = HomeViewModel;
 ```
-```JavaScript
+
+``` JavaScript
 // main-page.js
 const HomeViewModel = require("./home-view-model");
 
@@ -112,7 +117,8 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-```XML
+
+``` XML
 {%raw%}
 <StackLayout>
    <Label text="Tappable Label" tap="{{ onTap }}"></Label>
@@ -120,8 +126,9 @@ exports.pageLoaded = pageLoaded;
 {%endraw%}
 ```
 
-_TypeScript example_
-```TypeScript
+_TypeScript example_:
+
+``` TypeScript
 // main-view-model.ts
 import { Observable } from 'tns-core-modules/data/observable';
 import { GestureEventData } from "tns-core-modules/ui/gestures";
@@ -136,7 +143,8 @@ export class HomeViewModel extends Observable {
     }
 }
 ```
-```TypeScript
+
+``` TypeScript
 // main-page.ts
 import { EventData } from 'tns-core-modules/data/observable';
 import { Page } from 'tns-core-modules/ui/page';
@@ -147,7 +155,8 @@ export function pageLoaded(args: EventData) {
     page.bindingContext = new HomeViewModel();
 }
 ```
-```XML
+
+``` XML
 {%raw%}
 <StackLayout>
    <Label text="Tappable Label" tap="{{ onTap }}"></Label>
@@ -159,13 +168,14 @@ export function pageLoaded(args: EventData) {
 
 Usually, you don't need to remove the event listener. However, in some cases, you might need to do it when you want to receive the event just once or to free up resources.
 
-> **Note:** There is no syntax to remove an event listener through an XML declaration.
+> **Note**: There is no syntax to remove an event listener through an XML declaration.
 
 ### Removing an Event Listener Using JavaScript/TypeScript
 
 The below example uses the shorthand and the full syntax to remove all listeners for the tap event of the testButton instance. If more than one object is listening for events, you can set the second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
 
-_Removing a button tap event listener_
+_Removing a button tap event listener_:
+
 ``` JavaScript
 const Button = require("tns-core-modules/ui/button").Button;
 
@@ -175,6 +185,7 @@ testButton.off(Button.tapEvent);
 // Removing a listener with the full syntax
 testButton2.removeEventListener(Button.tapEvent);
 ```
+
 ``` TypeScript
 import { Button } from "tns-core-modules/ui/button";
 
@@ -188,21 +199,25 @@ testButton2.removeEventListener(Button.tapEvent);
 ## Event Data Types
 
 The base type of the event's arguments is of type [EventData](/api-reference/interfaces/_data_observable_.eventdata). The `EventData` provides two common properties:
-- `object` - The Observable instance that has raised the event.
-- `eventName` - The name of the raised event.
-```JavaScript
+
+* `object` - The Observable instance that has raised the event.
+* `eventName` - The name of the raised event.
+
+``` JavaScript
 // example for using EventData interface
 exports.onPageLoaded = function(args) {
     let page = args.object;
 }
 ```
-```TypeScript
+
+``` TypeScript
 // example for using EventData interface
 export function onPageLoaded(args: EventData) {
     let page = <Page>args.object;
 }
 ```
-```XML
+
+``` XML
 <Page loaded="onPageLoaded">
 ```
 
@@ -224,6 +239,7 @@ observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData)
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
+
 ``` TypeScript
 import { Observable } from "tns-core-modules/data/observable";
 const observableObject = new Observable();
@@ -242,11 +258,11 @@ const observableModule = require("tns-core-modules/data/observable");
 
 var MyClass = (function (_super) {
   __extends(MyClass, _super);
-  
+
   function MyClass() {
     _super.apply(this, arguments);
   }
-  
+
   Object.defineProperty(MyClass.prototype, "myProperty", {
     get: function () {
       return this._myProperty;
@@ -257,12 +273,13 @@ var MyClass = (function (_super) {
     enumerable: true,
     configurable: true
   });
-  
+
   return MyClass;
 })(observableModule.Observable);
 
 exports.MyClass = MyClass;
 ```
+
 ``` TypeScript
 import { Observable } from "tns-core-modules/data/observable";
 
@@ -277,17 +294,18 @@ export class MyClass extends Observable {
   }
 }
 ```
+
 The code snippet in __Example 4__ fires the `propertyChange` event when the property value is changed.
 
 ### PropertyChangeData Interface
 
 The arguments received after the `propertyChange` event is raised, are of type [PropertyChangeData](/api-reference/interfaces/_data_observable_.propertychangedata). The interface provides five common properties:
 
-- `object` - The Observable instance that has raised the event.
-- `eventName` - The name of the raised event.
-- `oldValue` - The previous value of the property.
-- `propertyName` - The name of the property that has changed.
-- `value` - The new value of the property.
+* `object` - The Observable instance that has raised the event.
+* `eventName` - The name of the raised event.
+* `oldValue` - The previous value of the property.
+* `propertyName` - The name of the property that has changed.
+* `value` - The new value of the property.
 
 ## Creating a Custom Event
 
@@ -300,6 +318,7 @@ let eventData = {
 };
 this.notify(eventData);
 ```
+
 ``` TypeScript
 let eventData: EventData = {
   eventName: "myCustomEventName",
@@ -307,6 +326,7 @@ let eventData: EventData = {
 }
 this.notify(eventData);
 ```
+
 The minimum information needed to raise an event is the `eventName`&mdash;it will be used to execute all event handlers associated with this event.
 
 The next step is to hook to this event:
@@ -317,6 +337,7 @@ myCustomObject.on("myCustomEventName", function(eventData){
   console.log(eventData.eventName + " has been raised! by: " + eventData.object);
 })
 ```
+
 A similar logic is implemented for the `propertyChange` event, so if your business logic requires that, `propertyChange` can be emitted manually through the `notify()` method (without using the `Observable.set()` method that also fires the `propertyChange` event).
 
 ## Avoiding Memory Leaks
@@ -371,6 +392,7 @@ let weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
 }
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
+
 ``` TypeScript
 import * as weakEventListenerModule from "tns-core-modules/ui/core/weak-event-listener";
 import { Button } from "tns-core-modules/ui/button";
@@ -417,6 +439,7 @@ The `targetWeakRef` and `key` properties are optional when invoking a function o
 ``` JavaScript
 weakEL.removeWeakEventListener(this.weakEventListenerOptions);
 ```
+
 ``` TypeScript
 weakEL.removeWeakEventListener(this.weakEventListenerOptions);
 ```

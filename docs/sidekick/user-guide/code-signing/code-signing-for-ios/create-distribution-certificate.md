@@ -1,6 +1,6 @@
 ---
 title: Create a Certificate for Distribution
-description: Follow the procedure to create a distribution certificate in the iOS Dev Center and then use it to code sign your app. 
+description: Follow the procedure to create a distribution certificate in the iOS Dev Center and then use it to code sign your app.
 position: 4
 publish: true
 slug: create-distribution-certificate
@@ -24,8 +24,8 @@ You can create a distribution certificate in the [iOS Dev Center](https://develo
 1. In the left-hand sidebar, select **Certificates** &#8594; **Production**.
 1. Click **+**.
 1. Select the type of distribution certificate that you want to create and click **Continue**.
-	* If you are enrolled in the iOS Developer Program, select **App Store and Ad Hoc** and click **Continue**.
-	* If you are enrolled in the iOS Developer Enterprise Program, select **In-House and Ad Hoc** and click **Continue**.
+  + If you are enrolled in the iOS Developer Program, select **App Store and Ad Hoc** and click **Continue**.
+  + If you are enrolled in the iOS Developer Enterprise Program, select **In-House and Ad Hoc** and click **Continue**.
 1. On the About Creating a Certificate Signing Request (CSR) page, click **Continue**.
 1. On the Generate your certificate page, click **Choose File**.
 1. Browse to the location where the `CSR` file for your certificate signing request is stored, select it and confirm the upload.

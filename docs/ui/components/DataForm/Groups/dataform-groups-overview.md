@@ -41,8 +41,8 @@ Note the {% typedoc_link classes:PropertyGroup,member:collapsible %} property of
 ## Events
 
 {% typedoc_link classes:RadDataForm %} provides the following group related events:
-- **groupUpdate** - fired when the a group is being setup and can be used for customizations of the native groups
-- **groupExpanded** and **groupCollapsed** - to notify you when a group is collapsed or expanded, if the group supports collapsing. 
+* **groupUpdate** - fired when the a group is being setup and can be used for customizations of the native groups
+* **groupExpanded** and **groupCollapsed** - to notify you when a group is collapsed or expanded, if the group supports collapsing.
 
 These events provide event arguments which have a property {% typedoc_link classes:DataFormEventData,member:groupName %} which you can use to determine the name of the group related with the event and a property {% typedoc_link classes:DataFormEventData,member:group %}, which can be used to get the native group element.
 
@@ -52,7 +52,7 @@ If you are using [JSON metadata]({% slug dataform-start-properties %}#adjust-edi
 
 #### Example 3: Sample JSON metadata for RadDataForm
 
-```JSON
+``` JSON
 {
 	"propertyAnnotations":
 	[
@@ -68,7 +68,7 @@ If you are using [JSON metadata]({% slug dataform-start-properties %}#adjust-edi
 			"index": 4,
 			"groupName": "Address"
 		},
-		{	
+		{
 			"name": "streetNumber",
 			"index": 5,
 			"editor": "Number",

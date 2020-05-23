@@ -15,15 +15,15 @@ Since events are available for Month and Week views you should initialize the `i
 
 `InlineEventCellStyle` class has the following properties:
 
-- `cellBackgroundColor` - defines the background color of inline events cell.
-- `eventTextColor` - defines the color for inline event text.
-- `eventFontName` - defines the font name for inline event text.
-- `eventFontStyle` - defines the font style for inline event text.
-- `eventTextSize` - defines the text size for inline event text.
-- `timeTextColor` - defines the color for time shown for inline event.
-- `timeFontName` - defines the font name for time shown for inline event.
-- `timeFontStyle` - Gets or sets the font style for time shown for inline event.
-- `timeTextSize` - defines the text size for time shown for inline event.
+* `cellBackgroundColor` - defines the background color of inline events cell.
+* `eventTextColor` - defines the color for inline event text.
+* `eventFontName` - defines the font name for inline event text.
+* `eventFontStyle` - defines the font style for inline event text.
+* `eventTextSize` - defines the text size for inline event text.
+* `timeTextColor` - defines the color for time shown for inline event.
+* `timeFontName` - defines the font name for time shown for inline event.
+* `timeFontStyle` - Gets or sets the font style for time shown for inline event.
+* `timeTextSize` - defines the text size for time shown for inline event.
 
 
 ## Example

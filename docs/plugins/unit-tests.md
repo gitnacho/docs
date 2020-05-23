@@ -16,20 +16,19 @@ You have completed your plugin and it works great, but how you can be sure that 
 
 The starting point of writing unit tests is the `tests` folder in your demo app directory. There you will find `tests.js` file containing sample [Jasmine](https://jasmine.github.io/) tests.
 
-```
+``` Shell
 my-plugin
 ├── demo
 |   └── app
 |       └── tests
 └── src
-
 ```
 
 The [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) builds this structure automatically when you initialize your plugin, so don’t worry about creating these files and folders manually.
 
 Let’s add a few additional tests to the `tests.js` file. We will continue from the point where [Building UI Plugins Using Composite Components]({% slug building-ui-plugins-composite-components %}) article left us so be sure you are aware of it. In order to test the three properties defined there we will write a test for each of them. Each test will be in a separate suite.
 
-```JavaScript
+``` JavaScript
 describe("topText property", function() {
     it("value is applied to top label", function() {
         uiPlugin.topText = "pain";
@@ -51,9 +50,10 @@ describe("bottomText property", function() {
     });
 });
 ```
+
 Every test assigns a value to the property in testing and verifies that the same value is applied to the element in the visual tree that uses it. The visual tree of the [nativescript-ui-plugin](https://github.com/NativeScript/nativescript-ui-plugin) in our example is pretty simple. It has a grid layout containing three elements which makes it easy to orientate in the structure. In case of more complicated plugin I would suggest that you use some of the [LayoutBase](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html) class methods to explore the visual three. For example:
 
-```JavaScript
+``` JavaScript
 const UiPlugin = require("nativescript-ui-plugin").Meme;
 let uiPlugin = new UiPlugin();
 
@@ -66,6 +66,7 @@ uiElement.eachChildView((view)=>{
     console.log(" ");
 });
 ```
+
 In this example, we use [getChildAt()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildat) function to select the one and only layout in our plugin at index zero. This function returns the `View` class - the base class for all UI components. Then we traverse all elements in the layout using [eachChildView()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#eachchildview), get their index with [getChildIndex()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildindex) and print all that information.
 
 You can find the complete `tests.js` file [here](https://github.com/NativeScript/nativescript-ui-plugin/blob/master/demo/app/tests/tests.js).
@@ -74,14 +75,14 @@ You can find the complete `tests.js` file [here](https://github.com/NativeScript
 
 We have our tests ready and it is time to get them in action. Fortunately, [nativescript-plugin-seed](https://github.com/NativeScript/nativescript-plugin-seed) has already provided the commands we need in the form of npm scripts. Just navigate to your `src` folder and run:
 
-```
+``` Shell
 npm run test.android
 npm run test.ios
 ```
 
 Be sure that you have available android/ios device or simulator.
 
-> **NOTE**: Using the npm scripts to run your tests is the best option, but in case of debugging purposes, where you want to output some console logs, you will have to navigate to your `demo` folder and run `tns test android` or `tns test ios`.
+> **Note**: Using the npm scripts to run your tests is the best option, but in case of debugging purposes, where you want to output some console logs, you will have to navigate to your `demo` folder and run `tns test android` or `tns test ios`.
 
 ## Continuous Integration
 

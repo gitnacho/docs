@@ -21,7 +21,7 @@ tns plugin add nativescript-ui-calendar
 ## Initialization
 Then, in order to add a {% typedoc_link classes:RadCalendar %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:calendar="nativescript-ui-calendar"`.
+* `xmlns:calendar="nativescript-ui-calendar"`.
 
 After defining the namespace adding a {% typedoc_link classes:RadCalendar %} instance to your page is done as follows:
 

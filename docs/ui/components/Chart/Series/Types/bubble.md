@@ -19,15 +19,15 @@ publish: true
 ## Setup
 
 To display a Bubble Chart, you will need to:
-- Add **RadCartesianChart** to your page.
-- Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
-- Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
-- Add at least one instance of **BubbleSeries**  to the chart's **series** property and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category, its **valueProperty** to the name of the property used to determine their value and its **bubbleSizeProperty** to the name of the property used to determine the size of the bubble.
+* Add **RadCartesianChart** to your page.
+* Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
+* Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
+* Add at least one instance of **BubbleSeries**  to the chart's **series** property and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category, its **valueProperty** to the name of the property used to determine their value and its **bubbleSizeProperty** to the name of the property used to determine the size of the bubble.
 
 To illustrate this setup, let's create an example. First we will create a source with items:
- 
+
 #### Example 1: Define a source with data
- 
+
 <snippet id='bubble-data-source'/>
 
 We use an instance of this model to assign it as the *bindingContext* of the page we have put our Bubble series on:

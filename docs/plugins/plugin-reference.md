@@ -33,7 +33,7 @@ If the NativeScript framework does not expose a native API that you need, you ca
 
 NativeScript plugins which consist of one CommonJS module might have the following directory structure.
 
-```text
+``` Shell
 nativescript-my-plugin/
 └── src
     ├── index.js
@@ -47,7 +47,7 @@ nativescript-my-plugin/
 
 NativeScript plugins which consist of multiple CommonJS modules might have the following directory structure.
 
-```text
+``` Shell
 nativescript-my-plugin/
 └── src
     ├── index.js
@@ -66,14 +66,14 @@ nativescript-my-plugin/
 ```
 
 * `src`: Putting your source in sub-folder is required for local LiveSync debugging. Older plugins should be updated to move their source code in to a subfolder.
-* `index.js`: This file is the CommonJS module which exposes the native API. You can use platform-specific `*.[platform].js` files. For example: `index.ios.js` and `index.android.js`. During the plugin installation, the NativeScript CLI will copy the platform resources to the `tns_modules` subdirectory in the correct platform destination in the `platforms` directory of your project.<br/>Alternatively, you can give any name to this CommonJS module. In this case, however, you need to point to this file by setting the `main` key in the `package.json` for the plugin. For more information, see [Folders as Modules](https://nodejs.org/api/modules.html#modules_folders_as_modules).
+* `index.js`: This file is the CommonJS module which exposes the native API. You can use platform-specific `*.[platform].js` files. For example: `index.ios.js` and `index.android.js`. During the plugin installation, the NativeScript CLI will copy the platform resources to the `tns_modules` subdirectory in the correct platform destination in the `platforms` directory of your project.<br />Alternatively, you can give any name to this CommonJS module. In this case, however, you need to point to this file by setting the `main` key in the `package.json` for the plugin. For more information, see [Folders as Modules](https://nodejs.org/api/modules.html#modules_folders_as_modules).
 * `package.json`: This file contains the metadata for your plugin. It sets the supported runtimes, the plugin name and version and any dependencies. The `package.json` specification is described in detail below.
 * `platforms/android/native-library.aar` Compiled native libraries (`*.aar` files) contain resources, code and any specific configuration changes, like permissions, required for your plugin to work.  For more information about Android native libraries, see the [Android permissions and resources](#android-permissions-and-resources) section.
-* `platforms\ios\Info.plist`: This file describes any specific configuration changes required for your plugin to work. For example, required permissions. To your convenience, all configurations that are applicable via XCode Info tab and are saved in application's Info.plist file can also be applied manually for plugins directly in the Info.plist. For more information about the format of `Info.plist`, see [About Information Property List Files](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html).<br/>During the plugin installation, the NativeScript CLI will merge the plugin `Info.plist` with the `Info.plist` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
+* `platforms\ios\Info.plist`: This file describes any specific configuration changes required for your plugin to work. For example, required permissions. To your convenience, all configurations that are applicable via XCode Info tab and are saved in application's Info.plist file can also be applied manually for plugins directly in the Info.plist. For more information about the format of `Info.plist`, see [About Information Property List Files](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html).<br />During the plugin installation, the NativeScript CLI will merge the plugin `Info.plist` with the `Info.plist` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
 
 NativeScript plugins which contain both native Android and iOS libraries might have the following directory structure.
 
-```text
+``` Shell
 nativescript-my-plugin/
 └── src
     ├── ...
@@ -103,13 +103,13 @@ nativescript-my-plugin/
 
 Every NativeScript plugin should contain a valid `package.json` file in its root. This `package.json` file must meet the following requirements.
 
-* It must comply with the [npm specification](https://docs.npmjs.com/files/package.json).<br/>The `package.json` must contain at least `name` and `version` pairs. You will later use the plugin in your code by requiring it by its `name`.
+* It must comply with the [npm specification](https://docs.npmjs.com/files/package.json).<br />The `package.json` must contain at least `name` and `version` pairs. You will later use the plugin in your code by requiring it by its `name`.
 * It must contain a `nativescript` section which describes the supported NativeScript runtimes and their versions. This section can be empty. If you want to define supported platforms and runtimes, you can nest a `platforms` section. In this `platforms` section, you can nest `ios` and `android` key-value pairs. The values in these pairs must be valid runtime versions or ranges of values specified by a valid semver(7) syntax.
-* If the plugin depends on other npm modules, it must contain a `dependencies` section as described [here](https://docs.npmjs.com/files/package.json#dependencies).<br/>The NativeScript CLI will resolve the dependencies during the plugin installation.
+* If the plugin depends on other npm modules, it must contain a `dependencies` section as described [here](https://docs.npmjs.com/files/package.json#dependencies).<br />The NativeScript CLI will resolve the dependencies during the plugin installation.
 
 The following is an example of a `package.json` file for a NativeScript plugin which supports the 1.0.0 version or above of the iOS runtime and the 1.1.0 version or above of the Android runtime.
 
-```JSON
+``` JSON
 {
   "name": "nativescript-my-plugin",
   "version": "0.0.1",
@@ -123,7 +123,7 @@ The following is an example of a `package.json` file for a NativeScript plugin w
 ```
 
 The above configuration states that the plugin requires iOS runtime version 4.0.0 and up or Android runtime version 4.1.0 and up.
-> **Note** In case your plugin supports only iOS or Android, make sure to remove the platform which is not supported.
+> **Note**: In case your plugin supports only iOS or Android, make sure to remove the platform which is not supported.
 
 ### Include.gradle Specification
 
@@ -133,11 +133,11 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 * It might contain native dependencies required to build the plugin properly.
 * Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine.
 
-> **IMPORTANT:** If you don't have an `include.gradle` file, at build time, gradle will create a default one containing all default elements.
+> **Important**: If you don't have an `include.gradle` file, at build time, gradle will create a default one containing all default elements.
 
-_Include.gradle Example_
+_Include.gradle Example_:
 
-```gradle
+``` Gradle
 //default elements
 android {
   productFlavors {
@@ -171,7 +171,7 @@ For a more complete Android library project overview visit the [Android Document
 
 In previous versions of the the NativeScript CLI it was possible to add permissions and resources for Android without a separate native library (`.aar` file). If you have an older plugin and your `AndroidManifest.xml` file and `res` directory are located in `platforms/android`, then you can compile them with a CLI command. Open a terminal, go to the `src` directory of the plugin and execute:
 
-```bash
+``` Shell
 tns plugin build
 ```
 
@@ -181,9 +181,9 @@ This will create an `.aar` file in the `platforms/android` directory, which will
 
 Every NativeScript plugin, which contains native iOS dependencies, can also contain a [valid](https://pewpewthespells.com/blog/xcconfig_guide.html) `build.xcconfig` file in the root of its `platforms\ios` directory. This `build.xcconfig` file might contain native dependencies required to build the plugin properly.
 
-_Build.xcconfig Example_
+_Build.xcconfig Example_:
 
-```xcconfig
+``` XcConfig
 OTHER_LDFLAGS = $(inherited) -framework "QuartzCore" -l"sqlite3"
 ```
 
@@ -195,7 +195,7 @@ Application author can opt-in for native metadata filtering. Plugins should supp
 
 To install a plugin for your project, inside your project, run the following command.
 
-```Shell
+``` Shell
 tns plugin add <Plugin>
 ```
 
@@ -219,17 +219,17 @@ If the NativeScript CLI detects any native iOS libraries in the plugin, it copie
 
 Next, the NativeScript CLI runs a partial `prepare` operation for the plugin for all platforms configured for the project. During this operation, the CLI copies only the plugin to the `tns_modules` subdirectories in the `platforms\android` and `platforms\ios` directories in your project. If your plugin contains platform-specific `JS` files, the CLI copies them to the respective platform subdirectory and renames them by removing the platform modifier.
 
-> **TIP:** If you have not configured any platforms, when you run `$ tns platform add`, the NativeScript CLI will automatically prepare all installed plugins for the newly added platform.
+> **Tip**: If you have not configured any platforms, when you run `$ tns platform add`, the NativeScript CLI will automatically prepare all installed plugins for the newly added platform.
 
 Finally, the CLI merges the plugin `Info.plist` file with `platforms\ios\Info.plist` in your project. The plugin `AndroidManifest.xml` will be merged with `platforms\android\AndroidManifest.xml` later, at build time.
 
-> **IMPORTANT:** Currently, the merging of the platform configuration files does not resolve any contradicting or duplicate entries.
+> **Important**: Currently, the merging of the platform configuration files does not resolve any contradicting or duplicate entries.
 
 ## Use a Plugin
 
 To use a plugin inside your project, you need to add a `require` in your app.
 
-```JavaScript
+``` JavaScript
 var myPlugin = require("nativescript-my-plugin");
 ```
 
@@ -239,7 +239,7 @@ This will look for a `nativescript-my-plugin` module with a valid `package.json`
 
 To remove a plugin from your project, inside your project, run the following command.
 
-```Shell
+``` Shell
 tns plugin remove <Plugin>
 ```
 
@@ -251,7 +251,7 @@ The removal of a NativeScript plugin mimics the removal of an npm module.
 
 The NativeScript CLI removes any plugin files from the `node_modules` directory in the root of your project. During this process, the NativeScript CLI removes any dependencies described in the plugin `package.json` file and removes the plugin from the project `package.json` file in the project root.
 
-> **IMPORTANT:** For iOS, this operation does not remove files from the `platforms\ios` directories and native iOS libraries, and does not unmerge the `Info.plist` file. For Android, this operation takes care of removing any plugin files located in `platforms\android`.
+> **Important**: For iOS, this operation does not remove files from the `platforms\ios` directories and native iOS libraries, and does not unmerge the `Info.plist` file. For Android, this operation takes care of removing any plugin files located in `platforms\android`.
 
 ### Manual Steps After Removal
 
@@ -259,13 +259,13 @@ After the plugin removal is complete, make sure to remove any leftover native iO
 
 Next, you need to run the following command.
 
-```Shell
+``` Shell
 tns prepare <Platform>
 ```
 
 Make sure to run the command for all platforms configured for the project. During this operation, the NativeScript CLI will remove any leftover plugin files from your `platforms\ios` directory.
 
-> **TIP:** Instead of `$ tns prepare` you can run `$ tns build`, `$ tns run`, `$ tns deploy` or `$ tns emulate`. All these commands run `$ tns prepare`.
+> **Tip**: Instead of `$ tns prepare` you can run `$ tns build`, `$ tns run`, `$ tns deploy` or `$ tns emulate`. All these commands run `$ tns prepare`.
 
 Next, open your `platforms\ios\Info.plist` file and remove any leftover entries from the plugin `Info.plist` file.
 

@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug chart-getting-started-vue %} "Char
 
 ## Getting Started
 
-You can make your charts more interactive by enabling selection.  When selection is enabled you can select, deselect and handle the selection events of either the data points or the series in **RadCartesianChart** and **RadPieChart**. 
+You can make your charts more interactive by enabling selection.  When selection is enabled you can select, deselect and handle the selection events of either the data points or the series in **RadCartesianChart** and **RadPieChart**.
 
 The selection can be set on the whole chart with the {% typedoc_link classes:RadChartBase,member:seriesSelectionMode %} and {% typedoc_link classes:RadChartBase,member:pointSelectionMode %} properties. The values for these properties can be:
 * {% typedoc_link enums:ChartSelectionMode,member:None %} - Selection is disabled.
@@ -43,10 +43,10 @@ For finer tuning of the selection behavior you can also set the {% typedoc_link 
 ## Selection Events
 
 To notify you when the selection state of an item is changed, the chart exposes the following events:
-- `seriesSelected` - Fired after a series is selected. The event data argument provides information about the event name, the chart that the series belongs to and the *ChartSeries* class instance for the selected series
-- `seriesDeselected` - Fired after a series is deselected. The event data argument provides information about the event name, the chart that the series belongs to and the *ChartSeries* class instance for the selected series
-- `pointSelected` - Fired after a data point is selected. The event data argument provides information about the event name, the chart that the data point belongs to, the point index and the native data point class instances(TKChartData for iOS, DataPoint for Android)
-- `pointDeselected` - Fired after a data point is deselected. The event data argument provides information about the event name, the chart that the data point belongs to, the point index and the native data point class instances(TKChartData for iOS, DataPoint for Android)
+* `seriesSelected` - Fired after a series is selected. The event data argument provides information about the event name, the chart that the series belongs to and the *ChartSeries* class instance for the selected series
+* `seriesDeselected` - Fired after a series is deselected. The event data argument provides information about the event name, the chart that the series belongs to and the *ChartSeries* class instance for the selected series
+* `pointSelected` - Fired after a data point is selected. The event data argument provides information about the event name, the chart that the data point belongs to, the point index and the native data point class instances(TKChartData for iOS, DataPoint for Android)
+* `pointDeselected` - Fired after a data point is deselected. The event data argument provides information about the event name, the chart that the data point belongs to, the point index and the native data point class instances(TKChartData for iOS, DataPoint for Android)
 
 ## References
 

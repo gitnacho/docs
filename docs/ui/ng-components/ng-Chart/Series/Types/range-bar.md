@@ -15,17 +15,18 @@ publish: true
 ## Setup
 
 To display a Range Bar Chart, you will need to:
-- Add a **RadCartesianChart** to your component.
-- Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **tkCartesianHorizontalAxis** directive.
-- Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **tkCartesianVerticalAxis** directive.
-- Add at least one instance of **RangeBarSeries** with the **tkCartesianSeries** directive and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
+
+* Add a **RadCartesianChart** to your component.
+* Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **tkCartesianHorizontalAxis** directive.
+* Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **tkCartesianVerticalAxis** directive.
+* Add at least one instance of **RangeBarSeries** with the **tkCartesianSeries** directive and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
 
  > The above setup will create a chart with vertical bars. If you need horizontal bars, you can swap the axes' position and add the tkCartesianVerticalAxis to the category axis and the tkCartesianHorizontalAxis to the value axis.
- 
+
 To illustrate this setup, let's create an example. Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization. The service is a simple 'mock' of an backend call that will return an array of objects:
 
- #### Example 1: Define a data service
- 
+### Example 1: Define a data service
+
 <snippet id='chart-angular-data-service'/>
 
 Inside that service we have a single function which returns an array:
@@ -39,6 +40,7 @@ Inside that service we have a single function which returns an array:
 #### Example 3: Add chart to component's template
 
 <snippet id='chart-angular-range-bar-series-component'/>
+
 <snippet id='chart-angular-range-bar-series'/>
 
 #### Figure 1: Chart with RangeBarSeries on Android (left) and iOS (right)

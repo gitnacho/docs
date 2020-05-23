@@ -17,26 +17,26 @@ If you followed the [getting started]({% slug chart-getting-started-vue %} "Char
 * [Events](#events)
 * [References](#references)
 
-## Getting Started  
+## Getting Started
 
 There are two boolean properties that enable this feature:
 * {% typedoc_link classes:CartesianAxis,member:allowZoom %} - Used to enable zooming by the axis.
 * {% typedoc_link classes:CartesianAxis,member:allowPan %} - Used to enable panning by the axis.
 
-## Zoom Factor 
+## Zoom Factor
 
 You can programmatically define a zoom factor by which the chart will zoom. This is done via two properties exposed by {% typedoc_link classes:RadCartesianChart %}:
-- {% typedoc_link classes:RadCartesianChart,member:horizontalZoom %} - Defines the zoom factor applied to the horizontal axis if zoom is enabled on it.
-- {% typedoc_link classes:RadCartesianChart,member:verticalZoom %} - Defines the zoom factor applied to the vertical axis if zoom is enabled on it.
+* {% typedoc_link classes:RadCartesianChart,member:horizontalZoom %} - Defines the zoom factor applied to the horizontal axis if zoom is enabled on it.
+* {% typedoc_link classes:RadCartesianChart,member:verticalZoom %} - Defines the zoom factor applied to the vertical axis if zoom is enabled on it.
 
 For example, if you set one of these properties to `1.5` this will apply a 50% zoom relative to the original zoom factor of 1.
 
 ## Events
 
 To notify you when the selection state of an item is changed, the chart exposes the following events:
-- `chartZoomed` - Fired multiple times when the chart is zooming. 
+* `chartZoomed` - Fired multiple times when the chart is zooming.
 The event data argument provides information about the event name and the chart that is zoomed.
-- `chartPanned` - Fired multiple times when the chart is panning. 
+* `chartPanned` - Fired multiple times when the chart is panning.
 The event data argument provides information about the event name and the chart that is panned.
 
 With the following example you can see that pan & zoom properties could be used for any axis assigned to a series or to the chart along with events handling.

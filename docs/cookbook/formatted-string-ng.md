@@ -11,7 +11,7 @@ environment: angular
 
 NativeScript has a special class called [FormattedString](/api-reference/classes/_text_formatted_string_.formattedstring.html) to support various text transformations and decorations. The `FormattedString` class can be used with all text-related components like Label, TextView, TextField and even Button. Using `FormattedString` within an NativeScript-Angular app requires using a special syntax because of how Angular views get added to the native visual tree. Here’s what the correct syntax looks like:
 
-```HTML
+``` HTML
 <Label>
     <FormattedString>
         <Span text="some content" fontWeight="Bold"></Span>
@@ -21,7 +21,7 @@ NativeScript has a special class called [FormattedString](/api-reference/classes
 
 This syntax differs from the full syntax of FormattedString used in NativeScript Core, shown below, which does not work in Angular apps:
 
-```HTML
+``` HTML
 <Label>
     <Label.formattedText>
         <FormattedString>

@@ -12,18 +12,17 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
-
 ## Installation
 
 All official NativeScript templates come with the NativeScript Core Theme prepackaged and ready to go, so manual installation is unnecessary. If for some reason you’re using an app that doesn’t have the theme pre-installed, you can add it with the following command:
 
-```
+``` Shell
 npm install @nativescript/theme --save
 ```
 
 Your `app.css` file then needs two `@import` CSS rules to include the theme in your app, which you'll learn about in the next section.
 
-> **Note:** NativeScript 6.2 shifted to using scoped packages while deprecating the old packages(e.g., the `tns-core-modules` is now published as the scoped `@nativescript/core` ). The previously known `nativescript-theme-core` package is now published as the scoped `@nativescript/theme`. The new `@nativescript/theme` introduced several breaking changes related to installation and usage (imports, classes, etc.). A detailed migration guide can be found [here](https://github.com/NativeScript/theme/blob/master/MIGRATION-GUIDE.md). In case you need information on how to use the old `nativescript-theme-core`, refer to [this article](https://docs.nativescript.org/5-4/ui/theme). If you prefer to use the old classes with `@nativescript/theme`, then you could use the compat styling.
+> **Note**: NativeScript 6.2 shifted to using scoped packages while deprecating the old packages(e.g., the `tns-core-modules` is now published as the scoped `@nativescript/core` ). The previously known `nativescript-theme-core` package is now published as the scoped `@nativescript/theme`. The new `@nativescript/theme` introduced several breaking changes related to installation and usage (imports, classes, etc.). A detailed migration guide can be found [here](https://github.com/NativeScript/theme/blob/master/MIGRATION-GUIDE.md). In case you need information on how to use the old `nativescript-theme-core`, refer to [this article](https://docs.nativescript.org/5-4/ui/theme). If you prefer to use the old classes with `@nativescript/theme`, then you could use the compat styling.
 
 ## Color Schemes
 
@@ -31,20 +30,20 @@ The NativeScript core theme comes with a default color scheme that supports ligh
 
 ![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
 
-> **Note:** The dark mode support was introduced natively with Android 10 and above and with iOS 13 and above.
+> **Note**: The dark mode support was introduced natively with Android 10 and above and with iOS 13 and above.
 
 ### CSS Imports
 
 To use the default color scheme (with accent color blue), add the following lines of code to the top of your `app.css` file:
 
-```CSS
+``` CSS
 @import '~@nativescript/theme/css/core.css';
 @import '~@nativescript/theme/css/default.css';
 ```
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch the **second** import in your `app.css` file to use one of the following imports.
 
-```CSS
+``` CSS
 @import '~@nativescript/theme/css/aqua.css';
 @import '~@nativescript/theme/css/blue.css';
 @import '~@nativescript/theme/css/brown.css';
@@ -62,7 +61,7 @@ You may want to alternatively use one of the 11 other color schemes included in 
 
 To load **SCSS** with `@nativescript/theme`, the imports are as follows.
 
-```CSS
+``` CSS
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
 ```
@@ -74,13 +73,15 @@ The files are now located in the root of the theme package as opposed to `native
 If you prefer to use the old classes for styling(from `nativescript-theme-core`), you can import the .compat core theme and skin to do so.
 
 CSS compatibility imports
-```CSS
+
+``` CSS
 @import "~@nativescript/theme/css/core.compat.css";
 @import "~@nativescript/theme/css/blue.compat.css";
 ```
 
 SCSS compatibility imports
-```CSS
+
+``` SCSS
 @import "~@nativescript/theme/core.compat";
 @import "~@nativescript/theme/blue.compat";
 ```
@@ -255,7 +256,6 @@ You can convey meaning through color with a handful of utility classes that are 
 
 The old `nativescript-theme-core` was using specific CSS classes that the user had to add on every element to get it styled. The new `@nativescript/theme` takes a very different approach - all elements are styled by default using **Element selectors** (like `ActionBar` or `RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the way - since all elements are already styled, you may need to override some of their stylings. And since NativeScript doesn't support !important, you can do this with a CSS feature called specificity (see [this article](https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/) for details).
 
-
 ### ActionBar
 
 The theme styles for `ActionBar` are applied via its element (type) selector.
@@ -270,12 +270,11 @@ The theme styles for `ActionBar` are applied via its element (type) selector.
 </ActionBar>
 ```
 
-> **Note:** In most cases, no additional CSS classes are needed for theming the NativeScript components. Still, for custom scenarios, the theme provides [BEM classes](#bem-classes).
+> **Note**: In most cases, no additional CSS classes are needed for theming the NativeScript components. Still, for custom scenarios, the theme provides [BEM classes](#bem-classes).
 
 ### Buttons
 
 The main theme styles for NativeScript's buttons are applied via their element selector `Button`. The NativeScript theme also includes a handful of class names to change the look and feel of buttons in your applications.
-
 
 * `-primary`: A class name that applies the original color pattern of the theme to the button.
 
@@ -310,7 +309,6 @@ The main theme styles for NativeScript's buttons are applied via their element s
 ```
 
 > **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more details, see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
-
 
 ### Forms
 
@@ -378,7 +376,7 @@ The NativeScript theme provides a few CSS class names for altering the appearanc
 <Image src="https://placem.at/things?w=150" width="150" class="img-circle"></Image>
 ```
 
-> **NOTE**: You can only add `border-radius` to an image if it has an explicit `height` and `width` set.
+> **Note**: You can only add `border-radius` to an image if it has an explicit `height` and `width` set.
 
 ![images ios](/img/theme/images-ios.png)
 
@@ -413,12 +411,13 @@ The theme styles for NativeScript's progress and activity indicators are applied
 
 SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](./components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](./ng-components/ng-SideDrawer/overview) {% endangular %}.
 
-> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
+> **Note**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
 * `nt-drawer__content`: A class name to apply the drawer menu content styles.
 
-_Example (NativeScript Core)_
-```XML
+_Example (NativeScript Core)_:
+
+``` XML
 <drawer:RadSideDrawer.drawerContent>
     <GridLayout rows="auto, *" class="nt-drawer__content">
         <!-- The drawer menu content follows here -->
@@ -428,7 +427,8 @@ _Example (NativeScript Core)_
 
 * `nt-drawer__header`: A class name to designate a section of your sidedrawer as the header. Useful if you want to show an image or logo above your app’s drawer navigation.
 
-_Example (NativeScript Core)_
+_Example (NativeScript Core)_:
+
 ``` XML
 <drawer:RadSideDrawer.drawerContent>
     <GridLayout rows="auto, *" class="nt-drawer__content">
@@ -443,7 +443,8 @@ _Example (NativeScript Core)_
 
 * `-left`: By default, the drawer menu content is centered. The `-left` modifier aligns the content to the left.
 
-_Example (NativeScript Core)_
+_Example (NativeScript Core)_:
+
 ``` XML
 <drawer:RadSideDrawer.drawerContent>
     <GridLayout rows="auto, *" class="nt-drawer__content">
@@ -458,7 +459,7 @@ _Example (NativeScript Core)_
 * `nt-drawer__header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you.
 * `nt-drawer__header-brand`: A class name to apply to text heading that appears in your sidedrawer’s header.
 
-```XML
+``` XML
 <StackLayout class="nt-drawer__header -left">
     <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"></Image>
     <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand"></Label>
@@ -469,7 +470,7 @@ _Example (NativeScript Core)_
 
 The theme styles for NativeScript's sliders are applied via their element selector `Slider`.
 
-```XML
+``` XML
 <Slider minValue="1" maxValue="100" value="50"></Slider>
 <Slider minValue="1" maxValue="100" value="50" isEnabled="false"></Slider>
 ```
@@ -480,7 +481,7 @@ The theme styles for NativeScript's sliders are applied via their element select
 
 The theme styles for NativeScript's switches are applied via their element selector `Switch`.
 
-```XML
+``` XML
 <Switch checked="true" horizontalAlignment="center"></Switch>
 <Switch checked="false" horizontalAlignment="center"></Switch>
 <Switch checked="false" isEnabled="false" horizontalAlignment="center"></Switch>
@@ -509,7 +510,7 @@ The theme styles for NativeScript's tabular based components are applied via the
 </BottomNavigation>
 ```
 
-> **Note:** There are some conceptual differences in the way the tab based controls are looking on Android and iOS.
+> **Note**: There are some conceptual differences in the way the tab based controls are looking on Android and iOS.
 
 ## BEM classes
 
@@ -566,17 +567,19 @@ Here is a list of modifiers and where they work:
 
 The NativeScript core theme is written in SASS, and you can (optionally) use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
 
-### Installation
+<h3 id="installation-1">Installation</h3>
 
 To get started, first, verify that your app has a SASS compiler e.g., `node-sass` or `sass` (formerly `dart-sass`).
 
-```
+``` Shell
 npm install node-sass --save-dev
 // or
 npm install sass --save-dev
 ```
+
 If using sass (dart-sass), you need to modify your webpack configuration to use that instead of default node-sass loader. In config.module.rules of webpack.config.js file you should have the following code:
-```
+
+``` JSON
 {
     test: /\.scss$/,
     use: [
@@ -585,8 +588,10 @@ If using sass (dart-sass), you need to modify your webpack configuration to use 
     ]
 }
 ```
+
 Replace this with following code
-```
+
+``` JSON
 {
     test: /\.scss$/,
     use: [
@@ -600,16 +605,18 @@ Replace this with following code
     ]
 },
 ```
-> **Note:** Webpack configuration file may get overwritten when updating `nativescript-dev-webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
+
+> **Note**: Webpack configuration file may get overwritten when updating `nativescript-dev-webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
 
 For a new project, you can use a template with SASS pre-enabled. A full list of officially supported templates can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
-```
+
+``` Shell
 tns create my-new-project --template tns-template-drawer-navigation-ts
 ```
 
 With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
 
-```
+``` Shell
 .
 ├── _app-common.scss
 ├── app.android.scss
@@ -634,7 +641,6 @@ And the following code into your `app.ios.scss` file.
 // Place any CSS rules you want to apply only on iOS here
 ```
 
-
 Finally, paste the following code into your `_app-common.scss` file.
 
 ``` SCSS
@@ -645,14 +651,13 @@ Finally, paste the following code into your `_app-common.scss` file.
 // This is where the vast majority of your CSS code goes.
 ```
 
-
 ### Custom skin using variables
 
 As `nativescript-theme-core!1.x.x` before it, the `@nativescript/theme` also allows customization through SCSS variables. However, due to changing its internals to use maps, you can change the variables only **before** the rest of the theme is loaded.
 
-_app-common.scss_
+_app-common.scss_:
 
-```CSS
+``` CSS
 /* Colors */
 $accent: #369;
 
@@ -665,7 +670,7 @@ $complementary: fuchsia;
 
 The code above is enough to create a custom skin with blue accent and a pink `ActionBar`.
 
-> **Note:** When creating custom skin you don't need to import any other file than `~@nativescript/theme/index` and it should be introduced after you make changes to the variables!
+> **Note**: When creating custom skin you don't need to import any other file than `~@nativescript/theme/index` and it should be introduced after you make changes to the variables!
 
 Here is a list of all variables that can be changed.
 
@@ -714,7 +719,7 @@ So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.
 variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same
 single import underneath.
 
-```scss
+``` SCSS
 $base-theme:Bootstrap;
 $skin-name:indigo;
 $swatch-name:Indigo;
@@ -745,33 +750,37 @@ $series-f: #d9534f;
 
 To load all core theme variables and mixins, you only need this import:
 
-```CSS
+``` CSS
 @import '~@nativescript/theme/scss/variables';
 ```
 
 In addition, you can load the Theme variables and mixins for every skin.
-```CSS
+
+``` CSS
 @import '~@nativescript/theme/scss/variables/blue';
 ```
 
 By using special functions that retrieve the variable from its place in the internal map, you can access SASS variables. There are 3 such function `const()`, `light()` and `dark()`. The `const()` function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used to retrieve specific light/dark variable.
 
-_Retrieving `color` variable_
-```CSS
+_Retrieving `color` variable_:
+
+``` CSS
 .my-label {
     color: const(ruby);
 }
 ```
 
-_Using skin-specific color_
-```CSS
+_Using skin-specific color_:
+
+``` CSS
 .my-label {
     background: light(background);
 }
 ```
 
-_Example for supporting dark mode with SASS_
-```CSS
+_Example for supporting dark mode with SASS_:
+
+``` CSS
 .my-label {
     background-color: light(background);
 
@@ -788,7 +797,7 @@ For example:
 
 File structure:
 
-```
+``` Shell
 .
 ├── custom.scss
 ├── custom.css
@@ -853,6 +862,7 @@ if (platform.isAndroid && platform.device.sdkVersion >= "21") {
 
 // Your application.run() call follows here.
 ```
+
 ``` JavaScript
 var application = require("tns-core-modules/application");
 var platform = require("tns-core-modules/platform");
@@ -868,12 +878,11 @@ if (platform.isAndroid && platform.device.sdkVersion >= "21") {
 // Your application.run() call follows here.
 ```
 
-
 ## Uninstalling
 
 If you wish to remove the NativeScript core theme from your application, you can do so using the following command:
 
-```
+``` Shell
 npm uninstall @nativescript/theme --save
 ```
 

@@ -20,7 +20,7 @@ tns plugin add nativescript-ui-listview
 ## Adding a RadListView to Your Page
 Then, in order to add a {% typedoc_link classes:RadListView %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:lv="nativescript-ui-listview"`.
+* `xmlns:lv="nativescript-ui-listview"`.
 
 After that, you can use the following XML construct to put {% typedoc_link classes:RadListView %} in your page:
 

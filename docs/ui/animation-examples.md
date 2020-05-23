@@ -1,6 +1,6 @@
 ---
 title: Animation Examples
-description: The article contains general examples demonstrating how to animate View via CSS and while using code-behind in NativeScript. 
+description: The article contains general examples demonstrating how to animate View via CSS and while using code-behind in NativeScript.
 position: 100
 slug: animation-examples
 publish: false
@@ -419,7 +419,7 @@ view.animate({
 ## Animation -  View's Width and Height
 {% nativescript %}
 ### Width
-```JavaScript
+``` JavaScript
 let label = page.getViewById("lblNS");
 let animation = new Animation([
     {
@@ -432,7 +432,7 @@ let animation = new Animation([
   ]);
 animation.play();
 ```
-```TypeScript
+``` TypeScript
 let label: Label = <Label>page.getViewById("lblNS");
 let animation = new Animation([
         {
@@ -446,7 +446,7 @@ let animation = new Animation([
 animation.play();
 ```
 ### Height
-```JavaScript
+``` JavaScript
 let label = page.getViewById("lblNS");
 let animation = new Animation([
     {
@@ -459,7 +459,7 @@ let animation = new Animation([
   ]);
 animation.play();
 ```
-```TypeScript
+``` TypeScript
 let label: Label = <Label>page.getViewById("lblNS");
 let animation = new Animation([
         {
@@ -477,7 +477,7 @@ animation.play();
 {% endnativescript %}
 {% angular %}
 ### Width
-```TypeScript
+``` TypeScript
 @ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
 private label: Label;
 ...
@@ -497,7 +497,7 @@ let animation = new Animation([
 animation.play();
 ```
 ### Height
-```TypeScript
+``` TypeScript
 @ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
 private label: Label;
 ...

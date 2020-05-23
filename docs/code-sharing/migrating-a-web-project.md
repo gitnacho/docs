@@ -15,7 +15,7 @@ You can add NativeScript to an existing Angular Web project with the help of **A
 
 To take advantage of the automated migration commands for NativeScript Angular you will need to install the **Angular CLI**. Run the following command:
 
-```bash
+``` Shell
 npm install --global @angular/cli
 ```
 
@@ -23,7 +23,7 @@ npm install --global @angular/cli
 
 To run mobile apps with NativeScript you will need to install the **NativeScript CLI**. Execute the following command:
 
-```bash
+``` Shell
 npm install --global nativescript
 ```
 
@@ -33,14 +33,14 @@ The NativeScript CLI performs only the build of your Angular code while skipping
 
 To use preview, you need to install two companion apps on your Android/iOS device(s):
 
-- **NativeScript Playground** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.play), [iOS](https://apps.apple.com/us/app/nativescript-playground/id1263543946)) — used to scan a QR code provided by the NativeScript CLI
-- **NativeScript Preview** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.preview), [iOS](https://apps.apple.com/us/app/nativescript-preview/id1264484702)) — used to host display your app
+* **NativeScript Playground** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.play), [iOS](https://apps.apple.com/us/app/nativescript-playground/id1263543946)) — used to scan a QR code provided by the NativeScript CLI
+* **NativeScript Preview** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.preview), [iOS](https://apps.apple.com/us/app/nativescript-preview/id1264484702)) — used to host display your app
 
 ## Migrating Project Structure
 
 The first step to convert your web project to a code-sharing structure is to add NativeScript. You can do this with the following command:
 
-```bash
+``` Shell
 ng add @nativescript/schematics
 ```
 
@@ -55,13 +55,11 @@ The command installs **@nativescript/schematics**, and then adds a NativeScript-
 
 You can also run the **ng add** command with a **--sample** flag.
 
-```bash
+``` Shell
 ng add @nativescript/schematics --sample
 ```
 
-
 This command adds a **BarcelonaModule**, which is a sample **NgModule** to show how a code-sharing module should be constructed. It can also be used for validation that the conversion of the project was successful.
-
 
 ### Validating the project migration
 
@@ -70,18 +68,18 @@ The easiest way to validate that the migration worked is to build and run your a
 #### Validate the web project
 
 Run **ng serve -o** from your terminal or command prompt, and you should get the same app as before running **ng add**.
- 
+
 #### Validate the web project with the sample module
 
 If you migrated your project with the **--sample** flag, you could also test the sample module in your web app.
 
-Assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), run **ng serve**, and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app should navigate to **/player/:id**.
+Assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), run **ng serve**, and in your browser navigate to **/players** (i.e. **<http://localhost:4200/players>**). You should see a list of Barcelona players, and if you click on any name the app should navigate to **/player/:id**.
 
 #### Validate the NativeScript project
 
 To validate the mobile setup build the NativeScript application by executing:
 
-```
+``` Shell
 tns preview
 ```
 
@@ -128,36 +126,40 @@ To convert your project to use a single (shared) navigation configuration, you n
 Here are the steps:
 
 1. Add a shared file with the routes configuration: **app.routes.ts**
-    ```TypeScript
-    import { Routes } from '@angular/router';
-    
-    export const routes: Routes = [
-      { path: '', redirectTo: '/players', pathMatch: 'full' },
-    ];
-    ```    
+
+   ``` TypeScript
+   import { Routes } from '@angular/router';
+
+   export const routes: Routes = [
+     { path: '', redirectTo: '/players', pathMatch: 'full' },
+   ];
+   ```
+
 1. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
-    ```TypeScript
-    import { NgModule } from '@angular/core';
-    import { RouterModule } from '@angular/router';
-    import { routes } from '@src/app/app.routes';
-    @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-    })
-    export class AppRoutingModule { }
-    ```
+
+   ``` TypeScript
+   import { NgModule } from '@angular/core';
+   import { RouterModule } from '@angular/router';
+   import { routes } from '@src/app/app.routes';
+   @NgModule({
+   imports: [RouterModule.forRoot(routes)],
+   exports: [RouterModule]
+   })
+   export class AppRoutingModule { }
+   ```
 
 1. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
-    ```TypeScript
-    import { NgModule } from '@angular/core';
-    import { NativeScriptRouterModule } from 'nativescript-angular/router';
-    import { routes } from '@src/app/app.routes';
-    @NgModule({
-    imports: [NativeScriptRouterModule.forRoot(routes)],
-    exports: [NativeScriptRouterModule]
-    })
-    export class AppRoutingModule { }
-    ```
+
+   ``` TypeScript
+   import { NgModule } from '@angular/core';
+   import { NativeScriptRouterModule } from 'nativescript-angular/router';
+   import { routes } from '@src/app/app.routes';
+   @NgModule({
+   imports: [NativeScriptRouterModule.forRoot(routes)],
+   exports: [NativeScriptRouterModule]
+   })
+   export class AppRoutingModule { }
+   ```
 
 ### Migrating Modules
 
@@ -171,9 +173,9 @@ Often the migration step will consist of these steps:
 * convert all of modules' components, by using migrate-component schematic,
 * and migrate declared components and add them to **declarations**
 
-This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
+This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module):
 
-```bash
+``` Shell
 ng g migrate-module --name=module-name
 ```
 
@@ -186,9 +188,9 @@ Often the migration step will consist of two steps:
 * add the component to a **.tns** version of the parent module
 * create a **name.component.tns.html** file, and provide NativeScript specific UI code
 
-This task can be helped with the [component migration schematic](./migrating-a-web-project#schematic-migrate-component): 
+This task can be helped with the [component migration schematic](./migrating-a-web-project#schematic-migrate-component):
 
-```bash
+``` Shell
 ng g migrate-component --name=component-name
 ```
 
@@ -203,13 +205,13 @@ The **migrate-component** schematic looks up the location of the **ComponentName
 
 You can execute it using the **Angular CLI**:
 
-```bash
+``` Shell
 ng g migrate-component --name=component-name
 ```
 
 For example, to migrate:
 
-```
+``` Shell
 src
 └── app
     ├── home
@@ -221,13 +223,13 @@ src
 
 Run the following command:
 
-```bash
+``` Shell
 ng g migrate-component --name=home
 ```
 
 This will create **home.component.tns.html** and update **app.module.tns.ts**.
 
-```
+``` Shell
 src
 └── app
     ├── home
@@ -235,25 +237,25 @@ src
     |   ├── home.component.tns.html  <= create
     |   └── home.component.ts
     ├── app.module.tns.ts            <= update
-    └── app.module.ts           
+    └── app.module.ts
 ```
 
 #### Components not belonging to **AppModule**:
 
 It is important to understand that **migrate-component** uses the parent **NgModule** to locate the migrated component, so when you want to migrate a component that doesn't belong to **AppModule**, you need to provide the parent **NgModule**.
 
-```bash
+``` Shell
 ng g migrate-component --name=component-name --module=module-name
 ```
 
 This schematic will find the location of the **ComponentNameComponent** in **module-name/module-name.module.ts** and then perform the component migration steps, which involves:
 
 * adding the component to **module-name/module-name.module.tns.ts** and
-* creating a **module-name/component-name.component.tns.html ** file.
+* creating a **module-name/component-name.component.tns.html** file.
 
 For example, to migrate:
 
-```
+``` Shell
 src
 └── app
     └── animals
@@ -266,13 +268,13 @@ src
 
 Run the following command:
 
-```
+``` Shell
 ng g migrate-component --name=dog --module=animals
 ```
 
 This will create **dog.component.tns.html** and update **animals/animals.module.tns.ts**.
 
-```
+``` Shell
 src
 └── app
     └── animals
@@ -281,7 +283,7 @@ src
         |   ├── dog.component.tns.html  <= create
         |   └── dog.component.ts
         ├── animals.module.tns.ts       <= update
-        └── animals.module.ts       
+        └── animals.module.ts
 ```
 
 #### Modules with non-standard file names
@@ -290,7 +292,7 @@ In the cases of modules with non-standard file names, you can provide a full pat
 
 For example, to migrate:
 
-```
+``` Shell
 src
 └── app
     └── animals
@@ -304,7 +306,7 @@ src
 
 Run the following code to achieve the same result.
 
-```bash
+``` Shell
 ng g migrate-component --name=dog --module-path=animals/animals-md.ts
 ```
 
@@ -312,17 +314,17 @@ ng g migrate-component --name=dog --module-path=animals/animals-md.ts
 
 You can also tell the schematic to not update its parent module by using the **--skipModule** flag.
 
-```bash
+``` Shell
 ng g migrate-component --name=component-name --skipModule
 ```
 
-####  Skip Module Updates - with direct path
+#### Skip Module Updates - with direct path
 
 In the case where you want to use **--skipModule** for components that are not located at **src/app**, you need to provide the path to the component by using the **--component-path** parameter.
 
 For example to migrate the dog component:
 
-```
+``` Shell
 src
 └── app
     └── animals
@@ -333,7 +335,7 @@ src
 
 Run the following code to achieve the same result.
 
-```bash
+``` Shell
 ng g migrate-component --name=dog --component-path=animals/dog/dog-cmp.ts --skip-module
 ```
 
@@ -347,7 +349,7 @@ The **migrate-module** performs the module migration steps, which involve:
 
 For example, to migrate the animals module:
 
-```
+``` Shell
 src
 └── app
         └── animals
@@ -362,13 +364,13 @@ src
 
 Run the following command:
 
-```bash
+``` Shell
 ng g migrate-module --name=animals
 ```
 
 This will result in the following changes.
 
-```
+``` Shell
 src
 └── app
     └── animals
@@ -388,9 +390,8 @@ src
 
 [Remapped imports](https://docs.nativescript.org/angular/code-sharing/intro#remapped-imports) are preferred over relative imports in code-sharing projects. The `ng add @nativescript/schematics` command extends your project TSLint configuration with the `prefer-mapped-imports` rule. The rule enforces the use of **remapped imports** and also provides a fix for existing relative imports. To convert the relative imports in your project, execute:
 
-```
+``` Shell
 ng lint --fix
 ```
 
 The `prefer-mapped-imports` rule is part of the `@nativescript/tslint-rules` package. To learn more about it, refer to the official [GitHub repository](https://github.com/nativescript/nativescript-tslint-rules#nativescript-tslint-rules).
-

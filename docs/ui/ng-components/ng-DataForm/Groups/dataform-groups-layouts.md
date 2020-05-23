@@ -21,8 +21,8 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 The available layouts are:
 
-- **DataFormStackLayout** (default): This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} vertically ordered by the value of the {% typedoc_link classes:EntityProperty,member:index%} of their {% typedoc_link classes:EntityProperty%}.
-- **DataFormGridLayout**: This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} in grid ordered by the values of the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of their {% typedoc_link classes:EntityProperty%}. 
+* **DataFormStackLayout** (default): This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} vertically ordered by the value of the {% typedoc_link classes:EntityProperty,member:index%} of their {% typedoc_link classes:EntityProperty%}.
+* **DataFormGridLayout**: This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} in grid ordered by the values of the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of their {% typedoc_link classes:EntityProperty%}.
 
 ## Stack Layout
 
@@ -34,14 +34,14 @@ This is the default layout. If you declare each {% typedoc_link classes:Property
 
 ## Grid Layout
 
-When you want to show more than one editor on one row, you can change the layout of a {% typedoc_link classes:PropertyGroup%} to a {% typedoc_link classes:DataFormGridLayout%}. 
+When you want to show more than one editor on one row, you can change the layout of a {% typedoc_link classes:PropertyGroup%} to a {% typedoc_link classes:DataFormGridLayout%}.
 
 First we need to declare the `RadDataForm` and each of its `TKPropertyGroup` as described in the [Groups Overview]({% slug dataform-groups-overview-angular %} "Groups") article. We need to do the following:
 
-- Add an `TKPropertyGroup` tag to the Component HTML and set the `tkDataFormGroups` inline directive to it.
-- Declare the `TKDataFormGridLayout` inside the `TKPropertyGroup` tags and set the `tkPropertyGroupLayout` inline directive to it.
-- Declare a `TKEntityProperty` for each property of the source object as you would without groups.
-- In order to specify where each editor will be placed in the {% typedoc_link classes:DataFormGridLayout%} you have to specify the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of each {% typedoc_link classes:EntityProperty%}. The next example demonstrates how you can achieve a Grid Layout with 2 rows and 2 columns: 
+* Add an `TKPropertyGroup` tag to the Component HTML and set the `tkDataFormGroups` inline directive to it.
+* Declare the `TKDataFormGridLayout` inside the `TKPropertyGroup` tags and set the `tkPropertyGroupLayout` inline directive to it.
+* Declare a `TKEntityProperty` for each property of the source object as you would without groups.
+* In order to specify where each editor will be placed in the {% typedoc_link classes:DataFormGridLayout%} you have to specify the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of each {% typedoc_link classes:EntityProperty%}. The next example demonstrates how you can achieve a Grid Layout with 2 rows and 2 columns:
 
 #### Example 1: Change the layout of a group to Grid Layout
 

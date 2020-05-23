@@ -9,9 +9,9 @@ slug: startup-times
 
 NativeScript allows you to write native iOS and Android applications using JavaScript. Although there are many advantages to taking this approach—using one language to write multiple apps, faster development times from using an interpreted language, and so forth—there is one fact NativeScript developers can’t avoid: NativeScript apps can take longer to start up than applications written with native development languages such as Objective-C and Java.
 
-Don’t worry though—with a few optimizations, NativeScript apps can startup fast enough for the overwhelming majority of app use cases. This article is a straight-to-the-point list of steps you can take to make sure your NativeScript apps start up as fast as possible. 
+Don’t worry though—with a few optimizations, NativeScript apps can startup fast enough for the overwhelming majority of app use cases. This article is a straight-to-the-point list of steps you can take to make sure your NativeScript apps start up as fast as possible.
 
-> **NOTE**: Jump to the [summary](#summary) if you want an explanation-free list of commands to run.
+> **Note**: Jump to the [summary](#summary) if you want an explanation-free list of commands to run.
 
 * [Step 1: Add uglification](#step-1)
 * [Step 2: Perform heap snapshots](#step-2)
@@ -25,19 +25,19 @@ For NativeScript apps there are two advantages to using UglifyJS. First, because
 
 Using UglifyJS is easy too. To use UglifyJS as part of your NativeScript builds, all you need to do is add a `--env.uglify` flag to the scripts you ran earlier. That is, run one of the following commands.
 
-```
+``` Shell
 tns run android --env.uglify
 ```
 
 Or
 
-```
+``` Shell
 tns run ios --env.uglify
 ```
 
 If you open your `vendor.js` and `bundle.js` files, you should now see compressed code that looks something like this.
 
-![](compressed-code.png)
+![compressed-code](compressed-code.png)
 
 The more code you have, the more of a difference the UglifyJS optimization will make. Here’s what the NativeScript Groceries sample looks like with Uglify added to the webpack build process.
 
@@ -62,30 +62,30 @@ What V8 lets you do, however, is provide a so-called heap snapshot, or a previou
 
 In NativeScript we’re integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--env.snapshot` flag to the previous step.
 
-```
+``` Shell
 tns run android --env.uglify --env.snapshot
 ```
 
-> **Note:** Heap snapshots are a feature of V8 and you can only use this feature as part of your NativeScript Android builds. A similar feature is not available for NativeScript iOS builds.
+> **Note**: Heap snapshots are a feature of V8 and you can only use this feature as part of your NativeScript Android builds. A similar feature is not available for NativeScript iOS builds.
 
 Because heap snapshots completely avoid the need to parse and execute the vast majority of your JavaScript on startup, they tend to speed up the startup times of NativeScript apps substantially. Here’s how the NativeScript Groceries app starts up on Android with heap snapshots enabled.
 
 <img src="../img/best-practices/android-start-up-3.gif" style="height: 450px;">
 
-> **NOTE**: For a far more technical explanation of how V8 heap snapshots work in NativeScript, and how you can configure and optimize the snapshots, check out [this article on the NativeScript blog](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot).
+> **Note**: For a far more technical explanation of how V8 heap snapshots work in NativeScript, and how you can configure and optimize the snapshots, check out [this article on the NativeScript blog](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot).
 
 <h2 id="summary">Summary</h2>
 
 By enabling webpack, using UglifyJS, and performing V8 heap snapshot builds, you have the ability to greatly improve the startup times of your NativeScript applications. As a reference, here is a brief summary of the commands you need to run to enable all optimizations.
 
-1) Run on iOS with, UglifyJS, and Angular Ahead-of-Time enabled.
+1. Run on iOS with, UglifyJS, and Angular Ahead-of-Time enabled.
 
-```
-tns run ios --env.uglify --env.aot 
+``` Shell
+tns run ios --env.uglify --env.aot
 ```
 
-2) Run on Android with, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.
+1. Run on Android with, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.
 
-```
+``` Shell
 tns run android --env.uglify --env.aot --env.snapshot
 ```

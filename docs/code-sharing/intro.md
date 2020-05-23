@@ -23,14 +23,14 @@ A code-sharing project is one where we keep the code for the web and mobile apps
 
 This usually means that we can share the code for:
 
- * **Routes** for navigation,
- * **Services** for common business logic,
- *  and **Component Class definition** for common behaviour of a component
+* **Routes** for navigation,
+* **Services** for common business logic,
+* and **Component Class definition** for common behaviour of a component
 
 While, splitting the code for:
 
- * **UI Layer** (**CSS** and **HTML**) - as you need to use different user interface components in web and NativeScript-built native apps,
- * and **NgModules** - so that you can import platform-specific modules, without creating conflicts (e.g. Angular Material Design - which is web only) between web and mobile.
+* **UI Layer** (**CSS** and **HTML**) - as you need to use different user interface components in web and NativeScript-built native apps,
+* and **NgModules** - so that you can import platform-specific modules, without creating conflicts (e.g. Angular Material Design - which is web only) between web and mobile.
 
 ### Example: A Shopping Basket
 
@@ -52,9 +52,9 @@ The **BasketService** should allow you to:
 
 The **Basket Service** should be made of 100% shareable code.
 
-**basket.service.ts**
+**basket.service.ts**:
 
-```TypeScript
+``` TypeScript
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -66,7 +66,7 @@ import { Item } from '@src/app/item.model.ts';
 export class BasketService {
 
   constructor(private http: HttpClient) { }
-  
+
   public loadItems(): Observable<Items[]> {
     return this.http.get('get-data-request');
   }
@@ -81,7 +81,7 @@ export class BasketService {
 }
 ```
 
-**payment.service.ts**
+**payment.service.ts**:
 
 The **PaymentService** - should allow you to:
 
@@ -89,7 +89,7 @@ The **PaymentService** - should allow you to:
 
 Again, the **PaymentService** should be made of 100% shareable code
 
-```TypeScript
+``` TypeScript
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -108,18 +108,18 @@ Next, you would need to create a component, that would inject the **Basket** and
 
 One more time, the behaviour and the code of the **BasketComponent** should be 100% shared.
 
-**basket.component.ts**
+**basket.component.ts**:
 
-```TypeScript
+``` TypeScript
 @Component()
 export class BasketComponent implements onInit {
   items$: Observable<Item[]>;
-  
+
   constructor(
     basketService: BasketService,
     paymentService: PaymentService
   ) { }
-  
+
   public ngOnInit() {
     this.items = this.basketService.loadItems();
   }
@@ -135,11 +135,11 @@ export class BasketComponent implements onInit {
       this.removeItem(item);
     }
   }
-  
+
   public removeItem(item: Item) {
     this.basketService.remove(item.id);
   }
-  
+
   public pay() {
     this.paymentService.processOneClickPayment();
   }
@@ -163,9 +163,9 @@ To create two separate templates, you just need to use a naming convention. Simp
 * **basket.component.html** - the web template file,
 * **basket.component.tns.html** - the NativeScript template file - it is the **.tns** that makes it a {N} file.
 
-**basket.component.html**
+**basket.component.html**:
 
-```HTML
+``` HTML
 <div>
   <h1>Basket</h1>
   <div *ngFor="let item of items$ | async">
@@ -179,9 +179,9 @@ To create two separate templates, you just need to use a naming convention. Simp
 </div>
 ```
 
-**basket.component.tns.html**
+**basket.component.tns.html**:
 
-```HTML
+``` HTML
 <ActionBar title="Basket"></ActionBar>
 <StackLayout>
   <ListView [items]="items$ | async">
@@ -207,20 +207,21 @@ Even though, the contents of **basket.component.html** and **basket.component.tn
 It's strongly recommended to use **remapped import statements** in code-sharing projects.
 Don't worry if you are not familiar with the term - it was coined by the NativeScript team during the development of the NativeScript Angular code-sharing project structure. The remapped import statements are TypeScript import statements in the following form:
 
-```TypeScript
+``` TypeScript
 import { AppComponent } from '@src/app/app.component';
 ```
 
 Notice the *module specifier*:
 
-```TypeScript
+``` TypeScript
 '@src/app/app.component'
 ```
 
 In a code-sharing project, the TypeScript compiler is configured to understand the `@src` symbol. Depending on the platform you're building for - web or mobile, the compiler will use one of two configuration files. Let's take a look into the configuration file for web:
 
-**tsconfig.app.json**
-```JSON
+**tsconfig.app.json**:
+
+``` JSON
 "compilerOptions": {
   "baseUrl": ".",
   "paths": {
@@ -236,12 +237,13 @@ In a code-sharing project, the TypeScript compiler is configured to understand t
 This tells the compiler for any **module specifier** that matches the pattern `"@src/*"` (i.e. starts with `"@src"`), to look in two locations:
 
 1. `"src/*.web.ts"`: meaning the web-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.web.ts`;
-2. `"src/*.ts"`: meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+1. `"src/*.ts"`: meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
 
 The configuration for mobile is similar:
 
-**tsconfig.tns.json**
-```JSON
+**tsconfig.tns.json**:
+
+``` JSON
 "compilerOptions": {
   "baseUrl": ".",
   "paths": {
@@ -257,7 +259,7 @@ The configuration for mobile is similar:
 Again, the platform-specific files are preferred during resolution:
 
 1. "src/*.tns.ts": meaning the NativeScript-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.tns.ts`;
-2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+1. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
 
 > You can also use `*.android` and `*.ios` files to split any platform-specific logic. Their resolution is handled by webpack during build.
 
@@ -269,7 +271,7 @@ You need to use **remapped imports** when configuring lazy loaded modules as wel
 
 Since Angular 8.0, you can use dynamic imports in your routing configuration. The import path should be a **remapped import**.
 
-```TypeScript
+``` TypeScript
 const routes: Routes = [
   {
     path: 'lazy',
@@ -282,7 +284,7 @@ const routes: Routes = [
 
 If you decide to stick to static strings for the paths of the lazy loaded modules, make sure they are also following the same format:
 
-```TypeScript
+``` TypeScript
 const routes: Routes = [
   {
     path: 'lazy',
@@ -295,8 +297,9 @@ However, in this case, the build process won't detect automatically the module f
 
 1. If the module is mobile-only, update the mobile configuration:
 
-  **tsconfig.tns.json**
-  ```json
+  **tsconfig.tns.json**:
+
+  ``` JSON
   {
     ...
     "files": [
@@ -306,10 +309,11 @@ However, in this case, the build process won't detect automatically the module f
   }
   ```
 
-2. If the module is web-only, update the web configuration file:
+1. If the module is web-only, update the web configuration file:
 
-  **tsconfig.app.json**
-  ```json
+  **tsconfig.app.json**:
+
+  ``` JSON
   {
     ...
     "files": [
@@ -320,10 +324,11 @@ However, in this case, the build process won't detect automatically the module f
   }
   ```
 
-3. If the module is shared, update both configuration files:
+1. If the module is shared, update both configuration files:
 
-  **tsconfig.tns.json**
-  ```json
+  **tsconfig.tns.json**:
+
+  ``` JSON
   {
     ...
     "files": [
@@ -333,8 +338,9 @@ However, in this case, the build process won't detect automatically the module f
   }
   ```
 
-  **tsconfig.app.json**
-  ```json
+  **tsconfig.app.json**:
+
+  ``` JSON
   {
     ...
     "files": [

@@ -19,9 +19,9 @@ The only prerequisite to run your app on a device is to have one connected to yo
 
 ## 3.2: Run your app on an Android device
 
-Let's run the app on the connected Android device. 
+Let's run the app on the connected Android device.
 
-Launch {{ site.sk }} and open your app. To open the run on device view, select **Run** and then **Run on Device**. Select the Android device/s on which you want to deploy your app, choose a **Build Type**, and leave the **Configuration** to **Debug**. 
+Launch {{ site.sk }} and open your app. To open the run on device view, select **Run** and then **Run on Device**. Select the Android device/s on which you want to deploy your app, choose a **Build Type**, and leave the **Configuration** to **Debug**.
 
 Enabling the **Start Debugger** option will automatically begin a debugging session when the app is started on the device.
 
@@ -35,7 +35,7 @@ To build and deploy your app on a connected iOS device, select **Run** and then 
 
 Enabling the **Start Debugger** option will automatically begin a debugging session when the app is started on the device.
 
-Click on the **Run on Device** button to start building the app. If the app is already installed on the device, any changes will be synced and the app will not undergo a complete rebuild. Once the app is deployed on the device, you need to launch it manually. 
+Click on the **Run on Device** button to start building the app. If the app is already installed on the device, any changes will be synced and the app will not undergo a complete rebuild. Once the app is deployed on the device, you need to launch it manually.
 
 You can inspect the iOS device logs the same way you would the Android ones.
 
@@ -43,7 +43,7 @@ You can inspect the iOS device logs the same way you would the Android ones.
 
 LiveSync lets you see changes made to your app applied in real time across all connected devices and emulators. For example, when you make changes to the user interface of your app by editing an XML or HTML file, you will see these changes applied instantly on the device. You will not need to rebuild and redeploy the app on the device. More extensive changes, like adding new plugins to your app, will trigger a rebuild.
 
-LiveSync is enabled automatically when you **Run on Device** in **Debug** configuration. 
+LiveSync is enabled automatically when you **Run on Device** in **Debug** configuration.
 
 ## 3.5: Debug your app
 

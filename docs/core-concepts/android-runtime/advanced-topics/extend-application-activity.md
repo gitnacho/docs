@@ -6,216 +6,224 @@ position: 1
 ---
 
 # Extending Application and Activity
+
 This article describes how to create custom `android.app.Application` and `androidx.appcompat.app.AppCompatActivity` implementations in a NativeScript application.
 
 > **Note**: Demo code below is taken from the Android Extend demos for [plain JavaScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/JavaScriptApp/app/activity.android.js), [TypeScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/TypeScriptApp/app/activity.android.ts) or [Angular](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/activity.android.ts) applications.
 
 ## Philosophy
+
 Because NativeScript is a JavaScript-to-Native framework, our main goal is to make as much as possible from the underlying native platforms easy to implement in JavaScript. Initially we discussed the option where developers would write Java code to achieve some more special cases like custom `androidx.appcompat.app.AppCompatActivity` implementations but then we agreed that we should explore a JavaScript approach first and only if it is not possible to fallback to native code. It turned to be pretty easy, especially with the [Static Binding Generator (SBG)](https://www.nativescript.org/blog/details/static-binding-generator---what-is-it-good-for) tool.
 
 ## Overview
+
 The SBG analyzes JavaScript files and generates the corresponding Java files (or what we call bindings). Prior to the 2.1 release, the core modules provided custom `Activity` and `Application` implementations but these were tightly coupled with the other logic within the modules, making custom implementations close to impossible to achieve. For 2.1 we made some refactoring, with the solely purpose to shape the modules more as a library rather than a framework. In other words - to decouple the `Activity` implementation from the [frame.android.ts](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.android.ts) file and to completely remove the need for a custom `Application` class. With these changes, the modules can now work with custom `Activity` implementations.
 
->The modules will still need to get notified for some `Activity` events in order to work properly. These events are described in the [AndroidActivityCallbacks interface](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.d.ts#L310).
+> The modules will still need to get notified for some `Activity` events in order to work properly. These events are described in the [AndroidActivityCallbacks interface](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.d.ts#L310).
 
 ## Extending Application
+
 The following steps are needed to create custom native `android.app.Application` object and use it, instead of the default `com.tns.NativeScriptApplication` one, provided in the empty project template of the Android Runtime.
 
 1. Create a new JavaScript file in your `app` folder - name it `application.android.js`
 
-    >Note the `*.android` suffix - we want this file packaged for Android only.
+   > Note the `*.android` suffix - we want this file packaged for Android only.
 
-2. Declare the extend:
+1. Declare the extend:
 
-    ```javascript
-    const superProto = android.app.Application.prototype;
+   ``` JavaScript
+   const superProto = android.app.Application.prototype;
 
-    // the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated.
-    android.app.Application.extend("org.myApp.Application", {
-        onCreate: function() {
-            superProto.onCreate.call(this);
+   // the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated.
+   android.app.Application.extend("org.myApp.Application", {
+       onCreate: function() {
+           superProto.onCreate.call(this);
 
-            // At this point modules have already been initialized
+           // At this point modules have already been initialized
 
-            // Enter custom initialization code here
-        },
-        attachBaseContext: function(base) {
-            superProto.attachBaseContext.call(this, base);
-            // This code enables MultiDex support for the application (if needed compile androidx.multidex:multidex)
-            // androidx.multidex.MultiDex.install(this);
-        }
-    });
-    ```
-    ```typescript
-    // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated.
-    @JavaProxy("org.myApp.Application")
-    class Application extends android.app.Application {
-        public onCreate(): void {
-            super.onCreate();
+           // Enter custom initialization code here
+       },
+       attachBaseContext: function(base) {
+           superProto.attachBaseContext.call(this, base);
+           // This code enables MultiDex support for the application (if needed compile androidx.multidex:multidex)
+           // androidx.multidex.MultiDex.install(this);
+       }
+   });
+   ```
 
-            // At this point modules have already been initialized
+   ``` TypeScript
+   // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated.
+   @JavaProxy("org.myApp.Application")
+   class Application extends android.app.Application {
+       public onCreate(): void {
+           super.onCreate();
 
-            // Enter custom initialization code here
-        }
+           // At this point modules have already been initialized
 
-        public attachBaseContext(baseContext: android.content.Context) {
-            super.attachBaseContext(baseContext);
+           // Enter custom initialization code here
+       }
 
-            // This code enables MultiDex support for the application (if needed)
-            // androidx.multidex.MultiDex.install(this);
-        }
-    }
-    ```
+       public attachBaseContext(baseContext: android.content.Context) {
+           super.attachBaseContext(baseContext);
 
-3. Modify the `application` entry within the `AndroidManifest.xml` file found in the `<application-name>app/App_Resources/Android/` folder:
+           // This code enables MultiDex support for the application (if needed)
+           // androidx.multidex.MultiDex.install(this);
+       }
+   }
+   ```
 
-    ```xml
-        <application
-            android:name="org.myApp.Application"
-            android:allowBackup="true"
-            android:icon="@drawable/icon"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" >
-    ```
+1. Modify the `application` entry within the `AndroidManifest.xml` file found in the `<application-name>app/App_Resources/Android/` folder:
 
-    >This modification is required by the native platform; it basically tells Android that your custom `Application` class will be used as the main entry point of the application.
+   ``` XML
+       <application
+           android:name="org.myApp.Application"
+           android:allowBackup="true"
+           android:icon="@drawable/icon"
+           android:label="@string/app_name"
+           android:theme="@style/AppTheme" >
+   ```
 
-4. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the extended Android application should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
+   > This modification is required by the native platform; it basically tells Android that your custom `Application` class will be used as the main entry point of the application.
 
-    ```javascript
-        entry: {
-            bundle: entryPath,
-            application: "./application.android",
-        },
-    ```
+1. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the extended Android application should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
 
-    In this way, the source code of [`application.android.ts`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/application.android.ts) is bundled separately as `application.js` file which is loaded from the native `Application.java` class on launch.
+   ``` JavaScript
+       entry: {
+           bundle: entryPath,
+           application: "./application.android",
+       },
+   ```
 
-    The `bundle.js` and `vendor.js` files are not loaded early enough in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded as early as needed in the application lifecycle.
+   In this way, the source code of [`application.android.ts`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/application.android.ts) is bundled separately as `application.js` file which is loaded from the native `Application.java` class on launch.
 
-    > Note: This approach won't work if `aplication.android.ts` requires external modules.
+   The `bundle.js` and `vendor.js` files are not loaded early enough in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded as early as needed in the application lifecycle.
+
+   > **Note**: This approach won't work if `aplication.android.ts` requires external modules.
 
 ## Extending Activity
+
 The core modules ship with a default `androidx.appcompat.app.AppCompatActivity` implementation, which ensures they alone are sufficient to bootstrap an empty NativeScript application, without forcing users to declare their custom `Activity` in every project. When needed, however, users may still specify custom `Activity` implementation and use it to bootstrap the application. The following code demonstrates how this can be done:
 
 1. Create a new JavaScript file in your `app` folder - name it `activity.android.js`
 
-    >Note the `*.android` suffix - we want this file packaged for Android only.
+   > Note the `*.android` suffix - we want this file packaged for Android only.
 
-2. Declare the extend:
+1. Declare the extend:
 
-    ```javascript
-    const frame = require("tns-core-modules/ui/frame");
+   ``` JavaScript
+   const frame = require("tns-core-modules/ui/frame");
 
-    const superProto = androidx.appcompat.app.AppCompatActivity.prototype;
-    androidx.appcompat.app.AppCompatActivity.extend("org.myApp.MainActivity", {
-        onCreate: function(savedInstanceState) {
-            // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
-            // The JS constructor might not be called because the activity is created from Android.
-            this.isNativeScriptActivity = true;
-            if(!this._callbacks) {
-                frame.setActivityCallbacks(this);
-            }
-            // Modules will take care of calling super.onCreate, do not call it here
-            this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), superProto.onCreate);
+   const superProto = androidx.appcompat.app.AppCompatActivity.prototype;
+   androidx.appcompat.app.AppCompatActivity.extend("org.myApp.MainActivity", {
+       onCreate: function(savedInstanceState) {
+           // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
+           // The JS constructor might not be called because the activity is created from Android.
+           this.isNativeScriptActivity = true;
+           if(!this._callbacks) {
+               frame.setActivityCallbacks(this);
+           }
+           // Modules will take care of calling super.onCreate, do not call it here
+           this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), superProto.onCreate);
 
-            // Add custom initialization logic here
-        },
-        onSaveInstanceState: function(outState) {
-            this._callbacks.onSaveInstanceState(this, outState, superProto.onSaveInstanceState);
-        },
-        onStart: function() {
-            this._callbacks.onStart(this, superProto.onStart);
-        },
-        onStop: function() {
-            this._callbacks.onStop(this, superProto.onStop);
-        },
-        onDestroy: function() {
-            this._callbacks.onDestroy(this, superProto.onDestroy);
-        },
-        onBackPressed: function() {
-            this._callbacks.onBackPressed(this, superProto.onBackPressed);
-        },
-        onRequestPermissionsResult: function (requestCode, permissions, grantResults) {
-            this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined);
-        },
-        onActivityResult: function (requestCode, resultCode, data) {
-            this._callbacks.onActivityResult(this, requestCode, resultCode, data, _super.prototype.onActivityResult);
-        }
-    });
-    ```
-    ```typescript
-    import {setActivityCallbacks, AndroidActivityCallbacks} from "tns-core-modules/ui/frame";
+           // Add custom initialization logic here
+       },
+       onSaveInstanceState: function(outState) {
+           this._callbacks.onSaveInstanceState(this, outState, superProto.onSaveInstanceState);
+       },
+       onStart: function() {
+           this._callbacks.onStart(this, superProto.onStart);
+       },
+       onStop: function() {
+           this._callbacks.onStop(this, superProto.onStop);
+       },
+       onDestroy: function() {
+           this._callbacks.onDestroy(this, superProto.onDestroy);
+       },
+       onBackPressed: function() {
+           this._callbacks.onBackPressed(this, superProto.onBackPressed);
+       },
+       onRequestPermissionsResult: function (requestCode, permissions, grantResults) {
+           this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined);
+       },
+       onActivityResult: function (requestCode, resultCode, data) {
+           this._callbacks.onActivityResult(this, requestCode, resultCode, data, _super.prototype.onActivityResult);
+       }
+   });
+   ```
 
-    @JavaProxy("org.myApp.MainActivity")
-    class Activity extends androidx.appcompat.app.AppCompatActivity {
-        public isNativeScriptActivity;
+   ``` TypeScript
+   import {setActivityCallbacks, AndroidActivityCallbacks} from "tns-core-modules/ui/frame";
 
-        private _callbacks: AndroidActivityCallbacks;
+   @JavaProxy("org.myApp.MainActivity")
+   class Activity extends androidx.appcompat.app.AppCompatActivity {
+       public isNativeScriptActivity;
 
-        public onCreate(savedInstanceState: android.os.Bundle): void {
-            // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
-            // The JS constructor might not be called because the activity is created from Android.
-            this.isNativeScriptActivity = true;
-            if (!this._callbacks) {
-                setActivityCallbacks(this);
-            }
+       private _callbacks: AndroidActivityCallbacks;
 
-            this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), super.onCreate);
-        }
+       public onCreate(savedInstanceState: android.os.Bundle): void {
+           // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
+           // The JS constructor might not be called because the activity is created from Android.
+           this.isNativeScriptActivity = true;
+           if (!this._callbacks) {
+               setActivityCallbacks(this);
+           }
 
-        public onSaveInstanceState(outState: android.os.Bundle): void {
-            this._callbacks.onSaveInstanceState(this, outState, super.onSaveInstanceState);
-        }
+           this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), super.onCreate);
+       }
 
-        public onStart(): void {
-            this._callbacks.onStart(this, super.onStart);
-        }
+       public onSaveInstanceState(outState: android.os.Bundle): void {
+           this._callbacks.onSaveInstanceState(this, outState, super.onSaveInstanceState);
+       }
 
-        public onStop(): void {
-            this._callbacks.onStop(this, super.onStop);
-        }
+       public onStart(): void {
+           this._callbacks.onStart(this, super.onStart);
+       }
 
-        public onDestroy(): void {
-            this._callbacks.onDestroy(this, super.onDestroy);
-        }
+       public onStop(): void {
+           this._callbacks.onStop(this, super.onStop);
+       }
 
-        public onBackPressed(): void {
-            this._callbacks.onBackPressed(this, super.onBackPressed);
-        }
+       public onDestroy(): void {
+           this._callbacks.onDestroy(this, super.onDestroy);
+       }
 
-        public onRequestPermissionsResult(requestCode: number, permissions: Array<string>, grantResults: Array<number>): void {
-            this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined /*TODO: Enable if needed*/);
-        }
+       public onBackPressed(): void {
+           this._callbacks.onBackPressed(this, super.onBackPressed);
+       }
 
-        public onActivityResult(requestCode: number, resultCode: number, data: android.content.Intent): void {
-            this._callbacks.onActivityResult(this, requestCode, resultCode, data, super.onActivityResult);
-        }
-    }
-    ```
+       public onRequestPermissionsResult(requestCode: number, permissions: Array<string>, grantResults: Array<number>): void {
+           this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined /*TODO: Enable if needed*/);
+       }
 
-    >Note the `this._callbacks` property. It is automatically assigned to your extended class by the `frame.setActivityCallbacks` method. It implements the [AndroidActivityCallbacks](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.d.ts#L310) interface and allows the core modules to get notified for important `Activity` events. It is mandatory to call back to the modules through this interface, to ensure their proper initialization.
+       public onActivityResult(requestCode: number, resultCode: number, data: android.content.Intent): void {
+           this._callbacks.onActivityResult(this, requestCode, resultCode, data, super.onActivityResult);
+       }
+   }
+   ```
 
-3. Modify the `activity` entry within the `AndroidManifest.xml` file found in the `<application-name>app/App_Resources/Android/` folder:
+   > Note the `this._callbacks` property. It is automatically assigned to your extended class by the `frame.setActivityCallbacks` method. It implements the [AndroidActivityCallbacks](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.d.ts#L310) interface and allows the core modules to get notified for important `Activity` events. It is mandatory to call back to the modules through this interface, to ensure their proper initialization.
 
-    ```xml
-        <activity
-            android:name="org.myApp.MainActivity"
-            android:label="@string/title_activity_kimera"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-    ```
+1. Modify the `activity` entry within the `AndroidManifest.xml` file found in the `<application-name>app/App_Resources/Android/` folder:
 
-4. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the absolute path to the file where the Android activity is extended should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array.
+   ``` XML
+       <activity
+           android:name="org.myApp.MainActivity"
+           android:label="@string/title_activity_kimera"
+           android:configChanges="keyboardHidden|orientation|screenSize">
+   ```
 
-    ```javascript
-        const appComponents = [
-            "tns-core-modules/ui/frame",
-            "tns-core-modules/ui/frame/activity",
-            resolve(__dirname, "app/activity.android.ts"),
-        ];
-    ```
+1. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the absolute path to the file where the Android activity is extended should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array.
 
-    In this way and with the default config, these components [get](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L109-L116) in the common *vendor.js* chunk and are required by the [`android-app-components-loader`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L146-L149).
+   ``` JavaScript
+       const appComponents = [
+           "tns-core-modules/ui/frame",
+           "tns-core-modules/ui/frame/activity",
+           resolve(__dirname, "app/activity.android.ts"),
+       ];
+   ```
+
+   In this way and with the default config, these components [get](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L109-L116) in the common *vendor.js* chunk and are required by the [`android-app-components-loader`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L146-L149).
 
 ## See Also
+
 * [How Extend Works](../generator/extend-class-interface.md)

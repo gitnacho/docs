@@ -7,31 +7,37 @@ tags: getting started, vue, ui, nativescript
 position: 2
 publish: true
 ---
+
 # Getting Started
+
 The following article assumes that you already have the latest version of NativeScript and have [created a NativeScript application]({% slug ns-vue %}).
 
 ## Installation
 
-- Open a console window and go to the root directory of your NativeScript application.
-- Install the package that contains the component that you want to use by typing nativescript command that adds a plugin. For example, if you want to use the chart, type  
-````
-$ tns plugin add nativescript-ui-chart
-````
-- Then import/require the installed component in your app
+* Open a console window and go to the root directory of your NativeScript application.
+* Install the package that contains the component that you want to use by typing nativescript command that adds a plugin. For example, if you want to use the chart, type
 
-```TypeScript
-import * as chartModule from "nativescript-ui-chart";
-```
-```JavaScript
-var chartModule = require("nativescript-ui-chart");
-```
+  ```` Shell
+  tns plugin add nativescript-ui-chart
+  ````
+
+* Then import/require the installed component in your app
+
+  ``` TypeScript
+  import * as chartModule from "nativescript-ui-chart";
+  ```
+
+  ``` JavaScript
+  var chartModule = require("nativescript-ui-chart");
+  ```
 
 ## Getting Started with Vue
+
 To use a plugin which is part from Progress NativeScript UI with Vue you need to first install the corresponding plugin by executing `tns plugin add nativescript-ui-<plugin-name>`, for example `tns plugin add nativescript-ui-chart`
 
 After installing the NPM package, we only need to install the Vue plugin by importing the `nativescript-ui-chart/vue` module and calling `Vue.use()`:
 
-```
+``` JavaScript
 import Vue from 'nativescript-vue';
 import RadChartPlugin from 'nativescript-ui-chart/vue';
 
@@ -40,7 +46,7 @@ Vue.use(RadChartPlugin);
 
 Once the module is required inside the NativeScript + Vue application you can take advantage of its contents by utilizing the RadCartesianChart. See this example of `App.vue` file:
 
-```
+``` HTML
 <template>
   <Page>
     <RadCartesianChart>

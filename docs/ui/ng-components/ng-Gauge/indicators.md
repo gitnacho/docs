@@ -19,7 +19,7 @@ Bar indicators are used to visualize a range of values on a scale. Customization
 #### Example 1. Add bar indicators to a scale
 First you will need to setup the RadRadialGauge as described in the [**Indicators**]({% slug gauges-gettingstarted-angular %}) after that in order to add the {% typedoc_link classes:RadialBarIndicator %} objects you will need to:
 
-- Declare the `<RadialBarIndicator></RadialBarIndicator>` and set the custom `tkRadialScaleIndicators` inline directive to it. That inline directive is making the 'link' between the {% typedoc_link classes:RadialBarIndicator %} object and the {% typedoc_link classes:RadialScale %}
+* Declare the `<RadialBarIndicator></RadialBarIndicator>` and set the custom `tkRadialScaleIndicators` inline directive to it. That inline directive is making the 'link' between the {% typedoc_link classes:RadialBarIndicator %} object and the {% typedoc_link classes:RadialScale %}
 
 <snippet id='gauges-customization-angular-html' />
 <snippet id='gauges-customization-angular' />
@@ -61,5 +61,3 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 Related articles you might find useful:
 
 * [**Scales**]({% slug gauges-scales-angular %})
-
-

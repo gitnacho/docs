@@ -15,27 +15,30 @@ The code inside `tns-core-modules` and all plugins published by the NativeScript
 
 The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time.
 The main drawbacks are:
-- It is up to the plugin developer to manage the plugin-related memory correctly. There might be plugins that do not support the feature and could crash the app with a "cleared reference" exception.
-- It is up to the app developer to manage the app memory correctly. The app code itself might also need to be updated in order to keep JS object references and prevent unwanted collection.
+
+* It is up to the plugin developer to manage the plugin-related memory correctly. There might be plugins that do not support the feature and could crash the app with a "cleared reference" exception.
+* It is up to the app developer to manage the app memory correctly. The app code itself might also need to be updated in order to keep JS object references and prevent unwanted collection.
 
 ## Updating an app or a plugin to support `markingMode: none`
 
 First, to instruct any app to use this feature we need to add the following in the [Android-specific custom flags(app/package.json)](./custom-flags):
 
-```json
+``` JSON
 "android": {
   "markingMode": "none",
 }
 ```
+
 If the app behaves correctly after this change - great. Sometimes, however, some sporadic errors/crashes occur, especially related to memory management, like any of the following:
-- `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
-- `The JavaScript instance no longer has available Java/Kotlin instance counterpart`
+
+* `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
+* `The JavaScript instance no longer has available Java/Kotlin instance counterpart`
 
 In such cases additional work has to be done. Have in mind the problem could be either in the app code, or in some plugin(s) used by the app. In both cases the resolution is identical.
 
 ### Let’s start with an example
 
-```javascript
+``` JavaScript
 var implementor = new android.native.Implementor();     // native class
 var callback = new android.native.NCallback({           // native interface
     getMessage: function () {
@@ -51,7 +54,7 @@ The implementor is enclosed by the callback implementation, but with `markingMod
 
 To fix the previous example you must keep implementor from being GC'ed, by attaching it to the global object (or some other long-lasting object, exported module or wherever you see fit) which will ensure it will not be GC'ed prematurely. Below, the `implementor` is attached to `global` for the sake of the example:
 
-```javascript
+``` JavaScript
 var implementor = new native.Implementor();
 global.implementor = implementor;
 var callback = new native.NCallback({
@@ -64,30 +67,36 @@ native.Executor.printWithDelay(callback, 3s);
 
 Naturally, you must manage the lifecycle of the implementor and release it when it is no longer needed:
 
-```javascript
+``` JavaScript
 global.implementor = null;
 ```
 
-> **NOTE** To see a more concrete example of the above scenario using `markingMode: none`, run [this example](https://github.com/NativeScript/marking-mode-example)
+> **Note**: To see a more concrete example of the above scenario using `markingMode: none`, run [this example](https://github.com/NativeScript/marking-mode-example)
 
 ## Testing an app for `markingMode: none` related issues
 
 `markingMode: none` applies to Android only, so testing for issues implies testing your app in Android Emulator or real Android device. Because bugs of this kind occur pretty randomly, there is not a single and universal way to find them. Below are some general tips on how to test/maintain an app:
-- Look for code fragments where native Java/Kotlin instances are created and ones in which these instances are used from inside event handlers, callbacks, functions of extended classes. Have in mind that in such cases if the JS instance reference becomes weak (i.e. garbage collectable), this can be a source of a problem. In such case make sure you make it strong, i.e. not collectable. Also make sure to dispose it when no longer needed.
+
+* Look for code fragments where native Java/Kotlin instances are created and ones in which these instances are used from inside event handlers, callbacks, functions of extended classes. Have in mind that in such cases if the JS instance reference becomes weak (i.e. garbage collectable), this can be a source of a problem. In such case make sure you make it strong, i.e. not collectable. Also make sure to dispose it when no longer needed.
 Below are 2 possible solutions for some common cases:
-    - {N} View classes - any native views or listeners should be kept in private properties on your View class so the lifetime of its native objects will be tied to the JavaScript View instance.
-    - Listeners - like the example above - store any native instances in the global scope if you need it to be accessed from callbacks, closures, etc.
-- [Monkey testing](https://developer.android.com/studio/test/monkey) - this is a CLI-based way of testing your apps by generating random events like clicks, gestures, etc. It is best to pin your app before starting the monkey test. Thus "the monkey" will interact only with the app and not with the whole OS.
+  + {N} View classes - any native views or listeners should be kept in private properties on your View class so the lifetime of its native objects will be tied to the JavaScript View instance.
+  + Listeners - like the example above - store any native instances in the global scope if you need it to be accessed from callbacks, closures, etc.
+* [Monkey testing](https://developer.android.com/studio/test/monkey) - this is a CLI-based way of testing your apps by generating random events like clicks, gestures, etc. It is best to pin your app before starting the monkey test. Thus "the monkey" will interact only with the app and not with the whole OS.
 Example command to start testing:
-```sh
+
+``` Shell
 adb shell monkey --throttle 200 40000
 ```
+
 To stop the monkey:
-```sh
+
+``` Shell
 adb shell ps | awk '/com\.android\.commands\.monkey/ { system("adb shell kill " $2) }'
 ```
+
 In order to unpin a pinned app:
-```sh
+
+``` Shell
 adb shell am task lock stop
 ```
 
@@ -95,13 +104,13 @@ adb shell am task lock stop
 
 Every native object instantiated in JS/TS, like:
 
-```javascript
+``` JavaScript
 var implementor = new android.native.Implementor();
 ```
 
 ... and which is also enclosed by a function of an extended class, event handler, etc:
 
-```javascript
+``` JavaScript
 ...
 getMessage: function() {
     implementor.getMessage();

@@ -16,11 +16,11 @@ The cells and all visuals that the calendar control is built from differentiate 
 Every one of these visual parts is customizable.
 
 The following calendar properties should be used for different view modes:
-- `monthViewStyle` - defines styling of RadCalendar for [Month view mode]({% slug calendar-monthview-styling %} "Read more about styling in Month view mode"). Should be initialized with instance of `CalendarMonthViewStyle`
-- `weekViewStyle` - defines styling of RadCalendar for [Week view mode]({% slug calendar-weekview-styling %} "Read more about styling in Week view mode"). Should be initialized with instance of `CalendarWeekViewStyle`
-- `yearViewStyle` - defines styling of RadCalendar for [Year view mode]({% slug calendar-yearview-styling %} "Read more about styling in Year view mode"). Should be initialized with instance of `CalendarYearViewStyle`
-- `monthNamesViewStyle` -  defines styling of RadCalendar for [MonthNames view mode]({% slug calendar-monthnamesview-styling %} "Read more about styling in MonthNames view mode"). Should be initialized with instance of `CalendarMonthNamesViewStyle`
-- `dayViewStyle` - defines styling of RadCalendar for [Day view mode]({% slug calendar-dayview-styling %} "Read more about styling in Day view mode"). Should be initialized with instance of `CalendarDayViewStyle`
+* `monthViewStyle` - defines styling of RadCalendar for [Month view mode]({% slug calendar-monthview-styling %} "Read more about styling in Month view mode"). Should be initialized with instance of `CalendarMonthViewStyle`
+* `weekViewStyle` - defines styling of RadCalendar for [Week view mode]({% slug calendar-weekview-styling %} "Read more about styling in Week view mode"). Should be initialized with instance of `CalendarWeekViewStyle`
+* `yearViewStyle` - defines styling of RadCalendar for [Year view mode]({% slug calendar-yearview-styling %} "Read more about styling in Year view mode"). Should be initialized with instance of `CalendarYearViewStyle`
+* `monthNamesViewStyle` -  defines styling of RadCalendar for [MonthNames view mode]({% slug calendar-monthnamesview-styling %} "Read more about styling in MonthNames view mode"). Should be initialized with instance of `CalendarMonthNamesViewStyle`
+* `dayViewStyle` - defines styling of RadCalendar for [Day view mode]({% slug calendar-dayview-styling %} "Read more about styling in Day view mode"). Should be initialized with instance of `CalendarDayViewStyle`
 
 These classes have properties for different visual parts of RadCalendar in corresponding view.
 

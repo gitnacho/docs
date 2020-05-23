@@ -25,7 +25,7 @@ When {% typedoc_link classes:RadCartesianChart %} visualizes {% typedoc_link cla
 
 ## Binding Specifics
 
-> When binding the chart to data that contains Date objects, developers need to convert these date objects to time in **milliseconds**. 
+> When binding the chart to data that contains Date objects, developers need to convert these date objects to time in **milliseconds**.
 
 This is necessary because the Telerik UI library calls JSON.stringify() on the data objects before they are passed to the underlying native implementation. Then, the native implementation
 parses back the string to a native Android or iOS object. This call to stringify may produce incorrect results when called on a Date object. To be safe, convert the Date data beforehand to time in milliseconds. For more details take a look at our "Date time axis" example from our sdk repository [here](https://github.com/NativeScript/nativescript-ui-samples-vue/blob/master/chart/app/examples/axes/DateTimeAxes.ts)
@@ -33,6 +33,7 @@ parses back the string to a native Android or iOS object. This call to stringify
 ## Properties
 
 ### Date Format
+
 By using the {% typedoc_link classes:DateTimeContinuousAxis,member:dateFormat %} property you can specify the format used to parse the date values passed as parameters to the {% typedoc_link classes:DateTimeContinuousAxis,member:minimum %} and {% typedoc_link classes:DateTimeContinuousAxis,member:maximum %} properties. It is also used to format the date-labels on the axis.
 
 ### Maximum

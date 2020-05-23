@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 ## Disable All Editors
 
-`RadDataForm` has a {% typedoc_link classes:RadDataForm,member:isReadOnly %} property which allows you to disable all of its editors. 
+`RadDataForm` has a {% typedoc_link classes:RadDataForm,member:isReadOnly %} property which allows you to disable all of its editors.
 
 #### Example 1: Make all editors read only
 

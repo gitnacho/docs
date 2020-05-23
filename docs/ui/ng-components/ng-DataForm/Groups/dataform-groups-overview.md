@@ -34,14 +34,14 @@ Adding groups to `RadDataForm` and specifying which property belongs to each gro
 
 Note the {% typedoc_link classes:PropertyGroup,member:collapsible %} property of the {% typedoc_link classes:PropertyGroup %} in the previous example. This allows you to specify whether the groups can be collapsed by tapping on their header. You can use the {% typedoc_link classes:PropertyGroup,member:collapsed %} property to control the current state of the group. If you want to hide the header, you can use PropertyGroup's {% typedoc_link classes:PropertyGroup,member:titleHidden %} property. To hide the whole group, you can use PropertyGroup's {% typedoc_link classes:PropertyGroup,member:hidden %} property. If you need to make changes to some of the properties of a {% typedoc_link classes:PropertyGroup %}, you can get it by its name through {% typedoc_link classes:RadDataForm,member:getGroupByName %} method and make your changes:
 
-- First we will need to pass the RadDataForm instance to the Angular `@Component`. We can easily do that via the `@ViewChild` mechanism, the `dataformAngularModule` is the `nativescript-ui-dataform/angular` module:
+* First we will need to pass the RadDataForm instance to the Angular `@Component`. We can easily do that via the `@ViewChild` mechanism, the `dataformAngularModule` is the `nativescript-ui-dataform/angular` module:
 
 #### Example 2: Access the RadDataFormComponent
 
 <snippet id='angular-runtime-viewchild-html'/>
 <snippet id='angular-runtime-viewchild-code'/>
 
-- This will inject the {% typedoc_link classes:RadDataFormComponent %} into the `myRuntimeDataFormComp` property. In order to access the {% typedoc_link classes:RadDataForm %} element simply use the  {% typedoc_link classes:RadDataFormComponent,member:dataForm%} property: 
+* This will inject the {% typedoc_link classes:RadDataFormComponent %} into the `myRuntimeDataFormComp` property. In order to access the {% typedoc_link classes:RadDataForm %} element simply use the  {% typedoc_link classes:RadDataFormComponent,member:dataForm%} property:
 
 #### Example 3: Adjust group's property through code
 
@@ -50,8 +50,8 @@ Note the {% typedoc_link classes:PropertyGroup,member:collapsible %} property of
 ## Events
 
 {% typedoc_link classes:RadDataForm %} provides the following group related events:
-- **groupUpdate** - fired when the a group is being setup and can be used for customizations of the native groups
-- **groupExpanded** and **groupCollapsed** - to notify you when a group is collapsed or expanded, if the group supports collapsing. 
+* **groupUpdate** - fired when the a group is being setup and can be used for customizations of the native groups
+* **groupExpanded** and **groupCollapsed** - to notify you when a group is collapsed or expanded, if the group supports collapsing.
 
 These events provide event arguments which have a property {% typedoc_link classes:DataFormEventData,member:groupName %} which you can use to determine the name of the group related with the event and a property {% typedoc_link classes:DataFormEventData,member:group %}, which can be used to get the native group element.
 
@@ -61,7 +61,7 @@ If you are using [JSON metadata]({% slug dataform-start-properties-angular %}#ad
 
 #### Example 4: Sample JSON metadata for RadDataForm
 
-```JSON
+``` JSON
 {
 	"propertyAnnotations":
 	[

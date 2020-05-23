@@ -6,12 +6,14 @@ position: 2
 ---
 
 # Objective-C Protocols
+
 Objective-C protocols describe an API Objective-C classes may implement. JavaScript does not have a matching counterpart. For every Objective-C Protocol we expose a JavaScript object that identifies the protocol.
 
 For example given the following Objective-C declarations:
-```objective-c
+
+``` Objective-C
 @protocol MyProtocol
-- (void)helloWorld;
+* (void)helloWorld;
 @end
 
 @interface MyClass : NSObject <MyProtocol>
@@ -19,7 +21,8 @@ For example given the following Objective-C declarations:
 ```
 
 Will be exposed as:
-```javascript
+
+``` JavaScript
 console.log(MyClass.conformsToProtocol(MyProtocol)); // true
 
 var instance = MyClass.alloc().init();
@@ -27,21 +30,24 @@ console.log(instance.conformsToProtocol(MyProtocol)); // true
 ```
 
 You can get the name of a protocol as a string and back:
-```javascript
+
+``` JavaScript
 var protocol = NSProtocolFromString("MyProtocol");
 console.log(NSStringFromProtocol(protocol)); // "MyProtocol"
 console.log(protocol === MyProtocol); // true
 ```
 
 Like [Objective-C classes](ObjC-Classes.md), Objective-C protocols too have a prototype and constructor methods. For example:
-```objective-c
+
+``` Objective-C
 @protocol TNSProtocol
 @property int aProperty;
 + (void)staticMethod;
-- (void)instanceMethod;
+* (void)instanceMethod;
 @end
 ```
-```javascript
+
+``` JavaScript
 var staticMethod = TNSProtocol.staticMethod;
 var instanceMethod = TNSProtocol.prototype.instanceMethod;
 var aProperty = Object.getOwnPropertyDescriptor(TNSProtocol.prototype, 'aProperty');
@@ -51,8 +57,9 @@ Although these methods cannot be called directly, it can be useful in some rare 
 
 These protocol wrapper objects can also be used in the [extension API](../how-to/ObjC-Subclassing.md) to create derived Objective-C classes that implement the protocols.
 
-> **NOTE:** In case of conflicts with other types, the name has the `Protocol` suffix.
-```javascript
+> **Note**: In case of conflicts with other types, the name has the `Protocol` suffix.
+
+``` JavaScript
 var klass = NSObject;
 var protocol = NSObjectProtocol;
 ```

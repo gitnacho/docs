@@ -21,8 +21,8 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 The available layouts are:
 
-- **DataFormStackLayout** (default): This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} vertically ordered by the value of the {% typedoc_link classes:EntityProperty,member:index%} of their {% typedoc_link classes:EntityProperty%}.
-- **DataFormGridLayout**: This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} in grid ordered by the values of the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of their {% typedoc_link classes:EntityProperty%}. 
+* **DataFormStackLayout** (default): This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} vertically ordered by the value of the {% typedoc_link classes:EntityProperty,member:index%} of their {% typedoc_link classes:EntityProperty%}.
+* **DataFormGridLayout**: This layout places all of the editors in a {% typedoc_link classes:PropertyGroup%} in grid ordered by the values of the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of their {% typedoc_link classes:EntityProperty%}.
 
 ## Stack Layout
 
@@ -34,7 +34,7 @@ This is the default layout. If you declare each {% typedoc_link classes:Property
 
 ## Grid Layout
 
-When you want to show more than one editor on one row, you can change the layout of a {% typedoc_link classes:PropertyGroup%} to a {% typedoc_link classes:DataFormGridLayout%}. 
+When you want to show more than one editor on one row, you can change the layout of a {% typedoc_link classes:PropertyGroup%} to a {% typedoc_link classes:DataFormGridLayout%}.
 
 In order to specify where each editor is placed in the {% typedoc_link classes:DataFormGridLayout%} you have to specify the {% typedoc_link classes:EntityProperty,member:index%} and {% typedoc_link classes:EntityProperty,member:columnIndex%} of its {% typedoc_link classes:EntityProperty%}. The next example demonstrates how you can achieve a Grid Layout with 2 rows and 2 columns:
 

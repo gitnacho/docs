@@ -14,7 +14,7 @@ Transpilers allow you to develop your application in languages other than JavaSc
 
 Run the following command to install Babel support into your project:
 
-```Shell
+``` Shell
 tns install babel
 ```
 

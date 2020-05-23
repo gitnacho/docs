@@ -18,7 +18,7 @@ This article will guide you through the process of adding a {% typedoc_link clas
 
 ## Create the Source Object
 
-In order to use `RadDataForm` to edit an object, we need to have the object that we will edit. In this example, we will create a class `Person`, pass an instance of this class to `RadDataForm` and then we will be able to edit the person's properties. 
+In order to use `RadDataForm` to edit an object, we need to have the object that we will edit. In this example, we will create a class `Person`, pass an instance of this class to `RadDataForm` and then we will be able to edit the person's properties.
 
 #### Example 1: Declare the object that we will use as a source for RadDataForm
 

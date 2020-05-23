@@ -13,9 +13,10 @@ previous: /integration-with-existing-ios-and-android-apps/extend-existing-ios-ap
 If you have an existing native iOS app built with Swift/Objective-C, but would like to extend functionality of the app with NativeScript, we can provide experimental guidance for you.
 
 ## Requirements
- - Xcode 9+
- - NativeScript CLI 3.0+
-    - Nativescript iOS platform 3.0+
+
+* Xcode 9+
+* NativeScript CLI 3.0+
+  + Nativescript iOS platform 3.0+
 
 ## Instructions
 

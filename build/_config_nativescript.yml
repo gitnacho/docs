@@ -10,7 +10,6 @@ exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules
 nsselected: "selected"
 ngselected: ""
 
-
 flavour: "nativescript"
 navigation:
 ## List your directory names and order here, like this:

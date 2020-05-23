@@ -15,8 +15,8 @@ Item separators are lines displayed between the items to better designate the bo
 ## Implementing Item Separators in RadListView
 
 1. Create an angular Component in your NativeScript application and put a {% typedoc_link classes:RadListView %} instance bound to a source of data items
-2. Add a new `StackLayout` instance in the **`tkListItemTemplate`** and make its height be 2 pixels as shown below:
-3. Run your application. The result should be as the following screenshot demonstrates
+1. Add a new `StackLayout` instance in the **`tkListItemTemplate`** and make its height be 2 pixels as shown below:
+1. Run your application. The result should be as the following screenshot demonstrates
 
 <snippet id='listview-angular-item-separator'/>
 

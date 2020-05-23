@@ -12,19 +12,19 @@ publish: true
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors overview]({% slug dataform-editors-overview %} "Editors Overview in RadDataForm for NativeScript") page outlined the main features of the editors in `RadDataForm`. This article will demonstrate the supported editors and show you how to use them.
 
-- [Complete List](#complete-list)
-- [Editors by Usage](#editors-by-usage)
+* [Complete List](#complete-list)
+* [Editors by Usage](#editors-by-usage)
 
-    - [Simple Text](#simple-text)
-    - [Numeric](#numeric)
-    - [True or False](#true-or-false)
-    - [Date and Time](#date-and-time)
-    - [Input from Predefined Lists](#input-from-predefined-lists)
-    - [Input with AutoComplete Suggestions](#input-with-autocomplete-suggestions)
-    - [View Only](#view-only)
+  + [Simple Text](#simple-text)
+  + [Numeric](#numeric)
+  + [True or False](#true-or-false)
+  + [Date and Time](#date-and-time)
+  + [Input from Predefined Lists](#input-from-predefined-lists)
+  + [Input with AutoComplete Suggestions](#input-with-autocomplete-suggestions)
+  + [View Only](#view-only)
 
-- [Custom Editors](#custom-editors)
-- [References](#references)
+* [Custom Editors](#custom-editors)
+* [References](#references)
 
 ## Complete List
 

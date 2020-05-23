@@ -23,15 +23,15 @@ Build your apps locally on your machine with the help of previously installed de
 1. Launch {{ site.ns-sk }} and open your app.
 1. From the top toolbar, select **Build**.
 1. Select **Android**.
-1. Hover on the **Android** box and click on the cogwheel icon to open the **Manage Android Certificates** dialog. 
+1. Hover on the **Android** box and click on the cogwheel icon to open the **Manage Android Certificates** dialog.
 1. Next to **Certificate**, click **Browse** to choose a certificate stored on the file system or expand the **drop-down** to select a certificate stored in the Certificate Manager (Windows) or the Keychain (macOS).
 1. Close the **Manage Android Certificates** dialog.
 1. Under **Build Type**, select **Local Build**.
 1. Select a **Configuration**.
 1. (Optional) If any issues are present, resolve them before you continue.
 1. Click on **Build**.
-1. If you have provided a certificate stored on the file system (step 5), you will be prompted to enter its password on every build. Certificates stored in the Certificate Manager or Keychain do not require password validation. 
-1. When the build process is complete, you will be presented with a path to the produced `APK` file and a **QR code**. You can use a barcode scanner app to scan the QR code and install the application directly on a device. 
+1. If you have provided a certificate stored on the file system (step 5), you will be prompted to enter its password on every build. Certificates stored in the Certificate Manager or Keychain do not require password validation.
+1. When the build process is complete, you will be presented with a path to the produced `APK` file and a **QR code**. You can use a barcode scanner app to scan the QR code and install the application directly on a device.
 
 ## Procedure for iOS
 
@@ -40,8 +40,8 @@ Build your apps locally on your machine with the help of previously installed de
 1. Launch {{ site.ns-sk }} and open your app.
 1. From the top toolbar, select **Build**.
 1. Select **iOS**.
-1. Hover on the **iOS** box and click on the cogwheel icon to open the **Manage iOS Provisioning and Certificates** dialog. 
-1. Next to **Certificate**, expand the **drop-down** to select a certificate stored in the Keychain. 
+1. Hover on the **iOS** box and click on the cogwheel icon to open the **Manage iOS Provisioning and Certificates** dialog.
+1. Next to **Certificate**, expand the **drop-down** to select a certificate stored in the Keychain.
 1. The **Provision** will be taken automatically from the Keychain. However, you need to ensure that the Keychain contains a mobile provision tied to the selected certificate and the respective `App ID`.
 1. Close the **Manage Android Certificates** dialog.
 1. Under **Build Type**, select **Local Build**.

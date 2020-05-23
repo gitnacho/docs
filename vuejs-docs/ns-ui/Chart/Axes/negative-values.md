@@ -10,7 +10,7 @@ publish: false
 
 # Chart Negative Values
 
-If you followed the [getting started]({% slug chart-getting-started-vue %} "Chart Getting Started") article, you now know how to create a chart and add it to a NativeScript page. In this article, you will see an example of using negative values and see how the chart will render them. 
+If you followed the [getting started]({% slug chart-getting-started-vue %} "Chart Getting Started") article, you now know how to create a chart and add it to a NativeScript page. In this article, you will see an example of using negative values and see how the chart will render them.
 
 * [Getting Started](#getting-started)
 * [References](#references)

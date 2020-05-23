@@ -14,9 +14,9 @@ NativeScript ships with a set of user interface [`views`](/api-reference/modules
 
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System]({%slug layouts %}).
 
-> **TIP:** You can access the underlying native widget for each view at runtime using the `nativeView` property:
+> **Tip**: You can access the underlying native widget for each view at runtime using the `nativeView` property:
 >
->  `<view>.nativeView`
+> `<view>.nativeView`
 >
 > Accessing the native widgets might be useful when you want to use some platform-specific functionalities of the widget. You can find information about the underlying native component for each view below.
 
@@ -29,7 +29,7 @@ The {% nativescript %}[Button]({%slug button%}){% endnativescript %} {% angular 
 
 ![button android](./img/gallery/android/buttonPage.png "button android")![button ios](./img/gallery/ios/buttonPage.png "button ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -41,7 +41,7 @@ The {% nativescript %}[Label]({%slug label%}){% endnativescript %} {% angular %}
 
 ![label android](./img/gallery/android/labelPage.png "label android")![label ios](./img/gallery/ios/labelPage.png "label ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -53,7 +53,7 @@ The {% nativescript %}[TextField]({%slug text-field%}){% endnativescript %} {% a
 
 ![text-field android](./img/gallery/android/textFieldPage.png "text-field android")![text-field ios](./img/gallery/ios/textFieldPage.png "text-field ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -67,7 +67,7 @@ You can use it to show multi-line text and implement text editing.
 
 ![text-view android](./img/gallery/android/textViewPage.png "text-view android")![text-view ios](./img/gallery/ios/textViewPage.png "text-view ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -79,7 +79,7 @@ The {% nativescript %}[SearchBar]({%slug search-bar%}){% endnativescript %} {% a
 
 ![search-bar android](./img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](./img/gallery/ios/searchBarPage.png "search-bar ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -91,7 +91,7 @@ The {% nativescript %}[Switch]({%slug switch%}){% endnativescript %} {% angular 
 
 ![switch android](./img/gallery/android/switchPage.png "switch android")![switch ios](./img/gallery/ios/switchPage.png "switch ios")
 
-**Native Component**
+**Native Component**:
 
 | Android               | iOS      |
 |:----------------------|:---------|
@@ -103,7 +103,7 @@ The {% nativescript %}[Slider]({%slug slider%}){% endnativescript %} {% angular 
 
 ![slider android](./img/gallery/android/sliderPage.png "slider android")![slider ios](./img/gallery/ios/sliderPage.png "slider ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -115,7 +115,7 @@ The {% nativescript %}[Progress]({%slug progress%}){% endnativescript %} {% angu
 
 ![progress android](./img/gallery/android/progressPage.png "progress android")![progress ios](./img/gallery/ios/progressPage.png "progress ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -127,7 +127,7 @@ The {% nativescript %}[ActivityIndicator]({%slug activity-indicator%}){% endnati
 
 ![activity-indicator android](./img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](./img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -139,7 +139,7 @@ The {% nativescript %}[Image]({%slug image%}){% endnativescript %} {% angular %}
 
 ![image android](./img/gallery/android/imagePage.png "image android")![image ios](./img/gallery/ios/imagePage.png "image ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -151,7 +151,7 @@ The {% nativescript %}[ListView]({%slug list-view%}){% endnativescript %} {% ang
 
 ![list-view android](./img/gallery/android/listViewPage.png "list-view android")![list-view ios](./img/gallery/ios/listViewPage.png "list-view ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -163,7 +163,7 @@ The {% nativescript %}[HtmlView]({%slug html-view%}){% endnativescript %} {% ang
 
 ![html-view android](./img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](./img/gallery/ios/htmlViewPage.png "html-view ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -175,7 +175,7 @@ The {% nativescript %}[WebView]({%slug web-view%}){% endnativescript %} {% angul
 
 ![web-view android](./img/gallery/android/webViewPage.png "web-view android")![web-view ios](./img/gallery/ios/webViewPage.png "web-view ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -187,7 +187,7 @@ With the {% nativescript %}[TabView]({%slug tab-view%}){% endnativescript %} {% 
 
 ![tab-view android](./img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](./img/gallery/ios/tabViewPage.png "tab-view ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -199,7 +199,7 @@ With the {% nativescript %}[SegmentedBar]({%slug segmented-bar%}){% endnativescr
 
 ![segmented-bar android](./img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](./img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -211,7 +211,7 @@ With the {% nativescript %}[DatePicker]({%slug date-picker%}){% endnativescript 
 
 ![date-picker android](./img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](./img/gallery/ios/datePickerPage.png "date-picker ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -223,7 +223,7 @@ With the {% nativescript %}[TimePicker]({%slug time-picker%}){% endnativescript 
 
 ![time-picker android](./img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](./img/gallery/ios/timePickerPage.png "time-picker ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -235,7 +235,7 @@ With the {% nativescript %}[ListPicker]({%slug list-picker%}){% endnativescript 
 
 ![list-picker android](./img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](./img/gallery/ios/listPickerPage.png "list-picker ios")
 
-**Native Component**
+**Native Component**:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
@@ -251,11 +251,11 @@ The {% nativescript %}[dialogs module]({%slug dialogs %}){% endnativescript %} {
 
 NativeScript UI is a set of free* components that enable implementing rich-ui applications for iOS and Android by using [NativeScript](https://www.nativescript.org). **Progress NativeScript UI** is built on top of natively implemented components targeting iOS and Android. Each of the components is available for download on npmjs.com as a separate package.
 
-> *Although the components are free, they are not open-source and their code is proprietary. [Read the components' license for details](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/LICENSE.md). 
-
+> *Although the components are free, they are not open-source and their code is proprietary. [Read the components' license for details](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/LICENSE.md).
+>
 > In case you're interested in contributing to the code base, [read the contributing options available](https://github.com/NativeScript/nativescript-ui-feedback#contributing-to-nativescript-ui).
 
-Continue reading about each component below or take them for a spin with the {% nativescript %}[NativeScript UI sample app on GitHub](https://github.com/NativeScript/nativescript-ui-samples){% endnativescript %}{% angular %}[NativeScript UI sample app on GitHub](https://github.com/NativeScript/nativescript-ui-samples-angular){%  endangular %}.
+Continue reading about each component below or take them for a spin with the {% nativescript %}[NativeScript UI sample app on GitHub](https://github.com/NativeScript/nativescript-ui-samples){% endnativescript %}{% angular %}[NativeScript UI sample app on GitHub](https://github.com/NativeScript/nativescript-ui-samples-angular){% endangular %}.
 
 ## Components
 
@@ -273,12 +273,11 @@ The SideDrawer component (known as RadSideDrawer in code and distributed through
 
 ![sidedrawer ios](../../img/ui-for-nativescript/sidedrawer-ios.png "sidedrawer ios") ![sidedrawer android](../../img/ui-for-nativescript/sidedrawer-android.png "sidedrawer android")
 
-
 ### RadListView
 
 [{% nativescript %}[Documentation]({% slug listview-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug listview-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/listview){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-listview)]
 
-> **NOTE**: The professional ListView component is different from the ListView built in to the core NativeScript modules. Use the professional ListView if you need to take advantage of the advanced functionality listed below.
+> **Note**: The professional ListView component is different from the ListView built in to the core NativeScript modules. Use the professional ListView if you need to take advantage of the advanced functionality listed below.
 
 The ListView component (known as RadListView in code and distributed through the `nativescript-ui-listview` package) is a virtualizing list component that provides the most needed features associated with scenarios where a list of items is used. Features include:
 
@@ -287,7 +286,7 @@ The ListView component (known as RadListView in code and distributed through the
 * Swipe to execute;
 * Header and footer;
 * Item animation when the user scrolls, and four out-of-the-box effects to choose from;
-*  `Linear`, `Grid`, and `Staggered` layout modes, allowing horizontal and vertical scrolling direction;
+* `Linear`, `Grid`, and `Staggered` layout modes, allowing horizontal and vertical scrolling direction;
 * Single and multiple selection modes;
 * Smart defaults for many gestures: select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe, and loading more items only when needed.
 
@@ -306,7 +305,6 @@ The Calendar component (known as RadCalendar in code and distributed through the
 
 ![calendar ios](../../img/ui-for-nativescript/calendar-ios.png "calendar ios") ![calendar android](../../img/ui-for-nativescript/calendar-android.png "calendar android")
 
-
 ### RadChart
 
 [{% nativescript %}[Documentation]({% slug chart-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug chart-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart){% endnativescript %}{% angular %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/chart){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-chart)]
@@ -316,16 +314,14 @@ The Chart component includes two types of charts: cartesian (known as RadCartesi
 * Wide array of accepted data types: numerical, string or `DateTime` data depending on the chart you want to visualize;
 * Smooth interaction and zooming;
 * Various chart series options:
-
-	* Show trends with `Line`, `Area`, and `Spline Area` charts;
-	* Compare sets of data with `Bar` charts;
-	* Illustrate proportions with `Pie` and `Donut` charts - and use `Spline` and `Spline Area` charts to plot data that require the use of curve fittings;
-	* Show relationships among values using `Scatter` and `Bubble` series, even use `Financial` series and indicators.
+  + Show trends with `Line`, `Area`, and `Spline Area` charts;
+  + Compare sets of data with `Bar` charts;
+  + Illustrate proportions with `Pie` and `Donut` charts - and use `Spline` and `Spline Area` charts to plot data that require the use of curve fittings;
+  + Show relationships among values using `Scatter` and `Bubble` series, even use `Financial` series and indicators.
 * Annotations, tooltips, and trackball;
 * Support for multiple axes.
 
 ![chart ios](../../img/ui-for-nativescript/chart-ios.png "chart ios") ![chart android](../../img/ui-for-nativescript/chart-android.png "chart android")
-
 
 ### RadAutoCompleteTextView
 
@@ -333,13 +329,12 @@ The Chart component includes two types of charts: cartesian (known as RadCartesi
 
 The AutoComplete component (known as RadAutoCompleteTextView in code and distributed through the `nativescript-ui-autocomplete` package) offers suggested options to your users based on characters they type. It provides multiple means for easy customization and data management, including:
 
-*  Suggest modes - you can choose to show suggestions in a drop-down list, one suggestion at a time in the text input, or a combination of both;
-*  `StartsWith` and `Contains` completion modes;
-*  Two distinct display modes: `Plain` in which only one item can be selected, and `Tokens` allowing multiple selection of suggestions (each displayed as a token);
+* Suggest modes - you can choose to show suggestions in a drop-down list, one suggestion at a time in the text input, or a combination of both;
+* `StartsWith` and `Contains` completion modes;
+* Two distinct display modes: `Plain` in which only one item can be selected, and `Tokens` allowing multiple selection of suggestions (each displayed as a token);
 * Token Layout modes - Wrap and Horizontal.
 
 ![autocompletetextview ios](../../img/ui-for-nativescript/autocompletetextview-ios.png "autocompletetextview ios") ![autocompletetextview android](../../img/ui-for-nativescript/autocompletetextview-android.png "autocompletetextview android")
-
 
 ### RadDataForm
 
@@ -355,7 +350,6 @@ The DataForm component (known as RadDataForm in code and distributed through the
 
 ![dataform ios](../../img/ui-for-nativescript/dataform-ios.png "dataform ios") ![dataform android](../../img/ui-for-nativescript/dataform-android.png "dataform android")
 
-
 ### RadGauge
 
 [{% nativescript %}[Documentation]({% slug gauges-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug gauges-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples/tree/master/gauge){% endnativescript %}{% angular %}[Sample Code](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/gauge){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-gauge)]
@@ -368,7 +362,6 @@ The Gauge component (known as RadRadialGauge in code and distributed through the
 
 ![gauges ios](../../img/ui-for-nativescript/gauges-ios.png "gauges ios") ![gauges android](../../img/ui-for-nativescript/gauges-android.png "gauges android")
 
-
 ## Further resources
 
 ### SDK samples app
@@ -376,7 +369,7 @@ The Gauge component (known as RadRadialGauge in code and distributed through the
 You can explore the Progress NativeScript UI getting started application, which is [publicly available on GitHub]{% nativescript %}(https://www.github.com/NativeScript/nativescript-ui-samples){% endnativescript %}{% angular %}(https://www.github.com/NativeScript/nativescript-ui-samples-angular){% endangular %}. It contains various examples of the usage of the components. More information about how to run the application is available in its README.
 
 ## Feedback
+
 Your feedback will be highly appreciated and will directly influence the development of **Progress NativeScript UI**.
 
 You can submit issues and feedback to the [dedicated feedback GitHub repository](https://github.com/NativeScript/nativescript-ui-feedback).
-

@@ -15,17 +15,17 @@ publish: true
 ## Setup
 
 To display a Range Bar Chart, you will need to:
-- Add a **RadCartesianChart** to your page.
-- Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
-- Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
-- Add at least one instance of **RangeBarSeries**  to the chart's **series** property and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
+* Add a **RadCartesianChart** to your page.
+* Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
+* Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
+* Add at least one instance of **RangeBarSeries**  to the chart's **series** property and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
 
  > The above setup will create a chart with vertical bars. If you need horizontal bars, you can swap the axes' position and assign the category axis to the *verticalAxis* property and the value axis to the *horizontalAxis* property.
- 
+
 To illustrate this setup, let's create an example. First we will create a source with items:
- 
+
 #### Example 1: Define a source with data
- 
+
 <snippet id='range-bar-source'/>
 
 Note that since the bar chart shows categories, each category must be unique. In the above example, the category is 'Country'. Including the same category more than once would result in some data not being displayed.

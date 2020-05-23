@@ -17,9 +17,9 @@ To enable item animations you first need to explicitly define item layout. More 
 
 Note that the {% typedoc_link classes:ListViewLinearLayout,member:itemInsertAnimation %} and {% typedoc_link classes:ListViewLinearLayout,member:itemDeleteAnimation %} properties are set via bindings to {% typedoc_link enums:ListViewItemAnimation,member:Fade %}. This means that items being inserted or removed from the source collection will be animated using a fade-in or fade-out animation. There are four different animations that are currently available:
 
-- {% typedoc_link enums:ListViewItemAnimation,member:Default %}
-- {% typedoc_link enums:ListViewItemAnimation,member:Fade %}
-- {% typedoc_link enums:ListViewItemAnimation,member:Scale %}
-- {% typedoc_link enums:ListViewItemAnimation,member:Slide %}
+* {% typedoc_link enums:ListViewItemAnimation,member:Default %}
+* {% typedoc_link enums:ListViewItemAnimation,member:Fade %}
+* {% typedoc_link enums:ListViewItemAnimation,member:Scale %}
+* {% typedoc_link enums:ListViewItemAnimation,member:Slide %}
 
 The currently available item animation types are defined by the {% typedoc_link enums:ListViewItemAnimation %} enumeration.

@@ -10,10 +10,10 @@ publish: true
 
 # RadCalendar Overview
 {% typedoc_link classes:RadCalendar %} for NativeScript is a highly customizable native calendar abstraction that exposes a unified API, covering:
-- inline events
-- different view modes
-- cells customization
-- selection
+* inline events
+* different view modes
+* cells customization
+* selection
 
 ![RadCalendar: Overview](../../img/ns_ui/calendar-overview_ios.png "iOS")     ![RadCalendar: Overview](../../img/ns_ui/calendar-overview_android.png "Android")
 
@@ -21,11 +21,11 @@ publish: true
 ### View modes
 {% typedoc_link classes:RadCalendar %} supports different view modes that are suitable for different application scenarios:
 
-- {% typedoc_link enums:CalendarViewMode,member:Week %} - displays the dates within one week
-- {% typedoc_link enums:CalendarViewMode,member:Month %} - displays the dates within one month
-- {% typedoc_link enums:CalendarViewMode,member:MonthNames %} - displays the months within a year
-- {% typedoc_link enums:CalendarViewMode,member:Year %} - displays a whole year
-- {% typedoc_link enums:CalendarViewMode,member:Day %} - displays a timeline for a day with its events
+* {% typedoc_link enums:CalendarViewMode,member:Week %} - displays the dates within one week
+* {% typedoc_link enums:CalendarViewMode,member:Month %} - displays the dates within one month
+* {% typedoc_link enums:CalendarViewMode,member:MonthNames %} - displays the months within a year
+* {% typedoc_link enums:CalendarViewMode,member:Year %} - displays a whole year
+* {% typedoc_link enums:CalendarViewMode,member:Day %} - displays a timeline for a day with its events
 
 For more information about View Modes take a look at the dedicated article: [Calendar view modes]({% slug calendar-view-modes %} "Read more about view modes of RadCalendar").
 

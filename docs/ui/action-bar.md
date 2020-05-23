@@ -13,9 +13,12 @@ previous_url: /cookbook/ui/action-bar
 The article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet. The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
 ## Defining The ActionBar
+
 {% nativescript %}
+
 Here is how to define the ActionBar inside your page:
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <Page.actionBar>
       <ActionBar title="My ActionBar"/>
@@ -24,25 +27,30 @@ Here is how to define the ActionBar inside your page:
   <!-- Page content ... -->
 </Page>
 ```
-We will include only the `ActionBar` tag in the rest of the code-snippets in this article. 
-{% endnativescript %}
-{% angular %}
+
+We will include only the `ActionBar` tag in the rest of the code-snippets in this article.
+
+{% endnativescript %}{% angular %}
+
 To define the ActionBar include the `ActionBar` tag inside a component template:
-```XML
+
+``` XML
 <ActionBar title="Custom Title"></ActionBar>
 ```
+
 If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-actionbar).
 
->Note: To hide the ActionBar on the initial page of your Angular application use the `actionBarHidden` boolean property while accesing the current `Page` instance.
+> **Note**: To hide the ActionBar on the initial page of your Angular application use the `actionBarHidden` boolean property while accesing the current `Page` instance.
 
 {% endangular %}
 
 ## Title
+
 ### Setting The Title Text
 
 Use the `title` property of the `ActionBar` to set the title:
 
-```XML
+``` XML
 <ActionBar title="Application Title"></ActionBar>
 ```
 
@@ -58,7 +66,7 @@ The example below shows how to combine an image and label for a `titleView` (the
 
 #### How to create custom title view instead of the ActionBar title.
 
-```XML
+``` XML
 <ActionBar title="test">
   <StackLayout orientation="horizontal"
     ios:horizontalAlignment="center"
@@ -68,7 +76,8 @@ The example below shows how to combine an image and label for a `titleView` (the
   </StackLayout>
 </ActionBar>
 ```
-```CSS
+
+``` CSS
 .action-image {
     width: 40;
     height: 40;
@@ -91,33 +100,35 @@ The result is:
 > **Note**: You can use CSS to style the elements inside the `titleView`.
 
 ### Using Custom View in Action Items
+
 You could set a custom view, which will be rendered instead of the ActionItem text.
 The example below demonstrates, how to load to separate labels inside the item.
 
 {% nativescript %}
-```XML
+
+``` XML
 <Page>
   <Page.actionBar>
     <ActionBar>
       <ActionBar.actionItems>
-			<ActionItem>
-			  <ActionItem.actionView>
-				  <StackLayout orientation="horizontal">
-				    <Label text="Green" color="green"/>
-				    <Label text="Red" color="red"/>
-				  </StackLayout>
-			  </ActionItem.actionView>
-			</ActionItem>
+            <ActionItem>
+              <ActionItem.actionView>
+                  <StackLayout orientation="horizontal">
+                    <Label text="Green" color="green"/>
+                    <Label text="Red" color="red"/>
+                  </StackLayout>
+              </ActionItem.actionView>
+            </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
   ...
 </Page>
 ```
-{% endnativescript %}
 
-{% angular %}
-```HTML
+{% endnativescript %}{% angular %}
+
+``` HTML
 <ActionBar title="Title">
   <ActionItem>
     <StackLayout orientation="horizontal">
@@ -127,17 +138,19 @@ The example below demonstrates, how to load to separate labels inside the item.
   </ActionItem>
 </ActionBar>
 ```
-{% endangular %}
 
-{% angular %}
+{% endangular %}{% angular %}
+
 > **Important**: Platform specific tags (e.g. `<ios>` and `android`) can't be used in Angular based project.
 Use structural directives like `*ngIf` to create platform specific logic for your ActionBar.
+
 {% endangular %}
 
 ### Setting the App Icon for Android
+
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
 
-```XML
+``` XML
 <ActionBar title="App Icon Demo" android.icon="res://icon" android.iconVisibility="always"></ActionBar>
 ```
 
@@ -150,33 +163,38 @@ The result is:
 The `NavigationButton` component is a common abstraction over the iOS back button and the Android navigation button.
 
 {% nativescript %}
-```XML
+
+``` XML
 <ActionBar title="App Icon Demo">
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
 </ActionBar>
 ```
-```JavaScript
+
+``` JavaScript
 function onNavBtnTap() {
     // This code will be called only in Android.
     console.log("Navigation button tapped!");
 }
 exports.onNavBtnTap = onNavBtnTap;
 ```
-```TypeScript
+
+``` TypeScript
 export function onNavBtnTap(){
     // This code will be called only in Android.
     console.log("Navigation button tapped!");
 }
 ```
-{% endnativescript %}
-{% angular %}
-```XML
+
+{% endnativescript %}{% angular %}
+
+``` XML
 <ActionBar title="App Icon Demo">
-  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" 
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"
     (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 ```
-```TypeScript
+
+``` TypeScript
 @Component({ ... })
 class MyComponent {
     public onNavBtnTap(){
@@ -185,6 +203,7 @@ class MyComponent {
     }
 }
 ```
+
 {% endangular %}
 
 The result is:
@@ -201,14 +220,15 @@ If you want to place a button on the left side of the `ActionBar` and handle the
 
 ### Android Specifics
 
-In Android, you cannot set text inside the navigation button. You can use the `icon` property to set an image (e.g., `~\images\nav-image.png` or `res:\\ic_nav`). You can use `android.systemIcon` to set one of the system icons available in Android. In this case, there is no default behaviour for NavigationButton's `tap` event, and we should define manually the callback function, which will be executed. 
+In Android, you cannot set text inside the navigation button. You can use the `icon` property to set an image (e.g., `~\images\nav-image.png` or `res:\\ic_nav`). You can use `android.systemIcon` to set one of the system icons available in Android. In this case, there is no default behaviour for NavigationButton's `tap` event, and we should define manually the callback function, which will be executed.
 
 ## Action Items
 
 You can define additional action buttons using the `actionItems` collection:
 
 {% nativescript %}
-```XML
+
+``` XML
 <ActionBar title="Action Items">
   <ActionItem tap="onShare"
       ios.systemIcon="9" ios.position="left"
@@ -218,7 +238,8 @@ You can define additional action buttons using the `actionItems` collection:
       text="delete" android.position="popup"></ActionItem>
 </ActionBar>
 ```
-```JavaScript
+
+``` JavaScript
 function onShare(args) {
     console.log("Share action item tapped.");
 }
@@ -228,7 +249,8 @@ function onDelete(args) {
 }
 exports.onDelete = onDelete;
 ```
-```TypeScript
+
+``` TypeScript
 export function onShare(args: observable.EventData) {
     console.log("Share action item tapped.");
 }
@@ -237,32 +259,36 @@ export function onDelete(args: observable.EventData) {
     console.log("Delete action item tapped.");
 }
 ```
-{% endnativescript %}
-{% angular %}
-```XML
+
+{% endnativescript %}{% angular %}
+
+``` XML
 <ActionBar title="Action Items">
   <ActionItem (tap)="onShare()"
       ios.systemIcon="9" ios.position="left"
-      android.systemIcon="ic_menu_share" 
+      android.systemIcon="ic_menu_share"
       android.position="actionBar"></ActionItem>
   <ActionItem (tap)="onDelete()"
       ios.systemIcon="16" ios.position="right"
       text="delete" android.position="popup"></ActionItem>
 </ActionBar>
 ```
-```TypeScript
+
+``` TypeScript
 @Component({ ... })
 class MyComponent {
     onShare(args: observable.EventData) {
         console.log("Share action item tapped.");
     }
-    
+
     onDelete(args: observable.EventData) {
         console.log("Delete action item tapped.");
     }
 }
 ```
+
 {% endangular %}
+
 The result is:
 
 ![action-items-ios](./img/modules/action-bar/action-items-ios.png "action-items-ios")
@@ -308,30 +334,35 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 |10     | Organize       |     |22     | Redo |
 |11     | Bookmarks      |     |23     | PageCurl |
 
-
 ## How To
+
 ### Showing or Hiding the ActionBar
 
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
+
 {% nativescript %}
 
 Hidng the `ActionBar` via XML.
-```XML
+
+``` XML
 <Page actionBarHidden="true" loaded="onPageLoaded">
 </Page>
 ```
+
 Hidng the `ActionBar` via code-behind (TypeScript).
-```TS
+
+``` TypeScript
 export function onPageLoaded(args: EventData) {
     const page = <Page>args.object;
     page.actionBarHidden = true;
 }
-
 ```
-{% endnativescript %}
-{% angular %}
+
+{% endnativescript %}{% angular %}
+
 You can inject a reference to the current `Page` in the constructor of your component using the Angular Dependency Injection (DI).
-```TypeScript
+
+``` TypeScript
 import { Component } from "@angular/core";
 import { isAndroid } from "tns-core-modules/platform";
 import { Page } from "tns-core-modules/ui/page";
@@ -349,6 +380,7 @@ export class ItemsComponent {
     }
 }
 ```
+
 {% endangular %}
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
@@ -356,12 +388,14 @@ In **Android**, the application bar is visible by default and shows the name of 
 In **iOS**, if the application bar is empty (e.g., no title or action items are defined), it is hidden on the first page and automatically shown after navigation to host the navigation button. If the ActionBar is not empty (e.g., there is a title or action items defined) it will be shown on first page, too.
 
 ### Hiding Action Items
+
 {% nativescript %}
+
 You can use the `visibility` property of the `ActionItem` to dynamically hide and show items. You can also use binding for the visibility.
 
 Here is an example of showing different action items when the app is in "editing" mode:
 
-```XML
+``` XML
 <ActionBar title="Action Items Visibility">
   <ActionItem tap="onEdit" ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"
       {%raw%}visibility="{{ isEditing ? 'collapse' : 'visible' }}"/>{%endraw%}
@@ -371,7 +405,8 @@ Here is an example of showing different action items when the app is in "editing
       {%raw%}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{%endraw%}
 </ActionBar>
 ```
-```JavaScript
+
+``` JavaScript
 var observable = require("tns-core-modules/data/observable");
 function onLoaded(args) {
     var page = args.object;
@@ -398,7 +433,8 @@ function onCancel(args) {
 }
 exports.onCancel = onCancel;
 ```
-```TypeScript
+
+``` TypeScript
 import { EventData, Observable } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 
@@ -426,32 +462,34 @@ export function onCancel(args: observable.EventData) {
     btn.bindingContext.set("isEditing", false);
 }
 ```
-{% endnativescript %}
-{% angular %}
+
+{% endnativescript %}{% angular %}
+
 You can use the `*ngIf` directive to dynamically hide and show action items.
 
 Here is an example of showing different action items when the app is in "editing" mode:
 
-```XML
+``` XML
 <ActionBar title="Action Items Visibility">
   <ActionItem *ngIf="!isEditing" (tap)="onEdit()"
     ios.systemIcon="2" android.systemIcon="ic_menu_edit"
     ios.position="right"></ActionItem>
-      
-  <ActionItem *ngIf="isEditing" (tap)="onSave()" 
+
+  <ActionItem *ngIf="isEditing" (tap)="onSave()"
     ios.systemIcon="3" android.systemIcon="ic_menu_save"
     ios.position="right"></ActionItem>
-    
+
   <ActionItem *ngIf="isEditing" (tap)="onCancel()"
     ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
 </ActionBar>
 ```
-```TypeScript
+
+``` TypeScript
 
 @Component({ ... })
 class MyComponent {
     isEditing:boolean = false;
-    
+
     onEdit() {
         console.log("Edit item tapped.");
         this.isEditing = true;
@@ -468,6 +506,7 @@ class MyComponent {
     }
 }
 ```
+
 {% endangular %}
 
 The result is:
@@ -479,13 +518,14 @@ The result is:
 
 The ActionBar has some CSS styling limitations. You can use only `background-color` and `color` properties. Here is an example:
 
-```XML
+``` XML
 <ActionBar title="ActionBar Style">
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
   <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"></ActionItem>
 </ActionBar>
 ```
-```CSS
+
+``` CSS
 ActionBar {
     background-color:  #3C5AFD;
     color: white;
@@ -500,7 +540,7 @@ The result is:
 In iOS, the `color` property affects the color of the title and the action items.
 In Android, the `color` property affects only the title text. However, you can set the default color of the text in the action items by adding an `actionMenuTextColor` item in the Android theme (inside `App_Resources\Android\values\styles.xml`).
 
->Note: Setting other CSS properties (e.g., `font-family`) will only affect the views defined inside `titleView`.
+> **Note**: Setting other CSS properties (e.g., `font-family`) will only affect the views defined inside `titleView`.
 
 ### Creating SideDrawer Button
 
@@ -511,12 +551,14 @@ For Android, this example uses the `NavigationButton` because `ActionItems` are 
 For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Using the `NavigationButton` as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
 
 {% nativescript %}
->Note: The `<android>` and `<ios>` tags are used inside the XML to define platform-specific elements.
->Important: The platform specific tags (`<android>` and `<ios>`) will work only in non-Angular based project.
-{% endnativescript %}
 
-{% nativescript %}
-```XML
+> **Note**: The `<android>` and `<ios>` tags are used inside the XML to define platform-specific elements.
+>
+> **Important**: The platform specific tags (`<android>` and `<ios>`) will work only in non-Angular based project.
+
+{% endnativescript %}{% nativescript %}
+
+``` XML
 <ActionBar title="SideDrawer Button">
   <android>
     <NavigationButton icon="res://ic_menu" tap="showSideDrawer" />
@@ -526,35 +568,39 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
   </ios>
 </ActionBar>
 ```
-```JavaScript
+
+``` JavaScript
 function showSideDrawer(args) {
     console.log("Show SideDrawer tapped.");
     // Show sidedrawer ...
 }
 exports.showSideDrawer = showSideDrawer;
 ```
-```TypeScript
+
+``` TypeScript
 export function showSideDrawer(args: observable.EventData) {
     console.log("Show SideDrawer tapped.");
     // Show sidedrawer ...
 }
 ```
-```CSS
+
+``` CSS
 ActionBar {
     background-color:  #3C5AFD;
     color: white;
 }
 ```
-{% endnativescript %}
 
-{% angular %}
-```XML
+{% endnativescript %}{% angular %}
+
+``` XML
 <ActionBar title="SideDrawer Button">
-	<NavigationButton android.systemIcon="res://ic_menu" *ngIf="isAndroid()" (tap)="showSideDrawer()"></NavigationButton>
-	<ActionItem ios.systemIcon="res://ic_menu" *ngIf="isIOS()" ios.position="left" (tap)="showSideDrawer()"></ActionItem>
+    <NavigationButton android.systemIcon="res://ic_menu" *ngIf="isAndroid()" (tap)="showSideDrawer()"></NavigationButton>
+    <ActionItem ios.systemIcon="res://ic_menu" *ngIf="isIOS()" ios.position="left" (tap)="showSideDrawer()"></ActionItem>
 </ActionBar>
 ```
-```TypeScript
+
+``` TypeScript
 import { Component, OnInit } from "@angular/core";
 import { isAndroid, isIOS } from "tns-core-modules/platform";
 
@@ -570,7 +616,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
     }
-    
+
     isIOS(): boolean {
         return isIOS;
     }
@@ -585,14 +631,15 @@ export class HomeComponent implements OnInit {
     }
 }
 ```
-```CSS
+
+``` CSS
 ActionBar {
     background-color:  #3C5AFD;
     color: white;
 }
 ```
-{% endangular %}
 
+{% endangular %}
 
 The result is:
 
@@ -602,16 +649,18 @@ The result is:
 {% angular %}
 
 ### Adding Actions To Existing ActionBar
+
 Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want to override the whole `ActionBar`.
 
 Here is how to define a contextual `copy` action:
 
-```XML
+``` XML
 <ActionBarExtension>
     <ActionItem *ngIf="hasSelection" (tap)="copy()" text="Copy"></ActionItem>
 </ActionBarExtension>
 ```
-```TypeScript
+
+``` TypeScript
 @Component({ ... })
 class MyTextEditorComponent {
     public hasSelection: boolean;
@@ -623,6 +672,7 @@ class MyTextEditorComponent {
     // ...
 }
 ```
+
 {% endangular %}
 
 ## See also

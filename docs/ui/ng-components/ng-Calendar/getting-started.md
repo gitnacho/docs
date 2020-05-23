@@ -8,20 +8,23 @@ position: 2
 publish: true
 ---
 
-# Getting Started with RadCalendar for Angular 
+# Getting Started with RadCalendar for Angular
+
 This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-calendar
 ```
 
 ## Adding a RadCalendar to Your Template
+
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUICalendarModule %} from the *nativescript-ui-calendar* plugin has been imported in an `ngModule` in your app. For example:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
 
 @NgModule({

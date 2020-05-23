@@ -10,7 +10,7 @@ publish: true
 
 # RadDataForm Custom Editors
 
-If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors list]({% slug dataform-editors-list %} "Editors List in RadDataForm for NativeScript") article demonstrated the available editors. This article will show you what to do if the editor you would like to use is not on the list with available editors. For example, if we wanted to have a `Button` to change the value of the property age in this example, we could use <a href="https://developer.android.com/reference/android/widget/Button.html" target="_blank">android.widget.Button</a> in Android and <a href="https://developer.apple.com/reference/uikit/uiview" target="_blank">UIButton</a> in iOS. 
+If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors list]({% slug dataform-editors-list %} "Editors List in RadDataForm for NativeScript") article demonstrated the available editors. This article will show you what to do if the editor you would like to use is not on the list with available editors. For example, if we wanted to have a `Button` to change the value of the property age in this example, we could use <a href="https://developer.android.com/reference/android/widget/Button.html" target="_blank">android.widget.Button</a> in Android and <a href="https://developer.apple.com/reference/uikit/uiview" target="_blank">UIButton</a> in iOS.
 
 #### Figure 1: RadDataForm with custom editor
 
@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 ## Create a custom property editor
 
-In this article you will learn how to create a custom editor that uses native `Button` controls to change its value as in the screenshot above. First, you will need to set an instance of {% typedoc_link classes:CustomPropertyEditor %} as the editor of the `EntityProperty` associated with the property of the source object that we want to edit with a custom editor (in our example this is the `age` property): 
+In this article you will learn how to create a custom editor that uses native `Button` controls to change its value as in the screenshot above. First, you will need to set an instance of {% typedoc_link classes:CustomPropertyEditor %} as the editor of the `EntityProperty` associated with the property of the source object that we want to edit with a custom editor (in our example this is the `age` property):
 
 #### Example 1: RadDataForm with custom editor
 
@@ -27,17 +27,17 @@ In this article you will learn how to create a custom editor that uses native `B
 Here's the flow for the usage of the custom editor step-by-step:
 
 1. `RadDataForm` loads and it needs a view that will be used for the custom editor - the **editorNeedsView** event occurs.
-2. The original value of the property in our source object has to be loaded in the custom editor - the **editorHasToApplyValue** event occurs.
-3. The user interacts with the provided editor view which changes the value of the editor - **you** have to call the editor's **notifyValueChanged** method.
-4. `RadDataForm` needs the current value of the editor - the **editorNeedsValue** event occurs and we have to update the value of the property depending on the current value of the custom editor.
+1. The original value of the property in our source object has to be loaded in the custom editor - the **editorHasToApplyValue** event occurs.
+1. The user interacts with the provided editor view which changes the value of the editor - **you** have to call the editor's **notifyValueChanged** method.
+1. `RadDataForm` needs the current value of the editor - the **editorNeedsValue** event occurs and we have to update the value of the property depending on the current value of the custom editor.
 
 All aforementioned events are fired with arguments of {% typedoc_link classes:DataFormCustomPropertyEditorEventData %} type.
 
 Here's what we are expected to do in the handlers of each of the mentioned events:
 
-- The **editorNeedsView** event occurs when a view has to be placed inside our custom editor, so in our event handler we will create a native view depending on the current platform and set the result as value of the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} property of the event data (On Android the event data will contain a {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:context %} property with `Context` that we can use to create our `View`).
-- The **editorHasToApplyValue** event occurs when the value of the property has to be used as initial value of our editor. Here, we will just take the value of the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:value %} property and apply it as formatted text for the view provided with the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} property.
-- The **editorNeedsValue** event occurs when we have to update the property value. This means that we will use again the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} and {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:value %} properties of the passed event data, but this time we will set the value depending on the value of our editor. 
+* The **editorNeedsView** event occurs when a view has to be placed inside our custom editor, so in our event handler we will create a native view depending on the current platform and set the result as value of the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} property of the event data (On Android the event data will contain a {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:context %} property with `Context` that we can use to create our `View`).
+* The **editorHasToApplyValue** event occurs when the value of the property has to be used as initial value of our editor. Here, we will just take the value of the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:value %} property and apply it as formatted text for the view provided with the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} property.
+* The **editorNeedsValue** event occurs when we have to update the property value. This means that we will use again the {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:view %} and {% typedoc_link classes:DataFormCustomPropertyEditorEventData,member:value %} properties of the passed event data, but this time we will set the value depending on the value of our editor.
 
 This is the Android implementation of the mentioned event handlers:
 
@@ -45,7 +45,7 @@ This is the Android implementation of the mentioned event handlers:
 
 <snippet id='dataform-custom-editors-android'/>
 
-Notice that we called the {% typedoc_link classes:CustomPropertyEditor,member:notifyValueChanged %} method of the {% typedoc_link classes:CustomPropertyEditor %}. This is necessary since the value change depends on the custom editor that we provide and thus it is our responsibility to notify `RadDataForm` for the update in the editor's value and in this example, the value change happens when the button is pressed. 
+Notice that we called the {% typedoc_link classes:CustomPropertyEditor,member:notifyValueChanged %} method of the {% typedoc_link classes:CustomPropertyEditor %}. This is necessary since the value change depends on the custom editor that we provide and thus it is our responsibility to notify `RadDataForm` for the update in the editor's value and in this example, the value change happens when the button is pressed.
 
 Here's the iOS implementation of the same event handlers:
 
@@ -66,4 +66,3 @@ Related articles you might find useful:
 
 * [**Editors Overview**]({% slug dataform-editors-overview %})
 * [**Editors List**]({% slug dataform-editors-list %})
-

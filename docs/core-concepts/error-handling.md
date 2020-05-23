@@ -14,16 +14,16 @@ In some cases, this seems to be the expected behaviour when the app is in `devel
 Regarding that, new API is introduced in NativeScript, which provides functionality for handling errors in different ways while the app is in development and production. While creating the API, the following three scenarios have been taken in mind.
 
 1. (development mode) Throw exceptions as soon as an error occurs.
-2. (development mode) Show a scary console.log with ERROR: Something bad happened but continue execution of the app. You will see it in your terminal, but decide if it is critical based on what happens with the app after that.
-3. (production mode) Send an error report to your analytics/error-report server but continue app execution. Maybe triggers some recover logic that will handle the app without a crash.
-
+1. (development mode) Show a scary console.log with ERROR: Something bad happened but continue execution of the app. You will see it in your terminal, but decide if it is critical based on what happens with the app after that.
+1. (production mode) Send an error report to your analytics/error-report server but continue app execution. Maybe triggers some recover logic that will handle the app without a crash.
 
 ### Using Error method
+
 With the API the `trace` module is extended with a new method called `error()`. The method can be used, for example, in the plugins and allows the JavaScript error to be passed up and to be handled in the application code.
 
 Example:
 
-```
+``` TypeScript
 function doSomething(arg) {
   // Instead of throwing the error
   // **if(!arg) throw new Error("Arg not provided in "doSomething");**
@@ -35,6 +35,7 @@ function doSomething(arg) {
   // ... implementation using arg
 }
 ```
+
 The example demonstrates, how we can use the `error` method inside of a plugin's code, instead of throwing the error, which can cause a crash.
 
 ### Defining custom error handler
@@ -43,7 +44,7 @@ This API also introduces a technique, which allows the developers to define cust
 
 Example:
 
-```javascript
+``` JavaScript
 import "./bundle-config";
 import * as application from "tns-core-modules/application";
 import * as traceModule from "tns-core-modules/trace";
@@ -75,4 +76,4 @@ A property called `discardUncaughtJsExceptions` was introduced with NativeScript
 
 Switching it on will cause JS exceptions to be caught without being propagated to the native world, effectively protecting the app from crashing. All exceptions that have been discarded will be reported to the app via the `application.discardedErrorEvent`. For more information on this feature refer to `Discarding JavaScript exceptions when called from native section` [here]({% slug structure %}#apppackagejson).
 
-> **Note:** Enabling this property can lead to the discarding a fatal exception, which can destabilize the application and result in unexpected behavior and hard to track and debug unrelated to the original issue crashes. For proper exception handling, it is recommended to keep the default setting and ensure that no uncaught JS exceptions escape to top-level native code.
+> **Note**: Enabling this property can lead to the discarding a fatal exception, which can destabilize the application and result in unexpected behavior and hard to track and debug unrelated to the original issue crashes. For proper exception handling, it is recommended to keep the default setting and ensure that no uncaught JS exceptions escape to top-level native code.

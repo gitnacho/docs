@@ -13,9 +13,9 @@ publish: true
 **RadSideDrawer** can be can be located at each side of the screen (top, bottom, right, left).
 Setting the location can be done by setting the **drawerLocation** property to a value from the {% typedoc_link enums:SideDrawerLocation %} enumeration:
 
-- {% typedoc_link enums:SideDrawerLocation,member:Top %}
-- {% typedoc_link enums:SideDrawerLocation,member:Bottom %}
-- {% typedoc_link enums:SideDrawerLocation,member:Left %}
-- {% typedoc_link enums:SideDrawerLocation,member:Right %}
+* {% typedoc_link enums:SideDrawerLocation,member:Top %}
+* {% typedoc_link enums:SideDrawerLocation,member:Bottom %}
+* {% typedoc_link enums:SideDrawerLocation,member:Left %}
+* {% typedoc_link enums:SideDrawerLocation,member:Right %}
 
 <snippet id='sidedrawer-positions-vue'/>

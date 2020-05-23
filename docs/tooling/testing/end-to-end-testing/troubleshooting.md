@@ -11,8 +11,8 @@ slug: e2e-testing-troubleshooting
 
 Use the `--verbose` option to get error details:
 
-```
-$ npm run e2e -- --runType android25 --verbose
+``` Shell
+npm run e2e -- --runType android25 --verbose
 ```
 
 ## Common Problems
@@ -24,5 +24,5 @@ Most of them provide error/warning and suggest an action.
     ```
     npm i -g appium
     ```
-2. Misleading appPath or capabilities location. Please make sure that the path to the app or capabilities location is correct.
-3. Misleading details for device specified in appium config. If the plugin fails to find the emulator/simulator you have, check that the *avd*, *platformName*, *deviceName* or any other related capability is properly set.
+1. Misleading appPath or capabilities location. Please make sure that the path to the app or capabilities location is correct.
+1. Misleading details for device specified in appium config. If the plugin fails to find the emulator/simulator you have, check that the *avd*, *platformName*, *deviceName* or any other related capability is properly set.

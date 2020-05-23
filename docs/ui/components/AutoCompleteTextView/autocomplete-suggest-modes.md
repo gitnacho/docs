@@ -10,11 +10,11 @@ publish: true
 
 # RadAutoCompleteTextView Suggest Modes
 
-**RadAutoCompleteTextView** has three different modes for providing suggestions. 
+**RadAutoCompleteTextView** has three different modes for providing suggestions.
 
-- {% typedoc_link enums:AutoCompleteSuggestMode,member:Suggest %}
-- {% typedoc_link enums:AutoCompleteSuggestMode,member:Append %}
-- {% typedoc_link enums:AutoCompleteSuggestMode,member:SuggestAppend %}
+* {% typedoc_link enums:AutoCompleteSuggestMode,member:Suggest %}
+* {% typedoc_link enums:AutoCompleteSuggestMode,member:Append %}
+* {% typedoc_link enums:AutoCompleteSuggestMode,member:SuggestAppend %}
 
 The suggest mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:suggestionMode %} property of the RadAutoCompleteTextView. The default value is {% typedoc_link enums:AutoCompleteSuggestMode,member:Suggest %}.
 

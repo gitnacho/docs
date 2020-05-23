@@ -5,7 +5,7 @@ position: 50
 slug: android-abi-split
 ---
 
-> **NOTE**: The recommended approach for reducing the app size by splitting it per architecture is the [Android App Bundle]({% slug android-app-bundle %}) which is supported out of the box through the `--aab` NativeScript CLI flag.
+> **Note**: The recommended approach for reducing the app size by splitting it per architecture is the [Android App Bundle]({% slug android-app-bundle %}) which is supported out of the box through the `--aab` NativeScript CLI flag.
 
 # Android ABI split
 
@@ -33,7 +33,7 @@ android {
 ....
 ```
 
-> **Note:** In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack%}#snapshot-per-architecture).
+> **Note**: In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack%}#snapshot-per-architecture).
 
 ## Publishing ABI split apk
 Now you will need to upload all built apk files in Google Play Developer Console. To achieve this the different apks need to have different Version Codes otherwise Google Play won't allow adding them in the same version.

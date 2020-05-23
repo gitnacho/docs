@@ -35,7 +35,7 @@ Second, you need to define the content that will be shown to the user when they 
 <snippet id='angular-listview-swipe-actions-template-html'/>
 
 The swipe template will be a `GridLayout` with three columns. The first and the last column each contain a `StackLayout`. These elements represent the actions revealed by swiping the item either left or right. The second column in the middle is set to take the remaining width of the item so that the two `StackLayout` elements are positioned at both ends of the item.
- 
+
 ## Implementing swipe actions
 There are two popular ways to implement swipe actions. In the first approach you define a swipe threshold which makes the swiped item stick at a given position (the swipe limit) revealing the swipe actions. The user then taps on a given action to perform it.
 In the second approach you simply listen for the {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} event and once the item being swiped reaches a given threshold, you execute the corresponding action when the  swiped item is released. The following examples demonstrate how these approaches are implemented.
@@ -46,9 +46,9 @@ In this scenario the user needs to swipe an item to reveal the actions and then 
 <snippet id='angular-listview-swipe-actions-template-html'/>
 
 The behavior that we have to implement is as follows:
-- user swipes an item
-- user releases the item and it sticks open revealing the action(s)
-- user taps on an action, an event handler is called and the swiped item is closed
+* user swipes an item
+* user releases the item and it sticks open revealing the action(s)
+* user taps on an action, an event handler is called and the swiped item is closed
 
 > Note that we have subscribed for the `tap` events of the `StackLayout` elements that are used to represent the actions.
 
@@ -66,9 +66,9 @@ So now we have a list with items that can be swiped open revealing an action. Us
 
 ### Swipe actions
 In this scenario the user needs to swipe and release the item to execute the corresponding action. The item must be swiped at a given distance over the provided threshold so that the associated action is executed. To implement this approach you need to handle the following {% typedoc_link classes:RadListView %} events:
-- {% typedoc_link classes:RadListView,member:itemSwipeProgressStartedEvent %} - used to specify the swipe limits in a way that will make the item return to its original place when released
-- {% typedoc_link classes:RadListView,member:itemSwipeProgressEndedEvent %} - used to determine if a swipe action has to be executed (in case the item was swiped beyond a given threshold)
-- {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} - in case you want to notify the user that they have swiped the item beyond a specified threshold and the swipe action will be executed
+* {% typedoc_link classes:RadListView,member:itemSwipeProgressStartedEvent %} - used to specify the swipe limits in a way that will make the item return to its original place when released
+* {% typedoc_link classes:RadListView,member:itemSwipeProgressEndedEvent %} - used to determine if a swipe action has to be executed (in case the item was swiped beyond a given threshold)
+* {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} - in case you want to notify the user that they have swiped the item beyond a specified threshold and the swipe action will be executed
 
 So let's look at the handler of the {% typedoc_link classes:RadListView,member:itemSwipeProgressStartedEvent %} event:
 
@@ -83,16 +83,16 @@ In this particular case we have decided that the threshold beyond which an actio
 <snippet id='angular-listview-swipe-actions-execute'/>
 
 All swipe events exposed by {% typedoc_link classes:RadListView %} provide you with a {% typedoc_link classes:ListViewEventData %} object which in turn carries a {% typedoc_link classes:SwipeOffsets %} object through its {% typedoc_link classes:ListViewEventData,member:data %} property. This object exposes the following properties:
-- `x` - the X offset of the item being released after swiping
-- `y` - the Y offset of the item being released after swiping
-- `swipeLimits` - an instance of the {% typedoc_link classes:SwipeLimits %} containing the dimensional limits which restrict the movement of the swiped item. Its properties are as follows:
-    - **top** - determines how far from the top edge can an item can be swiped
-    - **left** - determines how far from the left edge can an item can be swiped
-    - **right** - determines how far from the right edge can an item can be swiped
-    - **bottom** - determines how far from the bottom edge can an item can be swiped
-    - **threshold** - determines the amount if pixels that needs to be surpassed in any swiping direction so that the item docks open at the provided swipe limit (left or right).
-- `swipeView` - the `View` element that represents the swipe content of beneath the item being swiped
-- `mainView` - the `View` element representing the main content of the item being swiped 
+* `x` - the X offset of the item being released after swiping
+* `y` - the Y offset of the item being released after swiping
+* `swipeLimits` - an instance of the {% typedoc_link classes:SwipeLimits %} containing the dimensional limits which restrict the movement of the swiped item. Its properties are as follows:
+  + **top** - determines how far from the top edge can an item can be swiped
+  + **left** - determines how far from the left edge can an item can be swiped
+  + **right** - determines how far from the right edge can an item can be swiped
+  + **bottom** - determines how far from the bottom edge can an item can be swiped
+  + **threshold** - determines the amount if pixels that needs to be surpassed in any swiping direction so that the item docks open at the provided swipe limit (left or right).
+* `swipeView` - the `View` element that represents the swipe content of beneath the item being swiped
+* `mainView` - the `View` element representing the main content of the item being swiped
 
 ### Animating action views while swiping
 Many mobile apps that implement the "Swipe Actions" experience also animate the action views while the user is swiping. This can be easily achieved with {% typedoc_link classes:RadListView %} in the {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} event. Let's consider the following swipe template:

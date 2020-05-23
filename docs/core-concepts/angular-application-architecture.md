@@ -11,7 +11,7 @@ previous_url: /core-concepts/architecture-angular
 
 In this article we are going to go through the core concepts of the Angular framework, with an an emphasis on the specifics of using Angular with NativeScript.
 
->**Note:** The best place to learn about Angular concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
+> **Note**: The best place to learn about Angular concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
 
 ## Components
 
@@ -36,7 +36,8 @@ export class AppComponent {
 ```
 
 Each component has two parts - the **component class** and the **component template**:
-* **The component class** (`class AppComponent` in the example) defines the application logic of the component - its behavior. 
+
+* **The component class** (`class AppComponent` in the example) defines the application logic of the component - its behavior.
 * **The component template** defines the UI of the component - also called a *view*. It is the topic of the next section.
 
 The class and the view communicate with each other using data binding and events.
@@ -46,31 +47,35 @@ You can learn more about components on [angular.io](https://angular.io/api/core/
 There are almost no differences between creating component classes in Angular web apps and NativeScript apps.
 
 ## Template Syntax
-The template defines the view of the component - what is actually rendered. 
+
+The template defines the view of the component - what is actually rendered.
 In NativeScript applications the template is defined with XML using [NativeScript UI elements]({% slug components %}). It is different from HTML. So instead of `<input>`, `<span>`, `<div>` etc. - we have `<text-field>`, `<label>` and layouts.
 
 The important thing is that although the elements are different - all of the [Angular’s template syntax](https://angular.io/guide/template-syntax) works exactly the same. So you can still use template expressions, bindings, templates as well as all the built-in directives.
 
->When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition. 
+>When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition.
 
 There is no text-node element in NativeScript so the following template will render an empty `StackLayout`:
-```XML
+
+``` XML
 <StackLayout orientation="vertical">
-    {%raw%} {{ message }} {%endraw%} 
+    {%raw%} {{ message }} {%endraw%}
 </StackLayout>
 ```
 
 To fix it, you can just use a `Label` to show the message:
-```XML
+
+``` XML
 <StackLayout orientation="vertical">
-    {%raw%}<Label text="{{ message }}"></Label>{%endraw%} 
+    {%raw%}<Label text="{{ message }}"></Label>{%endraw%}
 </StackLayout>
 ```
 
 ## Data Binding
-Data binding is a mechanism for connecting the parts of the view (template) with parts of the component class. There are several forms of data binding in an Angular app. 
 
-```XML
+Data binding is a mechanism for connecting the parts of the view (template) with parts of the component class. There are several forms of data binding in an Angular app.
+
+``` XML
 <StackLayout orientation="vertical">
     <Label [text]="message"></Label>
     <Button text="tap me" (tap)="onTap()"></Button>
@@ -83,10 +88,11 @@ Let's examine:
 * `[text]="message"` - *binds* the `text` property of the `Label` to the `message` property of the component. Whenever the message is updated the label will be updated as well. This kind of binding is called “one-way binding” - the data flows in one direction from the component to the view.
 * `(tap)="onTap()"` - means that when the button is tapped the `onTap` method in the component should be called. This kind of binding is called “event binding” - here the data flows from the view to the component.
 * `[(ngModel)]="message"` - This is an example of “two-way binding”. When the user types something in the `TextField` - the `message` property of the component will be changed and vice versa - if your code changes the `message` property - the UI will be updated. Data flows in both directions, thus the name.
-    
+
 This topic is covered in depth in the [data binding article]({% slug data-binding %}).
 
 ## Directives
+
 Directives allow you to create and attach behavior to the visual tree. There are three kinds of directives:
 
 * `Components` - We already talked about them. `Components` are actually directives which have their own template.
@@ -103,12 +109,13 @@ You can read more about it on [angular.io](https://angular.io/guide/dependency-i
 ## Navigation
 
 The navigation inside a NativeScript application is done with the [Angular Router](https://angular.io/guide/router). However, you can choose between two router-outlets:
+
 * `router-outlet` - the built in Angular router outlet. It replaces the content of the outlet with the templates of different component.
-* `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages). 
+* `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages).
 
 To use the Router you will have to import `NativeScriptRouterModule` into `AppModule`:
 
-```TypeScript
+``` TypeScript
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 @NgModule({
@@ -122,4 +129,3 @@ export class GroceriesAppModule { }
 ```
 
 Navigation is covered in detail in the [navigation article]({% slug angular-navigation %}).
- 

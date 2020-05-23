@@ -21,57 +21,57 @@ Let’s start by looking at the fields you need to provide to connect to your en
 There are a lot of fields by which you can configure the OAuth 2 authentication service to suit your specific needs. However, below you will find only the ones that are required in order to ensure a working authentication in the NativeScript mobile app.
 
 <table>
-	<thead>
-		<tr>
-			<th style="width: 20%">Field name</th>
-			<th align="center">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>Name</code></td>
-			<td align="center">The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the <a href="https://console.kinvey.com/">Kinvey console</a>.</td>
-		</tr>
-		<tr>
-			<td><code>Provider URI</code></td>
-			<td align="center">In OAuth terms, this is usually referred to as the <em>token endpoint</em> for the authentication service that you are connecting to</td>
-		</tr>
-		<tr>
-			<td><code>Grant Endpoint</code></td>
-			<td align="center">In OAuth terms, this is usually referred to as the <em>authorization endpoint</em> for the authentication service that you are connecting to.</td>
-		</tr>
-		<tr>
-			<td><code>Client ID</code></td>
-			<td align="center">This is the public identifier for your app that is provided by the authentication service that you are connecting to. In some cases (as in our Azure example below), this may be referred to as an application ID.</td>
-		</tr>
-		<tr>
-			<td><code>Client Secret</code></td>
-			<td align="center">This is a private app key provided by the authentication service that you are connecting to.</td>
-		</tr>
-		<tr>
-			<td><code>User ID Attribute</code></td>
-			<td align="center">This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service places the user ID in an attrbute other than the default <code>id_token</code>.</td>
-		</tr>
-		<tr>
-			<td><code>User ID Endpoint</code></td>
-			<td align="center">This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service requires a separate endpoint to obtain the user ID</td>
-		</tr>
-		<tr>
-			<td><code>Scope</code></td>
-			<td align="center">The scope defines what information your app requires access to from the OAuth authentication service provider. The specific scopes that you are requesting access to are displayed to the user by the provider when granting the authentication request. For example, a value of <code>profile</code> may indicate that you are requesting access to read the user's basic profile info from the authentication service, while a value of <code>email</code> could indicate that you are requesting access to read their email address.</td>
-		</tr>
-		<tr>
-			<td><code>Include client ID in token request?</code></td>
-			<td align="center">This is typically fine with the default of No, but some authentication providers require that you pass the client ID in the token request rather than the authorization header.</td>
-		</tr>
-		<tr>
-			<td><code>Include client secret in token request?</code></td>
-			<td align="center">This is typically fine with the default of No, but some authentication providers require that you pass the client secret in the token request rather than the authorization header.</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th style="width: 20%">Field name</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Name</code></td>
+            <td align="center">The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the <a href="https://console.kinvey.com/">Kinvey console</a>.</td>
+        </tr>
+        <tr>
+            <td><code>Provider URI</code></td>
+            <td align="center">In OAuth terms, this is usually referred to as the <em>token endpoint</em> for the authentication service that you are connecting to</td>
+        </tr>
+        <tr>
+            <td><code>Grant Endpoint</code></td>
+            <td align="center">In OAuth terms, this is usually referred to as the <em>authorization endpoint</em> for the authentication service that you are connecting to.</td>
+        </tr>
+        <tr>
+            <td><code>Client ID</code></td>
+            <td align="center">This is the public identifier for your app that is provided by the authentication service that you are connecting to. In some cases (as in our Azure example below), this may be referred to as an application ID.</td>
+        </tr>
+        <tr>
+            <td><code>Client Secret</code></td>
+            <td align="center">This is a private app key provided by the authentication service that you are connecting to.</td>
+        </tr>
+        <tr>
+            <td><code>User ID Attribute</code></td>
+            <td align="center">This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service places the user ID in an attrbute other than the default <code>id_token</code>.</td>
+        </tr>
+        <tr>
+            <td><code>User ID Endpoint</code></td>
+            <td align="center">This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service requires a separate endpoint to obtain the user ID</td>
+        </tr>
+        <tr>
+            <td><code>Scope</code></td>
+            <td align="center">The scope defines what information your app requires access to from the OAuth authentication service provider. The specific scopes that you are requesting access to are displayed to the user by the provider when granting the authentication request. For example, a value of <code>profile</code> may indicate that you are requesting access to read the user's basic profile info from the authentication service, while a value of <code>email</code> could indicate that you are requesting access to read their email address.</td>
+        </tr>
+        <tr>
+            <td><code>Include client ID in token request?</code></td>
+            <td align="center">This is typically fine with the default of No, but some authentication providers require that you pass the client ID in the token request rather than the authorization header.</td>
+        </tr>
+        <tr>
+            <td><code>Include client secret in token request?</code></td>
+            <td align="center">This is typically fine with the default of No, but some authentication providers require that you pass the client secret in the token request rather than the authorization header.</td>
+        </tr>
+    </tbody>
 </table>
 
-<br/>
+<br />
 Once all the fields are filled in appropriately, click the "Save Service" button to continue.
 
 ## Example - Azure Active Directory
@@ -84,39 +84,38 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 1. From within the [Azure portal](https://portal.azure.com), click on Azure Active Directory or click on **+New** and search for Azure Active Directory.
 
-	![Azure AD](../../img/enterprise-auth/AzureAD.png)
+   ![Azure AD](../../img/enterprise-auth/AzureAD.png)
 
-2. Choose the **App Registrations** option and **New Application Registration**.
-	
-	![App registrations](../../img/enterprise-auth/new-app-registration.png)
-	
-3. Enter a name for the application (this can be any name you prefer), choose **Web app / API** and, for the Sign-on URL, enter `https://auth.kinvey.com`.
+1. Choose the **App Registrations** option and **New Application Registration**.
 
-	![new app registration](../../img/enterprise-auth/create-application.png)
+   ![App registrations](../../img/enterprise-auth/new-app-registration.png)
 
-4. Once it is created, choose **Reply URLs**.
+1. Enter a name for the application (this can be any name you prefer), choose **Web app / API** and, for the Sign-on URL, enter `https://auth.kinvey.com`.
 
-	![application settings](../../img/enterprise-auth/application-settings.png)
+   ![new app registration](../../img/enterprise-auth/create-application.png)
 
-5. Enter `https://auth.kinvey.com/oauth2/redirect` (see the [Kinvey docs](https://devcenter.kinvey.com/html5/guides/mobile-identity-connect#ConfiguringyourOAuth2IdentityProvidertoacceptKinveyRequests) for additional details)
+1. Once it is created, choose **Reply URLs**.
 
-	![Reply URLs](../../img/enterprise-auth/reply-urls.png)
+   ![application settings](../../img/enterprise-auth/application-settings.png)
 
-6. Back in the application settings, choose **Required Permissions** and then **Windows Azure Active Directory**.
+1. Enter `https://auth.kinvey.com/oauth2/redirect` (see the [Kinvey docs](https://devcenter.kinvey.com/html5/guides/mobile-identity-connect#ConfiguringyourOAuth2IdentityProvidertoacceptKinveyRequests) for additional details)
 
-	![required permissions](../../img/enterprise-auth/required-permissions.png)
+   ![Reply URLs](../../img/enterprise-auth/reply-urls.png)
 
-7. Enable the following:
+1. Back in the application settings, choose **Required Permissions** and then **Windows Azure Active Directory**.
 
-	* Access the directory as the signed-in user
-	* Read all users' basic profiles
-	* Sign in and read user profile
+   ![required permissions](../../img/enterprise-auth/required-permissions.png)
 
-	![enable access](../../img/enterprise-auth/enable-access.png)
+1. Enable the following:
+   + Access the directory as the signed-in user
+   + Read all users' basic profiles
+   + Sign in and read user profile
 
-8. Back in the application settings again, choose **Keys** and create a new option under **Passwords**. Set the description (this can be any text you prefer) and expiration (for example, "never"). Click **Save**. Be sure to copy the key's value before leaving.
+     ![enable access](../../img/enterprise-auth/enable-access.png)
 
-	![client secret](../../img/enterprise-auth/client-secret.png)
+1. Back in the application settings again, choose **Keys** and create a new option under **Passwords**. Set the description (this can be any text you prefer) and expiration (for example, "never"). Click **Save**. Be sure to copy the key's value before leaving.
+
+   ![client secret](../../img/enterprise-auth/client-secret.png)
 
 In order to test the log in process, Azure Active Directory will need a user. To assign a user to this enterprise application, click on "Assign a user for testing" in the quick start or "Users and groups" in the enterprise application sub-navigation. For testing purposes, you could add yourself.
 

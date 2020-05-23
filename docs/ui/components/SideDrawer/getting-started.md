@@ -12,7 +12,7 @@ publish: true
 This article will guide you through the process of adding a {% typedoc_link classes:RadSideDrawer %} instance to a page in your NativeScript application and initializing its content. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 > By design the `RadSideDrawer` is designed to be placed as a single child to your `Page`. For example:
-```XML
+``` XML
 <Page>
     <!-- RadSideDrawer should be either the absolute root element (instead Page) or a single child of the Page -->
     <RadSideDrawer>
@@ -32,7 +32,7 @@ tns plugin add nativescript-ui-sidedrawer
 ## Adding RadSideDrawer to your page
 Then, in order to add a {% typedoc_link classes:RadCalendar %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:nsDrawer="nativescript-ui-sidedrawer"`.
+* `xmlns:nsDrawer="nativescript-ui-sidedrawer"`.
 
 The namespace here is called `nsDrawer`. Now you can access {% typedoc_link classes:RadSideDrawer %}'s APIs in your XML page. Adding an instance of {% typedoc_link classes:RadSideDrawer %} is done the following way:
 

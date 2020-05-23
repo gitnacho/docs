@@ -6,10 +6,12 @@ position: 1
 ---
 
 # Objective-C Categories
+
 Objective-C categories are a powerful mechanism for extending existing Objective-C classes or grouping common APIs together.
 
 Consider the `NSURLPathUtilities` category on `NSURL`:
-```objective-c
+
+``` Objective-C
 @interface NSURL (NSURLPathUtilities)
 + (NSURL *)fileURLWithPathComponents:(NSArray *)components;
 @property (readonly, copy) NSArray *pathComponents;
@@ -21,10 +23,11 @@ It adds on the Objective-C `NSURL` class some properties and methods.
 
 They will be exposed as static methods on the JavaScript constructor function or instance methods and properties on the prototype object generated for `NSURL` (see [Objective-C Classes](ObjC-Classes.md)).
 
-> **NOTE:** This applies also to Objective-C categories added by third-party frameworks.
+> **Note**: This applies also to Objective-C categories added by third-party frameworks.
 
 You can use them from JavaScript:
-``` javascript
+
+``` JavaScript
 var url = NSURL.fileURLWithPathComponents(["foo", "bar"]);
 console.log(url); // "foo/bar -- file:///"
 console.log(url.pathComponents); // ["/", "foo", "bar"]

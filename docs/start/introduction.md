@@ -8,15 +8,17 @@ previous_url: /index
 ---
 
 {% nativescript %}
+
 # Getting Started With NativeScript
 
 NativeScript is how you build cross-platform, native iOS and Android apps without web views. Use Angular, TypeScript or modern JavaScript to get truly native UI and performance while reusing the skills and the code from your web projects. Get 100% access to native APIs via JavaScript and reuse of packages from npm, CocoaPods and Gradle. Open source and backed by Progress.
-{% endnativescript %}
 
-{% angular %}
+{% endnativescript %}{% angular %}
+
 # Getting Started With NativeScript and Angular
 
 NativeScript doesn’t require [Angular](https://angular.io/), but it’s even better when you use it. You can fully reuse skills and code from the web to build beautiful, high performance native mobile apps without web views. NativeScript features deep integration with Angular, the latest and greatest (and fastest) JavaScript framework. Open source and backed by Progress.
+
 {% endangular %}
 
 Ready to get started developing with NativeScript? Here are your next steps.
@@ -26,11 +28,13 @@ Ready to get started developing with NativeScript? Here are your next steps.
 NativeScript Playground is a browser-based environment for getting started with NativeScript fast. Playground offers a set of comprehensive tutorials that walk you through building a real-world iOS and Android app from scratch.
 
 {% angular %}
-<p><a href="https://play.nativescript.org/?template=play-ng&tutorial=getting-started-ng" class="ns-button -action">Start Tutorial</a></p>
-{% endangular %}
 
-{% nativescript %}
+<p><a href="https://play.nativescript.org/?template=play-ng&tutorial=getting-started-ng" class="ns-button -action">Start Tutorial</a></p>
+
+{% endangular %}{% nativescript %}
+
 <p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Start Tutorial</a></p>
+
 {% endnativescript %}
 
 ## Step #2: Install the NativeScript Command-Line Interface
@@ -49,9 +53,8 @@ Now that you have the NativeScript CLI installed, you’ll want to learn the bas
 
 Regardless of what you choose to do next with NativeScript, joining the NativeScript community is a great way to keep up with the latest and greatest in the NativeScript world. Here are some ways you can get involved:
 
-- **Follow [@nativescript](https://twitter.com/nativescript) on Twitter** for updates on all things NativeScript.
-- **Sign up for the [NativeScript newsletter](https://www.nativescript.org/nativescript-newsletter)**. The newsletter will deliver NativeScript articles, news, plugin updates, and more straight to your inbox.
-- **Join the [NativeScript Community Slack](https://www.nativescript.org/slack-invitation-form)**. The community Slack is a great place to chat with others in the NativeScript community.
-- **Bookmark the [NativeScript tag on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript)**, as it’s a great place to ask questions when you need help.
-- **Consider contributing to the [NativeScript repository on Github](https://github.com/NativeScript/docs/blob/master/CONTRIBUTING.md)**. Fixing a bug or adding to the documentation is always welcome and very appreciated.
-
+* **Follow [@nativescript](https://twitter.com/nativescript) on Twitter** for updates on all things NativeScript.
+* **Sign up for the [NativeScript newsletter](https://www.nativescript.org/nativescript-newsletter)**. The newsletter will deliver NativeScript articles, news, plugin updates, and more straight to your inbox.
+* **Join the [NativeScript Community Slack](https://www.nativescript.org/slack-invitation-form)**. The community Slack is a great place to chat with others in the NativeScript community.
+* **Bookmark the [NativeScript tag on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript)**, as it’s a great place to ask questions when you need help.
+* **Consider contributing to the [NativeScript repository on Github](https://github.com/NativeScript/docs/blob/master/CONTRIBUTING.md)**. Fixing a bug or adding to the documentation is always welcome and very appreciated.

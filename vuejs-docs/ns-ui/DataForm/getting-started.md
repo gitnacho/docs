@@ -20,12 +20,13 @@ This article will guide you through the process of adding a {% typedoc_link clas
 
 In order to use `RadDataForm` to edit an object, we need to have the object that we will edit. In this example, we will create a class `Person`, pass an instance of this class to `RadDataForm` and then we will be able to edit the person's properties.
 
-#### Example 1: Declare the object that we will use as a source for RadDataForm
+### Example 1: Declare the object that we will use as a source for RadDataForm
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-dataform
 ```
 
@@ -36,15 +37,16 @@ Add this to the main Javascript or Typescript file, usually called `main.js` or 
 <snippet id='dataform-imports-vue'/>
 
 ## Add RadDataForm to the Page
+
 Before proceeding, make sure that the `nativescript-ui-dataform/vue` module is required inside your application. This module handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
 
 After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source%} accordingly:
 
-- Add RadDataForm to a page
+* Add RadDataForm to a page
 
 Note the [data binding](https://nativescript-vue.org/en/docs/introduction/#why-would-you-use-this) of the `source` property of `RadDataForm` to the `person` property of our component.
 
-- Define the property used for binding
+* Define the property used for binding
 
 See the following minimalist example:
 
@@ -52,6 +54,6 @@ See the following minimalist example:
 
 If you run the application now, you should see the default editor for each property of the provided source object.
 
-#### Figure 1: The basic RadDataForm on Android (left) and iOS (right)
+### Figure 1: The basic RadDataForm on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Getting-Started-Android](../../../ui/img/ns_ui/dataform-start-source-android.png "DataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](../../../ui/img/ns_ui/dataform-start-source-ios.png "DataForm in iOS")

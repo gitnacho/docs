@@ -12,19 +12,23 @@ previous_url: /layout-containers
 > Looking for a fun and easy way to learn about NativeScript layout containers? Try the interactive tutorials available at [nslayouts.com](https://www.nslayouts.com/)!
 
 ## AbsoluteLayout
+
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
 
 ### AbsoluteLayout Properties
+
 None.
 
 ### AbsoluteLayout Child Properties
+
 | Property | Description |
 | -------- | ------------|
 | left     | Gets or sets the distance, in pixels, between the left edge of the child and the left edge of its parent AbsoluteLayout client area. |
 | top     | Gets or sets the distance, in pixels, between the top edge of the child and the top edge of its parent AbsoluteLayout client area. |
 
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
  <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
    <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"/>
@@ -34,9 +38,10 @@ None.
  </AbsoluteLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
     <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
     <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
@@ -44,12 +49,14 @@ None.
     <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label>
 </AbsoluteLayout>
 ```
+
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
 
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
     <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"/>
@@ -57,34 +64,41 @@ None.
   </AbsoluteLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
     <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"></Label>
     <Label text="margin=`30`" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"></Label>
 </AbsoluteLayout>
 ```
+
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
 ## DockLayout
+
 The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
 
 ### DockLayout Properties
+
 | Property | Description |
 | -------- | ------------|
 | stretchLastChild | Gets or sets a value that indicates whether the last child element within a DockLayout stretches to fill the remaining available space. The default value is `true`. |
 
 ### DockLayout Child Properties
+
 | Property | Description |
 | -------- | ------------|
 | dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom`. |
 
-_Example for `stretchLastChild="false"`_
+_Example for `stretchLastChild="false"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="false">
     <Label text="left" dock="left" width="60" backgroundColor="red"/>
@@ -94,9 +108,10 @@ _Example for `stretchLastChild="false"`_
   </DockLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="false">
     <Label text="left" dock="left" width="60" backgroundColor="red"></Label>
     <Label text="top" dock="top" height="60" backgroundColor="green"></Label>
@@ -104,13 +119,16 @@ _Example for `stretchLastChild="false"`_
     <Label text="bottom" dock="bottom" height="60" backgroundColor="yellow"></Label>
 </DockLayout>
 ```
+
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
 
-_Example for `stretchLastChild="true"`_
+_Example for `stretchLastChild="true"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left" dock="left" backgroundColor="red"/>
@@ -120,9 +138,10 @@ _Example for `stretchLastChild="true"`_
   </DockLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left" dock="left" backgroundColor="red"></Label>
     <Label text="top" dock="top" backgroundColor="green"></Label>
@@ -130,13 +149,16 @@ _Example for `stretchLastChild="true"`_
     <Label text="bottom" dock="bottom" backgroundColor="yellow"></Label>
 </DockLayout>
 ```
+
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
 
-_Example for multiple child elements on one side_
+_Example for multiple child elements on one side_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left1" dock="left" backgroundColor="red"/>
@@ -146,9 +168,10 @@ _Example for multiple child elements on one side_
   </DockLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left1" dock="left" backgroundColor="red"></Label>
     <Label text="left2" dock="left" backgroundColor="green"></Label>
@@ -156,23 +179,28 @@ _Example for multiple child elements on one side_
     <Label text="last child" backgroundColor="yellow"></Label>
 </DockLayout>
 ```
+
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
 
 ## GridLayout
+
 The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. To add additional columns and rows, you have to specify column definition items (separated by commas) to the `columns` property and row definition items (separated by commas) to the `rows` property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, as a percentage of the available space or automatically:
-- **Absolute**: Fixed size of pixels.
-- **Star (\*)**: Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. So 3*/7* means the same as 30*/70*.
-- **Auto**: Takes as much space as needed by the contained child element(s).
+
+* **Absolute**: Fixed size of pixels.
+* **Star (\*)**: Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. So 3*/7* means the same as 30*/70*.
+* **Auto**: Takes as much space as needed by the contained child element(s).
 
 ### GridLayout Properties
+
 | Property | Description |
 | -------- | ------------|
 | columns  | A string value representing column widths delimited with commas. Column widths can be either an absolute `number`, `auto` or `*`. A `number` indicates an absolute column width, `auto` makes the column as wide as its widest child, and `*` makes the column occupy all available horizontal space. |
 | rows  | A string value representing row heights delimited with commas. Row heights can be either an absolute `number`, `auto` or `*`. A `number` indicates an absolute row height, `auto` makes the row as high as its highest child, and `*` makes the row occupy all available vertical space. |
 
 ### GridLayout Child Properties
+
 | Property | Description |
 | -------- | ------------|
 | row      | Gets or sets a value that indicates which row child content within a GridLayout it should appear in. |
@@ -180,9 +208,11 @@ The GridLayout is a layout that arranges its child elements in a table structure
 | rowSpan  | Gets or sets a value that indicates the total number of rows that child content spans within a GridLayout. |
 | colSpan  | Gets or sets a value that indicates the total number of columns that child content spans within a GridLayout. |
 
-_Example for basic Grid usage_
+_Example for basic Grid usage_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" backgroundColor="lightgray" >
     <Label text="Label 1" row="0" col="0" backgroundColor="red"/>
@@ -195,9 +225,10 @@ _Example for basic Grid usage_
   </GridLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" row="0" col="0" backgroundColor="red"></Label>
     <Label text="Label 2" row="0" col="1" colSpan="2" backgroundColor="green"></Label>
@@ -208,15 +239,19 @@ _Example for basic Grid usage_
     <Label text="Label 7" row="2" col="2" backgroundColor="purple"></Label>
 </GridLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
 
-_Example for sizing with star (`*`)_
-- Columns: One star plus two stars is equal to three stars. (\* + 2\* = 3\*). Divide GridLayout width (300) by 3 to get 100. So first column is 1 x 100 = 100 pixels wide and second column is 2 x 100 = 200 pixels wide. 100 + 200 = 300.
-- Rows: Two stars plus three stars is equal to five stars. (2\* + 3\* = 5\*). Divide GridLayout height (300) by 5 to get 60. So first row is 2 x 60 = 120 pixels high and second row is 3 x 60 = 180 pixels high. 120 + 180 = 300.
+_Example for sizing with star (`*`)_:
+
+* Columns: One star plus two stars is equal to three stars. (\* + 2\* = 3\*). Divide GridLayout width (300) by 3 to get 100. So first column is 1 x 100 = 100 pixels wide and second column is 2 x 100 = 200 pixels wide. 100 + 200 = 300.
+* Rows: Two stars plus three stars is equal to five stars. (2\* + 3\* = 5\*). Divide GridLayout height (300) by 5 to get 60. So first row is 2 x 60 = 120 pixels high and second row is 3 x 60 = 180 pixels high. 120 + 180 = 300.
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
@@ -226,9 +261,10 @@ _Example for sizing with star (`*`)_
   </GridLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
@@ -236,15 +272,19 @@ _Example for sizing with star (`*`)_
     <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
 </GridLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
 
-_Example for fixed and auto sizing_
-- The first column and the first row have fixed sizes of 100 and 100 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
-- The second column and the second row are `auto`. This means that they are measured with infinite available space and then sized to their content.
+_Example for fixed and auto sizing_:
+
+* The first column and the first row have fixed sizes of 100 and 100 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
+* The second column and the second row are `auto`. This means that they are measured with infinite available space and then sized to their content.
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
@@ -254,9 +294,10 @@ _Example for fixed and auto sizing_
   </GridLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
@@ -264,15 +305,18 @@ _Example for fixed and auto sizing_
     <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
 </GridLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
-_Example for no width and horizontalAlignment != stretch_
+_Example for no width and horizontalAlignment != stretch_:
+
 When the GridLayout has no explicit `width` set and its `horizontalAlignment` is set and is not `stretch`, the star columns will not occupy the entire available space (200 from parent StackLayout).
 
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout width="200" height="200" backgroundColor="palegreen">
     <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" backgroundColor="lightgray">
@@ -282,9 +326,10 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
   </StackLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <StackLayout width="200" height="200" backgroundColor="palegreen">
     <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" backgroundColor="lightgray">
         <Label text="Label 1" col="0" backgroundColor="red"></Label>
@@ -292,14 +337,17 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
     </GridLayout>
 </StackLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
 
-_Example for column stretching_
+_Example for column stretching_:
+
 Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
@@ -308,24 +356,28 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
   </GridLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
     <Label text="Label 3" width="150" col="0" row="1" backgroundColor="blue"></Label>
 </GridLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
-_Example for complex structure_
+_Example for complex structure_:
+
 `Image` has fixed width and height of 72 and span the both rows. For the first `Label`, it's given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
 
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
     <Image src="~/cute.jpg" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"/>
@@ -335,9 +387,10 @@ _Example for complex structure_
   </GridLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
     <Image src="~/cute.jpg" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"></Image>
     <Label text="My cat loves the camera" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
@@ -345,21 +398,24 @@ _Example for complex structure_
     <Label text="comments: 26" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
 </GridLayout>
 ```
+
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
 {% nativescript %}
-_Example for creating grid dynamically via code behind_
+
+_Example for creating grid dynamically via code behind_:
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=RTWLSH) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=IrIZ5I).
 
-```XML
+``` XML
 <Page loaded="onPageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd">
 
 </Page>
 ```
-```JavaScript
+
+``` JavaScript
 const Color = require("tns-core-modules/color").Color;
 const Button = require("tns-core-modules/ui/button").Button;
 const Label = require("tns-core-modules/ui/label").Label;
@@ -419,7 +475,8 @@ function onPageLoaded(args) {
 }
 exports.onPageLoaded = onPageLoaded;
 ```
-```TypeScript
+
+``` TypeScript
 import { Color } from "tns-core-modules/color";
 import { EventData } from "tns-core-modules/data/observable";
 import { Button } from "tns-core-modules/ui/button";
@@ -479,21 +536,28 @@ export function onPageLoaded(args: EventData) {
     page.content = grid;
 }
 ```
+
 {% endnativescript %}
+
 ## StackLayout
+
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
 ### StackLayout Properties
+
 | Property    | Description |
 | ----------- | ------------|
 | orientation | Gets or sets a value indicating whether the child items should be stacked in the horizontal or vertical direction. Possible values are `vertical` and `horizontal`. The default value is `vertical`. |
 
 ### StackLayout Child Properties
+
 None.
 
-_Example for `orientation="vertical"`_
+_Example for `orientation="vertical"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"/>
@@ -503,9 +567,10 @@ _Example for `orientation="vertical"`_
   </StackLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
     <Label text="Label 2" width="50" height="50" backgroundColor="green"></Label>
@@ -513,13 +578,16 @@ _Example for `orientation="vertical"`_
     <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
 </StackLayout>
 ```
+
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
 
-_Example for `orientation="horizontal"`_
+_Example for `orientation="horizontal"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"/>
@@ -529,9 +597,10 @@ _Example for `orientation="horizontal"`_
   </StackLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
     <Label text="Label 2" width="50" height="50" backgroundColor="green"></Label>
@@ -539,13 +608,16 @@ _Example for `orientation="horizontal"`_
     <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
 </StackLayout>
 ```
+
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
 
-_Example for horizontal alignment of children_
+_Example for horizontal alignment of children_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" horizontalAlignment="left" backgroundColor="red"/>
@@ -555,9 +627,10 @@ _Example for horizontal alignment of children_
   </StackLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" horizontalAlignment="left" backgroundColor="red"></Label>
     <Label text="Label 2" horizontalAlignment="center" backgroundColor="green"></Label>
@@ -565,13 +638,16 @@ _Example for horizontal alignment of children_
     <Label text="Label 4" horizontalAlignment="stretch" backgroundColor="yellow"></Label>
 </StackLayout>
 ```
+
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
 
-_Example for vertical alignment of children_
+_Example for vertical alignment of children_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" verticalAlignment="top" backgroundColor="red"/>
@@ -581,9 +657,10 @@ _Example for vertical alignment of children_
   </StackLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" verticalAlignment="top" backgroundColor="red"></Label>
     <Label text="Label 2" verticalAlignment="center" backgroundColor="green"></Label>
@@ -591,13 +668,17 @@ _Example for vertical alignment of children_
     <Label text="Label 4" verticalAlignment="stretch" backgroundColor="yellow"></Label>
 </StackLayout>
 ```
+
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
 
 ## WrapLayout
+
 The WrapLayout is similar to the StackLayout, but it does not just stack all child elements to one column/row, it wraps them to new columns/rows if no space is left. The WrapLayout is often used with items of the same size, but this is not a requirement.
+
 ### WrapLayout Properties
+
 | Property    | Description |
 | ----------- | ------------|
 | orientation | Gets or sets a value indicating the flow direction. If orientation is `horizontal`, items are arranged in rows. If orientation is `vertical`, items are arranged in columns. The default value is `horizontal`. |
@@ -605,11 +686,14 @@ The WrapLayout is similar to the StackLayout, but it does not just stack all chi
 | itemHeight  | Gets or sets the height used to measure and layout each child. Default value is Number.NaN, which does not restrict children. |
 
 ### WrapLayout Child Properties
+
 None.
 
-_Example for `orientation="horizontal"`_
+_Example for `orientation="horizontal"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -619,9 +703,10 @@ _Example for `orientation="horizontal"`_
   </WrapLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <WrapLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -629,13 +714,16 @@ _Example for `orientation="horizontal"`_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </WrapLayout>
 ```
+
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
 
-_Example for `orientation="vertical"`_
+_Example for `orientation="vertical"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -645,9 +733,10 @@ _Example for `orientation="vertical"`_
   </WrapLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <WrapLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -655,13 +744,16 @@ _Example for `orientation="vertical"`_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </WrapLayout>
 ```
+
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
 
-_Example for `itemWidth="30"` and `itemHeight="30"`_
+_Example for `itemWidth="30"` and `itemHeight="30"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -671,9 +763,10 @@ _Example for `itemWidth="30"` and `itemHeight="30"`_
   </WrapLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -681,14 +774,17 @@ _Example for `itemWidth="30"` and `itemHeight="30"`_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </WrapLayout>
 ```
+
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
 
 ## FlexboxLayout
+
 The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) based on an existing Apache-2 licensed flexbox implementation hosted on [github.com/google/flexbox-layout](https://github.com/google/flexbox-layout).
 
 ### FlexboxLayout Properties
+
 | Property    | Description | Values |
 | ----------- | ------------|--------|
 | flexDirection | Gets or sets a value indicating the direction flex items are placed in the flex container. | <ul><li>`row` (same as text direction) *default*</li><li>`row-reverse` (opposite to text direction)</li><li>`column` (same as `row` but top to bottom)</li><li>`column-reverse` (same as `row-reverse` top to bottom)</li></ul> |
@@ -697,22 +793,25 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 | alignItems | Gets or sets a value indicating how flex items are laid out along the cross axis on the current line. You can think of it as the justifyContent version for the cross-axis (perpendicular to the main-axis). |<ul><li>`flex-start` (cross-start margin edge of the items is placed on the cross-start line)</li><li>`flex-end` (cross-end margin edge of the items is placed on the cross-end line)</li><li>`center` (items are centered in the cross-axis)</li><li>`baseline` (items are aligned such as their baselines align)</li><li>`stretch` (stretch to fill the container but still respect min-width/max-width). *default*</li></ul>|
 | alignContent | Gets or sets a value that helps aligning a flex container's lines within it when there is extra space in the cross-axis, similar to how justifyContent aligns individual items within the main-axis. |<ul><li>`flex-start` (lines packed to the start of the container)</li><li>`flex-end` (lines packed to the end of the container)</li><li>`center` (lines packed to the center of the container)</li><li>`space-between` (lines evenly distributed; the first line is at the start of the container while the last one is at the end)</li><li>`space-around` (lines evenly distributed with equal space between them)</li><li>`stretch` (lines stretch to take up the remaining space) *default*  This property has no effect when the flexbox has only a single line.</li></ul> |
 
-> **NOTE:** On **iOS**, you **cannot set** `alignItems` to `baseline`.
+> **Note**: On **iOS**, you **cannot set** `alignItems` to `baseline`.
 
 ### FlexboxLayout Child Properties
+
 | Property | Description |
 | -------- | ------------|
 | order         | Gets or sets a value that changes the default ordering of flex items. |
 | flexGrow | Gets or sets a unitless value that serves as a proportion indicating whether the flex item is able to grow if necessary. It dictates what amount of the available space inside the flex container the item should take up. |
 | flexShrink | Gets or sets a value indicating the "flex shrink factor", which determines how much the flex item will shrink relative to the rest of the flex items in the flex container when there is not enough space on the row. When omitted, it is set to 1 and the flex shrink factor is multiplied by the flex basis when distributing negative space. |
 | alignSelf | Gets or sets a value that makes it possible to override the alignItems value for specific flex items. This property accepts the same 5 values as the alignItems: `flex-start` (cross-start margin edge of the item is placed on the cross-start line), `flex-end` (cross-end margin edge of the item is placed on the cross-end line), `center` (item is centered in the cross-axis), `baseline` (items are aligned such as their baseline are aligned), and `stretch` (stretch to fill the container but still respect min-width / max-width). The default value is `stretch`. |
-| flexWrapBefore | Gets or sets a boolean value controlling item wrapping. Setting it to `true` on flexbox item will force it to wrap on a new line. The default value is `false`. This property is not part of the official flexbox specification.  
+| flexWrapBefore | Gets or sets a boolean value controlling item wrapping. Setting it to `true` on flexbox item will force it to wrap on a new line. The default value is `false`. This property is not part of the official flexbox specification.
 
-> **NOTE:** On **iOS**, you **cannot set** `alignSelf` to `baseline`.
+> **Note**: On **iOS**, you **cannot set** `alignSelf` to `baseline`.
 
-_Example for `flexDirection="row"` and `alignItems="stretch"` (default)_
+_Example for `flexDirection="row"` and `alignItems="stretch"` (default)_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -722,9 +821,10 @@ _Example for `flexDirection="row"` and `alignItems="stretch"` (default)_
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -732,13 +832,16 @@ _Example for `flexDirection="row"` and `alignItems="stretch"` (default)_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout1.png "FlexboxLayout")
 
-_Example for `flexDirection="column"` and `alignItems="stretch"` (default)_
+_Example for `flexDirection="column"` and `alignItems="stretch"` (default)_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout flexDirection="column" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -748,9 +851,10 @@ _Example for `flexDirection="column"` and `alignItems="stretch"` (default)_
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout flexDirection="column" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -758,13 +862,16 @@ _Example for `flexDirection="column"` and `alignItems="stretch"` (default)_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout2.png "FlexboxLayout")
 
-_Example for `flexDirection="row"` and `alignItems="flex-start"`_
+_Example for `flexDirection="row"` and `alignItems="flex-start"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -774,9 +881,10 @@ _Example for `flexDirection="row"` and `alignItems="flex-start"`_
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -784,13 +892,16 @@ _Example for `flexDirection="row"` and `alignItems="flex-start"`_
     <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout3.png "FlexboxLayout")
 
-_Example for `flexDirection="row"`, custom order_
+_Example for `flexDirection="row"`, custom order_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
     <Label order="3" text="Label 1" width="70" height="70" backgroundColor="red"/>
@@ -800,9 +911,10 @@ _Example for `flexDirection="row"`, custom order_
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
     <Label order="3" text="Label 1" width="70" height="70" backgroundColor="red"></Label>
     <Label order="4" text="Label 2" width="70" height="70" backgroundColor="green"></Label>
@@ -810,13 +922,16 @@ _Example for `flexDirection="row"`, custom order_
     <Label order="1" text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout4.png "FlexboxLayout")
 
-_Example for `flexWrap="wrap"`_
+_Example for `flexWrap="wrap"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout flexWrap="wrap" height="300" width="300" backgroundColor="lightgray">
     <Label text="Label 1" width="100" height="50" backgroundColor="red"/>
@@ -826,9 +941,10 @@ _Example for `flexWrap="wrap"`_
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout flexWrap="wrap" height="300" width="300" backgroundColor="lightgray">
     <Label text="Label 1" width="100" height="50" backgroundColor="red"></Label>
     <Label text="Label 2" width="100" height="50" backgroundColor="green"></Label>
@@ -836,13 +952,16 @@ _Example for `flexWrap="wrap"`_
     <Label text="Label 4" width="100" height="50" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout6.png "FlexboxLayout")
 
-_Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` and `alignItems="stretch"`_
+_Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` and `alignItems="stretch"`_:
+
 {% nativescript %}
-```XML
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch"
     height="300" width="300" backgroundColor="lightgray">
@@ -853,9 +972,10 @@ _Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` a
   </FlexboxLayout>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-```HTML
+
+{% endnativescript %}{% angular %}
+
+``` HTML
 <FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch" height="300" width="300"
     backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
@@ -864,6 +984,7 @@ _Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` a
     <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
 </FlexboxLayout>
 ```
+
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout5.png "FlexboxLayout")

@@ -10,9 +10,7 @@ slug: wire-backend
 
 Most mobile applications need to communicate with data in one form or another. Depending on the exact scenario, this may be local storage but if you need to share data or sync it across devices, you need to use some kind of backend.
 
-
 This article goes through some of the popular ways to connect your NativeScript mobile app with a backend.
-
 
 ## Progress Kinvey NativeScript SDK
 
@@ -20,7 +18,7 @@ This article goes through some of the popular ways to connect your NativeScript 
 
 __[Get Started with the Kinvey NativeScript SDK](https://devcenter.kinvey.com/nativescript/guides/getting-started) or take a look at the [SDK repository](https://github.com/Kinvey/nativescript-sdk).__
 
-## Google Firebase  
+## Google Firebase
 
 [Firebase](https://firebase.google.com/) is a BaaS solution, providing an easy, quick way to create a backend database and start sending data to a collection. Firebase also supports not only data storage but user authentication and static hosting.
 
@@ -28,6 +26,6 @@ You can integrate your NativeScript app with Firebase through the community plug
 
 Find the nativescript-plugin-firebase repository and documentation at [https://github.com/EddyVerbruggen/nativescript-plugin-firebase](https://github.com/EddyVerbruggen/nativescript-plugin-firebase) or clone the [demo app](https://github.com/EddyVerbruggen/nativescript-plugin-firebase-demo) for a quick start.
 
-
 ## See Also
+
 * [HTTP module]({%ns_cookbook http%})

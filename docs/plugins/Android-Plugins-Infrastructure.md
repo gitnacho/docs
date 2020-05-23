@@ -6,7 +6,7 @@ slug: android-plugins-infrastructure
 previous_url: /external-libs/jars,/external-libs/resource-libs
 ---
 
-> **IMPORTANT:** The CLI command `tns library add` is no longer supported. Use plugins to work with external libs.
+> **Important**: The CLI command `tns library add` is no longer supported. Use plugins to work with external libs.
 
 # Android Plugins Infrastructure
 
@@ -27,7 +27,8 @@ If the NativeScript framework does not expose a native API that you need, you ca
 ### Directory Structure
 
 This is what an Android NativeScript plugin may include.
-```
+
+``` Shell
 my-plugin/
 ├── package.json
 ├── MyModule1/
@@ -38,14 +39,15 @@ my-plugin/
 │   └── package.json
 └── platforms/
     ├── android/
-		└── include.gradle
-		└── MyLibrary.aar
-		└── MyLibrary.jar
+        └── include.gradle
+        └── MyLibrary.aar
+        └── MyLibrary.jar
 ```
 
 ### Android plugin elements
 
 You can find more information on the common parts of the NativeScript plugins like the `package.json` and js modules [here]({% slug plugins-infrastructure %}).
+
 * `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory.
 * `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file]({% slug gradle-hooks%}#plugins-includegradle).
 * `platforms\android\MyLibrary.aar` is an Android library. You can read more about the `.aar` format [here](http://tools.android.com/tech-docs/new-build-system/aar-format).
@@ -54,7 +56,8 @@ You can find more information on the common parts of the NativeScript plugins li
 ### Native Android plugin using V8 API
 
 If for any reason you want to use V8 API in your plugin, you will need to specify that explicitly in the plugin's `package.json`, so that the respective symbols be exposed for use when the plugin is installed inside a NativeScript application.
-```JSON
+
+``` JSON
 {
     "name": "plugin-name",
     "version": "0.1.0",
@@ -76,24 +79,25 @@ We are concentrating on the "_native_" part of the plugin. When we talk about "_
 
 ### What do I use?
 
-When you want to create an Android NativeScript plugin and you want to add some "_native_" functionality there are two main options. Use a `.jar` file, or use a `.aar` file. Keep in mind that `.aar` files are the recommended library form for NativeScript plugins. When we use a library in the form of a `.jar` file we want some functionality that doesn’t need any resources, just native implementation of some logic we need. For example, if we need to make some complicated calculation and there is an SDK in the form of a `.jar` file and requires **no** UI elements, we could use that library. This would only provide a couple of classes with some logic in them and **should not** declare activities or any other types of application components (http://www.tutorialspoint.com/android/android_application_components.htm).
+When you want to create an Android NativeScript plugin and you want to add some "_native_" functionality there are two main options. Use a `.jar` file, or use a `.aar` file. Keep in mind that `.aar` files are the recommended library form for NativeScript plugins. When we use a library in the form of a `.jar` file we want some functionality that doesn’t need any resources, just native implementation of some logic we need. For example, if we need to make some complicated calculation and there is an SDK in the form of a `.jar` file and requires **no** UI elements, we could use that library. This would only provide a couple of classes with some logic in them and **should not** declare activities or any other types of application components (<http://www.tutorialspoint.com/android/android_application_components.htm>).
 
 * In what cases should we prefer `.jar` files?
-    * when we don’t have any need for using android application components
-    * when we want to add classes with logic in them, we can use from our js user code.
-    * when we don’t need resources connected to the `.jar` file like drawables, layouts, etc.
+  + when we don’t have any need for using android application components
+  + when we want to add classes with logic in them, we can use from our js user code.
+  + when we don’t need resources connected to the `.jar` file like drawables, layouts, etc.
 
 * In what cases should we prefer `.aar` files:
-    * when we want to use some kind of an interactive SDK like Facebook, Dropbox, YouTube, etc.
-    * when we need to use application components like activities, services, resources, etc.
+  + when we want to use some kind of an interactive SDK like Facebook, Dropbox, YouTube, etc.
+  + when we need to use application components like activities, services, resources, etc.
 
-> **IMPORTANT:**  The recommended way of using AAR files inside a NativeScript plugin is to add it as a dependency in the `include.gradle` file inside the `platforms/android` folder of the plugin.
+> **Important**:  The recommended way of using AAR files inside a NativeScript plugin is to add it as a dependency in the `include.gradle` file inside the `platforms/android` folder of the plugin.
 
 ### Plugin migration.
 
 Let's say you have a plugin with the following structure:
-**Case 1:**
-```
+**Case 1**:
+
+``` Shell
 my-plugin/
 ├── package.json
 ├── MyModule1/
@@ -104,17 +108,19 @@ my-plugin/
 │   └── package.json
 └── platforms/
     ├── android/
-		└── AndroidManifest.xml
-		└── MyLibrary.aar
+        └── AndroidManifest.xml
+        └── MyLibrary.aar
 ```
 
 **What to do to migrate this plugin?**
 Take all the plugin related info from the `AndroidManifest.xml` and put it in the MyLibrary.aar's `AndroidManifest.xml`. You can do that one of two ways:
+
 * Unpack MyLibrary.aar file and update its `AndroidManifest.xml`.
 * Open `.aar` source project and update its `AndroidManifest.xml`, then rebuild `.aar` file.
 
-**Case 2:**
-```
+**Case 2**:
+
+``` Shell
 my-plugin/
 ├── package.json
 ├── MyModule1/
@@ -125,15 +131,16 @@ my-plugin/
 │   └── package.json
 └── platforms/
     ├── android/
-		└── AndroidManifest.xml
-		└── MyLibrary.jar
+        └── AndroidManifest.xml
+        └── MyLibrary.jar
 ```
+
 **What to do to migrate this plugin?**
 Take all the plugin related info from the `AndroidManifest.xml` and put it in `app\App_Resources\Android\AndroidManifest.xml`.
 
+**Case 3**:
 
-**Case 3:**
-```
+``` Shell
 my-plugin/
 ├── package.json
 ├── MyModule1/
@@ -144,9 +151,10 @@ my-plugin/
 │   └── package.json
 └── platforms/
     ├── android/
-		└── AndroidManifest.xml
-		└──	res/
-		└── MyLibrary.jar
+        └── AndroidManifest.xml
+        └──    res/
+        └── MyLibrary.jar
 ```
+
 **What to do to migrate this plugin?**
 Create a new Android Studio project and migrate the code to an `.aar` file. The `.aar` file is a self contained project by itself so it contains `res/` folder, `AndroidManifest.xml` and source files.

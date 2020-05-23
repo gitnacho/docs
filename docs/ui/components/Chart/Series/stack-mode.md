@@ -19,9 +19,9 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 
 There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
 
-- {% typedoc_link enums:ChartSeriesStackMode,member:None%} - The data points for all series start drawing from the axis.
-- {% typedoc_link enums:ChartSeriesStackMode,member:Stack%} - The data points for each series start drawing from the end of the data points of the previous series.
-- {% typedoc_link enums:ChartSeriesStackMode,member:Stack100%} - The data points for each series start drawing from the end of the data points of the previous series but their size is adjusted proportionally so that the whole plot-area of the chart is filled.
+* {% typedoc_link enums:ChartSeriesStackMode,member:None%} - The data points for all series start drawing from the axis.
+* {% typedoc_link enums:ChartSeriesStackMode,member:Stack%} - The data points for each series start drawing from the end of the data points of the previous series.
+* {% typedoc_link enums:ChartSeriesStackMode,member:Stack100%} - The data points for each series start drawing from the end of the data points of the previous series but their size is adjusted proportionally so that the whole plot-area of the chart is filled.
 
 This is the data with which we will populate our series:
 

@@ -13,20 +13,20 @@ Using a `ListView` control inside Angular app requires some special attention du
 
 In this article we will cover the following topics:
 
-- [List View](#list-view)
-    - [Using the ListView Component](#using-the-listview-component)
-    - [Customizing the ListView](#customizing-the-listview)
-    - [Using an Item Template](#using-an-item-template)
-    - [Using Multiple Item Templates](#using-multiple-item-templates)
-    - [Using Async Pipe](#using-async-pipe)
-    - [Load More Items](#load-more-items)
-    - [Estimated Row Height](#estimated-row-height)
+* [List View](#list-view)
+  + [Using the ListView Component](#using-the-listview-component)
+  + [Customizing the ListView](#customizing-the-listview)
+  + [Using an Item Template](#using-an-item-template)
+  + [Using Multiple Item Templates](#using-multiple-item-templates)
+  + [Using Async Pipe](#using-async-pipe)
+  + [Load More Items](#load-more-items)
+  + [Estimated Row Height](#estimated-row-height)
 
 ## Using the ListView Component
 
 NativeScript-angular plugin provides a custom Angular component which simplifies the way native ListView should be used. Following is an example of how to add ListView to your page (with some clarifications later):
 
-```XML
+``` XML
 // list-test.html
 <ListView [items]="myItems" (itemTap)="onItemTap($event)">
     <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
@@ -37,7 +37,8 @@ NativeScript-angular plugin provides a custom Angular component which simplifies
     </ng-template>
 </ListView>
 ```
-```TypeScript
+
+``` TypeScript
 import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 class DataItem {
@@ -68,14 +69,15 @@ export class ListTest {
     }
 }
 ```
-```CSS
+
+``` CSS
 // list-test.css
 .odd {
-	background-color: red;
+    background-color: red;
 }
 
 .even {
-	background-color: blue;
+    background-color: blue;
 }
 ```
 
@@ -84,11 +86,11 @@ As shown there is nothing complex in a way ListView component is used, but some 
 * items - The `items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities, supporting such a scenario counts on Angular's change detection mechanism for notification that something has changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of this kind of data source is the NativeScript ObservableArray.
 
 * template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular optional variables marked with `let-` that are preset for every data item:
-  * `let-item` - the data item itself.
-  * `let-i` - the index of the data item (inside data source)
-  * `let-odd` - represents if the index of the data item is an odd number
-  * `let-even` - represents if the index of the data item is an even number
-  * Inside the actual template it is shown how to use these variables.
+  + `let-item` - the data item itself.
+  + `let-i` - the index of the data item (inside data source)
+  + `let-odd` - represents if the index of the data item is an odd number
+  + `let-even` - represents if the index of the data item is an even number
+  + Inside the actual template it is shown how to use these variables.
 
 * itemTap event - `itemTap` event is an event that comes from the NativeScript ListView (the underlying control behind the NativeScript-Angular ListView component). There is nothing special here—just a normal one-way to source binding with a corresponding function `onItemTap` inside the code-behind file.
 
@@ -98,7 +100,7 @@ This is a typical usage of the ListView component, however if the business case 
 
 The most common customization of ListView control is customizing the item template. Everything inside the `<ng-template>` tag will be used as the item template and will be generated for each item. Another possible customization is connected with the creation of a different item. Usually with a pure NativeScript application, the `itemLoading` event could be used to accomplish this customization. Unfortunately this event cannot be used with a NativeScript-Angular app, since the NativeScript-Angular plugin uses this event to create an Angular view which will be inserted into the Angular virtual dom. However, the NativeScript-Angular ListView component provides an option to customize the created Angular view before adding it to the visual tree. This option is available via the `setupItemView` event. Here is a small example how to use this event:
 
-```XML
+``` XML
 <GridLayout rows="*">
     <ListView [items]="myItems" (setupItemView)="onSetupItemView($event)">
         <ng-template let-item="item" let-i="index" let-third="third">
@@ -110,21 +112,22 @@ The most common customization of ListView control is customizing the item templa
     </ListView>
 </GridLayout>
 ```
-```TypeScript
+
+``` TypeScript
 import {SetupItemViewArgs} from "nativescript-angular/directives";
 
 ...
 
 onSetupItemView(args: SetupItemViewArgs) {
-	args.view.context.third = (args.index % 3 === 0);
+    args.view.context.third = (args.index % 3 === 0);
 }
 ```
 
 In order to see the result just add `third` css class in app.css or in styles of your custom component:
 
-```
+``` CSS
 .third {
-	background-color: lime;
+    background-color: lime;
 }
 ```
 
@@ -136,7 +139,7 @@ And the result is:
 
 Another popular scenario is using a separate component for the ListView template. Using a custom control within a ListView actually is very simple.
 
-```TypeScript
+``` TypeScript
 @Component({
     selector: 'item-component',
     template: `
@@ -182,9 +185,9 @@ As shown, just create a custom component and add it to the directives of the hos
 There are scenarios when you want to use different item templates based on the type of the current item (or some other condition). Here is how to do that:
 
 1. Define a list view with multiple templates, giving each one of them a key using the `nsTemplateKey` directive.
-2. Set the `itemTemplateSelector` callback for the `ListView`. This is a function that will be called when each item is rendered and should return the name of the template that should be used for it.
+1. Set the `itemTemplateSelector` callback for the `ListView`. This is a function that will be called when each item is rendered and should return the name of the template that should be used for it.
 
-```TypeScript
+``` TypeScript
 import { Component, Input, Injectable } from "@angular/core";
 
 class DataItem {
@@ -246,7 +249,8 @@ export class ListTemplateSelectorTest {
     }
 }
 ```
-```HTML
+
+``` HTML
 <ListView [items]="myItems" [itemTemplateSelector]="templateSelector">
     <ng-template nsTemplateKey="header" let-item="item">
         <header-component [data]="item"></header-component>
@@ -266,7 +270,7 @@ Using different item templates for different item types is much more performant 
 
 Generally according to Angular documentation, a pipe is a simple display-value transformation that can be declared in HTML. A pipe takes an input and transforms it to a desired output. One of the built-in Angular pipes is very commonly used with ListView like controls. This is the `async` pipe. The input of this pipe is either `Promise<Array>` or `Observable<Array>` (Observable actually stands for [RxJS.Observable](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md). This pipe subscribes to the observable and returns the value inside it as property value. Following is a simple example of using async pipe with NativeScript-Angular ListView.
 
-```TypeScript
+``` TypeScript
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Observable as RxObservable } from 'rxjs/Observable';
 
@@ -325,7 +329,7 @@ export class ListTestAsync {
 
 The built-in [loadMoreItemsEvent](/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
 
-```HTML
+``` HTML
 // list-test.html
 <ListView [items]="myItems" (loadMoreItems)="loadMoreItems()">
     <ng-template let-item="item" let-i="index">
@@ -333,7 +337,8 @@ The built-in [loadMoreItemsEvent](/api-reference/classes/_ui_list_view_.listview
     </ng-template>
 </ListView>
 ```
-```TypeScript
+
+``` TypeScript
 import { Component } from "@angular/core";
 import { EventData } from "tns-core-modules/data/observable";
 

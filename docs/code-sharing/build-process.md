@@ -24,7 +24,6 @@ In order to build an iOS or an Android app with NativeScript, you need to use th
 
 To build a mobile app from a code-sharing project run:
 
-```
+``` Node
 tns preview
 ```
-

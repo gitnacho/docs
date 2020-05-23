@@ -15,22 +15,23 @@ publish: true
 ## Setup
 
 To display a Range Bar Chart, you will need to:
-- Add a **RadCartesianChart** to your component.
-- Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **v-tkCartesianHorizontalAxis** directive.
-- Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **v-tkCartesianVerticalAxis** directive.
-- Add at least one instance of **RangeBarSeries** with the **v-tkCartesianSeries** directive and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
 
- > The above setup will create a chart with vertical bars. If you need horizontal bars, you can swap the axes' position and add the v-tkCartesianVerticalAxis to the category axis and the v-tkCartesianHorizontalAxis to the value axis.
- 
+* Add a **RadCartesianChart** to your component.
+* Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **v-tkCartesianHorizontalAxis** directive.
+* Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **v-tkCartesianVerticalAxis** directive.
+* Add at least one instance of **RangeBarSeries** with the **v-tkCartesianSeries** directive and set its **items** property to a collection of data items, its **categoryProperty** set to the name of the property of the data items that will be used to determine their category and the **lowPropertyName** and **highPropertyName** to the names of the properties used to determine their low and high values.
+
+  > The above setup will create a chart with vertical bars. If you need horizontal bars, you can swap the axes' position and add the v-tkCartesianVerticalAxis to the category axis and the v-tkCartesianHorizontalAxis to the value axis.
+
 To illustrate this setup, let's create an example. Just like with all vue 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
- #### Example 1: Define a collection of items
+### Example 1: Define a collection of items
 
- <snippet id='chart-get-range-bar-data-vue'/>
+<snippet id='chart-get-range-bar-data-vue'/>
 
- #### Example 2: Add chart to component's template
+### Example 2: Add chart to component's template
 
- <snippet id='chart-range-bar-vue'/>
+<snippet id='chart-range-bar-vue'/>
 
 #### Figure 1: Chart with RangeBarSeries on Android (left) and iOS (right)
 

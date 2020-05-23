@@ -22,7 +22,7 @@ tns plugin add nativescript-ui-autocomplete
 ## Initialization
 Then, in order to add a {% typedoc_link classes:RadAutoCompleteTextView %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:au="nativescript-ui-autocomplete"` 
+* `xmlns:au="nativescript-ui-autocomplete"`
 
 To create a **RadAutoCompleteTextView** you should use the RadAutoCompleteTextView tag in your .xml file.
 Once you have added the tag you should specify value for the `items` property of the control.
@@ -124,4 +124,3 @@ Want to see more examples using **RadAutoCompleteTextView**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
 * [RadAutoCompleteTextView Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/)
-

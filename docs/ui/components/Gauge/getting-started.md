@@ -13,7 +13,7 @@ publish: true
 This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 #### Figure 1. Radial gauge with needle and bar indicators
-![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/gauges-gettingstarted-android.png "RadRadialGauge in Android") 
+![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/gauges-gettingstarted-android.png "RadRadialGauge in Android")
 
 ## Installation
 Run the following command to add the plugin to your application:
@@ -26,7 +26,7 @@ tns plugin add nativescript-ui-gauge
 
 Then, in order to add a {% typedoc_link classes:RadRadialGauge %} instance in a page of your application, you need to define the following XML namespace:
 
-- `xmlns:gauge="nativescript-ui-gauge"`.
+* `xmlns:gauge="nativescript-ui-gauge"`.
 
 Here's how to add a {% typedoc_link classes:RadGauge %} instance to your page:
 

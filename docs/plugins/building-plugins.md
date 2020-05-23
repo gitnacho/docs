@@ -16,19 +16,19 @@ Let's start by looking at the basics of how to structure a NativeScript plugin, 
 
 At their basic level NativeScript plugins are simple JavaScript modules that use well established npm conventions. For example, here's what the world's simplest NativeScript plugin looks like.
 
-```text
+``` Shell
 nativescript-hello-world/
 └── src
     ├── index.js
     └── package.json
 ```
 
->IMPORTANT: Putting your source in a sub-folder is required for local LiveSync debugging.  
+>IMPORTANT: Putting your source in a sub-folder is required for local LiveSync debugging.
 >Older plugins should be updated to move their source code in to a sub-folder.
 
 And here is the simplest possible implementation of that plugin.
 
-```JavaScript
+``` JavaScript
 // index.js
 module.exports = {
   helloWorld: function() {
@@ -37,7 +37,7 @@ module.exports = {
 }
 ```
 
-```JSON
+``` JSON
 /* package.json */
 {
   "name": "nativescript-hello-world",
@@ -56,19 +56,19 @@ There are a few things to note in this implementation.
 * NativeScript uses the [CommonJS format](http://wiki.commonjs.org/wiki/CommonJS) for defining JavaScript modules. In practical terms that just means you need to know the syntax for importing and exporting functionality (`require`, `export`, and `module.exports`). It's pretty straightforward, and you'll see several examples throughout this guide.
 * NativeScript plugins must have a "nativescript" key in their `package.json` file that specifies the minimum version of the iOS and Android runtimes that the plugin supports. Don't worry about this at the moment, other than to note that it's there.
 
-> **TIP**: Other than the `"nativescript"` key, everything about your plugin's `package.json` file will be identical to any other npm package. Therefore, [the npm docs about the `package.json` file](https://docs.npmjs.com/files/package.json) are a great reference when tinkering with your NativeScript plugin's metadata during development.
+> **Tip** Other than the `"nativescript"` key, everything about your plugin's `package.json` file will be identical to any other npm package. Therefore, [the npm docs about the `package.json` file](https://docs.npmjs.com/files/package.json) are a great reference when tinkering with your NativeScript plugin's metadata during development.
 
 To use the above plugin all you need to do is install it in one of your apps.
 
-```bash
+``` Shell
 tns plugin add /path/to/nativescript-hello-world/src
 ```
 
-> **TIP**: The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos, local folders, or .tgz archives. For details, run `tns plugin add --help` from your command line.
+> **Tip** The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos, local folders, or .tgz archives. For details, run `tns plugin add --help` from your command line.
 
 With the plugin installed, you can use the CommonJS `require()` method to import your plugin and use its `helloWorld()` method.
 
-```JavaScript
+``` JavaScript
 var helloWorldModule = require("nativescript-hello-world");
 helloWorldModule.helloWorld();
 ```
@@ -83,23 +83,24 @@ The [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plug
 
 Let's look at how the plugin seed works, and in the process build a simple plugin that can retrieve an app's version number on both Android and iOS.
 
-> **NOTE**: Although we recommend using the NativeScript plugin seed, you do have the ability to build your NativeScript plugin from scratch. If you're interested in creating your own plugin development workflow, refer to the [NativeScript plugin reference](/plugins/plugin-reference) for details on exactly how NativeScript plugins are structured.
+> **Note**: Although we recommend using the NativeScript plugin seed, you do have the ability to build your NativeScript plugin from scratch. If you're interested in creating your own plugin development workflow, refer to the [NativeScript plugin reference](/plugins/plugin-reference) for details on exactly how NativeScript plugins are structured.
 
 ### Step 1: Start Your Plugin
 
 Because the NativeScript plugin seed is a public and open source repository, you'll start your plugin by running `git clone`. The command below clones the seed into a new folder called "nativescript-version-number".
 
-```bash
+``` Shell
 git clone https://github.com/NativeScript/nativescript-plugin-seed nativescript-version-number
 ```
 
-> **TIP**:
+> **Tip**
+>
 > * The `git clone` command takes an [optional `<directory>` argument](https://git-scm.com/docs/git-clone#git-clone-ltdirectorygt), and you can use it to change the folder name of any repository that you clone. The above command uses this to clone a repository named "nativescript-plugin-seed" into a folder named "nativescript-version-number".
 > * By convention, NativeScript plugins use a naming convention of nativescript-name-of-plugin, which is why this plugin uses the name "nativescript-version-number" instead of something like "nativescript-VersionNumber" or "NativeScriptVersionNumber". Sticking to this naming convention allows developers to find your plugin easily.
 
 You'll learn about the file structure of your plugin momentarily, but first there's one last setup script you need to run. After your `git clone` command finishes, `cd` into your new plugin's `src` folder, and then run the npm `postclone` script.
 
-```bash
+``` Shell
 cd nativescript-version-number/src
 npm run postclone
 ```
@@ -108,7 +109,7 @@ The `postclone` script will ask you a few questions, such as your GitHub usernam
 
 After the `postclone` script completes, your plugin should have a folder structure that looks looks this.
 
-```text
+``` Shell
 nativescript-version-number/
 ├── demo
 ├── publish
@@ -126,12 +127,13 @@ During development, the NativeScript plugin seed allows you to work on your plug
 ### Step 2: Set Up a Development Workflow
 
 In short, the process can be summarized with the following steps:
+
 1. Run the demo app (which references the plugin), e.g. using `npm run demo ios|android`.
-2. Update the plugin code and see the result in the refreshed app.
+1. Update the plugin code and see the result in the refreshed app.
 
 Let's run your plugin in the demo app so you can see your plugin in action. Start by opening a new terminal window or command prompt on your development machine. Next, run either `npm run demo.ios` or `npm run demo.android`, to start up the demo app on iOS or Android.
 
-```bash
+``` Shell
 # Pick one of these commands and run it while still in the src folder.
 npm run demo.ios
 npm run demo.android
@@ -143,7 +145,7 @@ If all went well, you should see the demo app start up and show one of the follo
 
 To show how the development process works, next, open your plugin's `src/version-number.common.ts` file, find the line of code that contains the "Your plugin is working" string, and make a small change. For example you could change the entire line of code that sets the `msg` variable to the following.
 
-```TypeScript
+``` TypeScript
 let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!`;
 ```
 
@@ -151,7 +153,7 @@ After you save this change a few things are going to happen. Next, your `demo` c
 
 ![Your plugin is working on iOS!](./img/plugins/working-ios-2.png)
 
-> **NOTE**: Wondering how this works? The demo application's `package.json` file is set to reference the plugin's source code in the `src` folder directly. This link allows you to edit files in `src`, and see those changes in your demo immediately.
+> **Note**: Wondering how this works? The demo application's `package.json` file is set to reference the plugin's source code in the `src` folder directly. This link allows you to edit files in `src`, and see those changes in your demo immediately.
 
 Pretty cool, huh? With this workflow you have the ability to develop NativeScript plugins just like they're any other files in your NativeScript apps.
 
@@ -161,20 +163,21 @@ Now that you have a workflow in place, let's take a step back and look at the fi
 
 Your plugin's `src` folder is where you'll work on writing your plugin. There are a number of files in this folder, but let's start with the `.ts` files as they're where you'll spend the majority of your time.
 
-```text
+``` Shell
 .
 ├── version-number.android.ts
 ├── version-number.common.ts
 └── version-number.ios.ts
 ```
 
-> **NOTE**:
+> **Note**:
+>
 > * Each `.ts` file will have have a generated `.js` file with the same name, but you can safely ignore those. If you're using Visual Studio Code you can add a [bit of configuration](https://code.visualstudio.com/Docs/languages/typescript#_hiding-derived-javascript-files) to hide generated `.js` files in your editor.
 > * Each `.ts` file also has a generated `.d.ts` file. Don't worry about these files as the NativeScript CLI takes care of creating these files for you. The only `.d.ts` file you need to worry about is `src/index.d.ts`, and you'll learn about that file momentarily.
 
 The `.android.ts` file is where you put the Android implementation of your plugin; the `.ios.ts` file is where you put the iOS implementation of your plugin; and the `.common.ts` file is an optional file where you can put any code you intend to share on both platforms. The shared code in the `.common.ts` file must be referenced in your platform specific `.android.ts` and `.ios.ts` files. For example in `version-number.ios.ts` you will see:
 
-```TypeScript
+``` TypeScript
 import { Common } from './version-number.common';
 ```
 
@@ -195,11 +198,11 @@ The NativeScript plugin seed automatically sets up the necessary TypeScript conf
 
 ![VS Code IntelliSense](./img/plugins/vs-code-intellisense.png)
 
-> **TIP**: If you're new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugins' source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
+> **Tip** If you're new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugins' source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
 
 There are still a few more changes you need to make before your plugin is ready to test. Next, open your `src/version-number.android.ts` file and paste in the following code:
 
-```TypeScript
+``` TypeScript
 import * as application from "tns-core-modules/application";
 
 export class VersionNumber {
@@ -216,7 +219,7 @@ With this you have a functional plugin implementation for both iOS and Android, 
 
 Open your `src/index.d.ts` file and paste in the following code.
 
-```TypeScript
+``` TypeScript
 export declare class VersionNumber {
   get(): string;
 }
@@ -226,11 +229,11 @@ The `index.d.ts` file serves two purposes: first, it serves as a contract for an
 
 The NativeScript CLI does not generate your `index.d.ts` file, but in most situations you can copy the contents of your `.android.d.ts` file or your `.ios.d.ts` file into your `index.d.ts` file. (The only time you wouldn't want to do that is if your plugin had Android- or iOS-specific APIs that you wanted to expose.)
 
-> **TIP** For more detailed information on writing declaration files refer to [TypeScript's documentation on the topic](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
+> **Tip** For more detailed information on writing declaration files refer to [TypeScript's documentation on the topic](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
 
 With that, your plugin is completely functional and can retrieve your app's version number on both iOS and Android. To test this out, head back to your demo app, open your `demo/app/main-view-model.ts` file, find the line of code that sets `this.message`, and change it to use the following line of code.
 
-```TypeScript
+``` TypeScript
 this.message = this.versionNumber.get();
 ```
 
@@ -250,19 +253,19 @@ There are two different scripts that you can run depending on whether you just w
 
 Both scripts are in the `publish` folder in your plugin's root folder, so start by using the `cd` command to navigate into that folder:
 
-```bash
+``` Shell
 cd ../publish
 ```
 
 Next, if you just want to create a package, execute the `pack.sh` script using the following command:
 
-```bash
+``` Shell
 ./pack.sh
 ```
 
 The pack command will build your plugin, and place the built archive in your plugin's `publish/package` folder, for example `publish/package/nativescript-version-number-1.0.0.tgz`. You can then take that plugin package and install it in other NativeScript apps using the `tns plugin add` command:
 
-```bash
+``` Shell
 tns plugin add nativescript-version-number-1.0.0.tgz
 ```
 
@@ -274,13 +277,13 @@ Next, open the `README.md` file in the root of your plugin. The NativeScript plu
 
 Once you're all set with your `package.json` configuration, as well as your `README.md` documentation, return to the `publish` folder or your plugin and run the `publish.sh` script.
 
-```bash
+``` Shell
 ./publish.sh
 ```
 
 The publish command runs through the same build process as the pack command, but after the build completes the command will additionally push your plugin to the npm registry.
 
-> **NOTE**: For the publish command to work you need to be logged into the `npm` CLI using `npm adduser` or `npm login`. For details on how to use these commands see the [npm documentation on the topic](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+> **Note**: For the publish command to work you need to be logged into the `npm` CLI using `npm adduser` or `npm login`. For details on how to use these commands see the [npm documentation on the topic](https://docs.npmjs.com/getting-started/publishing-npm-packages).
 
 And that's it! You have now built a simple plugin, set up a robust development workflow, and got everything ready to share your plugin with the world.
 

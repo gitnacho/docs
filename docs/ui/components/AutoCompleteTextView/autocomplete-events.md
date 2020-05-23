@@ -10,7 +10,7 @@ publish: true
 
 # RadAutoCompleteTextView Events
 In this article you are going to learn about the **RadAutoCompleteTextView's** events.
-The event are designed to notify you whenever a particular action, in the workflow of the control, has happened. They are quite useful when it comes to executing logic based on the **RadAutoCompleteTextView's** state. 
+The event are designed to notify you whenever a particular action, in the workflow of the control, has happened. They are quite useful when it comes to executing logic based on the **RadAutoCompleteTextView's** state.
 
 ## Available Events
 The **RadAutoCompleteTextView** control exposes these events:
@@ -23,7 +23,7 @@ The **RadAutoCompleteTextView** control exposes these events:
 * `didAutoComplete` - triggered whenever an item from the suggestions list is selected.
 * `suggestionViewBecameVisible` - triggered whenever the suggestion view is shown.
 
-All of these have identical logical structure and identical workflow, the only difference between them is the event which they are observing and notifing you about. 
+All of these have identical logical structure and identical workflow, the only difference between them is the event which they are observing and notifing you about.
 
 ## Usage
 In order to get notified when one of the above-mentioned events occur, you should use the following structure with the type of event you want to capture.

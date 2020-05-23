@@ -14,7 +14,7 @@ The V8 engine comes with a set of controlling flags that may be useful for fine-
 
 The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug android-memory-management %}).
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -28,7 +28,7 @@ The `--expose_gc` flag exposes a global `gc()` function which can be helpful in 
 
 The `markingMode: none` flag instructs NativeScript apps to use a different mode for garbage collection, providing significant performance boost. To enable it:
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -38,13 +38,13 @@ The `markingMode: none` flag instructs NativeScript apps to use a different mode
 }
 ```
 
-> **NOTE:** Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on proper memory management using `markingMode:none`](./marking-mode-none).
+> **Note**: Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on proper memory management using `markingMode:none`](./marking-mode-none).
 
 ## Timezone Changes
 
 For improved performance, V8 keeps a cache of various values used for date and time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted. While this is not a common requirement for most applications, there are some circumstances where this behavior might be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -60,7 +60,7 @@ As a result, the application will register a [BroadcastReceiver](https://develop
 
 By default, all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -74,7 +74,7 @@ By default, all messages sent to Logcat are limited to 1024 characters and large
 
 When you are using a release build there will be no logs to the console, so if you still want to have your console logs you need to enable the `forceLog` flag:
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -88,7 +88,7 @@ When you are using a release build there will be no logs to the console, so if y
 
 If you want to use V8 API in your application code or you want to have the V8 symbols included in the `libNativeScript.so` file inside the application when built in **release** mode, you will need to enable the `useB8Symbols` flag:
 
-```JSON
+``` JSON
 {
     ...
     "android": {
@@ -101,4 +101,3 @@ If you want to use V8 API in your application code or you want to have the V8 sy
 ## Configuring automatic garbage collection
 
 There are three parameters used for configuring the frequency and conditions of automatic triggerring of garbage collections in the JavaScript world. These are `gcThrottleTime`, `memoryCheckInterval` and `freeMemoryRatio`. For detailed explanation of their behavior please refer to the `Syncronizing Garabage Collectors` section in [Memory Management]({% slug android-memory-management %}#syncronizing-garabage-collectors)
-
