@@ -13,7 +13,8 @@ If the recommended Android App Bundle approach is not applicable for you, an ABI
 To achieve this you need to enable ABI splits at **app/App_Resources/Android/app.gradle**
 
 ## Enable ABI split
-```
+
+``` Gradle
 android {
 ....
   defaultConfig {
@@ -33,13 +34,14 @@ android {
 ....
 ```
 
-> **Note**: In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack%}#snapshot-per-architecture).
+> **Note**: In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack %}#snapshot-per-architecture).
 
 ## Publishing ABI split apk
+
 Now you will need to upload all built apk files in Google Play Developer Console. To achieve this the different apks need to have different Version Codes otherwise Google Play won't allow adding them in the same version.
 To use different Version Codes you can add the following code in your `App_Resources/Android/app.gradle` which will prefix the different architecture apk Version Codes with different prefixes:
 
-```
+``` Gradle
 project.ext.abiCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, 'x86': 3]
 
 android.applicationVariants.all { variant ->

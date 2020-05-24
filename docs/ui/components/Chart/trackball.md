@@ -18,9 +18,10 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 * [References](#references)
 
 ## Getting Started
+
 To define a trackball on your {% typedoc_link classes:RadCartesianChart %} you need to set the {% typedoc_link classes:RadCartesianChart,member:trackball %} property to an instance of the {% typedoc_link classes:Trackball %} class as shown below:
 
-#### Example 1: A Cartesian Chart with a Trackball:
+### Example 1: A Cartesian Chart with a Trackball:
 
 <snippet id='chart-trackball-xml'/>
 
@@ -33,14 +34,17 @@ Depending on your current setup, the trackball will display information about th
 ## Features
 
 ### SnapMode
+
 By using the {% typedoc_link classes:Trackball,member:snapMode %} property you can control how the trackball is positioned relative to the series and the data points within. Possible values are defined by the {% typedoc_link enums:ChartTrackballSnapMode %} enum.
 
 ### Intersection Points
+
 By using the {% typedoc_link classes:Trackball,member:showIntersectionPoints %} property you can determine whether information about all of the relevant data points will be shown in the trackball. This behavior is dependent on the {% typedoc_link classes:Trackball,member:snapMode %} property setting.
 
 ## Custom Content
 
 You can customize the content within the trackball by using the {% typedoc_link classes:Trackball,member:trackBallContentRequestedEvent %} event. This event is fired each time information about a given data point is needed for the trackball. The event exposes an instance of the {% typedoc_link classes:TrackballCustomContentData %}. This class extends the {% typedoc_link classes:ChartEventData %} class and adds two new properties:
+
 * {% typedoc_link classes:TrackballCustomContentData,member:seriesIndex %} - the index of the active series with which the user has started interacting
 * {% typedoc_link classes:TrackballCustomContentData,member:content %} - used to override the default data point content. By setting this property you can customize the content within the trackball for the provided data point. You can use the base event data properties to obtain the data point index and the business object for which the data point has been generated for
 

@@ -12,7 +12,7 @@ publish: true
 
 `RadDataForm` for NativeScript helps you edit the properties of a business object during runtime and build a mobile form fast and easy. All you have to do is set a business object as a value for the {% typedoc_link classes:RadDataForm,member:source %} property and {% typedoc_link classes:RadDataForm %} will automatically generate editors for each property of the source object. `RadDataForm` offers built-in editors for each primitive type and also has various features to help you create your desired form.
 
-#### Figure 1: How RadDataForm can look on Android (left) and iOS (right)
+## Figure 1: How RadDataForm can look on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Overview-Android](../../img/ns_ui/dataform-overview-android.png "Overview of DataForm in Android") ![NativeScriptUI-DataForm-Overview-iOS](../../img/ns_ui/dataform-overview-ios.png "Overview of DataForm in iOS")
 
@@ -43,4 +43,3 @@ If you need to use the form to simply show the content of the source object with
 ## Styling
 
 You can change the style of each of the editors of `RadDataForm` and also the style of the group headers if grouping is enabled. You can read more about the customization options [here]({% slug dataform-styling %} "Styling in RadDataForm for NS").
-

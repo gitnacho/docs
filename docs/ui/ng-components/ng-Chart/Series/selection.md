@@ -23,16 +23,16 @@ You can make your charts more interactive by enabling selection.  When selection
 The selection can be set on the whole chart with the {% typedoc_link classes:RadChartBase,member:seriesSelectionMode %} and {% typedoc_link classes:RadChartBase,member:pointSelectionMode %} properties. The values for these properties can be:
 
 * {% typedoc_link enums:ChartSelectionMode,member:None %} - Selection is disabled.
-* {% typedoc_link enums:ChartSelectionMode,member:Single%} - Only one series/point can be selected at a time.
-* {% typedoc_link enums:ChartSelectionMode,member:Multiple%} - More one series/point can be selected simultaneously.
+* {% typedoc_link enums:ChartSelectionMode,member:Single %} - Only one series/point can be selected at a time.
+* {% typedoc_link enums:ChartSelectionMode,member:Multiple %} - More one series/point can be selected simultaneously.
 
 For finer tuning of the selection behavior you can also set the {% typedoc_link classes:ChartSeries,member:selectionMode %} property of each series. The individual series selection mode enables you to specify multiple data point selection for one series, single data point selection for another series and even disable selection for a third series all the same time. With the combination of the chart selection properties and series selectionMode property, any selection scenario can be implemented. The series selectionMode property can have the following values:
 
-* {% typedoc_link enums:ChartSeriesSelectionMode,member:None%} - Selection is disabled.
-* {% typedoc_link enums:ChartSeriesSelectionMode,member:NotSet%} - The selection mode will be determined by chart's properties.
-* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPoint%} -  Only one point can be selected at a time.
-* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPointMultiple%} - More than one point can be selected at a time.
-* {% typedoc_link enums:ChartSeriesSelectionMode,member:Series%} - All data points are selected simultaneously.
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:None %} - Selection is disabled.
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:NotSet %} - The selection mode will be determined by chart's properties.
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPoint %} -  Only one point can be selected at a time.
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPointMultiple %} - More than one point can be selected at a time.
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:Series %} - All data points are selected simultaneously.
 
 ### Example 1: Enabling Data Point Selection
 

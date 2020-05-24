@@ -9,16 +9,19 @@ publish: true
 ---
 
 # RadListView for Vue - Getting started
+
 {% typedoc_link classes:RadListView %} for Vue is exposed through the {% typedoc_link classes:RadListViewComponent %} class. This article will guide you through the process of adding a {% typedoc_link classes:RadListViewComponent %} in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListViewComponent %} is used, please refer to the dedicated articles which are using the same scenario and extend it further.
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-listview
 ```
 
 ## Adding a RadListView to your Vue app
+
 The first step is installing the Vue plugin for `RadListView` integration, adding that fragment in the top of the main file entry (usually `main.js` or `main.ts`):
 
 <snippet id='listview-vue-import'/>
@@ -37,7 +40,7 @@ To add an instance of {% typedoc_link classes:RadListViewComponent %} in an Vue 
 
  The previous code would be like this:
 
- ```
+ ``` TypeScript
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
  export default {
   template: `

@@ -19,7 +19,7 @@ If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "Ra
 * [Custom Validation](#custom-validation)
 * [References](#references)
 
-#### Figure 1: How validated field looks on Android (left) and iOS (right)
+## Figure 1: How validated field looks on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Validation-Android](../../../ui/img/ns_ui/dataform-validation-overview-android.png "Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-iOS](../../../ui/img/ns_ui/dataform-validation-overview-ios.png "Validation in DataForm in iOS")
 
@@ -27,7 +27,7 @@ If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "Ra
 
 You can declare the validators in the JSON Metadata through the `validators` key. The value of the validators should be an array of validators, where each validator is an object that has a `name` and optionally `params`. The `params`, if present, is another object containing key value pairs, where the keys are the properties of the validator. Here's an example:
 
-#### Example: How to add validators with JSON for a property
+### Example: How to add validators with JSON for a property
 
 <snippet id='dataform-validation-vue'/>
 
@@ -48,7 +48,7 @@ Here's the list with supported validators:
 
 You can choose when the validation of the changes happens by changing the data form's {% typedoc_link classes:RadDataForm,member:validationMode %} property. It accepts values from the {% typedoc_link enums:DataFormValidationMode %} enumeration.
 
-```
+``` JavaScript
 import { DataFormValidationMode } from 'nativescript-ui-dataform';
 
 export default {
@@ -130,6 +130,7 @@ export default {
 ```
 
 You should have in mind that the {% typedoc_link classes:RadDataForm,member:validationMode %} property is dependent on the value of the {% typedoc_link classes:RadDataForm,member:commitMode %} property, meaning that {% typedoc_link classes:RadDataForm %} will not let you commit property changes before you validate them. In other words:
+
 * If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Immediate %}, validation is also immediate disregarding the value of the `validationMode` property
 * If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:OnLostFocus %}, validation is immediate, if `validationMode` is {% typedoc_link enums:DataFormValidationMode,member:Immediate %}, or {% typedoc_link enums:DataFormValidationMode,member:OnLostFocus %} otherwise
 * If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Manual %}, validation will follow the value of `validationMode`.

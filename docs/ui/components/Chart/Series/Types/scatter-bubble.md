@@ -19,6 +19,7 @@ publish: true
 ## Setup
 
 To display a Scatter Bubble Chart, you will need to:
+
 * Add a **RadCartesianChart** to your page.
 * Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
 * Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
@@ -26,19 +27,19 @@ To display a Scatter Bubble Chart, you will need to:
 
 To illustrate this setup, let's create an example. First we will create a source with items:
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='scatter-data-source'/>
 
 We use an instance of this model to assign it as the `bindingContext` of the page we have put our Scatter Bubble series on:
 
-#### Example 2: Update bindingContext
+### Example 2: Update bindingContext
 
 <snippet id='binding-context-scatter-bubble'/>
 
 And finally, in the XML definition of the page we put a {% typedoc_link classes:RadCartesianChart %}, add a {% typedoc_link classes:ScatterBubbleSeries %} instance to it and bind the series to the source of data:
 
-#### Example 3: Add chart to page's markup
+### Example 3: Add chart to page's markup
 
 <snippet id='scatter-bubble-series'/>
 
@@ -48,7 +49,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 ## Bubble Scale
 
-Additionally, {% typedoc_link classes:ScatterBubbleSeries %} expose a {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale%} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale%} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
+Additionally, {% typedoc_link classes:ScatterBubbleSeries %} expose a {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale %} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale %} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
 
 ## References
 

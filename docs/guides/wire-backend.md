@@ -28,4 +28,4 @@ Find the nativescript-plugin-firebase repository and documentation at [https://g
 
 ## See Also
 
-* [HTTP module]({%ns_cookbook http%})
+* [HTTP module]({% ns_cookbook http %})

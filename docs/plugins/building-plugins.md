@@ -23,8 +23,8 @@ nativescript-hello-world/
     └── package.json
 ```
 
->IMPORTANT: Putting your source in a sub-folder is required for local LiveSync debugging.
->Older plugins should be updated to move their source code in to a sub-folder.
+> **Important**: Putting your source in a sub-folder is required for local LiveSync debugging.
+> Older plugins should be updated to move their source code in to a sub-folder.
 
 And here is the simplest possible implementation of that plugin.
 

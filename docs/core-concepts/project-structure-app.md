@@ -40,11 +40,11 @@ myApplication/
 └── ...
 ```
 
-{% endangular%}
+{% endangular %}
 
 There are several other directories and configuration files that can be present in your project based on the initial template, the programming language (JavaScript or TypeScript) or the plugins that you are using in your application. This article covers the files and folders that are always present in a NativeScript project, as well as some of the more common ones that you may encounter while developing your app.
 
-## The {% nativescript %}app/{% endnativescript %}{% angular %}src/{% endangular%} directory
+## The {% nativescript %}app/{% endnativescript %}{% angular %}src/{% endangular %} directory
 
 The {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} directory in the root of the project is the development space for your project. **Place all your common and platform-specific code in this directory.** When the app is prepared for a build, the NativeScript tooling copies relevant content to the platform-specific folders for each target platform.
 
@@ -58,7 +58,7 @@ In the `app` folder, you will also find the `App_Resources` directory.
 
 {% endnativescript %}
 
-> **Note**: The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular%}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
+> **Note**: The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
 
 ### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
@@ -138,13 +138,13 @@ The `App_Resources` folder contains the platform-specific resources of the appli
 
 * Native Android source code can be dropped in at `App_Resources/Android/src/main/java` (after creating the proper package subdirectory structure), while native iOS source code – at `App_Resources/iOS/src/` (more info can be found [here]({% slug ios-source %}))
 
-* Metadata filtering rules can be specified in `App_Resources/Android/native-api-usage.json` and `App_Resources/iOS/native-api-usage.json` respectively. For more detailed description of this feature read [this article]({% slug metadata%})
+* Metadata filtering rules can be specified in `App_Resources/Android/native-api-usage.json` and `App_Resources/iOS/native-api-usage.json` respectively. For more detailed description of this feature read [this article]({% slug metadata %})
 
 ## The **platforms** Directory
 
-The `platforms` directory is created when you start a build or add a target platform to your project. The NativeScript tooling creates a new subdirectory with the respective platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs of the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory to the platform-specific subdirectory for each target platform.
+The `platforms` directory is created when you start a build or add a target platform to your project. The NativeScript tooling creates a new subdirectory with the respective platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs of the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} directory to the platform-specific subdirectory for each target platform.
 
-> **Important**: Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory during the `prepare <Platform>` process.
+> **Important**: Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} directory during the `prepare <Platform>` process.
 
 ## The **package.json** File
 
@@ -195,7 +195,7 @@ The `tsconfig.json` file is present only in projects that use TypeScript. The fi
 
 The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath`, `appResourcesPath`, `overridePods` and `webpackConfigPath`.
 
-The paths (`appPath`, `appResourcesPath`, `webpackConfigPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files. The `webpackConfigPath` option allows you to specify the location of your webpack configuration file. If the value is not set, the CLI will use `webpack.config.js` file located at the root of the application. More information for `webpackConfigPath` option is available in [custom webpack configuration article](./tooling/custom-webpack-configuration).
+The paths (`appPath`, `appResourcesPath`, `webpackConfigPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files. The `webpackConfigPath` option allows you to specify the location of your webpack configuration file. If the value is not set, the CLI will use `webpack.config.js` file located at the root of the application. More information for `webpackConfigPath` option is available in [custom webpack configuration article](./tooling/custom-webpack-configuration).
 The `overridePods` option tells the CLI to use the Cocoapods defined in the project's Podfile (inside `App_Resources/iOS/Podfile`) as a resolution in case pluginstry to use different versions of the same pod. For example, in case plugin A wants to use version 2.7 of `AFNetworking` pod and another plugin wants version 3.0 of the same pod, the build operation will fail. In this case, you can set the `overridePods` to true in your `nsconfig.json` and set version of the `AFNetworking` in your `App_Resources/iOS/Podfile`. CLI will use only this version of the pod and will omit the occurences from the plugins. All other pods from plugins will still be included in the application.
 
 ### **nsconfig.json** Path examples

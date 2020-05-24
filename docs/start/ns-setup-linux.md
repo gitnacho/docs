@@ -53,55 +53,58 @@ Complete the following steps to set up NativeScript on your Linux development ma
 1. Set up [JDK 8] [JDK 8](https://openjdk.java.net/install/).
    1. Run the following commands.
 
-        <pre class="add-copy-button"><code class="language-terminal">
-        sudo apt-get install openjdk-8-jdk
-        </code></pre>
+      <pre class="add-copy-button"><code class="language-terminal">
+      sudo apt-get install openjdk-8-jdk
+      </code></pre>
 
    1. After installation if you have multiple installations of java you can choose which to use:
 
-        <pre class="add-copy-button"><code class="language-terminal">sudo update-alternatives --config java
-        </code></pre>
+      <pre class="add-copy-button"><code class="language-terminal">sudo update-alternatives --config java
+      </code></pre>
 
    1. Set the JAVA_HOME system environment variable. Open `~/.bashrc` and add the following:
 
-        <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')</code></pre>
-        You may need to reload the `bashrc`file either by logging out and in again, or by running `source .bashrc` in the terminal from your Home directory.
+      <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')</code></pre>
+      You may need to reload the `bashrc`file either by logging out and in again, or by running `source .bashrc` in the terminal from your Home directory.
 
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
    1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux at the bottom of the page.
    1. After the download completes, unpack the downloaded archive into a folder, such as `/usr/local/android/sdk`
-       * The archive you just extracted was the `tools` folder, so in this case it would be at: `/usr/local/android/sdk/tools`
+      * The archive you just extracted was the `tools` folder, so in this case it would be at: `/usr/local/android/sdk/tools`
    1. Set the ANDROID_HOME environment variable. Open `~/.bashrc` and add the following:
-        <pre><code class="language-terminal">export ANDROID_HOME="/usr/local/android/sdk/"
-       export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"</code></pre>
+
+      <pre><code class="language-terminal">export ANDROID_HOME="/usr/local/android/sdk/"
+      export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"</code></pre>
+
    1. In a text file which was opened, paste in the path to your variable (at the new line).
 
-    For example: `ANDROID_HOME=/usr/local/android/sdk`
-        <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
+      For example: `ANDROID_HOME=/usr/local/android/sdk`
+      <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
+
    1. Logout from current user and login again so environment variables changes take place.
 
 1. Install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages. In order to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the Android versions you would like to support within your project (The API Level column indicates the SDK Platform).
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
-    </code></pre>
+   <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
+   </code></pre>
 
-1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
+1. Setup Android Emulators (AVD) by following the article [here]({% slug android-emulators %})
    1. After creating an emulated device you need to:
-        * Enable its Developer mode - go to _Settings -> About emulated device_ and tap 7 times on _Build number_
-        * Enable USB debugging - go to _Settings -> Developer options_ and enable USB Debugging
+      * Enable its Developer mode - go to _Settings -> About emulated device_ and tap 7 times on _Build number_
+      * Enable USB debugging - go to _Settings -> Developer options_ and enable USB Debugging
 
 1. Install the NativeScript CLI.
    1. Run the following command.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo npm install nativescript -g --unsafe-perm
-    </code></pre>
+      <pre class="add-copy-button"><code class="language-terminal">sudo npm install nativescript -g --unsafe-perm
+      </code></pre>
 
    1. Restart the command prompt.
 
 1. To check if your system is configured properly, run the following command.
 
-    <pre class="add-copy-button"><code class="language-terminal">tns doctor
-    </code></pre>
+   <pre class="add-copy-button"><code class="language-terminal">tns doctor
+   </code></pre>
 
 If you see "No issues were detected" you are good to go!
 

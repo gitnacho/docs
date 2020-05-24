@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 `RadDataForm` has a {% typedoc_link classes:RadDataForm,member:isReadOnly %} property which allows you to disable all of its editors.
 
-#### Example 1: Make all editors read only
+### Example 1: Make all editors read only
 
 <snippet id='angular-dataform-form-readonly-html'/>
 
@@ -32,7 +32,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 If you need to disable only a specific editor, you can use {% typedoc_link classes:EntityProperty %}'s {% typedoc_link classes:EntityProperty,member:readOnly %} property.
 
-#### Example 2: Make only a specific editor read only
+### Example 2: Make only a specific editor read only
 
 <snippet id='angular-dataform-property-readonly-html'/>
 

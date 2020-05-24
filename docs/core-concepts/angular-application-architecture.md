@@ -53,13 +53,13 @@ In NativeScript applications the template is defined with XML using [NativeScrip
 
 The important thing is that although the elements are different - all of the [Angular’s template syntax](https://angular.io/guide/template-syntax) works exactly the same. So you can still use template expressions, bindings, templates as well as all the built-in directives.
 
->When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition.
+> When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition.
 
 There is no text-node element in NativeScript so the following template will render an empty `StackLayout`:
 
 ``` XML
 <StackLayout orientation="vertical">
-    {%raw%} {{ message }} {%endraw%}
+    {% raw %} {{ message }} {% endraw %}
 </StackLayout>
 ```
 
@@ -67,7 +67,7 @@ To fix it, you can just use a `Label` to show the message:
 
 ``` XML
 <StackLayout orientation="vertical">
-    {%raw%}<Label text="{{ message }}"></Label>{%endraw%}
+    {% raw %}<Label text="{{ message }}"></Label>{% endraw %}
 </StackLayout>
 ```
 

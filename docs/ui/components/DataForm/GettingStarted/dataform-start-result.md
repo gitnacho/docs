@@ -37,7 +37,7 @@ When the commit is **Manual**, the commit happens when one of the {% typedoc_lin
 `RadDataForm` provides **propertyCommit** and **propertyCommitted** events that you can use to get notified that some modifications are committed or are about to be.
 The **propertyCommit** event notifies you before the actual commit so you can optionally cancel it by setting the {% typedoc_link classes:DataFormEventData,member:returnValue %} of the arguments to `false` as shown in the following example.
 
-#### Example 1: Cancel the commit for an editor
+### Example 1: Cancel the commit for an editor
 
 <snippet id='dataform-commit-cancel'/>
 

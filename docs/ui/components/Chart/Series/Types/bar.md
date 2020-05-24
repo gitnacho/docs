@@ -19,6 +19,7 @@ publish: true
 ## Setup
 
 To display a Bar Chart, you will need to:
+
 * Add **RadCartesianChart** to your page.
 * Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
 * Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
@@ -28,7 +29,7 @@ To display a Bar Chart, you will need to:
 
 To illustrate this setup, let's create an example. First we will create a source with items:
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='categorical-source'/>
 

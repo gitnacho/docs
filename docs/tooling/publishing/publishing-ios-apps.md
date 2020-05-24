@@ -15,9 +15,9 @@ You can publish a NativeScript app in the *App Store* the same way you would [re
 
 1. Verify that the iOS native project inside your app contains your latest changes and resources by running the following command.
 
-     ``` Shell
-     tns prepare ios --release
-     ```
+   ``` Shell
+   tns prepare ios --release
+   ```
 
 1. Open the iOS native project in Xcode. Your native project is located at: `{app-name}/platforms/ios/{app-name}.xcworkspace` (or in `{app-name}/platforms/ios/{app-name}.xcodeproj` if the project does not contain any native iOS libraries).
 1. [Configure the project for distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
@@ -86,7 +86,7 @@ The launch files are not a splash screen; instead, they are a way for the OS to 
 
 [For design guidelines you can consider the following article provided by Apple](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LaunchImages.html).
 
-> **QUOTE:** If you think that following these guidelines will result in a plain, boring launch image, you’re right. Remember, the launch image doesn’t provide you with an opportunity for artistic expression. It’s solely intended to enhance the user’s perception of your app as quick to launch and immediately ready for use.
+> **Quote**: If you think that following these guidelines will result in a plain, boring launch image, you’re right. Remember, the launch image doesn’t provide you with an opportunity for artistic expression. It’s solely intended to enhance the user’s perception of your app as quick to launch and immediately ready for use.
 
 *App Store* submissions will be rejected if certain launch files are not present. Make sure that when new iOS versions and devices are released that you update your *launch files* and accommodate the upcoming form factors.
 
@@ -101,6 +101,7 @@ The storyboard allows basic primitives such as images to be presented on the scr
 The NativeScript framework default project has a *Launch Screen Storyboard* and *Launch Images*. In iOS8 and later, your app may use storyboards; your app can use launch images for devices that run earlier versions of iOS.
 
 <h4 id="launch-screen-images">Launch screen images</h4>
+
 The images are placed, similar to the icons already mentioned, in `app/App_Resources/iOS`. The default project template ships several `Default-*.PNG` files there; you may consider changing them.
 
 In iOS8 and later versions, your app will display its storyboard. If you want to use images on all devices, you can consider disabling the *Launch Screen Storyboard*. Instructions for how to do this are explained later in the next section.
@@ -108,6 +109,7 @@ In iOS8 and later versions, your app will display its storyboard. If you want to
 Similar to the icons, you can use the [`UILaunchImageFile`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW24) and [`UILaunchImages`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW28) key in the `app/App_Resources/iOS`.
 
 <h4 id="launch-screen-storyboard">Launch Screen Storyboard</h4>
+
 The NativeScript framework will provide a *Launch Screen Storyboard* in `platforms/ios/<YourAppName>/en.lproj/LaunchScreen.xib`, but does **not** yet provide a means to store it at `app/App_Resources/iOS`.
 If you want to edit it you can use the `.xcodeproj` generated in `platforms/ios`. You will have to add it in source control.
 CLI rebuilds may overwrite it, so you will have to watch out for automatic changes in it when you commit.
@@ -257,6 +259,7 @@ Failing to provide all necessary assets may prevent you from submitting your app
 Once you have your app information registered at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) it is time to build your NativeScript app for iOS and submit it to *iTunes Connect* — using Xcode.
 
 <h4 id="build-versioning">Build versioning</h4>
+
 We have already explained how the *Bundle ID* is set in your project, how the launch screen (or storyboard) and images are added to your app, and how you can set the display name.
 
 Before the build, you need to set two important things: the *Bundle Short Version String* and the *Bundle Version String*.
@@ -292,8 +295,10 @@ export CFBundleVersion=`/usr/libexec/PlistBuddy app/App_Resources/iOS/Info.plist
 ```
 
 <h4 id="submit-from-the-nativescript-cli">Submit from the NativeScript CLI</h4>
+
 You can execute the following command inside a NativeScript project using the CLI:
-```
+
+``` Shell
 tns publish ios
 ```
 

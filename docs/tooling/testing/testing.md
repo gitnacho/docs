@@ -13,7 +13,6 @@ When you develop new features inside your app, you can ensure that they are work
 
 To run your unit tests, the NativeScript CLI uses [Karma](http://karma-runner.github.io/latest/index.html).
 
-
 ## Before You Begin
 
 Before writing and running unit tests, verify that you have completed the following steps.
@@ -21,15 +20,16 @@ Before writing and running unit tests, verify that you have completed the follow
 1. [Install and configure the NativeScript CLI on your system.]({% slug quick-start %}#the-nativescript-cli)
 1. If you don't have any projects, create a new project and navigate to the directory of the newly created directory.
 
-	``` Shell
-	tns create projectName
-	cd projectName
-	```
+   ``` Shell
+   tns create projectName
+   cd projectName
+   ```
+
 1. If you want to create tests for an existing directory, navigate to the directory of the project.
 
-	``` Shell
-	cd existingProjectDirectory
-	```
+   ``` Shell
+   cd existingProjectDirectory
+   ```
 
 > **Tip**: You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
 
@@ -44,19 +44,23 @@ tns test init
 ```
 
 This operation applies the following changes to your project.
+
 * It creates the `app/tests` directory. You need to store all tests in this directory. This directory is excluded from release builds.
 * It creates an `example.js` file in the `app/tests` directory. This sample test illustrates the basic syntax for the selected framework.
 * It installs the nativescript-unit-test-runner npm module for the selected framework and its dev dependencies in `node_modules`.
 * It creates `karma.conf.js` in the root of your project. This file contains the default configuration for the Karma server for the selected framework.
 
 > **Note**: To enable and write unit tests for TypeScript or Angular project install the TypeScript typings for the selected testing framework.
-```Jasmine
+
+``` Jasmine
 npm i @types/jasmine --save-dev
 ```
-```Mocha
+
+``` Mocha
 npm i @types/mocha --save-dev
 ```
-```QUnit
+
+``` QUnit
 npm i @types/qunit --save-dev
 ```
 
@@ -79,7 +83,7 @@ When creating tests for a new or existing functionality, keep in mind the follow
 
 The following samples test the initial value of the counter and the message in the Hello World template. These tests show the specifics and limitations outlined above.
 
-```Jasmine
+``` Jasmine
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
 describe("Hello World Sample Test:", function() {
@@ -87,11 +91,12 @@ describe("Hello World Sample Test:", function() {
     expect(mainViewModel.createViewModel().counter).toEqual(42); //Check if the counter equals 42.
   });
   it("Check message.", function () {
-  	expect(mainViewModel.createViewModel().message).toBe("42 taps left"); //Check if the message is "42 taps left".
+     expect(mainViewModel.createViewModel().message).toBe("42 taps left"); //Check if the message is "42 taps left".
   });
 });
 ```
-```Jasmine
+
+``` Jasmine
 // (Angular w/TypeScript)
 // As our intention is to test an Angular component that contains annotations
 // we need to include the reflect-metadata dependency.
@@ -104,31 +109,36 @@ describe("A suite", function() {
   });
 });
 ```
-```Mocha
+
+``` Mocha
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
 describe('Hello World Sample Test:', function () {
-	it('Counter should be 42 on start.', function () {
-		assert.equal(mainViewModel.createViewModel().counter, 42); //Assert that the counter equals 42.
-	});
-	it('Message should be "42 taps left" on start.', function () {
-		assert.equal(mainViewModel.createViewModel().message, "42 taps left"); //Assert that the message is "42 taps left".
-	});
+   it('Counter should be 42 on start.', function () {
+      assert.equal(mainViewModel.createViewModel().counter, 42); //Assert that the counter equals 42.
+   });
+   it('Message should be "42 taps left" on start.', function () {
+      assert.equal(mainViewModel.createViewModel().message, "42 taps left"); //Assert that the message is "42 taps left".
+   });
 });
 ```
-```QUnit
+
+``` QUnit
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
 QUnit.test("Hello World Sample Test:", function (assert) {
-	assert.equal( mainViewModel.createViewModel().counter, 42, "Counter, 42; equal succeeds." ); //Assert that the counter equals 42.
-	assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
+   assert.equal( mainViewModel.createViewModel().counter, 42, "Counter, 42; equal succeeds." ); //Assert that the counter equals 42.
+   assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
 });
 ```
+
 {% angular %}
+
 ## TestBed Integration
 
 To use TestBed you have to alter your `karma.conf.js` to:
-```
+
+``` JavaScript
     // list of files / patterns to load in the browser
     files: [
       'src/tests/setup.ts',
@@ -139,7 +149,7 @@ To use TestBed you have to alter your `karma.conf.js` to:
 
 The file `src/tests/setup.ts` should look like this for jasmine:
 
-```
+``` TypeScript
 import "nativescript-angular/zone-js/testing.jasmine";
 import {nsTestBedInit} from "nativescript-angular/testing";
 nsTestBedInit();
@@ -147,15 +157,16 @@ nsTestBedInit();
 ```
 
 or if using mocha:
-```
+
+``` TypeScript
 import "nativescript-angular/zone-js/testing.mocha";
 import {nsTestBedInit} from "nativescript-angular/testing";
 nsTestBedInit();
-
 ```
+
 Then you can use it within the spec files, e.g. `example.spec.ts`:
 
-```
+``` TypeScript
 import { Component, ElementRef, NgZone, Renderer2 } from '@angular/core';
 import { ComponentFixture, async } from '@angular/core/testing';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
@@ -202,10 +213,9 @@ describe('Renderer E2E', () => {
         );
     }));
 });
-
 ```
 
-{% endangular%}
+{% endangular %}
 
 ## Run Your Tests
 
@@ -217,14 +227,16 @@ Before running your tests, verify that your development machine and your testing
 
 * The Android native emulators on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
 
-	``` Shell
-	tns device
-	```
+  ``` Shell
+  tns device
+  ```
+
 * The physical devices on which you want to run your tests must be connected to your development machine. To verify that your machine recognizes the devices, run the following command.
 
-	``` Shell
-	tns device
-	```
+  ``` Shell
+  tns device
+  ```
+
 * The physical devices on which you want to run your tests must be able to resolve the IP of your development machine. To verify that the device can access the Karma server, connect the device and the development machine to the same Wi-Fi network or establish USB or Bluetooth tethering between the device and the development machine.
 * Port 9876 must be allowed on your development machine. The Karma server uses this port to communicate with the testing device.
 

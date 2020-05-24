@@ -21,7 +21,7 @@ In this article, you will learn to start using NativeScript UI Chart: how to ini
 
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-chart
 ```
 
@@ -29,7 +29,7 @@ tns plugin add nativescript-ui-chart
 
 Let's start with the DataModel that we will use for our Chart instance. We will create a basic Data Model that will contain a collection of objects, which will have two properties that will be used by the chart to provide intuitive data visualization.
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='categorical-source'/>
 
@@ -48,7 +48,7 @@ The next step is to add the chart to the page. In this case we will use the **Ra
 After adding the chart to the page we need to add the series we will use in order to show the chart. In this case we will use the [BarSeries]({% slug chart-series-bar %} "Read more about BarSeries") in combination with a [Categorical axis]({% slug chart-axes-categorical %} "Read more about Categorical axis.") and a [Linear axis]({% slug chart-axes-linear %} "Read more about Linear axis."). We set the `categoryProperty` of the series to the `Country` property in the objects from our data model and the `valueProperty` to the `Amount` property.
 Then we set the `horizontalAxis` to an instance of a `CategoricalAxis` and the `verticalAxis` to an instance of a `LinearAxis`.
 
-#### Example 2: Add chart to page's markup
+### Example 2: Add chart to page's markup
 
 <snippet id='bar-series'/>
 

@@ -26,20 +26,19 @@ Also, make sure to look through the [NativeScript core modules](https://docs.nat
 
 Once you’ve found the plugin you need, install the plugin into your app using the `tns plugin add` command.
 
-```Node
+``` Shell
 tns plugin add <plugin-name>
-
 ```
 
 For example, the following command installs the [NativeScript camera plugin](http://market.nativescript.org/plugins/nativescript-camera).
 
-```Node
+``` Shell
 tns plugin add nativescript-camera
 ```
 
 If you prefer, you could use the NPM command `npm install` instead of the NativeScript CLI command `plugin add`.
 
-```Node
+``` Shell
 npm i nativescript-camera --save
 ```
 

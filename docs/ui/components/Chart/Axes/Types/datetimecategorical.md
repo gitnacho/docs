@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 
 ## Getting Started
 
-When **RadCartesianChart** visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When **RadCartesianChart** visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 The {% typedoc_link classes:DateTimeCategoricalAxis %} is a special axis that works with the CategoricalSeries and expects each CategoricalDataPoint to provide a valid date time value as its Category. Once built, the groups are sorted in chronological order.
 
@@ -28,7 +28,7 @@ The {% typedoc_link classes:DateTimeCategoricalAxis %} extends {% typedoc_link c
 
 ### Date Time Component
 
-Defines the component of each Calendar structure that participates in the grouping process. The possible values are from the {% typedoc_link enums:ChartAxisDateTimeComponent %} enumeration. To get or set the component use the {% typedoc_link classes:DateTimeCategoricalAxis,member:dateTimeComponent%} property.
+Defines the component of each Calendar structure that participates in the grouping process. The possible values are from the {% typedoc_link enums:ChartAxisDateTimeComponent %} enumeration. To get or set the component use the {% typedoc_link classes:DateTimeCategoricalAxis,member:dateTimeComponent %} property.
 
 ### Date Time Format
 

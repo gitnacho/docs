@@ -19,6 +19,7 @@ publish: true
 ## Setup
 
 To display a Bubble Chart, you will need to:
+
 * Add a **RadCartesianChart** to your component.
 * Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **v-tkCartesianHorizontalAxis** directive.
 * Add a value axis (**BubbleSeries** or **LogarithmicAxis**) with the **v-tkCartesianVerticalAxis** directive.
@@ -26,11 +27,11 @@ To display a Bubble Chart, you will need to:
 
 To illustrate this setup, let's create an example. Just like with all vue 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
- #### Example 1: Define a collection of items
+### Example 1: Define a collection of items
 
 <snippet id='chart-bubble-data-vue'/>
 
-#### Example 2: Add chart to component's template
+### Example 2: Add chart to component's template
 
 <snippet id='chart-bubble-vue'/>
 
@@ -40,7 +41,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 ## Bubble Scale
 
-Additionally, {% typedoc_link classes:BubbleSeries %} expose a {% typedoc_link classes:BubbleSeries,member:bubbleScale%} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:BubbleSeries,member:bubbleScale%} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
+Additionally, {% typedoc_link classes:BubbleSeries %} expose a {% typedoc_link classes:BubbleSeries,member:bubbleScale %} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:BubbleSeries,member:bubbleScale %} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
 
 ## References
 

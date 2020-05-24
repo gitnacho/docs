@@ -57,7 +57,7 @@ Once the NativeScript project is prepared (`tns prepare ios`) all the images wil
 
 {% endangular %}
 
-You can manually create an [ImageSource instance from resource]({%ns_cookbook image-source#load-image-using-resource-name%}).
+You can manually create an [ImageSource instance from resource]({% ns_cookbook image-source#load-image-using-resource-name %}).
 
 ## Loading icons in the TabView from the resources
 

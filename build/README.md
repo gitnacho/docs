@@ -99,7 +99,7 @@ The position this document will appear at in the TOC navigation. Blade name was 
 
 #### slug (optional)
 
-The optional unique identifier of the page. Can be used to link to the current page `[Getting-started]({% slug getting-started%})`
+The optional unique identifier of the page. Can be used to link to the current page `[Getting-started]({% slug getting-started %})`
 
 #### previous_url
 

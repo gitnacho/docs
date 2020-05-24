@@ -9,10 +9,12 @@ publish: true
 ---
 
 # RadAutoCompleteTextView Events
+
 In this article you are going to learn about the {% typedoc_link classes:RadAutoCompleteTextView %} events.
 The events are designed to notify you whenever a particular action, in the workflow of the control, has happened. They are quite useful when it comes to executing logic based on the {% typedoc_link classes:RadAutoCompleteTextView %} state.
 
 ## Available events
+
 The {% typedoc_link classes:RadAutoCompleteTextView %} control exposes these events:
 
 * `tokenAdded` - triggered whenever a token is added.
@@ -26,6 +28,7 @@ The {% typedoc_link classes:RadAutoCompleteTextView %} control exposes these eve
 All of these have identical logical structure and identical workflow, the only difference between them is the event which they are observing and notifing you about.
 
 ## Usage
+
 In order to get notified when one of the above-mentioned events occur, you should use the following structure with the type of event you want to capture.
 
 <snippet id='autocomplete-events-vue'/>

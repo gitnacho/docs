@@ -20,13 +20,13 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 If the validators provided by {% typedoc_link classes:RadDataForm %} don't fulfil your requirements you can create your own validator. All you need to do, is create a class extending the {% typedoc_link classes:PropertyValidator %} class and override its {% typedoc_link classes:PropertyValidator,member:validate %} method. Here's a sample implementation that validates if the input has an exact content:
 
-#### Example 1: Create a custom validator
+### Example 1: Create a custom validator
 
 <snippet id='dataform-custom-validator'/>
 
 In order to use your validator, you can add it to your `xml` just like the other validators:
 
-#### Example 2: Use a custom validator in RadDataForm
+### Example 2: Use a custom validator in RadDataForm
 
 <snippet id='dataform-custom-validator-xml'/>
 
@@ -40,7 +40,7 @@ In order to use your validator, you can add it to your `xml` just like the other
 
 Another option is to manually notify {% typedoc_link classes:RadDataForm %} for the validation state of its properties and not use the validators at all. Here's an example that manually validates the fields that require validation on a button tap and if they are valid, commits them:
 
-#### Example 3: Custom validation
+### Example 3: Custom validation
 
 <snippet id='dataform-custom-validation'/>
 

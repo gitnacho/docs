@@ -10,7 +10,7 @@ class SlugTag < Liquid::Tag
             page.url.sub('.html', '')
         else
             page_url = context.environments.first["page"]["url"]
-            Jekyll.logger.warn "Slug:", "No page with slug `#{@slug_name}` in #{page_url}. Consider fixing the slug or use normal link." 
+            Jekyll.logger.warn "Slug:", "No page with slug `#{@slug_name}` in #{page_url}. Consider fixing the slug or use normal link."
         end
     end
 end

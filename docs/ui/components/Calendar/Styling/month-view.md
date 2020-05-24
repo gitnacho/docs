@@ -59,7 +59,6 @@ The `CalendarDayCellStyle` extends this set with some style properties specific 
 * `eventFontStyle` -  defines the style of the font used for events text in date cell.
 * `eventTextSize` - defines the size of the events text in date cell
 
-
 ## Example
 
 To better illustrate the usage of styling properties, we will use a simple scenario in which the cells are customized:
@@ -71,6 +70,7 @@ This is how the calendar looks like:
 ![Calendar month view styling](../../../img/ns_ui/calendar_styling_month_ios.png "iOS")      ![Calendar month view styling](../../../img/ns_ui/calendar_styling_month_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

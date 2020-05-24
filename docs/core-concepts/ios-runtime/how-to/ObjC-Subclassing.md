@@ -205,7 +205,7 @@ There should be no TypeScript constructor, because it will not be executed. Inst
 > like this:
 >
 > ``` TypeScript
->> const AppDelegate = (UIResponder as any).extend({
+> const AppDelegate = (UIResponder as any).extend({
 >     applicationDidBecomeActive(application: UIApplication): void {
 >         console.log("applicationDidBecomeActive", application);
 >     }

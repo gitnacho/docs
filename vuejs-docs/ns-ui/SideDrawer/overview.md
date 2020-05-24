@@ -18,6 +18,7 @@ The next screenshots showcase how the {% typedoc_link classes:RadSideDrawer %} c
 ![TelerikUI-SideDrawer-Overview](../../../ui/img/ns_ui/drawer-overview-android.png "Side drawer overview.") ![TelerikUI-SideDrawer-Overview](../../../ui/img/ns_ui/drawer-overview-ios.png "Side drawer overview.")
 
 ## Elements
+
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |

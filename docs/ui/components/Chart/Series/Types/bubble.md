@@ -19,6 +19,7 @@ publish: true
 ## Setup
 
 To display a Bubble Chart, you will need to:
+
 * Add **RadCartesianChart** to your page.
 * Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
 * Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
@@ -26,7 +27,7 @@ To display a Bubble Chart, you will need to:
 
 To illustrate this setup, let's create an example. First we will create a source with items:
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='bubble-data-source'/>
 
@@ -48,7 +49,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 ## Bubble Scale
 
-Additionally, {% typedoc_link classes:BubbleSeries %} expose a {% typedoc_link classes:BubbleSeries,member:bubbleScale%} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:BubbleSeries,member:bubbleScale%} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
+Additionally, {% typedoc_link classes:BubbleSeries %} expose a {% typedoc_link classes:BubbleSeries,member:bubbleScale %} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:BubbleSeries,member:bubbleScale %} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
 
 ## References
 

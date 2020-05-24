@@ -126,9 +126,9 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <TextField text="{{ textSource }}" />
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 
@@ -160,9 +160,9 @@ _Example 2: Binding function on button tap event_:
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <Button text="Test Button For Binding" tap="{{ onTap }}" />
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 
@@ -192,13 +192,13 @@ _Example 3: Bind ListView to a property of the bindingContext_:
 
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <ListView items="{{ items }}" height="200">
             <ListView.itemTemplate>
                 <Label text="{{ $value }}" />
             </ListView.itemTemplate>
         </ListView>
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 
@@ -253,7 +253,7 @@ _Example 4: Creating ListView child items based on the itemTemplate_:
 
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <GridLayout rows="*" >{%raw%}
+    <GridLayout rows="*" >{% raw %}
         <ListView items="{{ items }}">
             <!--Describing how the element will look like-->
             <ListView.itemTemplate>
@@ -268,7 +268,7 @@ _Example 4: Creating ListView child items based on the itemTemplate_:
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>
-    {%endraw%}</GridLayout>
+    {% endraw %}</GridLayout>
 </Page>
 ```
 
@@ -316,9 +316,9 @@ You can create a custom expression for bindings. Custom expressions could help i
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <TextField text="{{ sourceProperty, sourceProperty + ' some static text' }}" />
-    {%endraw%}</StackLayout>
+    {% endraw %}</StackLayout>
 </Page>
 ```
 
@@ -362,9 +362,9 @@ _Example 5: Handle textField date input and formatted in accordance preferences_
 
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <TextField text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}" />
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 
@@ -456,9 +456,9 @@ _Example 6: Converting the new date input to a valid Date object_:
 
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <TextField text="{{ testDate, testDate | dateConverter(dateFormat) }}" />
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 
@@ -549,13 +549,13 @@ _Example 7: Adding converters in the application module resources_:
 
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <StackLayout>{%raw%}
+    <StackLayout>{% raw %}
         <ListView items="{{ items }}" height="200">
             <ListView.itemTemplate>
                 <Label text="{{ itemDate | dateConverter(dateFormat) }}" />
             </ListView.itemTemplate>
         </ListView>
-{%endraw%}    </StackLayout>
+{% endraw %}    </StackLayout>
 </Page>
 ```
 

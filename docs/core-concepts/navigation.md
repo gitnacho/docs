@@ -31,7 +31,7 @@ Forward navigation can be also called downward navigation since you are going do
 
 ### Page
 
-The `Page` is NativeScript's most basic navigation component. It represents a screen that the user can navigate to. This component serves two important roles. It holds the UI components of a single screen and provides navigation lifecycle events. For complete information regarding the `Page` component, check out its dedicated [article]({%slug page%}).
+The `Page` is NativeScript's most basic navigation component. It represents a screen that the user can navigate to. This component serves two important roles. It holds the UI components of a single screen and provides navigation lifecycle events. For complete information regarding the `Page` component, check out its dedicated [article]({% slug page %}).
 
 By design, a `Page` can't be declared as a child of another component. It is used as a root component of a module, in which case the module becomes a page module. Here is an example of how you can implement the `item-page` module from the diagram above:
 
@@ -68,7 +68,7 @@ export function onPageLoaded(args: EventData): void {
 
 ### Frame
 
-To display a `Page` on the screen, you need to navigate to it using the `Frame` component. This component is the main provider of forward and backward navigation in NativeScript. The `Frame` component has no visible representation. It simply provides a container for transitions between pages. It also provides a navigation API which includes history manipulation and setting custom navigation transitions. For more information on the `Frame` component and its API, visit this [article]({%slug frame%}).
+To display a `Page` on the screen, you need to navigate to it using the `Frame` component. This component is the main provider of forward and backward navigation in NativeScript. The `Frame` component has no visible representation. It simply provides a container for transitions between pages. It also provides a navigation API which includes history manipulation and setting custom navigation transitions. For more information on the `Frame` component and its API, visit this [article]({% slug frame %}).
 
 For the most basic forward navigation scenario, you need only these two features:
 

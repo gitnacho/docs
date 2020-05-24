@@ -19,50 +19,50 @@ As an open-source project NativeScript keeps not only its source code but its bu
 
 * Uninstall any existing NativeScript versions:
 
-```Console
-npm uninstall -g nativescript
-```
+  ```Console
+  npm uninstall -g nativescript
+  ```
 
 * Install the latest development version of NativeScript CLI:
 
-```Console
-npm install -g nativescript@next
-```
+  ```Console
+  npm install -g nativescript@next
+  ```
 
 * Edit the package.json file in your project and replace tns-core-modules, tns-android and tns-ios versions with `next`:
 
-``` JSON
-{
-    "description": "NativeScript Application",
-    "nativescript": {
-        "id": "org.nativescript.MyApp",
-        "tns-ios": {
-            "version": "next"
-        },
-        "tns-android": {
-            "version": "next"
-        }
-    },
-    "dependencies": {
-        "tns-core-modules": "next"
-    }
-}
-```
+  ``` JSON
+  {
+      "description": "NativeScript Application",
+      "nativescript": {
+          "id": "org.nativescript.MyApp",
+          "tns-ios": {
+              "version": "next"
+          },
+          "tns-android": {
+              "version": "next"
+          }
+      },
+      "dependencies": {
+          "tns-core-modules": "next"
+      }
+  }
+  ```
 
-Instead of editing the package.json file by hand, you could run the following commands:
+  Instead of editing the package.json file by hand, you could run the following commands:
 
-```Console
-tns platform add ios@next
-tns platform add android@next
-tns plugin add tns-core-modules@next
-```
+  ```Console
+  tns platform add ios@next
+  tns platform add android@next
+  tns plugin add tns-core-modules@next
+  ```
 
 * Run the `npm install` command to update the node modules:
 
-```Console
-cd <your-project-folder>
-npm install
-```
+  ```Console
+  cd <your-project-folder>
+  npm install
+  ```
 
 You are now ready to use the latest development version of NativeScript.
 

@@ -22,7 +22,7 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 ## Properties
 
-You can easily modify the base of the logarithmic function used to calculate the value by using the {% typedoc_link classes:LogarithmicAxis,member:logarithmBase%} property.  You can also specify the exponent step between the axis ticks with the {% typedoc_link classes:LogarithmicAxis,member:exponentStep%}  property.
+You can easily modify the base of the logarithmic function used to calculate the value by using the {% typedoc_link classes:LogarithmicAxis,member:logarithmBase %} property.  You can also specify the exponent step between the axis ticks with the {% typedoc_link classes:LogarithmicAxis,member:exponentStep %}  property.
 
 ## References
 

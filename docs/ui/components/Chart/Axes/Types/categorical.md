@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 
 When **RadCartesianChart** visualizes **CategoricalSeries**, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of the **CategoricalSeries**'s items. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
-#### Example 1: Categorical Axis
+### Example 1: Categorical Axis
 
 <snippet id='categorical-axis-example'/>
 
@@ -30,10 +30,10 @@ When **RadCartesianChart** visualizes **CategoricalSeries**, it needs an axis th
 
 The {% typedoc_link classes:CategoricalAxis %} allows you to define how exactly the axis will be plotted on the viewport of the chart. The possible values are:
 
-* {% typedoc_link enums:ChartAxisPlotMode,member:BetweenTicks%} - Points are plotted in the middle of the range, defined between each two ticks.
-* {% typedoc_link enums:ChartAxisPlotMode,member:OnTicks%} - Points are plotted over each tick.
+* {% typedoc_link enums:ChartAxisPlotMode,member:BetweenTicks %} - Points are plotted in the middle of the range, defined between each two ticks.
+* {% typedoc_link enums:ChartAxisPlotMode,member:OnTicks %} - Points are plotted over each tick.
 
-You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode%} property.
+You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode %} property.
 
 ### Major Tick Interval
 

@@ -28,6 +28,7 @@ The file with the **.tns** part, is designated as a NativeScript-specific file, 
 When you run **ng serve**, no **.tns** files will be bundled.
 
 Or in different words:
+
 > **.tns** files are excluded from web builds.
 
 ## NativeScript build
@@ -35,6 +36,7 @@ Or in different words:
 When you run **tns run [ios|android]**, all **.tns** files will be bundled instead of the web files.
 
 Or in different words:
+
 > **.tns** files replace the web files in the NativeScript builds.
 
 ## iOS, Android, web files

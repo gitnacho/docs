@@ -20,27 +20,27 @@ All native numeric types (e.g., char, short, int, double, float on iOS and byte,
 
 * iOS
 
-``` JavaScript
-console.log(`pow(2.5, 3) = ${pow(2.5, 3)}`);
-```
+  ``` JavaScript
+  console.log(`pow(2.5, 3) = ${pow(2.5, 3)}`);
+  ```
 
-``` TypeScript
-console.log(`pow(2.5, 3) = ${pow(2.5, 3)}`);
-```
+  ``` TypeScript
+  console.log(`pow(2.5, 3) = ${pow(2.5, 3)}`);
+  ```
 
 the iOS Runtime converts the JavaScript number literals to native doubles and passes them to the native `pow(double x, double y)` function. The returned native integer is automatically converted to a JavaScript number and passed to `console.log()`. The same is valid for Android:
 
 * Android
 
-``` JavaScript
-console.log(`min(3, 4) = ${java.lang.Math.min(3, 4)}`);
-```
+  ``` JavaScript
+  console.log(`min(3, 4) = ${java.lang.Math.min(3, 4)}`);
+  ```
 
-``` TypeScript
-console.log(`min(3, 4) = ${java.lang.Math.min(3, 4)}`);
-```
+  ``` TypeScript
+  console.log(`min(3, 4) = ${java.lang.Math.min(3, 4)}`);
+  ```
 
-The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of the function `java.lang.Math.min()` and translates the literals `3` and `4` to their representation in a Java integer data type. The returned integer is also automatically translated to a JavaScript number and passed to `console.log()`.
+  The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of the function `java.lang.Math.min()` and translates the literals `3` and `4` to their representation in a Java integer data type. The returned integer is also automatically translated to a JavaScript number and passed to `console.log()`.
 
 ## String
 
@@ -48,31 +48,31 @@ JavaScript strings are implicitly marshalled to `java.lang.String` on Android an
 
 * iOS
 
-``` JavaScript
-let button = new UIButton();
-button.setTitleForState('Button title', UIControlStateNormal); // 'Button title' is converted to NSString
-console.log(button.titleLabel.text); // The returned NSString is converted to JavaScript string
-```
+  ``` JavaScript
+  let button = new UIButton();
+  button.setTitleForState('Button title', UIControlStateNormal); // 'Button title' is converted to NSString
+  console.log(button.titleLabel.text); // The returned NSString is converted to JavaScript string
+  ```
 
-``` TypeScript
-let button = new UIButton();
-button.setTitleForState('Button title', UIControlStateNormal); // 'Button title' is converted to NSString
-console.log(button.titleLabel.text); // The returned NSString is converted to JavaScript string
-```
+  ``` TypeScript
+  let button = new UIButton();
+  button.setTitleForState('Button title', UIControlStateNormal); // 'Button title' is converted to NSString
+  console.log(button.titleLabel.text); // The returned NSString is converted to JavaScript string
+  ```
 
 * Android
 
-``` JavaScript
-const file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
-```
+  ``` JavaScript
+  const file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
+  ```
 
-``` TypeScript
-const file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
-```
+  ``` TypeScript
+  const file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
+  ```
 
-The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance rather than a JavaScript string.
+  The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance rather than a JavaScript string.
 
-> Exception: Methods on `NSString` classes declared as returning `instancetype` (e.g., init methods and factory methods). For example, calls to `NSString.stringWithString` return `instancetype` results in Objective-C. In your NativeScript code, such calls will return a wrapper around a `NSString` instance instead of a JavaScript string.
+  > Exception: Methods on `NSString` classes declared as returning `instancetype` (e.g., init methods and factory methods). For example, calls to `NSString.stringWithString` return `instancetype` results in Objective-C. In your NativeScript code, such calls will return a wrapper around a `NSString` instance instead of a JavaScript string.
 
 ## Boolean
 
@@ -80,29 +80,29 @@ JavaScript boolean values are implicitly marshalled to `boolean` on Android and 
 
 * iOS
 
-``` JavaScript
-let str = NSString.stringWithString('YES');
-let isTrue = str.boolValue();
-```
+  ``` JavaScript
+  let str = NSString.stringWithString('YES');
+  let isTrue = str.boolValue();
+  ```
 
-``` TypeScript
-let str = NSString.stringWithString('YES');
-let isTrue = str.boolValue();
-```
+  ``` TypeScript
+  let str = NSString.stringWithString('YES');
+  let isTrue = str.boolValue();
+  ```
 
 * Android
 
-``` JavaScript
-let str = new java.lang.String('Hello world!');
-let result = str.endsWith('world!');
-console.log(result); // true
-```
+  ``` JavaScript
+  let str = new java.lang.String('Hello world!');
+  let result = str.endsWith('world!');
+  console.log(result); // true
+  ```
 
-``` TypeScript
-let str = new java.lang.String('Hello world!');
-let result = str.endsWith('world!');
-console.log(result); // true
-```
+  ``` TypeScript
+  let str = new java.lang.String('Hello world!');
+  let result = str.endsWith('world!');
+  console.log(result); // true
+  ```
 
 ## Array
 
@@ -110,35 +110,35 @@ JavaScript arrays map to specialized Java arrays on Android and `NSArray` on iOS
 
 * iOS
 
-``` JavaScript
-// nsArray is not a JavaScript array but a JavaScript wrapper around a native NSArray
-let nsArray = NSArray.arrayWithArray(['Four', 'Five', 'Two', 'Seven']);
-let jsArray = ['One', 'Two', 'Three']; // pure JavaScript array
-let firstCommon = nsArray.firstObjectCommonWithArray(jsArray);
-console.log(firstCommon); // Two
-```
+  ``` JavaScript
+  // nsArray is not a JavaScript array but a JavaScript wrapper around a native NSArray
+  let nsArray = NSArray.arrayWithArray(['Four', 'Five', 'Two', 'Seven']);
+  let jsArray = ['One', 'Two', 'Three']; // pure JavaScript array
+  let firstCommon = nsArray.firstObjectCommonWithArray(jsArray);
+  console.log(firstCommon); // Two
+  ```
 
-``` TypeScript
-// nsArray is not a JavaScript array but a JavaScript wrapper around a native NSArray
-let nsArray = NSArray.arrayWithArray(['Four', 'Five', 'Two', 'Seven']);
-let jsArray = ['One', 'Two', 'Three']; // pure JavaScript array
-let firstCommon = nsArray.firstObjectCommonWithArray(jsArray);
-console.log(firstCommon); // Two
-```
+  ``` TypeScript
+  // nsArray is not a JavaScript array but a JavaScript wrapper around a native NSArray
+  let nsArray = NSArray.arrayWithArray(['Four', 'Five', 'Two', 'Seven']);
+  let jsArray = ['One', 'Two', 'Three']; // pure JavaScript array
+  let firstCommon = nsArray.firstObjectCommonWithArray(jsArray);
+  console.log(firstCommon); // Two
+  ```
 
 * Android
 
-The following code snippet shows how to call a `ns.example.Math.minElement(int[] array)` from JavaScript:
+  The following code snippet shows how to call a `ns.example.Math.minElement(int[] array)` from JavaScript:
 
-``` JavaScript
-let numbers = [3, 6, 19, -2, 7, 6];
-let min = ns.example.Math.minElement(numbers); // -2
-```
+  ``` JavaScript
+  let numbers = [3, 6, 19, -2, 7, 6];
+  let min = ns.example.Math.minElement(numbers); // -2
+  ```
 
-``` TypeScript
-let numbers = [3, 6, 19, -2, 7, 6];
-let min = ns.example.Math.minElement(numbers); // -2
-```
+  ``` TypeScript
+  let numbers = [3, 6, 19, -2, 7, 6];
+  let min = ns.example.Math.minElement(numbers); // -2
+  ```
 
 ## Classes and Objects
 
@@ -166,25 +166,25 @@ You will most probably encounter methods accepting NSDictionary instances as par
 
 * Using `NSDictionary` and passing arrays for keys and values.
 
-``` JavaScript
-let dict = new NSDictionary([".example.com", "cookieName", "/", "cookieValue"], [NSHTTPCookieDomain, NSHTTPCookieName, NSHTTPCookiePath,NSHTTPCookieValue]);
-let cookie = NSHTTPCookie.cookieWithProperties(dict);
-```
+  ``` JavaScript
+  let dict = new NSDictionary([".example.com", "cookieName", "/", "cookieValue"], [NSHTTPCookieDomain, NSHTTPCookieName, NSHTTPCookiePath,NSHTTPCookieValue]);
+  let cookie = NSHTTPCookie.cookieWithProperties(dict);
+  ```
 
-``` TypeScript
-let dict = new NSDictionary([".example.com", "cookieName", "/", "cookieValue"], [NSHTTPCookieDomain, NSHTTPCookieName, NSHTTPCookiePath,NSHTTPCookieValue]);
-let cookie = NSHTTPCookie.cookieWithProperties(dict);
-```
+  ``` TypeScript
+  let dict = new NSDictionary([".example.com", "cookieName", "/", "cookieValue"], [NSHTTPCookieDomain, NSHTTPCookieName, NSHTTPCookiePath,  NSHTTPCookieValue]);
+  let cookie = NSHTTPCookie.cookieWithProperties(dict);
+  ```
 
 * Using JSON literals
 
-``` JavaScript
-let cookie = NSHTTPCookie.cookieWithProperties({[NSHTTPCookieDomain]:".example.com", [NSHTTPCookieName]:"cookieName", [NSHTTPCookiePath]:"/", [NSHTTPCookieValue]:"cookieValue"});
-```
+  ``` JavaScript
+  let cookie = NSHTTPCookie.cookieWithProperties({[NSHTTPCookieDomain]:".example.com", [NSHTTPCookieName]:"cookieName", [NSHTTPCookiePath]:"/", [NSHTTPCookieValue]:"cookieValue"});
+  ```
 
-``` TypeScript
-let cookie = NSHTTPCookie.cookieWithProperties({[NSHTTPCookieDomain]:".example.com", [NSHTTPCookieName]:"cookieName", [NSHTTPCookiePath]:"/", [NSHTTPCookieValue]:"cookieValue"});
-```
+  ``` TypeScript
+  let cookie = NSHTTPCookie.cookieWithProperties({[NSHTTPCookieDomain]:".example.com", [NSHTTPCookieName]:"cookieName", [NSHTTPCookiePath]:"/", [NSHTTPCookieValue]:"cookieValue"});
+  ```
 
 In the second example we are passing a JSON literal to the method.**NSHTTPCookieDomain** is a variable and we need to use a [computed property name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) in order to have its value (otherwise we are getting *"NSHTTPCookieDomain"* as key).
 
@@ -212,27 +212,27 @@ JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) & [Nu
 
 * iOS
 
-``` JavaScript
-console.log(NSStringFromClass(null)); // null
-```
+  ``` JavaScript
+  console.log(NSStringFromClass(null)); // null
+  ```
 
-``` TypeScript
-console.log(NSStringFromClass(null)); // null
-```
+  ``` TypeScript
+  console.log(NSStringFromClass(null)); // null
+  ```
 
 * Android
 
-``` JavaScript
-let context = ...;
-const button = new android.widget.Button(context);
-button.setOnClickListener(undefined); // the Java call will be made using the null keyword
-```
+  ``` JavaScript
+  let context = ...;
+  const button = new android.widget.Button(context);
+  button.setOnClickListener(undefined); // the Java call will be made using the null keyword
+  ```
 
-``` TypeScript
-let context = ...;
-const button = new android.widget.Button(context);
-button.setOnClickListener(undefined); // the Java call will be made using the null keyword
-```
+  ``` TypeScript
+  let context = ...;
+  const button = new android.widget.Button(context);
+  button.setOnClickListener(undefined); // the Java call will be made using the null keyword
+  ```
 
 ## IntelliSense and Access to the Native APIs via TypeScript
 
@@ -259,25 +259,24 @@ For example, let's assume you are developing an application for API 21+ and you 
 /// <reference path="node_modules/tns-platform-declarations/android-21.d.ts" />
 ```
 
- > **Note**: Proceed with caution when using functionalities introduced in newer API level. If you attempt
-  to use a class, method, or property from a newer API level on a device with a lower API, the application will crash.
+> **Note**: Proceed with caution when using functionalities introduced in newer API level. If you attempt to use a class, method, or property from a newer API level on a device with a lower API, the application will crash.
 
 * Modify `tsconfig.json` to contain the following settings:
 
-``` JSON
-{
-  "compilerOptions": {
-    ...
-    "lib": ["es6", "dom"],
-    "baseUrl": ".",
-    "paths": {
-        "*": [
-            "./node_modules/tns-core-modules/*",
-            "./node_modules/*"
-        ]
+  ``` JSON
+  {
+    "compilerOptions": {
+      ...
+      "lib": ["es6", "dom"],
+      "baseUrl": ".",
+      "paths": {
+          "*": [
+              "./node_modules/tns-core-modules/*",
+              "./node_modules/*"
+          ]
+    }
   }
-}
-```
+  ```
 
 Note that `d.ts` files require a lot of memory and CPU. Consider adding **skipLibCheck** option to `tsconfig.json`.
 For more information visit the GitHub repository of [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)

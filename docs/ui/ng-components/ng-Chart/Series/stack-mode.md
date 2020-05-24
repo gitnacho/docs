@@ -17,13 +17,13 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 ## Getting Started
 
-There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
+There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode %} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
 
-* {% typedoc_link enums:ChartSeriesStackMode,member:None%} - The data points for all series start drawing from the axis.
-* {% typedoc_link enums:ChartSeriesStackMode,member:Stack%} - The data points for each series start drawing from the end of the data points of the previous series.
-* {% typedoc_link enums:ChartSeriesStackMode,member:Stack100%} - The data points for each series start drawing from the end of the data points of the previous series but their size is adjusted proportionally so that the whole plot-area of the chart is filled.
+* {% typedoc_link enums:ChartSeriesStackMode,member:None %} - The data points for all series start drawing from the axis.
+* {% typedoc_link enums:ChartSeriesStackMode,member:Stack %} - The data points for each series start drawing from the end of the data points of the previous series.
+* {% typedoc_link enums:ChartSeriesStackMode,member:Stack100 %} - The data points for each series start drawing from the end of the data points of the previous series but their size is adjusted proportionally so that the whole plot-area of the chart is filled.
 
-Here's how your chart will look like with {% typedoc_link classes:CategoricalSeries,member:stackMode%} set to `Stack`:
+Here's how your chart will look like with {% typedoc_link classes:CategoricalSeries,member:stackMode %} set to `Stack`:
 
 ### Figure 1: Chart with stacked AreaSeries on Android (left) and iOS (right)
 

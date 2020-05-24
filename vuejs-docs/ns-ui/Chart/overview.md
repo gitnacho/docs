@@ -12,7 +12,7 @@ publish: true
 
 The NativeScript UI Chart is a charting component designed for the mobile environment. It offers great performance in loading time, drawing capabilities and real-time updates. Its intuitive object model and public API allow you to easily setup complex chart objects and integrate them into your application. The plugin provides two views that can be placed in a NativeScript layout - {% typedoc_link classes:RadCartesianChart %} - used to visualize (or plot) data on a cartesian coordinate system and {% typedoc_link classes:RadPieChart %} - used to visualize data in a way that resembles slices of a pie. An intuitive data binding mechanism transforms the raw data to appropriate data points. The plugin is distributed through the **nativescript-ui-chart** package on npmjs.
 
-#### Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right)
+## Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right)
 
 ![NativeScriptUI-Chart-Overview-LineSeries](../../../ui/img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../../ui/img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
 
@@ -51,6 +51,7 @@ When using the {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link 
 Here is a full list of the available custom Vue {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %} directives and components:
 
 ### Components
+
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |
@@ -59,6 +60,7 @@ Represent the major elements:
 | RadPieChart       | {% typedoc_link classes:RadPieChartComponent %}       |
 
 ### Directives
+
 Represent the smaller elements that are visualized in {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %}:
 
 | Selector          | Class (more details)                                  |
@@ -89,9 +91,8 @@ Represent the smaller elements that are visualized in {% typedoc_link classes:Ra
 | Trackball | {% typedoc_link classes:TrackballDirective %} |
 | PointLabelStyle | {% typedoc_link classes:PointLabelStyleDirective %} |
 
-
-
 ### Inline Directives
+
 Represent the 'link' mechanism of the smaller with the major elements. Note that for using the directive, you need to prefix the HTML attribute with a `v-` prefix. See [Vue.js directives](https://vuejs.org/v2/guide/custom-directive.html).
 
 | Selector          | Class (more details)                                  |

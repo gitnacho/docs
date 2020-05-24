@@ -9,10 +9,12 @@ publish: true
 ---
 
 # RadCalendar Transitions
+
 {% typedoc_link classes:RadCalendar %} supports different animations when switching between months, weeks or years. These are also called *transitions*. Defining a transition is done by setting the {% typedoc_link classes:RadCalendar,member:transitionMode %} property to one of the values enlisted by the {% typedoc_link enums:CalendarTransitionMode %} enum.
 
 ## Available Transition Modes:
-*  {% typedoc_link enums:CalendarTransitionMode,member:None %} - Transitions with gestures are disabled and no animation is applied when transitioning programatically. Available in iOS and Android.
+
+* {% typedoc_link enums:CalendarTransitionMode,member:None %} - Transitions with gestures are disabled and no animation is applied when transitioning programatically. Available in iOS and Android.
 * {% typedoc_link enums:CalendarTransitionMode,member:Slide %} - Slide animation is applied when transitioning between views in {% typedoc_link classes:RadCalendar %}. Available in iOS and Android.
 * {% typedoc_link enums:CalendarTransitionMode,member:Stack %} -  Stack animation is applied when transitioning between views in {% typedoc_link classes:RadCalendar %}. Available in iOS and Android.
 * {% typedoc_link enums:CalendarTransitionMode,member:Flip %} -  Flip animation is applied when transitioning between views in {% typedoc_link classes:RadCalendar %}. Available only in iOS.

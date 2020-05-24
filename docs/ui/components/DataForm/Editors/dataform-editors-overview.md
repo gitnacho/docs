@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 * [Editors List](#editors-list)
 * [References](#references)
 
-#### Figure 1: Some of the editors supported by RadDataForm on Android (left) and iOS (right)
+## Figure 1: Some of the editors supported by RadDataForm on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Editors-Android](../../../img/ns_ui/dataform-editors-overview-android.png "Editors in DataForm in Android") ![NativeScriptUI-DataForm-Editors-iOS](../../../img/ns_ui/dataform-editors-overview-ios.png "Editors in DataForm in iOS")
 
@@ -26,11 +26,11 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 By default, {% typedoc_link classes:RadDataForm %} will load a default editor depending on the type of each property of the source object. If you need to change the type, you can provide another editor through xml or code-behind. This is demonstrated in the following examples:
 
-#### Example 1: Change the editor that is used for a property through XML
+### Example 1: Change the editor that is used for a property through XML
 
 <snippet id='dataform-editors-xml'/>
 
-#### Example 2: Change the editor that is used for a property through code-behind
+### Example 2: Change the editor that is used for a property through code-behind
 
 <snippet id='dataform-editors-code'/>
 
@@ -40,7 +40,7 @@ Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} pr
 
 In the example in the beginning of the article the {% typedoc_link classes:EntityProperty,member:valuesProvider %} of the `EntityProperty` was set to an array of strings and the value of the property of the source object that was edited was also of type `string`. In some scenarios you will need to save a value which differs from the one that an editor displays. Consider the following example where you have a class `Movie` with two properties - `name` and `id`. If you want to save the value of the `id` and also display the value of the `name` in an editor, you can create a converter that will convert between the two values. Here's a sample implementation of the aforementioned scenario:
 
-#### Example 3: Use a converter to change the type of the editor value before it is saved in the source object
+### Example 3: Use a converter to change the type of the editor value before it is saved in the source object
 
 <snippet id='dataform-converters-code'/>
 
@@ -50,7 +50,7 @@ As you can see in your model you can have a property of type `number` which repr
 
 The {% typedoc_link enums:DataFormEditorType,member:Stepper %} and {% typedoc_link enums:DataFormEditorType,member:Slider %} editors have additional properties which you can be setup through {% typedoc_link classes:PropertyEditorParams %}. The following example of the {% typedoc_link enums:DataFormEditorType,member:Stepper %} editor shows how to limit its bounds and define its step:
 
-#### Example 4: Use editor params to adjust an editor
+### Example 4: Use editor params to adjust an editor
 
 <snippet id='dataform-editor-params-xml'/>
 

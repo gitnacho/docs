@@ -69,7 +69,7 @@ Following the set up the `Project Structure` dialog look like this:
 
 * Open `settings.gradle` file in the already opened Android Studio project, which should look like this:
 
-![Settings Gradle Before](settings-gradle-before.png)
+  ![Settings Gradle Before](settings-gradle-before.png)
 
 * Uncomment the included projects: `:runtime` and `:runtime-binding-generator`
 * Uncomment and set the `:runtime` and `:runtime-binding-generator` project dirs. These project dirs, can be found in the already cloned [android-runtime repository](https://github.com/NativeScript/android-runtime).
@@ -90,33 +90,33 @@ If you only want to debug the Java part of the runtime, you're already all set u
 
 * Open `Runtime.java` and set a breakpoint at: `private void init ...` method.
 
-![Set Java Breakpoint](set-java-runtime-breakpoint.png)
+  ![Set Java Breakpoint](set-java-runtime-breakpoint.png)
 
 * Run Debug
 
-![Run In Debug](hit-debug.png)
+  ![Run In Debug](hit-debug.png)
 
-> When you run the project in debug, you should see the Android Runtime build log in the Gradle Console(bottom right).
+  > When you run the project in debug, you should see the Android Runtime build log in the Gradle Console(bottom right).
 
 ### 2. How to debug both Java and the C++ part of the runtime
 
 * Open the `:app` project debug configurations:
 
-![App Configurations](app-edit-configurations.png)
+  ![App Configurations](app-edit-configurations.png)
 
 * Add the runtime symbols in the debugger tab.
 
-![Add CMake Symbols](add-runtime-symbols.png)
+  ![Add CMake Symbols](add-runtime-symbols.png)
 
-The symbols can be found in the cloned android runtime repo in: `<android-runtime-repo>/test-app/runtime/build/intermediates/cmake/release/obj`. In order for this folder to exist, you must run the android runtime build at least once.
+  The symbols can be found in the cloned android runtime repo in: `<android-runtime-repo>/test-app/runtime/build/intermediates/cmake/release/obj`. In order for this folder to exist, you must run the android runtime build at least once.
 
 * Open `com_tns_Runtime.cpp` and set a breakpoint at: `extern "C" JNIEXPORT void Java_com_tns_Runtime_initNativeScript ...` method.
 
-![Set CPP Breakpoint](set-cpp-runtime-breakpoint.png)
+  ![Set CPP Breakpoint](set-cpp-runtime-breakpoint.png)
 
 * Run Debug
 
-![Run In Debug](hit-debug.png)
+  ![Run In Debug](hit-debug.png)
 
 ## Known Issues
 

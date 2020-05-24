@@ -15,15 +15,15 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 * [Usage](#usage)
 * [References](#references)
 
-#### Figure 1: Show image labels instead of text labels in RadDataForm on Android (left) and iOS (right)
+## Figure 1: Show image labels instead of text labels in RadDataForm on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Image-Labels-Android](../../img/ns_ui/dataform-imagelabels-android.png "Image Labels in RadDataForm in Android") ![NativeScriptUI-DataForm-Image-Labels-iOS](../../img/ns_ui/dataform-imagelabels-ios.png "Image Labels in RadDataForm in iOS")
 
 ## Usage
 
-By default {% typedoc_link classes:RadDataForm %} will load a label for each editor with the name of its property with some formatting applied. In order to remove this you can use {% typedoc_link classes:EntityProperty%}'s {% typedoc_link classes:EntityProperty,member:displayName%} property and change its value to the empty string. With EntityProperty's {% typedoc_link classes:EntityProperty,member:imageResource%}, you can specify the resource name with the image that you would like displayed. You can read <a href="https://docs.nativescript.org/angular/ui/images.html#adding-android-resources" target="_blank">here</a> how to add image resources to a  {N} + Angular application. Here's an example which also sets a hint text so that the purpose of the field is more obvious for the user:
+By default {% typedoc_link classes:RadDataForm %} will load a label for each editor with the name of its property with some formatting applied. In order to remove this you can use {% typedoc_link classes:EntityProperty %}'s {% typedoc_link classes:EntityProperty,member:displayName %} property and change its value to the empty string. With EntityProperty's {% typedoc_link classes:EntityProperty,member:imageResource %}, you can specify the resource name with the image that you would like displayed. You can read <a href="https://docs.nativescript.org/angular/ui/images.html#adding-android-resources" target="_blank">here</a> how to add image resources to a  {N} + Angular application. Here's an example which also sets a hint text so that the purpose of the field is more obvious for the user:
 
-#### Example 1: Use image resource and hint text instead of displayName for an editor
+## Example 1: Use image resource and hint text instead of displayName for an editor
 
 <snippet id='dataform-image-labels-xml'/>
 

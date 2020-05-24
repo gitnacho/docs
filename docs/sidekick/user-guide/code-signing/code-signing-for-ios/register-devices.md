@@ -13,10 +13,10 @@ To run your app on device during the development process, you need to build and 
 ## Prerequisites
 
 * Verify that you have obtained the **UDID** of your iOS device.
-   1. Connect the iOS device to your Windows or {{site.osx}} system.
-   1. In iTunes, open the device information.
-   1. Click **Serial Number** to switch to **UDID**.
-   1. Copy the **UDID**.
+  1. Connect the iOS device to your Windows or {{site.osx}} system.
+  1. In iTunes, open the device information.
+  1. Click **Serial Number** to switch to **UDID**.
+  1. Copy the **UDID**.
 
 ## Procedure
 

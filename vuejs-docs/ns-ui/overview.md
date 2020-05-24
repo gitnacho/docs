@@ -84,7 +84,7 @@ AutoComplete for Vue (distributed through the `nativescript-ui-autocomplete` pac
 * Token Layout modes - Wrap and Horizontal
 * Completion modes - StartsWith and Contains
 
-For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug autocomplete-gettingstarted-vue%} "Read more about RadAutoComplete with Vue.") in RadAutoComplete's documentation section. The articles are extended with Vue snippets and explanations where needed.
+For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug autocomplete-gettingstarted-vue %} "Read more about RadAutoComplete with Vue.") in RadAutoComplete's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
 ## Gauge for Vue: overview
 

@@ -142,8 +142,8 @@ This article will walk you through setting up an already existing Android Studio
 * Arbitrary JavaScript files can be executed using the `Runtime.runScript()` method like so:
 
   + ``` Java
-      nsRuntimeInstance.runScript(new File(context.getFilesDir(),"app/view.js"))
-      ```
+    nsRuntimeInstance.runScript(new File(context.getFilesDir(),"app/view.js"))
+    ```
 
 ## **Known Limitations**
 

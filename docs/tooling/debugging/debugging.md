@@ -10,7 +10,6 @@ previous_url: /debugging,/core-concepts/debugging
 
 You can debug apps developed with the NativeScript framework from both the NativeScript CLI and [Visual Studio Code](https://code.visualstudio.com/).
 
-
 ## Debugger Commands
 
 The `debug` command builds and deploys a new package on a connected device or emulator. By default, it also starts to track for changes the `app` folder,  meaning that it will automatically livesync changes in code as soon as they are saved. In order to apply the changes, the CLI will automatically restart the application after each sync.
@@ -43,6 +42,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--clean` - If set forces rebuilding the native application.
 
 ### iOS specific options
+
 * `--inspector` - Flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools).
 
 For more information about Android debugging, run any of the following commands:
@@ -59,7 +59,7 @@ To debug NativeScript applications in [Visual Studio Code](https://code.visualst
 
 ## Debugging with Chrome DevTools
 
-Debugging Android and iOS applications is as easy as executing `tns debug <android | ios>`. A complete list of features, and how to use them can be found at [Debugging NativeScript apps with Chrome DevTools]({%slug chrome-devtools%}).
+Debugging Android and iOS applications is as easy as executing `tns debug <android | ios>`. A complete list of features, and how to use them can be found at [Debugging NativeScript apps with Chrome DevTools]({% slug chrome-devtools %}).
 
 ## Debugging iOS Applications with the WebKit Web Inspector
 

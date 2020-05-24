@@ -22,6 +22,7 @@ This method is easier, but it implies using an `ActionBar`. The NativeScript `Ac
 * Use the page's XML file to declare an `ActionBar` in your application.
 
 > Example 1: How to create default `ActionBar` with title
+
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded">
   <Page.actionBar>
@@ -36,14 +37,16 @@ __Figure 1__ shows the result of adding the sample code from __Example 1__.
 
 ![adding-action-bar](../img/change-status-bar-style-ios/status-bar-style-via-actionbar.png "adding-action-bar")
 
- It is easy to change the background color of the `UINavigationBar` and the status bar, respectively. To do this you should set the `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
+It is easy to change the background color of the `UINavigationBar` and the status bar, respectively. To do this you should set the `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
 
- > Example 2:How to set up `ActionBar` backgroundColor property
+> Example 2:How to set up `ActionBar` backgroundColor property
+
 ``` XML
 <Page.actionBar>
      <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
 </Page.actionBar>
 ```
+
 ``` CSS
 ActionBar
 {
@@ -76,6 +79,7 @@ function loaded(args) {
 }
 exports.loaded = loaded;
 ```
+
 ``` TypeScript
 import { EventData } from "tns-core-modules/data/observable";
 import { topmost } from "tns-core-modules/ui/frame";
@@ -193,6 +197,7 @@ As a result, your `Info.plist` should look like this:
     </dict>
     </plist>
 ```
+
 Which you can see in __Figure 5__.
 
 > Figure 5: Changed StatusBar style to `UIStatusBarStyleLightContent`

@@ -32,7 +32,7 @@ The **propertyValidate** event gives you an opportunity to change the validation
 
 The following example demonstrates how to use the **propertyValidate** event to validate whether two fields contain the same value (for example for confirming passwords or emails).
 
-#### Example 1: Using propertyValidate event for matching fields
+### Example 1: Using propertyValidate event for matching fields
 
 <snippet id='dataform-property-validate-event'/>
 
@@ -42,7 +42,7 @@ The following example demonstrates how to use the **propertyValidate** event to 
 
 This next example shows how to set the validation result to a `Promise` and validate the input asynchronously (for example to check whether a selected username is already used).
 
-#### Example 2: Using propertyValidate event to validate a field asynchronously
+### Example 2: Using propertyValidate event to validate a field asynchronously
 
 <snippet id='dataform-property-validate-async'/>
 
@@ -56,7 +56,7 @@ In this example, we are simulating a slow and (almost) random validation for a p
 
 The **propertyValidated** event gives you an opportunity to get notified that a property is validated and check what is the result from the validation. Here's an example:
 
-#### Example 3: Using propertyValidated event to check the result from validation
+### Example 3: Using propertyValidated event to check the result from validation
 
 <snippet id='dataform-property-validated'/>
 

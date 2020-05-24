@@ -20,13 +20,13 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 All axes have properties which provide various customization options for the labels:
 
-* {% typedoc_link classes:CartesianAxis,member:labelTextColor%} - Determines the color of the axis' labels.
-* {% typedoc_link classes:CartesianAxis,member:labelSize%} - Determines the text size of the axis' labels.
-* {% typedoc_link classes:CartesianAxis,member:labelFormat%} - Determines the format used to display the axis' labels. For example to format values to one symbol after decimal point and append the text `seconds`, you can use the following format: `%.1f seconds`.
-* {% typedoc_link classes:CartesianAxis,member:labelMargin%} - Determines the margin for the labels. The margin is a single number value and determines the number of device independent pixels between a label and its corresponding axis tick.
-* {% typedoc_link classes:CartesianAxis,member:labelRotationAngle%} - Determines the angle of rotation for labels. Used only when *labelFitMode* property has a value of {% typedoc_link enums:ChartAxisLabelFitMode,member:Rotate%}.
-* {% typedoc_link classes:CartesianAxis,member:labelFitMode%} - Determines the strategy used in attempt to fit the labels. The default value is {% typedoc_link enums:ChartAxisLabelFitMode,member:None%} which means the labels are positioned on single line but there are {% typedoc_link enums:ChartAxisLabelFitMode,member:Multiline%} and {% typedoc_link enums:ChartAxisLabelFitMode,member:Rotate%} options too.
-* {% typedoc_link classes:CartesianAxis,member:labelLayoutMode%} - Determines the layout mode for axis labels. With this property you can position labels in the {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Inner%} or {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Outer%} side of chart.
+* {% typedoc_link classes:CartesianAxis,member:labelTextColor %} - Determines the color of the axis' labels.
+* {% typedoc_link classes:CartesianAxis,member:labelSize %} - Determines the text size of the axis' labels.
+* {% typedoc_link classes:CartesianAxis,member:labelFormat %} - Determines the format used to display the axis' labels. For example to format values to one symbol after decimal point and append the text `seconds`, you can use the following format: `%.1f seconds`.
+* {% typedoc_link classes:CartesianAxis,member:labelMargin %} - Determines the margin for the labels. The margin is a single number value and determines the number of device independent pixels between a label and its corresponding axis tick.
+* {% typedoc_link classes:CartesianAxis,member:labelRotationAngle %} - Determines the angle of rotation for labels. Used only when *labelFitMode* property has a value of {% typedoc_link enums:ChartAxisLabelFitMode,member:Rotate %}.
+* {% typedoc_link classes:CartesianAxis,member:labelFitMode %} - Determines the strategy used in attempt to fit the labels. The default value is {% typedoc_link enums:ChartAxisLabelFitMode,member:None %} which means the labels are positioned on single line but there are {% typedoc_link enums:ChartAxisLabelFitMode,member:Multiline %} and {% typedoc_link enums:ChartAxisLabelFitMode,member:Rotate %} options too.
+* {% typedoc_link classes:CartesianAxis,member:labelLayoutMode %} - Determines the layout mode for axis labels. With this property you can position labels in the {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Inner %} or {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Outer %} side of chart.
 
 ## Styling with CSS
 
@@ -40,9 +40,9 @@ The easiest option to style all of the labels for the series of a chart is to us
 * **padding** - The space between the label's text and its border.
 * **font**-related properties (font-size, font-family, etc.)
 * **format** -  The format used to display the axes' labels. For example to format values to one symbol after decimal point and append the text `seconds`, you can use the following format: `%.1f seconds`.
-* **rotation-angle** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelRotationAngle%} property.
-* **fit-mode** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelFitMode%} property.
-* **layout-mode** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelLayoutMode%} property.
+* **rotation-angle** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelRotationAngle %} property.
+* **fit-mode** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelFitMode %} property.
+* **layout-mode** - Used just line CartesianAxis's {% typedoc_link classes:CartesianAxis,member:labelLayoutMode %} property.
 
 ### Example 1: Apply axes label styles through css
 

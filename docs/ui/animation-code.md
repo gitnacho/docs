@@ -10,7 +10,7 @@ publish: false
 
 The easiest way to animate a **single** [`View`](/api-reference/classes/_ui_core_view_.view.html) is by using the `View.animate` method which accepts an [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationdefinition.html), immediately starts the animation and then returns its finished promise.
 
-__Example 20: How to execute animation on single view.__
+__Example 20: How to execute animation on single view__:
 
 ``` JavaScript
 view.animate({
@@ -19,6 +19,7 @@ view.animate({
     curve: enums.AnimationCurve.easeIn
 });
 ```
+
 ``` TypeScript
 view.animate({
     translate: { x: 0, y: 100},
@@ -73,7 +74,7 @@ The [`Animation`](/api-reference/classes/_ui_animation_.animation.html) class re
 
 It is easy to animate multiple properties at once; just pass the desired animatable properties and the corresponding values when calling the animate function.
 
-__Example 21: How to animate multiple properties.__
+__Example 21: How to animate multiple properties__:
 
 ``` JavaScript
 view.animate({
@@ -84,6 +85,7 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     backgroundColor: new color.Color("#3D5AFE"),
@@ -100,7 +102,7 @@ view.animate({
 
 The animate method returns a promise that you can use to chain animations, as shown in __Example 21__.
 
-__Example 22: How to create chain animations.__
+__Example 22: How to create chain animations__:
 
 ``` JavaScript
 view.animate({ opacity: 0 })
@@ -118,6 +120,7 @@ view.animate({ opacity: 0 })
     console.log(e.message);
 });
 ```
+
 ``` TypeScript
 view.animate({ opacity: 0 })
     .then(() => view.animate({ opacity: 1 }))

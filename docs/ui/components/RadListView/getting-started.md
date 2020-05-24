@@ -7,24 +7,28 @@ tags: listview, overview, nativescript, professional, ui
 position: 2
 publish: true
 ---
+
 # RadListView Getting Started
+
 This article will guide you through the process of adding a RadListView in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListView %} is used, please refer to the dedicated articles which are using the same scenario and extend it further. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-listview
 ```
 
 ## Adding a RadListView to Your Page
+
 Then, in order to add a {% typedoc_link classes:RadListView %} instance in a page of your application, you need to define the following XML namespace:
 
 * `xmlns:lv="nativescript-ui-listview"`.
 
 After that, you can use the following XML construct to put {% typedoc_link classes:RadListView %} in your page:
 
-#### __Example 1: Adding RadListView to your Page__
+### __Example 1: Adding RadListView to your Page__
 
 <snippet id='listview-first-look'/>
 
@@ -53,6 +57,7 @@ Building and running the application will produce the following result:
 ![TelerikUI-RadListView-Getting-Started](../../img/ns_ui/list-view-getting-started_1.png "iOS") ![TelerikUI-RadListView-Getting-Started](../../img/ns_ui/list-view-getting-started_2.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

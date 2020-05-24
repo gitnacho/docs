@@ -131,6 +131,6 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 * **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
 * **Scope** should be set to `email` to give your app access to the user's email address.
 
-Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
+  Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 
 * [Next step: Running your app]({% slug enterprise-auth %}#step-3)

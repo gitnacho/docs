@@ -18,7 +18,5 @@ Setting the location can be done by setting the **drawerLocation** property to a
 * {% typedoc_link enums:SideDrawerLocation,member:Left %}
 * {% typedoc_link enums:SideDrawerLocation,member:Right %}
 
-
 <snippet id='angular-sidedrawer-location'/>
-
 <snippet id='sidedrawer-angular-position-code'/>

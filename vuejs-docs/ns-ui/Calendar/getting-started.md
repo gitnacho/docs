@@ -9,16 +9,19 @@ publish: true
 ---
 
 # RadCalendar for Vue - Getting Started
+
 This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles.
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-calendar
 ```
 
 ## Adding a RadCalendar to Your Template
+
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUICalendarModule %} from the *nativescript-ui-calendar* plugin has been imported in the main JS in your app with the following sentences:
 
 <snippet id='calendar-import-vue'/>

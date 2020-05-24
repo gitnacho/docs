@@ -11,9 +11,9 @@ slug: code-signing-assistance
 To build and deploy your apps on an iOS device, you need to have them code signed with a valid certificate and mobile provision. The code signing assistance will help you to automatically generate temporary certificates and mobile provisions which can be used to deploy and test your app on a device. The automatically generated code signing assets cannot be used to publish your app to the App Store.
 
 > Currently, only users with **Free Apple Developer** accounts can benefit from the automatic code signing assets generation. We are working on extending this functionality and make it available for all types of accounts. You can create a Free Apple Developer account from [here](https://appleid.apple.com/account).
-
+>
 > The iOS devices connected to your machine during the generation will be included in the mobile provision. Apps signed with this mobile provision can be deployed only on those devices.
-
+>
 > To generate a temporary certificate and mobile provision, your application must have a unique App ID.
 
 ## Prerequisites

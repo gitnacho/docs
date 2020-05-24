@@ -26,8 +26,8 @@ The `allDayEventsViewStyle` should be used with a  `AllDayEventsViewStyle` insta
 * `allDayText` - defines the text that notifies that the top area contains all day events
 * `allDayTextIsVisible` - defines wether the text that notifies that the top area contains all day events should be visible
 
-
 ## Example
+
 Here's an example of using the properties mentioned above:
 
 <snippet id='calendar-dayview-styling'/>
@@ -37,6 +37,7 @@ This is how the calendar looks like in that case:
 ![Calendar day view styling](../../../img/ns_ui/calendar_styling_day_ios.png "iOS")      ![Calendar day view styling](../../../img/ns_ui/calendar_styling_day_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

@@ -24,11 +24,13 @@ The completion mode can be changed with the {% typedoc_link classes:RadAutoCompl
 In `StartsWith` mode the autocomplete shows only suggestions that start with the typed phrase.
 
 ## Contains Mode
+
 In `Contains` mode the autocomplete shows the suggestions that contain the typed phrase, but not necessarily in the beginning.
 The completion mode `Contains` is not intended to work with the `Append` and  `SuggestAppend`  suggest modes.
  Since these suggest modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing.
 
 ## References
+
 Want to see more examples using **RadAutoCompleteTextView**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 

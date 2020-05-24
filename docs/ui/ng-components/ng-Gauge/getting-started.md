@@ -12,17 +12,20 @@ publish: true
 
 This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
-#### Figure 1. Radial gauge with needle and bar indicators
+## Figure 1. Radial gauge with needle and bar indicators
+
 ![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/gauges-gettingstarted-android.png "RadRadialGauge in Android")
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-gauge
 ```
 
 ## Adding a RadRadialGauge to your Component
+
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIGaugeModule %} from the *nativescript-ui-gauge* plugin has been imported in an `ngModule` in your app. For example:
 
 ``` TypeScript
@@ -44,7 +47,7 @@ export class GaugesExamplesModule { }
 
 [Demo](https://github.com/NativeScript/nativescript-ui-samples-angular/blob/master/gauge/app/examples/gauges-examples.module.ts).
 
-To display data the {% typedoc_link classes:RadRadialGauge %} instance is not enough. We should add also add a scale with at least on indicator. In this example we are going to add a {% typedoc_link classes:RadialScale %} with several {% typedoc_link classes:RadialBarIndicator %} instances and one {% typedoc_link classes:RadialNeedle %}. To add a scale to the {% typedoc_link classes:RadRadialGauge %} we should use its {% typedoc_link classes:RadGauge,member:scales%} property. Adding indicators to the scale is similar - we are using {% typedoc_link classes:RadialScale %}'s {% typedoc_link classes:GaugeScale,member:indicators%} property.
+To display data the {% typedoc_link classes:RadRadialGauge %} instance is not enough. We should add also add a scale with at least on indicator. In this example we are going to add a {% typedoc_link classes:RadialScale %} with several {% typedoc_link classes:RadialBarIndicator %} instances and one {% typedoc_link classes:RadialNeedle %}. To add a scale to the {% typedoc_link classes:RadRadialGauge %} we should use its {% typedoc_link classes:RadGauge,member:scales %} property. Adding indicators to the scale is similar - we are using {% typedoc_link classes:RadialScale %}'s {% typedoc_link classes:GaugeScale,member:indicators %} property.
 
 In order to setup an `RadRadialGauge` in your Component HTML you will need to follow this steps:
 
@@ -55,6 +58,7 @@ In order to setup an `RadRadialGauge` in your Component HTML you will need to fo
 <snippet id='gauges-getting-started-angular' />
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

@@ -9,9 +9,11 @@ publish: true
 ---
 
 # RadListView Header and Footer
+
 Header and Footer are a special kind of elements that are displayed at the beginning and at the end of the scrollable data list. They are part of the core functionality of `RadListView` and are exposed through two separate directives. This article explains how Header and Footer are defined on {% typedoc_link classes:RadListViewComponent %}  with Angular.
 
 ## Defining Header and Footer
+
 Defining a list header or list footer on {% typedoc_link classes:RadListViewComponent %}  via Angular is done easily with the corresponding directives:
 
 * {% typedoc_link classes:ListViewHeaderDirective %} - used with the `tkListViewHeader` selector

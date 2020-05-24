@@ -14,7 +14,7 @@ CSS animations consist of two components: a style describing the CSS animation a
 
 __Example 1__ binds the "example" animation to the button element. The animation lasts 4 seconds. It will gradually change the background-color of the button element from "red" to "green".
 
-__Example 1: How to create simple animation using CSS.__
+__Example 1: How to create simple animation using CSS__:
 
 ``` CSS
 @keyframes example {
@@ -25,7 +25,7 @@ __Example 1: How to create simple animation using CSS.__
 .view {
     animation-name: example;
     animation-duration: 4s;
-	animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 ```
 
@@ -34,9 +34,11 @@ To get an animation to work, you must bind the animation to an element:
 ``` JavaScript
 view1.className = "example";
 ```
+
 ``` TypeScript
 view1.className = "example";
 ```
+
 ``` XML
 <Button id="myButton" text="{N}" class="example"/>
 ```
@@ -74,7 +76,7 @@ The following list presents all animation properties:
 
 To set multiple points at which an element should undergo a transition, use the **@keyframes** rule, shown in __Example 2__. It includes the animation name, any animation breakpoints, and the properties intended to be animated.
 
-__Example 2: How to use **@keyframes** rule.__
+__Example 2: How to use **@keyframes** rule__:
 
 ``` CSS
 @keyframes example {
@@ -87,7 +89,7 @@ __Example 2__ defines an animation with two keyframes. The "from" represents 0% 
 
 __Example 3__ shows how to change the background color when the animation is 25% complete, 50% complete, and again when the animation is 100% complete.
 
-__Example 3: Changing background color in different animation stages.__
+__Example 3: Changing background color in different animation stages__:
 
 ``` CSS
 @keyframes example {
@@ -100,7 +102,7 @@ __Example 3: Changing background color in different animation stages.__
 
 You can set multiple properties in a keyframe, as shown in __Example 4__.
 
-__Example 4: Changing multiple properties in different animation stages.__
+__Example 4: Changing multiple properties in different animation stages__:
 
 ``` CSS
 @keyframes example {
@@ -114,7 +116,7 @@ __Example 4: Changing multiple properties in different animation stages.__
 
 You can combine keyframes, as shown in __Example 5__.
 
-__Example 5: Set up properties for several keyframes__
+__Example 5: Set up properties for several keyframes__:
 
 ``` CSS
 @keyframes example {
@@ -128,11 +130,11 @@ __Example 5: Set up properties for several keyframes__
 
 The **animation-delay** property specifies a delay (in seconds) before the animation starts:
 
-__Example 6: Set up a delay before the animation starts__
+__Example 6: Set up a delay before the animation starts__:
 
 ``` CSS
 .view {
-	background-color: red;
+    background-color: red;
     animation-name: example;
     animation-duration: 4s;
     animation-delay: 2s;
@@ -147,7 +149,7 @@ __Example 7: How to use `animation-iteration-count` property__
 
 ``` CSS
 .view {
-	background-color: red;
+    background-color: red;
    animation-name: example;
    animation-duration: 4s;
    animation-iteration-count: 2;
@@ -172,11 +174,11 @@ The **animation-timing-function** property specifies the speed curve of the anim
 * **spring**: Specifies a spring animation.
 * **cubic-bezier(n,n,n,n)**: Lets you define your own values in a cubic-bezier function, as shown in __Example 8__.
 
-__Example 8: How to specify the speed curve using cubic-bezier function.__
+__Example 8: How to specify the speed curve using cubic-bezier function__:
 
 ``` CSS
 .view {
-	animation-name: example;
+    animation-name: example;
    animation-timing-function: cubic-bezier(0.1, 0.1, 1.0, 1.0);
 }
 ```
@@ -185,11 +187,11 @@ __Example 8: How to specify the speed curve using cubic-bezier function.__
 
 The **animation-fill-mode** property determines the element style when the animation finishes. Its default value is "none". In this case, all animated values will be reset to the state before the animation started. You should choose "forwards" in order to preserve the property values set during the animation.
 
-__Example 9: How to use **animation-fill-mode** property__
+__Example 9: How to use **animation-fill-mode** property__:
 
 ``` CSS
 .view {
-	background-color: red;
+    background-color: red;
     animation-name: example;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -200,11 +202,11 @@ __Example 9: How to use **animation-fill-mode** property__
 
 You can use the **animation-direction** property to play a CSS animation in reverse direction, as shown in __Example 10__.
 
-__Example 10: How to reverse animation direction.__
+__Example 10: How to reverse animation direction__:
 
 ``` CSS
 .view {
-	background-color: red;
+    background-color: red;
     animation-name: example;
     animation-duration: 4s;
     animation-direction: reverse;
@@ -215,7 +217,7 @@ __Example 10: How to reverse animation direction.__
 
 The **animation** property allows setting all seven animation properties with a single line:
 
-__Example 11: How to use animation shorthand property__
+__Example 11: How to use animation shorthand property__:
 
 ``` CSS
 .view {
@@ -229,7 +231,7 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 
 You can combine two animations in the **animation** property by using commas:
 
-__Example 12: How to combine several animations in the **animation** property__
+__Example 12: How to combine several animations in the **animation** property__:
 
 ``` CSS
 .view {
@@ -241,7 +243,7 @@ __Example 12: How to combine several animations in the **animation** property__
 
 A pseudo selector is used to define a special state of an element. For example, when a button is touched by the user. You can use pseudo selectors to trigger animations:
 
-__Example 13: How to trigger animation on element special state__
+__Example 13: How to trigger animation on element special state__:
 
 ``` CSS
 .button {
@@ -264,8 +266,10 @@ __Example 13: How to trigger animation on element special state__
 
 ## Animations - width and height
 
-__Example 14: How to animate view's width and height.__
+__Example 14: How to animate view's width and height__:
+
 {% nativescript %}
+
 ``` XML
 <GridLayout rows="* *" columns="*" class="home-panel">
         <StackLayout row="0">
@@ -276,6 +280,7 @@ __Example 14: How to animate view's width and height.__
         </StackLayout>
 </GridLayout>
 ```
+
 ``` CSS
 .first-view {
     animation-name: example-width;
@@ -299,9 +304,11 @@ __Example 14: How to animate view's width and height.__
     to { height:200; }
 }
 ```
+
 [Demo](https://play.nativescript.org/?template=play-js&id=xe3lMf)
-{% endnativescript %}
-{% angular %}
+
+{% endnativescript %}{% angular %}
+
 ``` HTML
 <GridLayout rows="* *" columns="*" class="home-panel">
     <StackLayout row="0">
@@ -312,6 +319,7 @@ __Example 14: How to animate view's width and height.__
     </StackLayout>
 </GridLayout>
 ```
+
 ``` CSS
 .first-view {
     animation-name: example-width;
@@ -335,19 +343,22 @@ __Example 14: How to animate view's width and height.__
     to { height:200; }
 }
 ```
+
 [Demo](https://play.nativescript.org/?template=play-ng&id=NMM4I5)
+
 {% endangular %}
 
 ## Access CSS animations from code
 
 The simplest way to trigger a CSS animation is by changing the element **className** property:
 
-__Example 15: How to trigger CSS animation__
+__Example 15: How to trigger CSS animation__:
 
 ``` JavaScript
 var view = page.getViewById("view");
 view.className = "transparent";
 ```
+
 ``` TypeScript
 let view = page.getViewById<viewModule.View>("view");
 view.className = "transparent";
@@ -355,8 +366,7 @@ view.className = "transparent";
 
 All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
 
-
-__Example 16: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
+__Example 16: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__:
 
 ``` JavaScript
 var keyframeAnimation = require("tns-core-modules/ui/animation/keyframe-animation");
@@ -369,6 +379,7 @@ animation.play(view).then(() => {
     console.log("Played with code!");
 });
 ```
+
 ``` TypeScript
 import {KeyframeAnimation} from "tns-core-modules/ui/animation/keyframe-animation";
 

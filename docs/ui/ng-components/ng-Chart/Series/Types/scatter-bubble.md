@@ -51,7 +51,7 @@ Inside that service we have a single function which returns an array:
 
 ## Bubble Scale
 
-Additionally, {% typedoc_link classes:ScatterBubbleSeries %} expose a {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale%} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale%} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
+Additionally, {% typedoc_link classes:ScatterBubbleSeries %} expose a {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale %} property which can be used to fine-tune the size of the bubbles according to specific application requirements. The way the {% typedoc_link classes:ScatterBubbleSeries,member:bubbleScale %} property works is by multiplying its value to the radius calculated for each data-point's bubble to determine the bubble's final size.
 
 ## References
 

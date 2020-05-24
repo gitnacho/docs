@@ -24,6 +24,7 @@ This is how the calendar looks like now:
 ![Calendar year view styling](../../../img/ns_ui/calendar_styling_month_names_ios.png "iOS")      ![Calendar year view styling](../../../img/ns_ui/calendar_styling_month_names_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

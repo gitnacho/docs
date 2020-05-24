@@ -318,7 +318,7 @@ class MyVersatileCopywriter: Printer, Copier, Writer{
 }
 ```
 
-The same result can be achieved in NativeScript by [extending]({%slug how-extend-works%}) any valid object that inherits [Java Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html).
+The same result can be achieved in NativeScript by [extending]({% slug how-extend-works %}) any valid object that inherits [Java Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html).
 
 * In JavaScript - Declare an **interfaces** array in the implementation
 * Using Typescript syntax - apply a **decorator** to the extended class (note `@Interfaces([...]`))

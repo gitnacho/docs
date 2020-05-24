@@ -9,6 +9,7 @@ publish: true
 ---
 
 # RadListView Load on Demand
+
 The load-on-demand feature is particularly useful in cases when data needs to be loaded in chunks (pages) to optimize bandwidth usage and improve the UX. The value of the {% typedoc_link classes:RadListView,member:loadOnDemandMode %} property determines the mode that will be used for loading on demand. It accepts the values from the {% typedoc_link enums:ListViewLoadOnDemandMode %} enumeration:
 
 * {% typedoc_link enums:ListViewLoadOnDemandMode,member:Manual %} - in this mode the user needs to manually request the next data page
@@ -20,13 +21,15 @@ When more items need to be loaded, **RadListView** fires the `loadMoreDataReques
 In addition, {% typedoc_link classes:RadListView %} exposes the {% typedoc_link classes:RadListView,member:loadOnDemandBufferSize %} property which determines the count of items left to scroll which when reached triggers a `loadMoreDataRequested` event. This property is used when the load-on-demand mode is set to be {% typedoc_link enums:ListViewLoadOnDemandMode,member:Auto %}.
 
 ## Example
+
 The following scenario demonstrates how the `loadMoreDataRequested` event is handled. In addition, an example of a custom load-on-demand view is also given. A custom load-on-demand view is provided via the {% typedoc_link classes:TKListViewLoadOnDemandDirective %} which is used with the `tkListLoadOnDemandTemplate` selector. To feed `RadListView` with data we use an `ObservableArray` which provides smart data change notifications to `RadListView`. When the `loadMoreDataRequested` event is fired we push new items into the array which notifies the list that a change has occurred.
 
 ### Example: The Template
+
 The following snippet shows the template used to create the UI for the scenario. It shows how a handler for the `loadMoreDataRequested` event is provided, as well as how a custom load-on-demand view is applied:
 
-
 ### Example: The Component
+
 The following code snippet demonstrates the code behind the template. Here you see how the `loadMoreDataRequested` event is handled and how data is fed back to `RadListView`:
 
 <snippet id='angular-listview-load-on-demand'/>

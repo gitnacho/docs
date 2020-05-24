@@ -19,9 +19,9 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 ## Getting Started
 
-When {% typedoc_link classes:RadCartesianChart %} visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When {% typedoc_link classes:RadCartesianChart %} visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
-{% typedoc_link classes:DateTimeContinuousAxis %} is another axis that can be used with categorical data but instead of categories, the axis builds time slots depending on its {% typedoc_link classes:DateTimeContinuousAxis,member:Minimum%}, {% typedoc_link classes:DateTimeContinuousAxis,member:Maximum%} and {% typedoc_link classes:DateTimeContinuousAxis,member:MajorStep%} values. {% typedoc_link classes:DateTimeContinuousAxis %} also expects valid data time values so that the data could be plotted correctly. Think of DateTimeContinuousAxis as a timeline where each data point has a certain position, depending on the date it represents. The timeline range properties' values are automatically calculated if not set explicitly by the user: the default value of the major step is the smallest difference between any two date values. Because this axis behaves like a numerical one, there might be empty time slots if no data falling into them is found.
+{% typedoc_link classes:DateTimeContinuousAxis %} is another axis that can be used with categorical data but instead of categories, the axis builds time slots depending on its {% typedoc_link classes:DateTimeContinuousAxis,member:Minimum %}, {% typedoc_link classes:DateTimeContinuousAxis,member:Maximum %} and {% typedoc_link classes:DateTimeContinuousAxis,member:MajorStep %} values. {% typedoc_link classes:DateTimeContinuousAxis %} also expects valid data time values so that the data could be plotted correctly. Think of DateTimeContinuousAxis as a timeline where each data point has a certain position, depending on the date it represents. The timeline range properties' values are automatically calculated if not set explicitly by the user: the default value of the major step is the smallest difference between any two date values. Because this axis behaves like a numerical one, there might be empty time slots if no data falling into them is found.
 
 ## Binding Specifics
 
@@ -33,6 +33,7 @@ parses back the string to a native Android or iOS object. This call to stringify
 ## Properties
 
 ### Date Format
+
 By using the {% typedoc_link classes:DateTimeContinuousAxis,member:dateFormat %} property you can specify the format used to parse the date values passed as parameters to the {% typedoc_link classes:DateTimeContinuousAxis,member:minimum %} and {% typedoc_link classes:DateTimeContinuousAxis,member:maximum %} properties. It is also used to format the date-labels on the axis.
 
 ### Maximum
@@ -51,10 +52,10 @@ The major step represents the value difference between two visible ticks on the 
 
 {% typedoc_link classes:DateTimeContinuousAxis %} allows you to define how exactly the axis will be plotted on the viewport of the chart. The possible values are:
 
-* {% typedoc_link enums:ChartAxisPlotMode,member:BetweenTicks%} - Points are plotted in the middle of the range, defined between each two ticks.
-* {% typedoc_link enums:ChartAxisPlotMode,member:OnTicks%} - Points are plotted over each tick.
+* {% typedoc_link enums:ChartAxisPlotMode,member:BetweenTicks %} - Points are plotted in the middle of the range, defined between each two ticks.
+* {% typedoc_link enums:ChartAxisPlotMode,member:OnTicks %} - Points are plotted over each tick.
 
-You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode%} property.
+You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode %} property.
 
 ## References
 

@@ -15,13 +15,16 @@ Live sync debugging updates your demo/test app automatically in the simulator/de
 Live sync debugging requires your plugin's source code to not be in the root of its home folder.
 
 Bad:
-```
+
+``` Shell
 nativescript-my-plugin/
 ├── index.js
 └── package.json
 ```
+
 Good:
-```
+
+``` Shell
 nativescript-my-plugin/
 ├── demo
 └── src
@@ -29,13 +32,13 @@ nativescript-my-plugin/
     └── package.json
 ```
 
->For the technically curious, this is because the build process will copy your plugin's source code folder, including **all** of its files, to their respective android/ios platform folder(s) prior to transpiling. If that process copied your project's root folder then it would also be copying your hidden/system (ex: .git) folders their respective android/ios platform folder(s); that would be bad.
+> For the technically curious, this is because the build process will copy your plugin's source code folder, including **all** of its files, to their respective android/ios platform folder(s) prior to transpiling. If that process copied your project's root folder then it would also be copying your hidden/system (ex: .git) folders their respective android/ios platform folder(s); that would be bad.
 
 If you created your plugin using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) then you are already set up!
 
 If you did not create your plugin using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) then just make sure that, per the example above, your plugin's source code is not in your project's root folder.
 
->If you are debugging an existing or third party plugin, many of them may not be updated and properly structured to support live sync debugging. If a plugin's source code is in the project's root folder and not in a subfolder then you will need to move its source code out of the root folder and in to a subfolder. We encourage you to fork the plugin's original repo and create a Pull Request of your changes back to the plugin's original repo.
+> If you are debugging an existing or third party plugin, many of them may not be updated and properly structured to support live sync debugging. If a plugin's source code is in the project's root folder and not in a subfolder then you will need to move its source code out of the root folder and in to a subfolder. We encourage you to fork the plugin's original repo and create a Pull Request of your changes back to the plugin's original repo.
 
 ## Enabling
 

@@ -20,7 +20,7 @@ This article will guide you through the process of adding a {% typedoc_link clas
 
 In order to use `RadDataForm` to edit an object, we need to have the object that we will edit. In this example, we will create a class `Person`, pass an instance of this class to `RadDataForm` and then we will be able to edit the person's properties. First, let's create a file named `person-model.ts` with the following content:
 
-#### Example 1: Declare the object that we will use as a source for RadDataForm
+### Example 1: Declare the object that we will use as a source for RadDataForm
 
 <snippet id='dataform-person-view-model'/>
 
@@ -28,7 +28,7 @@ In order to use `RadDataForm` to edit an object, we need to have the object that
 
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-dataform
 ```
 
@@ -36,13 +36,13 @@ Then, in order to add a {% typedoc_link classes:RadDataForm %} instance in a pag
 
 * `xmlns:df="nativescript-ui-dataform"`.
 
-#### Example 2: Add RadDataForm to a Page
+### Example 2: Add RadDataForm to a Page
 
 <snippet id='dataform-getting-started-xml'/>
 
 Note the [data binding](https://docs.nativescript.org/ui/basics#bindings) of the `source` property of `RadDataForm` to the `person` property of the context of the page. In order to provide that context, we will use the `pageLoaded` event as follows:
 
-#### Example 3: Define the BindingContext
+### Example 3: Define the BindingContext
 
 <snippet id='dataform-getting-started-context'/>
 

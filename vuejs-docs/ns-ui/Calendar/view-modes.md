@@ -9,6 +9,7 @@ publish: true
 ---
 
 # RadCalendar View Modes
+
 {% typedoc_link classes:RadCalendar %} supports the view modes exposed by the {% typedoc_link enums:CalendarViewMode %} enum. The following view modes are supported:
 
 * {% typedoc_link enums:CalendarViewMode,member:Week %}

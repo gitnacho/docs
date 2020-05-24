@@ -18,6 +18,7 @@ publish: true
 ## Setup
 
 To display an Ohlc Chart, you will need to:
+
 * Add a **RadCartesianChart** to your page.
 * Set the chart's **horizontalAxis** to a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**).
 * Set the chart's **verticalAxis** to a value axis (**LinearAxis** or **LogarithmicAxis**).
@@ -25,19 +26,19 @@ To display an Ohlc Chart, you will need to:
 
 To illustrate this setup, let's create an example. First we will create a source with items:
 
-#### Example 1: Define a source with data
+### Example 1: Define a source with data
 
 <snippet id='ohlc-data-model'/>
 
 We use an instance of this model to assign it as the *bindingContext* of the page we have put our Scatter Bubble series on:
 
-#### Example 2: Update bindingContext
+### Example 2: Update bindingContext
 
 <snippet id='binding-context-ohlc-series'/>
 
 And finally, in the XML definition of the page we put a RadCartesianChart, add a ScatterBubbleSeries instance to it and bind the series to the source of data:
 
-#### Example 3: Add chart to page's markup
+### Example 3: Add chart to page's markup
 
 <snippet id='ohlc-series'/>
 

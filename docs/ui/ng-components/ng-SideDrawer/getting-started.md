@@ -9,28 +9,32 @@ publish: true
 ---
 
 # RadSideDrawer Getting Started
+
 This article explains how to create a simple RadSideDrawer with Angular. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 > The `RadSideDrawer` is designed to be placed as a single child in your component's HTML.
- This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML.
- For example:
- ``` HTML
- <ActionBar></ActionBar> <!-- ActionBar can be used with RadSideDrawer on the root level -->
- <RadSideDrawer></RadSideDrawer> <!-- RadSideDrawer should be single child (not counting ActionBar)-->
- <!--
-    It is NOT allowed to have other elements on the root level with RadSideDrawer
-    <StackLayout></StackLayout>
- -->
- ```
+  This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML.
+  For example:
+
+  ``` HTML
+  <ActionBar></ActionBar> <!-- ActionBar can be used with RadSideDrawer on  the root level -->
+  <RadSideDrawer></RadSideDrawer> <!-- RadSideDrawer should be single child (not counting ActionBar)-->
+  <!--
+     It is NOT allowed to have other elements on the root level with  RadSideDrawer
+     <StackLayout></StackLayout>
+  -->
+  ```
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-sidedrawer
 ```
 
 ## Initialization
+
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUISideDrawerModule %} from the *nativescript-ui-sidedrawer* plugin has been imported in an `ngModule` in your app. For example:
 
 ``` TypeScript
@@ -67,15 +71,16 @@ The following code snippet is a simple template with a basic setup for RadSideDr
 <snippet id='sidedrawer-getting-started-angular'/>
 <snippet id='sidedrawer-getting-started-angular-css'/>
 
-#### Figure 1. RadSideDrawer's 'tkMainContent'
+### Figure 1. RadSideDrawer's 'tkMainContent'
+
 ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-android-1.png "Side drawer main content on Android.")
 
+### Figure 2. RadSideDrawer's 'tkDrawerContent'
 
-#### Figure 2. RadSideDrawer's 'tkDrawerContent'
 ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-ios-2.png "Drawer content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-android-2.png "Drawer content on Android.")
 
-
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 

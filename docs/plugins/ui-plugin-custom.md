@@ -15,7 +15,7 @@ The article contains information applicable to apps built with NativeScript 3.x.
 
 ## Bootstrap Your Plugin
 
-First things first - you start off from a regular plugin. You can check the [Building Plugins article]({%slug building-plugins%}) for reference.
+First things first - you start off from a regular plugin. You can check the [Building Plugins article]({% slug building-plugins %}) for reference.
 
 ## Common Code
 
@@ -114,7 +114,7 @@ myOpacityProperty.register(Style);
 MyButtonBase.prototype.recycleNativeView = false;
 ```
 
-You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({%slug properties%}).
+You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({% slug properties %}).
 
 ## Platform-specific Code
 
@@ -327,4 +327,4 @@ For more details and the full source code of the described MyButton sample, chec
 
 ## Make Your Plugin Angular-Compatible
 
-Having your UI plugin developed successfully you could easily make it Angular-compatible following the steps described in [Supporting Angular in UI Plugins article]({%slug supporting-angular-in-ui-plugins%}).
+Having your UI plugin developed successfully you could easily make it Angular-compatible following the steps described in [Supporting Angular in UI Plugins article]({% slug supporting-angular-in-ui-plugins %}).

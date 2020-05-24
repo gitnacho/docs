@@ -11,7 +11,7 @@ When writing a plugin that shows some UI, you can take different paths. One of t
 
 ## Bootstrap Your Plugin
 
-First things first - you start off from a regular plugin. You can check the [Building Plugins article]({%slug building-plugins%}) for reference.
+First things first - you start off from a regular plugin. You can check the [Building Plugins article]({% slug building-plugins %}) for reference.
 
 ## Add UI bits
 
@@ -23,9 +23,10 @@ Let's say you want to build a simple meme generator component with three propert
 
 ...and when used in an app it looks like:
 
-![](./img/plugins/ui-plugin-ns-preview.png)
+![ui-plugin-ns-preview](./img/plugins/ui-plugin-ns-preview.png)
 
 You can implement this by creating two files:
+
 * **meme.ts**: Contains properties, the implementation logic, and loads the UI.
 * **meme.xml**: Contains the UI and data bindings.
 
@@ -45,6 +46,7 @@ export class Meme extends GridLayout {
 ```
 
 As you see, in the constructor, we load the UI from the **meme.xml** and set its **bindingContext** to **this**, so that we can bind the XML to the properties:
+
 ``` XML
 <GridLayout rows="auto,*, auto">
     <Label row="0" text="{{ topText }}" fontSize="64" textWrap="true"
@@ -56,7 +58,9 @@ As you see, in the constructor, we load the UI from the **meme.xml** and set its
         horizontalAlignment="center" verticalAlignment="bottom"></Label>
 </GridLayout>
 ```
+
 The properties themselves are declared and registered in the .ts like:
+
 ``` TypeScript
 export const topTextProperty = new Property<Meme, string>({ name: "topText", defaultValue: undefined });
 export const bottomTextProperty = new Property<Meme, string>({ name: "bottomText", defaultValue: undefined });
@@ -73,4 +77,4 @@ For more details and the full source code of the described meme sample, check th
 
 ## Make Your Plugin Angular-Compatible
 
-Having your UI plugin developed successfully you could easily make it Angular-compatible following the steps described in [Supporting Angular in UI Plugins article]({%slug supporting-angular-in-ui-plugins%}).
+Having your UI plugin developed successfully you could easily make it Angular-compatible following the steps described in [Supporting Angular in UI Plugins article]({% slug supporting-angular-in-ui-plugins %}).

@@ -28,7 +28,7 @@ One option to style the labels that are shown for series values is to initialize
 * {% typedoc_link classes:PointLabelStyle,member:textColor %}: Used to specify the color for the text of the labels.
 * {% typedoc_link classes:PointLabelStyle,member:textSize %}: Used to specify the size of the text of the labels.
 * {% typedoc_link classes:PointLabelStyle,member:fontName %}: Used to specify the font name. If it is missing from the OS the default font is used instead.
-* {% typedoc_link classes:PointLabelStyle,member:fontStyle %}: Used to specify the style of font. {% typedoc_link enums:ChartFontStyle,member:Bold%}, {% typedoc_link enums:ChartFontStyle,member:Italic%}, {% typedoc_link enums:ChartFontStyle,member:BoldItalic%} and {% typedoc_link enums:ChartFontStyle,member:Normal%} values can be used. Defaults to {% typedoc_link enums:ChartFontStyle,member:Normal%}.
+* {% typedoc_link classes:PointLabelStyle,member:fontStyle %}: Used to specify the style of font. {% typedoc_link enums:ChartFontStyle,member:Bold %}, {% typedoc_link enums:ChartFontStyle,member:Italic %}, {% typedoc_link enums:ChartFontStyle,member:BoldItalic %} and {% typedoc_link enums:ChartFontStyle,member:Normal %} values can be used. Defaults to {% typedoc_link enums:ChartFontStyle,member:Normal %}.
 
 To better illustrate styling of point label let's look at the following example:
 

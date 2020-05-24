@@ -9,7 +9,7 @@ slug: android-app-bundle
 
 Android App Bundle is a new publishing format that contains all the compiled code and resources of your app, but leaves the actual APK generation and signing to Google Play. The store then uses the app bundle to generate and serve optimized APKs based on the device configuration of the specific user. In general, the benefit of using Android App Bundles is that you no longer have to build, sign, and manage multiple APKs to support different devices, and users get smaller, more optimized downloads. For more information about the Android App Bundle, see the About Android App Bundles article in the official [Android Developer documentation](https://developer.android.com/guide/app-bundle/).
 
-> **Note**: In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack%}#snapshot-per-architecture).
+> **Note**: In order to get a maximum app size reduction, you can combine the Android App Bundle with [a compiled V8 heap snapshot]({% slug bundling-with-webpack %}#snapshot-per-architecture).
 
 ## Produce Android App Bundle
 
@@ -38,7 +38,7 @@ android {
 ....
 ```
 
-> **Note**: If you use the V8 snapshots feature and change the target architectures, you can also apply the same change in the snapshot plugin by providing [it's targetArchs option]({% slug bundling-with-webpack%}#other-options-target-archs) in order to avoid generating redundant snapshots and speed up the app build time.
+> **Note**: If you use the V8 snapshots feature and change the target architectures, you can also apply the same change in the snapshot plugin by providing [it's targetArchs option]({% slug bundling-with-webpack %}#other-options-target-archs) in order to avoid generating redundant snapshots and speed up the app build time.
 
 ## Testing the produced `.aab` file
 

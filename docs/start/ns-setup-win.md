@@ -62,7 +62,7 @@ Complete the following steps to set up NativeScript on your Windows development 
    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
    </code></pre>
 
-1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
+1. Setup Android Emulators (AVD) by following the article [here]({% slug android-emulators %})
 
 1. Install the NativeScript CLI.
    + Run the following command.

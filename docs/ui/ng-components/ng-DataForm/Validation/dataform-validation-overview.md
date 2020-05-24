@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 * [Custom Validation](#custom-validation)
 * [References](#references)
 
-#### Figure 1: How validated field looks on Android (left) and iOS (right)
+## Figure 1: How validated field looks on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Validation-Android](../../../img/ns_ui/dataform-validation-overview-android.png "Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-iOS](../../../img/ns_ui/dataform-validation-overview-ios.png "Validation in DataForm in iOS")
 
@@ -28,7 +28,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 The above image demonstrates the {% typedoc_link classes:MinimumLengthValidator %} for a property of type password. Here's the code to add this validator:
 
-#### Example 1: How to add a MinimumLengthValidator for a property
+### Example 1: How to add a MinimumLengthValidator for a property
 
 <snippet id='dataform-validation-html'/>
 
@@ -38,7 +38,7 @@ You can use more than one validator for a single field and they will be checked 
 
 If you are using [JSON Metadata]({% slug dataform-start-properties-angular %} "Describe the Properties") to setup your properties, you can also declare the validators that you'd like to use through the `validators` key. The value of the validators should be an array of validators, where each validator is an object that has a `name` and optionally `params`. The `params`, if present, is another object containing key value pairs, where the keys are the properties of the validator. Here's an example:
 
-#### Example 2: How to add validators with JSON for a property
+### Example 2: How to add validators with JSON for a property
 
 ``` JSON
 {

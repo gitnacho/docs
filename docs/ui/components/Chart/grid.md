@@ -39,7 +39,7 @@ The grid lines and the stripes between them are controlled by the {% typedoc_lin
 
 To better illustrate the Grid capabilities, let's add the following properties to the grid:
 
-#### Example 1: Grid Styling
+### Example 1: Grid Styling
 
 <snippet id='grid-styling'/>
 

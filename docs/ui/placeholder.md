@@ -34,6 +34,7 @@ function creatingView(args) {
 }
 exports.creatingView = creatingView;
 ```
+
 ``` TypeScript
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
@@ -56,6 +57,7 @@ function creatingView(args) {
 }
 exports.creatingView = creatingView;
 ```
+
 ``` TypeScript
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 

@@ -22,9 +22,11 @@ The next code snippet shows how to change that default value to {% typedoc_link 
 <snippet id='autocomplete-token-vue'/>
 
 ## Plain mode
+
 In plain mode the {% typedoc_link classes:RadAutoCompleteTextView %} displays chosen item as plain text. With this mode only one item can be chosen.
 
 ## Tokens mode
+
 Tokens mode allows multiple choice of items, which are displayed as tokens.
 
 When **RadAutoCompleteTextView**'s `displayMode` is `Tokens`, you can apply two different behaviors for token arrangement.
@@ -37,9 +39,11 @@ The layout mode of the tokens can be changed with the {% typedoc_link enums:RadA
 <snippet id='autocomplete-layouts-wrap-vue'/>
 
 ### Wrap layout
+
 In wrap mode tokens are arranged on multiple lines. Every time a new line is started the **RadAutoCompleteTextView** is expanding in order to show all tokens.
 
 ### Horizontal layout
+
 In horizontal mode tokens are displayed on single line which can be scrolled horizontally in order to display all tokens.
 
 ## References

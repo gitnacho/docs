@@ -20,24 +20,23 @@ This article will guide you through the process of adding a {% typedoc_link clas
 
 In order to use `RadDataForm` to edit an object, we need to have the object that we will edit. In this example, we will create a class `Person`, pass an instance of this class to `RadDataForm` and then we will be able to edit the person's properties.
 
-#### Example 1: Declare the object that we will use as a source for RadDataForm
+### Example 1: Declare the object that we will use as a source for RadDataForm
 
 <snippet id='angular-dataform-person'/>
-
 
 ## Add RadDataForm to the Page
 
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIDataFormModule %} from the *nativescript-ui-dataform* plugin has been imported in an `ngModule` in your app as explained [here]({% slug dataform-overview-angular %}).
 
-After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source%} accordingly:
+After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source %} accordingly:
 
-#### Example 2: Add RadDataForm to a page
+### Example 2: Add RadDataForm to a page
 
 <snippet id='angular-dataform-getting-started-html'/>
 
 Note the [data binding](https://docs.nativescript.org/angular/core-concepts/angular-data-binding.html) of the `source` property of `RadDataForm` to the `person` property of our component. Let's add this property in the `@Component` '.ts' file and initialize it in the `ngOnInit` method:
 
-#### Example 3: Define the property used for binding
+### Example 3: Define the property used for binding
 
 <snippet id='angular-dataform-getting-started-context'/>
 

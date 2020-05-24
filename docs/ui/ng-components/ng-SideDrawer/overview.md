@@ -24,6 +24,7 @@ When using the {% typedoc_link classes:RadSideDrawer %} with Angular you are goi
 Here is a full list of the available custom Angular {% typedoc_link classes:RadListView %} directives and components:
 
 ### Components
+
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |
@@ -31,6 +32,7 @@ Represent the major elements:
 | RadSideDrawer | {% typedoc_link classes:RadSideDrawerComponent %} |
 
 ### Inline Directives
+
 Represent the 'link' mechanism of the smaller with the major elements
 
 | Selector          | Class (more details)                                  |

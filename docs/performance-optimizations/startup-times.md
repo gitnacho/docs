@@ -80,12 +80,12 @@ By enabling webpack, using UglifyJS, and performing V8 heap snapshot builds, you
 
 1. Run on iOS with, UglifyJS, and Angular Ahead-of-Time enabled.
 
-``` Shell
-tns run ios --env.uglify --env.aot
-```
+   ``` Shell
+   tns run ios --env.uglify --env.aot
+   ```
 
 1. Run on Android with, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.
 
-``` Shell
-tns run android --env.uglify --env.aot --env.snapshot
-```
+   ``` Shell
+   tns run android --env.uglify --env.aot --env.snapshot
+   ```

@@ -14,11 +14,13 @@ The Week view mode practically is the same as Month view mode, that's why the sa
 In order to apply custom style for this mode, you need to initialize the `weekViewStyle` property of `RadCalendar` with instance of `CalendarWeekViewStyle`.
 
 ## Example
+
 Here's a code snippet demonstrating the usage of the properties of the Style objects mentioned above:
 
 <snippet id='calendar-weekview-styling'/>
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

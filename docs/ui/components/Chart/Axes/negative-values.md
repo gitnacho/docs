@@ -17,10 +17,9 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 
 ## Getting Started
 
-By default the {% typedoc_link classes:LinearAxis %} supports the use of negative values. You can set the {% typedoc_link classes:LinearAxis,member:minimum%} minimum and/or the {% typedoc_link classes:LinearAxis,member:maximum%} to negative values.
+By default the {% typedoc_link classes:LinearAxis %} supports the use of negative values. You can set the {% typedoc_link classes:LinearAxis,member:minimum %} minimum and/or the {% typedoc_link classes:LinearAxis,member:maximum %} to negative values.
 
-
-#### Example 1: Using Negative Values
+### Example 1: Using Negative Values
 
 <snippet id='negative-values'/>
 

@@ -123,6 +123,7 @@ The following is an example of a `package.json` file for a NativeScript plugin w
 ```
 
 The above configuration states that the plugin requires iOS runtime version 4.0.0 and up or Android runtime version 4.1.0 and up.
+
 > **Note**: In case your plugin supports only iOS or Android, make sure to remove the platform which is not supported.
 
 ### Include.gradle Specification
@@ -189,7 +190,7 @@ OTHER_LDFLAGS = $(inherited) -framework "QuartzCore" -l"sqlite3"
 
 ### Metadata filtering usage specifications
 
-Application author can opt-in for native metadata filtering. Plugins should supply their metadata filtering rules in `platforms/android/native-api-usage.json` and `platforms/ios/native-api-usage.json` files respectively. For more detailed description of this feature read [this article]({% slug metadata%})
+Application author can opt-in for native metadata filtering. Plugins should supply their metadata filtering rules in `platforms/android/native-api-usage.json` and `platforms/ios/native-api-usage.json` files respectively. For more detailed description of this feature read [this article]({% slug metadata %})
 
 ## Install a Plugin
 

@@ -43,8 +43,8 @@ Customization of month cels is done by initializing the `monthCellStyle` with in
 * `monthNameFontStyle` - defines the font style for month title in cell.
 * `monthNameTextSize` - defines the text size for month title in cell.
 
-
 ## Example
+
 Here's an example of using the properties mentioned above:
 
 <snippet id='calendar-yearview-styling'/>
@@ -54,6 +54,7 @@ This is how the calendar looks like in that case:
 ![Calendar year view styling](../../../img/ns_ui/calendar_styling_year_ios.png "iOS")      ![Calendar year view styling](../../../img/ns_ui/calendar_styling_year_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

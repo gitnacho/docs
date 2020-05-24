@@ -11,7 +11,7 @@ class TypeDocLinkTag < Liquid::Tag
         end
         page_url = context.environments.first["page"]["url"]
         localSite = context['site']
-       
+
         apiRefUrl = localSite['apirefurl']
 
         moduleInfo = @arguments[0].split(":")

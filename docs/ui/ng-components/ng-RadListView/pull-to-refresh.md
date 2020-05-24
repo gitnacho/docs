@@ -9,9 +9,11 @@ publish: true
 ---
 
 # RadListView Pull to Refresh
+
 Pull-to-refresh allows you to implement a mechanism for refreshing ListView's content upon user's request. The request is done by swiping (pulling) down the list and releasing it. This experience is common in many mobile apps and is used in scenarios where a list needs to be updated with the most recent changes.
 
 ## Using Pull-to-Refresh with RadListView for Angular
+
 To enable the pull-to-refresh feature you need to follow the steps outlined below:
 
 1. Set the `pullToRefresh` property on `RadListView` to true.

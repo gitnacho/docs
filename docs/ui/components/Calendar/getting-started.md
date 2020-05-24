@@ -9,16 +9,19 @@ publish: true
 ---
 
 # RadCalendar Getting Started
+
 This article will guide you through the process of adding a {% typedoc_link classes:RadCalendar %} instance to a page in a **{N}** application. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 ## Installation
+
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-calendar
 ```
 
 ## Initialization
+
 Then, in order to add a {% typedoc_link classes:RadCalendar %} instance in a page of your application, you need to define the following XML namespace:
 
 * `xmlns:calendar="nativescript-ui-calendar"`.
@@ -34,6 +37,7 @@ This will initialize a new {% typedoc_link classes:RadCalendar %} instance and p
 ![TelerikUI RadCalendar: Getting Started](../../img/ns_ui/calendar-getting-started_android.png "Android")   ![TelerikUI RadCalendar: Getting Started](../../img/ns_ui/calendar-getting-started_ios.png "iOS")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

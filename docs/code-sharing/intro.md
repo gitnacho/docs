@@ -297,59 +297,59 @@ However, in this case, the build process won't detect automatically the module f
 
 1. If the module is mobile-only, update the mobile configuration:
 
-  **tsconfig.tns.json**:
+   **tsconfig.tns.json**:
 
-  ``` JSON
-  {
-    ...
-    "files": [
-      "src/main.tns.ts",
-      "src/app/lazy/lazy.module.tns.ts"
-    ]
-  }
-  ```
+   ``` JSON
+   {
+     ...
+     "files": [
+       "src/main.tns.ts",
+       "src/app/lazy/lazy.module.tns.ts"
+     ]
+   }
+   ```
 
 1. If the module is web-only, update the web configuration file:
 
-  **tsconfig.app.json**:
+   **tsconfig.app.json**:
 
-  ``` JSON
-  {
-    ...
-    "files": [
-      "src/main.ts",
-      "src/polyfills.ts",
-      "src/app/lazy/lazy.module.ts"
-    ]
-  }
-  ```
+   ``` JSON
+   {
+     ...
+     "files": [
+       "src/main.ts",
+       "src/polyfills.ts",
+       "src/app/lazy/lazy.module.ts"
+     ]
+   }
+   ```
 
 1. If the module is shared, update both configuration files:
 
-  **tsconfig.tns.json**:
+   **tsconfig.tns.json**:
 
-  ``` JSON
-  {
-    ...
-    "files": [
-      "src/main.tns.ts",
-      "src/app/lazy/lazy.module.ts"
-    ]
-  }
-  ```
+   ``` JSON
+   {
+     ...
+     "files": [
+       "src/main.tns.ts",
+       "src/app/lazy/lazy.module.ts"
+     ]
+   }
+   ```
 
-  **tsconfig.app.json**:
+   **tsconfig.app.json**:
 
-  ``` JSON
-  {
-    ...
-    "files": [
-      "src/main.ts",
-      "src/polyfills.ts",
-      "src/app/lazy/lazy.module.ts"
-    ]
-  }
-  ```
+   ``` JSON
+   {
+     ...
+     "files": [
+       "src/main.ts",
+       "src/polyfills.ts",
+       "src/app/lazy/lazy.module.ts"
+     ]
+   }
+   ```
 
 ## What’s next?
 

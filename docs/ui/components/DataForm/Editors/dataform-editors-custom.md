@@ -12,7 +12,7 @@ publish: true
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors list]({% slug dataform-editors-list %} "Editors List in RadDataForm for NativeScript") article demonstrated the available editors. This article will show you what to do if the editor you would like to use is not on the list with available editors. For example, if we wanted to have a `Button` to change the value of the property age in this example, we could use <a href="https://developer.android.com/reference/android/widget/Button.html" target="_blank">android.widget.Button</a> in Android and <a href="https://developer.apple.com/reference/uikit/uiview" target="_blank">UIButton</a> in iOS.
 
-#### Figure 1: RadDataForm with custom editor
+## Figure 1: RadDataForm with custom editor
 
 ![NativeScriptUI-DataForm-Custom-Editors-Android](../../../img/ns_ui/dataform-editors-custom-android.png "Custom Editors in RadDataForm in Android") ![NativeScriptUI-DataForm-Custom-Editors-iOS](../../../img/ns_ui/dataform-editors-custom-ios.png "Custom Editors in RadDataForm in iOS")
 
@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 In this article you will learn how to create a custom editor that uses native `Button` controls to change its value as in the screenshot above. First, you will need to set an instance of {% typedoc_link classes:CustomPropertyEditor %} as the editor of the `EntityProperty` associated with the property of the source object that we want to edit with a custom editor (in our example this is the `age` property):
 
-#### Example 1: RadDataForm with custom editor
+### Example 1: RadDataForm with custom editor
 
 <snippet id='dataform-editor-custom-xml'/>
 
@@ -41,7 +41,7 @@ Here's what we are expected to do in the handlers of each of the mentioned event
 
 This is the Android implementation of the mentioned event handlers:
 
-#### Example 2: Custom editor implementation for Android
+### Example 2: Custom editor implementation for Android
 
 <snippet id='dataform-custom-editors-android'/>
 
@@ -49,7 +49,7 @@ Notice that we called the {% typedoc_link classes:CustomPropertyEditor,member:no
 
 Here's the iOS implementation of the same event handlers:
 
-#### Example 3: Custom editor implementation for iOS
+### Example 3: Custom editor implementation for iOS
 
 <snippet id='dataform-custom-editors-ios'/>
 

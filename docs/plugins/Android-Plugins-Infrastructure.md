@@ -49,7 +49,7 @@ my-plugin/
 You can find more information on the common parts of the NativeScript plugins like the `package.json` and js modules [here]({% slug plugins-infrastructure %}).
 
 * `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory.
-* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file]({% slug gradle-hooks%}#plugins-includegradle).
+* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file]({% slug gradle-hooks %}#plugins-includegradle).
 * `platforms\android\MyLibrary.aar` is an Android library. You can read more about the `.aar` format [here](http://tools.android.com/tech-docs/new-build-system/aar-format).
 * `platforms\android\MyLibrary.jar` is a library. You can read more about the `.jar` format [here](https://en.wikipedia.org/wiki/JAR_(file_format))
 

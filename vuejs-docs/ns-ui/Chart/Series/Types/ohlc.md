@@ -18,6 +18,7 @@ publish: true
 ## Setup
 
 To display an Ohlc Chart, you will need to:
+
 * Add a **RadCartesianChart** to your component.
 * Add a category axis (**CategoricalAxis**, **DateTimeCategoricalAxis** or **DateTimeContinuousAxis**) with the **v-tkCartesianHorizontalAxis** directive.
 * Add a value axis (**LinearAxis** or **LogarithmicAxis**) with the **v-tkCartesianVerticalAxis** directive.
@@ -25,13 +26,13 @@ To display an Ohlc Chart, you will need to:
 
 To illustrate this setup, let's create an example. Just like with all vue 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
- #### Example 1: Define a collection of items
+### Example 1: Define a collection of items
 
- <snippet id='chart-get-financial-data'/>
+<snippet id='chart-get-financial-data'/>
 
- #### Example 2: Add chart to component's template
+### Example 2: Add chart to component's template
 
- <snippet id='chart-ohlc-series-vue'/>
+<snippet id='chart-ohlc-series-vue'/>
 
 #### Figure 1: Chart with OhlcSeries on Android (left) and iOS (right)
 

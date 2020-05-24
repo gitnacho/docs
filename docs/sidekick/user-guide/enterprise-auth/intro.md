@@ -43,7 +43,7 @@ Once you’ve figured out which protocol your service supports, you should head 
 
 Each authentication service requires a different set of values needed to make the connection. Therefore, refer to one of the following guides to help complete the rest of the necessary configuration.
 
-* [Configuring **SAML-Redirect** Authentication]({% slug saml%})
+* [Configuring **SAML-Redirect** Authentication]({% slug saml %})
 * [Configuring **OpenID Connect** Authentication]({% slug openid %})
 * [Configuring **OAuth 2** Authentication]({% slug oauth2 %})
 

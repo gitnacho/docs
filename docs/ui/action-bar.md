@@ -398,11 +398,11 @@ Here is an example of showing different action items when the app is in "editing
 ``` XML
 <ActionBar title="Action Items Visibility">
   <ActionItem tap="onEdit" ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"
-      {%raw%}visibility="{{ isEditing ? 'collapse' : 'visible' }}"/>{%endraw%}
+      {% raw %}visibility="{{ isEditing ? 'collapse' : 'visible' }}"/>{% endraw %}
   <ActionItem tap="onSave" ios.systemIcon="3" android.systemIcon="ic_menu_save" ios.position="right"
-      {%raw%}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{%endraw%}
+      {% raw %}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{% endraw %}
   <ActionItem tap="onCancel"  ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel"
-      {%raw%}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{%endraw%}
+      {% raw %}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{% endraw %}
 </ActionBar>
 ```
 

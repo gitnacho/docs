@@ -34,7 +34,7 @@ Plugins can declare their list of APIs that are called from JavaScript using a f
 
 Applications have the final word of what filtering will be applied to metadata. They provide similar `native-api-usage.json` files, located in `App_Resources/Android` and `App_Resources/iOS`, having the following format:
 
-``` JavaScript
+``` JSON
 {
     "whitelist-plugins-usages": true,
     "whitelist": [

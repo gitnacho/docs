@@ -9,12 +9,14 @@ publish: true
 ---
 
 # RadListView Overview
+
 Header and Footer are a special kind of elements that are displayed at the beginning and at the end of the scrollable data list. They are part of the core functionality of `RadListView` and are exposed through two special `<v-template name="header">` and `<v-template name="footer">` components (See [v-template docs](https://nativescript-vue.org/en/docs/utilities/v-template/)). This article explains how Header and Footer are defined on {% typedoc_link classes:RadListViewComponent %}  with Vue.
 
 ## Defining Header and Footer
+
 The following code snippet demonstrates a sample scenario in which a header and a footer are shown on a `RadListView` instance:
 
-```
+``` TypeScript
 export default {
   template: `
   <Page>

@@ -25,6 +25,7 @@ In the snippet above we are creating a simple ListView with a registered handler
 <snippet id='listview-item-loading-model'/>
 
 The `args` object exposes the following important properties:
+
 * `itemIndex` - the data source index of the item currently being visualized
 * `view` - the {N} view that represents the visual container for the item
 * `ios` (iOS specific) - exposes the native iOS cell used to visualize the item

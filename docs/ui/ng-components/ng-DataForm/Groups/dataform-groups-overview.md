@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 * [Add Groups with JSON](#add-groups-with-json)
 * [References](#references)
 
-#### Figure 1: Show the editors in groups in RadDataForm on Android (left) and iOS (right)
+## Figure 1: Show the editors in groups in RadDataForm on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Groups-Android](../../../img/ns_ui/dataform-groups-overview-android.png "Groups in RadDataForm in Android") ![NativeScriptUI-DataForm-Groups-iOS](../../../img/ns_ui/dataform-groups-overview-ios.png "Groups in RadDataForm in iOS")
 
@@ -26,7 +26,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 Adding groups to `RadDataForm` and specifying which property belongs to each group is done very intuitively with the HTML. Instead of adding each `TKEntityProperty` to `RadDataForm` directly with the `tkDataFormProperty` directive, we add groups to `RadDataForm` and the we add each `EntityProperty` to its own group with the `tkPropertyGroupProperties`. The following example demonstrates how.
 
-#### Example 1: Add groups to RadDataForm
+### Example 1: Add groups to RadDataForm
 
 <snippet id='angular-dataform-groups-html'/>
 
@@ -36,20 +36,21 @@ Note the {% typedoc_link classes:PropertyGroup,member:collapsible %} property of
 
 * First we will need to pass the RadDataForm instance to the Angular `@Component`. We can easily do that via the `@ViewChild` mechanism, the `dataformAngularModule` is the `nativescript-ui-dataform/angular` module:
 
-#### Example 2: Access the RadDataFormComponent
+### Example 2: Access the RadDataFormComponent
 
 <snippet id='angular-runtime-viewchild-html'/>
 <snippet id='angular-runtime-viewchild-code'/>
 
-* This will inject the {% typedoc_link classes:RadDataFormComponent %} into the `myRuntimeDataFormComp` property. In order to access the {% typedoc_link classes:RadDataForm %} element simply use the  {% typedoc_link classes:RadDataFormComponent,member:dataForm%} property:
+* This will inject the {% typedoc_link classes:RadDataFormComponent %} into the `myRuntimeDataFormComp` property. In order to access the {% typedoc_link classes:RadDataForm %} element simply use the  {% typedoc_link classes:RadDataFormComponent,member:dataForm %} property:
 
-#### Example 3: Adjust group's property through code
+### Example 3: Adjust group's property through code
 
 <snippet id='angular-dataform-groups-code'/>
 
 ## Events
 
 {% typedoc_link classes:RadDataForm %} provides the following group related events:
+
 * **groupUpdate** - fired when the a group is being setup and can be used for customizations of the native groups
 * **groupExpanded** and **groupCollapsed** - to notify you when a group is collapsed or expanded, if the group supports collapsing.
 
@@ -59,48 +60,48 @@ These events provide event arguments which have a property {% typedoc_link class
 
 If you are using [JSON metadata]({% slug dataform-start-properties-angular %}#adjust-editors-with-json) to setup the `RadDataForm`, you can also apply grouping to the properties. Just add `groupName` to each property inside the `propertyAnnotations` array.
 
-#### Example 4: Sample JSON metadata for RadDataForm
+### Example 4: Sample JSON metadata for RadDataForm
 
 ``` JSON
 {
-	"propertyAnnotations":
-	[
-		{
-			"name": "city",
-			"index": 3,
-			"groupName": "Address",
-			"editor": "Picker",
-			"valuesProvider": ["New York", "Washington", "Los Angeles"]
-		},
-		{
-			"name": "street",
-			"index": 4,
-			"groupName": "Address"
-		},
-		{
-			"name": "streetNumber",
-			"index": 5,
-			"editor": "Number",
-			"groupName": "Address"
-		},
-		{
-			"name": "age",
-			"index": 1,
-			"editor": "Number",
-			"groupName": "Main Info"
-		},
-		{
-			"name": "email",
-			"index": 2,
-			"editor": "Email",
-			"groupName": "Main Info"
-		},
-		{
-			"name": "name",
-			"index": 0,
-			"groupName": "Main Info"
-		}
-	]
+    "propertyAnnotations":
+    [
+        {
+            "name": "city",
+            "index": 3,
+            "groupName": "Address",
+            "editor": "Picker",
+            "valuesProvider": ["New York", "Washington", "Los Angeles"]
+        },
+        {
+            "name": "street",
+            "index": 4,
+            "groupName": "Address"
+        },
+        {
+            "name": "streetNumber",
+            "index": 5,
+            "editor": "Number",
+            "groupName": "Address"
+        },
+        {
+            "name": "age",
+            "index": 1,
+            "editor": "Number",
+            "groupName": "Main Info"
+        },
+        {
+            "name": "email",
+            "index": 2,
+            "editor": "Email",
+            "groupName": "Main Info"
+        },
+        {
+            "name": "name",
+            "index": 0,
+            "groupName": "Main Info"
+        }
+    ]
 }
 ```
 
@@ -108,15 +109,15 @@ If you are using [JSON metadata]({% slug dataform-start-properties-angular %}#ad
 
 In order to achieve the same look as the group in the above image, we need to also make the new groups collapsible. This can be done through the native groups that are accessible through the `groupUpdate` event:
 
-```
+``` JavaScript
 public onGroupUpdate(args) {
-	if (ios) {
-		let nativeGroup: TKEntityPropertyGroupView = args.group;
-		nativeGroup.collapsible = true;
-	} else {
-		let nativeGroup: com.telerik.widget.dataform.visualization.ExpandableEditorGroup = args.group;
-		nativeGroup.setExpandable(true);
-	}
+    if (ios) {
+        let nativeGroup: TKEntityPropertyGroupView = args.group;
+        nativeGroup.collapsible = true;
+    } else {
+        let nativeGroup: com.telerik.widget.dataform.visualization.ExpandableEditorGroup = args.group;
+        nativeGroup.setExpandable(true);
+    }
 }
 ```
 

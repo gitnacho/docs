@@ -21,8 +21,9 @@ Most of them provide error/warning and suggest an action.
 
 1. Missing installed appium. To resolve it install appium globally.
 
-    ```
-    npm i -g appium
-    ```
+   ``` Shell
+   npm i -g appium
+   ```
+
 1. Misleading appPath or capabilities location. Please make sure that the path to the app or capabilities location is correct.
 1. Misleading details for device specified in appium config. If the plugin fails to find the emulator/simulator you have, check that the *avd*, *platformName*, *deviceName* or any other related capability is properly set.

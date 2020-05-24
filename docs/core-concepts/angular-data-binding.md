@@ -29,10 +29,10 @@ Let's see some examples how to use data binding with `nativeScript-angular` plug
   <Label [text]='model.mytext' ></Label>
   ```
 
-``` TypeScript
-this.model.mytext = 'Lorem ipsum ...';
-// this is the component where label is added
-```
+  ``` TypeScript
+  this.model.mytext = 'Lorem ipsum ...';
+  // this is the component where label is added
+  ```
 
 * One-way to source data binding - surround source event with brackets
 
@@ -92,10 +92,10 @@ This is the way Angular supports two-way data binding. It generally works in alm
 
 ## Interpolation
 
-Angular mustache {%raw%}(`{{ }}`){%endraw%} syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
+Angular mustache {% raw %}(`{{ }}`){% endraw %} syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ``` XML
-{%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}
+{% raw %}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{% endraw %}
 ```
 
 ``` TypeScript

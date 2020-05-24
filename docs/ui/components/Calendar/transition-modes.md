@@ -9,9 +9,11 @@ publish: true
 ---
 
 # RadCalendar Transition Modes
+
 * {% typedoc_link classes:RadCalendar %} supports different animations when switching between months, weeks or years. These are also called *transitions*. Defining a transition is done by setting the - {% typedoc_link classes:RadCalendar,member:transitionMode %} property to one of the values enlisted by the `CalendarTransitionModes` enum.
 
 ## Available Transition Modes
+
 * {% typedoc_link enums:CalendarTransitionMode,member:None %} - Transitions with gestures are disabled and no animation is applied when transitioning programmatically. Available in iOS and Android.
 * {% typedoc_link enums:CalendarTransitionMode,member:Slide %} - Slide animation is applied when transitioning between views in *RadCalendar*. Available in iOS and Android.
 * {% typedoc_link enums:CalendarTransitionMode,member:Stack %} -  Stack animation is applied when transitioning between views in *RadCalendar*. Available in iOS and Android.
@@ -25,6 +27,7 @@ publish: true
 * {% typedoc_link enums:CalendarTransitionMode,member:Overlap %} -  Views overlap when transitioning in *RadCalendar*. Available only in Android.
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

@@ -36,7 +36,7 @@ The chart has its predefined palettes that provide an automatic selection of col
 
 All of the above properties can also be applied through [css](https://docs.nativescript.org/ui/styling). Here's an example to style a chart with BarSeries:
 
-#### Example 1: Apply BarSeries styles through CSS
+### Example 1: Apply BarSeries styles through CSS
 
 ``` CSS
 BarSeries {
@@ -80,19 +80,19 @@ Information about styling the labels of the series in NativeScript UI Chart is a
 
 ## Styling with Palettes
 
-Another option for styling of the chart series is to use Palettes. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette can contain multiple {% typedoc_link classes:PaletteEntry %} instances. When declaring the {% typedoc_link classes:Palette %} instances, set their {% typedoc_link classes:Palette,member:seriesName%} and set the **`tkCartesianPalette`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePalette`** for {% typedoc_link classes:RadPieChart %}). Also for each {% typedoc_link classes:PaletteEntry %} instance set the **`tkCartesianPaletteEntry`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePaletteEntry`** for {% typedoc_link classes:RadPieChart %}). Each **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
+Another option for styling of the chart series is to use Palettes. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette can contain multiple {% typedoc_link classes:PaletteEntry %} instances. When declaring the {% typedoc_link classes:Palette %} instances, set their {% typedoc_link classes:Palette,member:seriesName %} and set the **`tkCartesianPalette`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePalette`** for {% typedoc_link classes:RadPieChart %}). Also for each {% typedoc_link classes:PaletteEntry %} instance set the **`tkCartesianPaletteEntry`** directive when used with {% typedoc_link classes:RadCartesianChart %} (or **`tkPiePaletteEntry`** for {% typedoc_link classes:RadPieChart %}). Each **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
 
-* {% typedoc_link classes:PaletteEntry,member:fillColor%}
-* {% typedoc_link classes:PaletteEntry,member:strokeColor%}
-* {% typedoc_link classes:PaletteEntry,member:strokeWidth%}
+* {% typedoc_link classes:PaletteEntry,member:fillColor %}
+* {% typedoc_link classes:PaletteEntry,member:strokeColor %}
+* {% typedoc_link classes:PaletteEntry,member:strokeWidth %}
 
 To better illustrate the usage of Palettes, we will use a scenario with three series of different kind which are customized:
 
-#### Example 3: Chart with Palettes
+### Example 3: Chart with Palettes
 
 <snippet id='chart-styling-vue'/>
 
-Our palette consists of a single entry that defines values for {% typedoc_link classes:PaletteEntry,member:fillColor%}, {% typedoc_link classes:PaletteEntry,member:strokeColor%} and {% typedoc_link classes:PaletteEntry,member:strokeWidth%}. What remains to be done is mapping the palette to the series it is meant to style. This is done by setting the **`seriesName`** property on the series and the palette to the same key. As you can see, the `seriesName` property is set to the Palette and the series to the same value - in that case *Bar*, *Area* and *Line*. You can use any string token here assuming it is the same on the corresponding series and the palette, as it serves as a mapping key between both.
+Our palette consists of a single entry that defines values for {% typedoc_link classes:PaletteEntry,member:fillColor %}, {% typedoc_link classes:PaletteEntry,member:strokeColor %} and {% typedoc_link classes:PaletteEntry,member:strokeWidth %}. What remains to be done is mapping the palette to the series it is meant to style. This is done by setting the **`seriesName`** property on the series and the palette to the same key. As you can see, the `seriesName` property is set to the Palette and the series to the same value - in that case *Bar*, *Area* and *Line*. You can use any string token here assuming it is the same on the corresponding series and the palette, as it serves as a mapping key between both.
 
 The images below demonstrates the result of applying this palette to the Bar series:
 
@@ -106,9 +106,9 @@ If you want to specify additional style for selected state of the series you nee
 
 ## Changing Palette Mode
 
-By default, the provided palettes (or the default colors) are applied per series, i.e. the first PaletteEntry from a palette will be applied to each of the items in the series. The {% typedoc_link classes:CartesianSeries,member:paletteMode%} property can be used to change the way the palette is applied, i.e. the first PaletteEntry from the palette to be applied to the first item in the series, the second PaletteEntry to the second item, etc. You can choose from the following `paletteMode` values: {% typedoc_link enums:ChartSeriesPaletteMode,member:Series%} or {% typedoc_link enums:ChartSeriesPaletteMode,member:Item%} depending on how you want the palette to be applied.
+By default, the provided palettes (or the default colors) are applied per series, i.e. the first PaletteEntry from a palette will be applied to each of the items in the series. The {% typedoc_link classes:CartesianSeries,member:paletteMode %} property can be used to change the way the palette is applied, i.e. the first PaletteEntry from the palette to be applied to the first item in the series, the second PaletteEntry to the second item, etc. You can choose from the following `paletteMode` values: {% typedoc_link enums:ChartSeriesPaletteMode,member:Series %} or {% typedoc_link enums:ChartSeriesPaletteMode,member:Item %} depending on how you want the palette to be applied.
 
-#### Figure 4: Bar Series styles on Android (left) and iOS (right)
+### Figure 4: Bar Series styles on Android (left) and iOS (right)
 
 ![Chart styling: PaletteMode](../../../../ui/img/ns_ui/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](../../../../ui/img/ns_ui/series_styling_bar_ios.png "iOS")
 

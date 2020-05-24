@@ -20,7 +20,7 @@ In this article, you will learn to start using NativeScript UI Chart: how to ini
 
 Run the following command to add the plugin to your application:
 
-```
+``` Shell
 tns plugin add nativescript-ui-chart
 ```
 
@@ -28,7 +28,7 @@ tns plugin add nativescript-ui-chart
 
 Before proceeding, make sure that the `nativescript-ui-chart/vue` plugin is installed in your main application file (usually `main.js` or `main.ts`). This plugin handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
 
-#### Example 1: Register Chat Vue component
+### Example 1: Register Chat Vue component
 
 <snippet id='chart-imports-vue'/>
 

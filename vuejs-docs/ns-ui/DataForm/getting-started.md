@@ -40,7 +40,7 @@ Add this to the main Javascript or Typescript file, usually called `main.js` or 
 
 Before proceeding, make sure that the `nativescript-ui-dataform/vue` module is required inside your application. This module handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
 
-After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source%} accordingly:
+After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source %} accordingly:
 
 * Add RadDataForm to a page
 

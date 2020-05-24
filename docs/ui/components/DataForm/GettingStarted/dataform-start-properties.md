@@ -18,7 +18,7 @@ If you followed the article about [providing the source]({% slug dataform-start-
 * [Adjust Editors with JSON](#adjust-editors-with-json)
 * [References](#references)
 
-#### Figure 1: How RadDataForm can look if we describe the editors that will be used on Android (left) and iOS (right)
+## Figure 1: How RadDataForm can look if we describe the editors that will be used on Android (left) and iOS (right)
 
 ![NativeScriptUI-DataForm-Getting-Started-Android](../../../img/ns_ui/dataform-start-properties-android.png "RadDataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](../../../img/ns_ui/dataform-start-properties-ios.png "RadDataForm in iOS")
 
@@ -44,7 +44,7 @@ The {% typedoc_link classes:EntityProperty %} is a helper class that allows you 
 
 One way to use the {% typedoc_link classes:EntityProperty %} class to adjust the editors is to declare an `EntityProperty` for each property of your source object in the xml and set the desired values. Here's an example:
 
-#### Example 1: Use EntityProperty in XML
+### Example 1: Use EntityProperty in XML
 
 <snippet id='dataform-adjustment-xml'/>
 
@@ -56,7 +56,7 @@ Now if you run the application, you should get a result like in the image shown 
 
 Another way to make changes of each {% typedoc_link classes:EntityProperty %} is through [code-behind](https://docs.nativescript.org/tutorial/chapter-3#31-the-code-behind). You can access the {% typedoc_link classes:EntityProperty %} instance for each property of your source object by passing its name to the {% typedoc_link classes:RadDataForm,member:getPropertyByName %} method. Then you can change the value of each of its properties except from {% typedoc_link classes:EntityProperty,member:name %} which is used to correctly link the `EntityProperty` objects with the properties of the source object:
 
-#### Example 2: Use EntityProperty in code-behind
+### Example 2: Use EntityProperty in code-behind
 
 <snippet id='dataform-getting-started-runtime-change'/>
 
@@ -64,7 +64,7 @@ Another way to make changes of each {% typedoc_link classes:EntityProperty %} is
 
 You can also use json with a list of property annotations which will be used to setup the `EntityProperty` for each property. Here's an example content of a json file which can be used to achieve the same look of `RadDataForm` from the image in the beginning of the article:
 
-#### Example 3: Sample JSON metadata for RadDataForm
+### Example 3: Sample JSON metadata for RadDataForm
 
 ``` JSON
 {
@@ -114,7 +114,7 @@ You can also use json with a list of property annotations which will be used to 
 
 The parsed content of the file is then passed to `RadDataForm` through its {% typedoc_link classes:RadDataForm,member:metadata %} property:
 
-#### Example 4: Set RadDataForm's metadata property
+### Example 4: Set RadDataForm's metadata property
 
 <snippet id='dataform-metadata-xml'/>
 

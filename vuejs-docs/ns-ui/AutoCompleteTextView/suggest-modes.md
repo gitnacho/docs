@@ -25,11 +25,13 @@ In `Suggest` mode the autocomplete represents the filtered suggestions, matching
 <snippet id='autocomplete-suggest-mode-vue'/>
 
 ## Append Mode
+
 In `Append` mode the autocomplete shows only the first suggestion matching the typed text, which is represented as direct suffix of the typed text.
 
 <snippet id='autocomplete-append-mode-vue'/>
 
 ## Suggest-Append Mode
+
 In `SuggestAppend` mode the autocomplete combines both upper-mentioned modes. It shows all matching suggestions in a pop-up view and the first of them is appended to the typed text.
 
 <snippet id='autocomplete-suggest-append-mode-vue'/>

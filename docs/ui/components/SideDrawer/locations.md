@@ -7,7 +7,9 @@ tags: sidedrawer, features, drawer, location, nativescript, professional, ui
 position: 4
 publish: true
 ---
+
 # RadSideDrawer Location
+
 Depending on the application scenario, {% typedoc_link classes:RadSideDrawer %} can be configured to display at a specific location on the screen. This also changes the way the transition animation is applied. Setting the location can be done by setting the **drawerLocation** property to a value from the {% typedoc_link enums:SideDrawerLocation %} enumeration:
 
 * {% typedoc_link enums:SideDrawerLocation,member:Top %}
@@ -21,6 +23,7 @@ Changing the drawer location is done by setting one of the four possible values 
 <snippet id='sidedrawer-setting-location-xml'/>
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

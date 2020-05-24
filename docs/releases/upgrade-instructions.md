@@ -67,7 +67,7 @@ This command will perform all the required updates of packages and changes in th
 
 You should execute the **update** command in the root folder of your project to upgrade it with the latest versions of iOS/Android runtimes and cross-platform modules.
 
->The **update** command is introduced in version 2.4 of NativeScript CLI. You should update NativeScript CLI before using this command.
+> The **update** command is introduced in version 2.4 of NativeScript CLI. You should update NativeScript CLI before using this command.
 
 ``` Shell
 tns update

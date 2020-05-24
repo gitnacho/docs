@@ -23,7 +23,7 @@ Here is the list of the four main blank templates depending on the coding langua
 
 Creating your template is as simple as cloning the wanted template repository and modifying the source code to satisfy your business logic.
 
-``` Git
+``` Shell
 git clone https://github.com/NativeScript/template-blank-ts.git
 ```
 

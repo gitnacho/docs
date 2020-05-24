@@ -43,7 +43,7 @@ Adding annotations to chart can be done through the {% typedoc_link classes:RadC
 
 The {% typedoc_link classes:ChartGridLineAnnotation %} represents a vertical or horizontal line that crosses the entire plot area at specific value of the assigned axis. There is a mandatory property **value** that have to be initialized with an appropriate axis value. Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart.  Different set of options determines the visual state and position of annotations and one of the annotations is hidden.
 
-#### Example 1: A Cartesian Chart with a Grid Line Annotations
+### Example 1: A Cartesian Chart with a Grid Line Annotations
 
 <snippet id='grid-line-annotations'/>
 
@@ -53,13 +53,12 @@ This will produce a page showing a Chart with annotations that will look like:
 
 ![TelerikUI-Chart-Annotations](../../img/ns_ui/grid_line_annotations_android.png "Grid line annotations sample on Android") ![TelerikUI-Chart-Annotations](../../img/ns_ui/grid_line_annotations_ios.png "Grid line annotations sample on iOS")
 
-
 ## Plot Band Annotations
 
 The {% typedoc_link classes:ChartPlotBandAnnotation %} represents a vertical or horizontal area that crosses the entire plot area. Here is an example that demonstrates how to define a horizontal {% typedoc_link classes:ChartPlotBandAnnotation %} in the chart that we have created above.
 There are two additional values that need to be provided along with {% typedoc_link classes:CartesianChartAnnotation,member:axisID %}, {% typedoc_link classes:ChartPlotBandAnnotation,member:minValue %} and {% typedoc_link classes:ChartPlotBandAnnotation,member:maxValue %} that will determine the range for the annotation. There is one additional property **fillColor** that determines the fill color of the band. Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart:
 
-#### Example 2: A Cartesian Chart with a Plot Band Annotations
+### Example 2: A Cartesian Chart with a Plot Band Annotations
 
 <snippet id='plot-band-annotations'/>
 

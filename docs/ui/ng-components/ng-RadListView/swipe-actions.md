@@ -9,6 +9,7 @@ publish: true
 ---
 
 # RadListView Swipe Actions
+
 The "Swipe Actions" feature allows you to implement actions associated with list items which are triggered by swiping the item left or right. For examples, you can organize a TO-DO application and let your users complete or delete to-do items by swiping them. Similar scenarios are also to be found in famous e-mail client apps.
 The "Swipe Actions" feature supports the use of interactive elements within the item being swiped, i.e. the main content of the item.
 
@@ -37,15 +38,18 @@ Second, you need to define the content that will be shown to the user when they 
 The swipe template will be a `GridLayout` with three columns. The first and the last column each contain a `StackLayout`. These elements represent the actions revealed by swiping the item either left or right. The second column in the middle is set to take the remaining width of the item so that the two `StackLayout` elements are positioned at both ends of the item.
 
 ## Implementing swipe actions
+
 There are two popular ways to implement swipe actions. In the first approach you define a swipe threshold which makes the swiped item stick at a given position (the swipe limit) revealing the swipe actions. The user then taps on a given action to perform it.
 In the second approach you simply listen for the {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} event and once the item being swiped reaches a given threshold, you execute the corresponding action when the  swiped item is released. The following examples demonstrate how these approaches are implemented.
 
 ### Tap-to-execute actions
+
 In this scenario the user needs to swipe an item to reveal the actions and then tap on one to execute it. Let's use the swipe template from the XML snippet above:
 
 <snippet id='angular-listview-swipe-actions-template-html'/>
 
 The behavior that we have to implement is as follows:
+
 * user swipes an item
 * user releases the item and it sticks open revealing the action(s)
 * user taps on an action, an event handler is called and the swiped item is closed
@@ -65,7 +69,9 @@ So now we have a list with items that can be swiped open revealing an action. Us
 > Note that we call the `notifySwipeToExecuteFinished()` method to make sure the swipe item is closed after the action is performed.
 
 ### Swipe actions
+
 In this scenario the user needs to swipe and release the item to execute the corresponding action. The item must be swiped at a given distance over the provided threshold so that the associated action is executed. To implement this approach you need to handle the following {% typedoc_link classes:RadListView %} events:
+
 * {% typedoc_link classes:RadListView,member:itemSwipeProgressStartedEvent %} - used to specify the swipe limits in a way that will make the item return to its original place when released
 * {% typedoc_link classes:RadListView,member:itemSwipeProgressEndedEvent %} - used to determine if a swipe action has to be executed (in case the item was swiped beyond a given threshold)
 * {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} - in case you want to notify the user that they have swiped the item beyond a specified threshold and the swipe action will be executed
@@ -83,6 +89,7 @@ In this particular case we have decided that the threshold beyond which an actio
 <snippet id='angular-listview-swipe-actions-execute'/>
 
 All swipe events exposed by {% typedoc_link classes:RadListView %} provide you with a {% typedoc_link classes:ListViewEventData %} object which in turn carries a {% typedoc_link classes:SwipeOffsets %} object through its {% typedoc_link classes:ListViewEventData,member:data %} property. This object exposes the following properties:
+
 * `x` - the X offset of the item being released after swiping
 * `y` - the Y offset of the item being released after swiping
 * `swipeLimits` - an instance of the {% typedoc_link classes:SwipeLimits %} containing the dimensional limits which restrict the movement of the swiped item. Its properties are as follows:
@@ -95,6 +102,7 @@ All swipe events exposed by {% typedoc_link classes:RadListView %} provide you w
 * `mainView` - the `View` element representing the main content of the item being swiped
 
 ### Animating action views while swiping
+
 Many mobile apps that implement the "Swipe Actions" experience also animate the action views while the user is swiping. This can be easily achieved with {% typedoc_link classes:RadListView %} in the {% typedoc_link classes:RadListView,member:itemSwipeProgressChangedEvent %} event. Let's consider the following swipe template:
 
 <snippet id='angular-listview-swipe-actions-multiple-template-html'/>
@@ -109,4 +117,4 @@ What we do here is check which swipe direction the user has chosen and trigger a
 
 Here are two screenshots demonstrating the behavior on Android and iOS:
 
- ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_2.png)
+![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_2.png)

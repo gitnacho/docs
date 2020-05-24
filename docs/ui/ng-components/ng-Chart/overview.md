@@ -12,7 +12,7 @@ publish: true
 
 The NativeScript UI Chart is a charting component designed for the mobile environment. It offers great performance in loading time, drawing capabilities and real-time updates. Its intuitive object model and public API allow you to easily setup complex chart objects and integrate them into your application. The plugin provides two views that can be placed in a NativeScript layout - {% typedoc_link classes:RadCartesianChart %} - used to visualize (or plot) data on a cartesian coordinate system and {% typedoc_link classes:RadPieChart %} - used to visualize data in a way that resembles slices of a pie. An intuitive data binding mechanism transforms the raw data to appropriate data points. The plugin is distributed through the **nativescript-ui-chart** package on npmjs.
 
-#### Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right)
+## Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right)
 
 ![NativeScriptUI-Chart-Overview-LineSeries](../../img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
 
@@ -44,7 +44,6 @@ The trackball is another feature availalbe for RadCartesianChart. When it is ena
 
 Both RadCartesianChart and RadPieChart support adding a **RadLegendView** which will contain information about the presented series. In the context of RadCartesianChart, the legend will contain information about the different series, while in the context of RadPieChart it will contain information about the different slices for the presented series. More information is available in [this article]({% slug chart-legend-angular %} "Chart Legend").
 
-
 ## Angular directives
 
 When using the {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %} with Angular you are going to work with multiple custom angular Chart specific directives. In short these directives are used by the angular framework to enable 'linking' between separate HTML tags into one 'complex' element. As the {% typedoc_link classes:RadCartesianChart %}) and ({% typedoc_link classes:RadPieChart %} are composed by many elements (axes, series, legend, labels etc.) we have created an easy way of declaring for example an {% typedoc_link classes:LineSeries %} as a simple standalone HTML tag and in order to 'link' it to its parent {% typedoc_link classes:RadCartesianChart %} you will only need to add the custom inline **`tkCartesianSeries`** directive.
@@ -52,6 +51,7 @@ When using the {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link 
 Here is a full list of the available custom Angular {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %} directives and components:
 
 ### Components
+
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |
@@ -60,6 +60,7 @@ Represent the major elements:
 | RadPieChart       | {% typedoc_link classes:RadPieChartComponent %}       |
 
 ### Directives
+
 Represent the smaller elements that are visualized in {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %}:
 
 | Selector          | Class (more details)                                  |
@@ -90,9 +91,8 @@ Represent the smaller elements that are visualized in {% typedoc_link classes:Ra
 | Trackball | {% typedoc_link classes:Trackball %} |
 | PointLabelStyle | {% typedoc_link classes:PointLabelStyle %} |
 
-
-
 ### Inline Directives
+
 Represent the 'link' mechanism of the smaller with the major elements
 
 | Selector          | Class (more details)                                  |

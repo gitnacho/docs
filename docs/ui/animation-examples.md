@@ -22,12 +22,14 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     opacity: 0,
     duration: 3000
 });
 ```
+
 ``` CSS
 .view {
 	animation-name: opacity;
@@ -51,12 +53,14 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     backgroundColor: new colorModule.Color("#3D5AFE"),
     duration: 3000
 });
 ```
+
 ``` CSS
 .view {
 	animation-name: backgroundColor;
@@ -80,12 +84,14 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     translate: { x: 100, y: 100},
     duration: 3000
 });
 ```
+
 ``` CSS
 .view {
 	animation-name: translate;
@@ -109,12 +115,14 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     scale: { x: 2, y: 2},
     duration: 3000
 });
 ```
+
 ``` CSS
 .view {
 	animation-name: scale;
@@ -138,12 +146,14 @@ view.animate({
     duration: 3000
 });
 ```
+
 ``` TypeScript
 view.animate({
     rotate: 360,
     duration: 3000
 });
 ```
+
 ``` CSS
 .view {
 	animation-name: rotate;
@@ -176,6 +186,7 @@ animationSet.play().then(function () {
     console.log(e.message);
 });
 ```
+
 ``` TypeScript
 var definitions = new Array<animationModule.AnimationDefinition>();
 definitions.push({target: view1, translate: {x: 200, y: 0}, duration: 3000 });
@@ -230,6 +241,7 @@ animationSet.play().then(function () {
     console.log(e.message);
 });
 ```
+
 ``` TypeScript
 var definitions = new Array<animationModule.AnimationDefinition>();
 var a1: animationModule.AnimationDefinition = {
@@ -292,6 +304,7 @@ animation1.play()
     console.log(e.message);
 });
 ```
+
 ``` TypeScript
 var animation1 = view.createAnimation({opacity: 0});
 var animation2 = view.createAnimation({opacity: 1});
@@ -327,6 +340,7 @@ item.on("loaded", function (args) {
 });
 wrapLayout.addChild(item);
 ```
+
 ``` TypeScript
 var item = new imageModule.Image();
 item.src = "~/res/icon_100x100.png";
@@ -358,6 +372,7 @@ animationSet.play().catch(function (e) {
 });
 // Call animationSet.cancel() to stop it;
 ```
+
 ``` TypeScript
 animationSet = new animationModule.Animation([{
     target: view,
@@ -396,6 +411,7 @@ view.animate({
     })
 })
 ```
+
 ``` TypeScript
 const view = page.getViewById("myView");
 
@@ -432,6 +448,7 @@ let animation = new Animation([
   ]);
 animation.play();
 ```
+
 ``` TypeScript
 let label: Label = <Label>page.getViewById("lblNS");
 let animation = new Animation([
@@ -459,6 +476,7 @@ let animation = new Animation([
   ]);
 animation.play();
 ```
+
 ``` TypeScript
 let label: Label = <Label>page.getViewById("lblNS");
 let animation = new Animation([

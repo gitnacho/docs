@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug chart-getting-started %} "Chart Ge
 
 To define a legend in your chart you need to set the {% typedoc_link classes:RadChartBase,member:legend %} property as shown below:
 
-#### Example 1: A Cartesian Chart with a Legend
+### Example 1: A Cartesian Chart with a Legend
 
 <snippet id='legend-definition-xml'/>
 
@@ -38,7 +38,6 @@ The {% typedoc_link classes:RadChartBase,member:legend %} property expects an in
 * {% typedoc_link classes:RadLegendView,member:titleColor %} - used to define the text color of the legend title
 * {% typedoc_link classes:RadLegendView,member:titleSize %} - used to define the text size of the legend title
 * {% typedoc_link classes:RadLegendView,member:enableSelection %} - determines whether Series or DataPoints in the Chart are automatically selected upon tapping on an item in the Legend
-
 
 ## Legend Selection
 

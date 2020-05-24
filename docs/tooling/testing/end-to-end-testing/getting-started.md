@@ -9,7 +9,7 @@ slug: e2e-testing-getting-started
 
 # Getting Started
 
-Before you continue, make sure you have reviewed the [Prerequisites]({%slug e2e-testing-overview%}#prerequisites) and have executed the steps to [setup your environment for testing with Appium]({%slug e2e-testing-overview%}#environment-setup).
+Before you continue, make sure you have reviewed the [Prerequisites]({% slug e2e-testing-overview %}#prerequisites) and have executed the steps to [setup your environment for testing with Appium]({% slug e2e-testing-overview %}#environment-setup).
 
 The following steps will guide you through the process of setting up your project for e2e testing and running your first test.
 

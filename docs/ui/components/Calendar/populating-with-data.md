@@ -9,9 +9,11 @@ publish: true
 ---
 
 # Populating RadCalendar with Data
+
 RadCalendar allows you to define a list of events for a particular date. This is done by using the `eventSource` property. This article describes the steps you need to take in order to feed {% typedoc_link classes:RadCalendar %} with your custom events using a events source.
 
 ## The CalendarEvent Class
+
 Feeding events into {% typedoc_link classes:RadCalendar %} is done via instances of the {% typedoc_link classes:CalendarEvent %} class. The {% typedoc_link classes:CalendarEvent %} class is model describing a single event. It exposes properties allowing you to specify things like:
 
 * start time of the event
@@ -24,6 +26,7 @@ To create instances of the {% typedoc_link classes:CalendarEvent %} class you ne
 <snippet id='calendar-calendar-require'/>
 
 ## Define a List of Events and Bind Them to `RadCalendar`
+
 Assuming we have imported the calendar module as instructed above, we can now create an `Array` of events and assign it to the {% typedoc_link classes:RadCalendar,member:eventSource %} property of {% typedoc_link classes:RadCalendar %}:
 
 <snippet id='calendar-calendar-event-instance'/>
@@ -39,6 +42,7 @@ Running the application, the following is shown on iOS and Android:
 ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_android.png "iOS") ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_ios.png "Android")
 
 ## Extending the CalendarEvent
+
 If you need, you can extend the `CalendarEvent` with an id to track more easily the selected items or any other information that you need that is missing from the default event. Here's an example:
 
 <snippet id='calendar-custom-event-model-ts'/>
@@ -48,6 +52,7 @@ Then you can use the new type to populate the list of items that will be bound t
 <snippet id='calendar-custom-event-items-ts'/>
 
 ## Event View Modes
+
 The events for each date cell are shown as dots (iOS) or squares with a summary (Android). **RadCalendar** allows you to show more information about the events by changing the **eventsViewMode** property. The default value is **None** meaning that there will be no additional event reperesentation coming out-of-the-box and the detailed information about events could be added through an additional **ListView** added below the **RadCalendar** and populated with information about events in a selected date. There are other event modes - **Inline** and **Popover** that present similar information within the calendar. Here are the available event view modes:
 
 * {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
@@ -61,6 +66,7 @@ To change the events view mode you need to set the {% typedoc_link classes:RadCa
 ![TelerikUI-RadCalendar-Event-View-Modes](../../img/ns_ui/calendar-event-view-modes_ios.png "iOS")  ![TelerikUI-RadCalendar-Event-View-Modes](../../img/ns_ui/calendar-event-view-modes_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 

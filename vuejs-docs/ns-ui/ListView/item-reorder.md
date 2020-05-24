@@ -9,9 +9,11 @@ publish: true
 ---
 
 # RadListView Item Reorder
+
 The item reorder feature allows the end users to change the position of an item by dragging it. This is particularly useful in scenarios where lists of items with priorities are created. Reordering an item is used to change the item's priority. The Item Reorder feature is enabled by setting the `itemReorder` property to `true`.
 
 # Example
+
 The following simple scenario demonstrates how the item-reorder feature is used. A handler for the `itemReordered` event is provided which prints out the indices of the item being reordered.
 
 <snippet id='listview-itemreorder-vue'/>

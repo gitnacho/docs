@@ -495,8 +495,8 @@ The custom component in `app/components/my-control.xml` defines a Button, a Labe
 <StackLayout class="p-20" loaded="onLoaded">
     <Label text="This custom component binding is coming from the parent page" textWrap="true" />
     <Label text="Tap the button (custom component)" class="h1 text-center"/>
-{%raw%}    <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
-    <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>{%endraw%}
+{% raw %}    <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+    <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>{% endraw %}
 </StackLayout>
 ```
 
@@ -722,9 +722,9 @@ This sample `main-page.xml` contains a simple label whose text will be populated
 
 ``` XML
 <Page>
-{%raw%}
+{% raw %}
     <Label text="{{ myTitle }}" />
-{%endraw%}
+{% endraw %}
 </Page>
 ```
 
@@ -756,9 +756,9 @@ This sample `main-page.xml` contains a button. The text for the button and the e
 
 ``` XML
 <Page navigatingTo="navigatingTo">
-{%raw%}
+{% raw %}
   <Button text="{{ myProperty }}" tap="{{ myFunction }}" />
-{%endraw%}
+{% endraw %}
 </Page>
 ```
 
@@ -804,13 +804,13 @@ In this sample `main-page.xml`, the ListView consists of labels and each item wi
 
 ``` XML
 <Page navigatingTo="navigatingTo">
-{%raw%}
+{% raw %}
     <ListView id="listView1" items="{{ myItems }}">
         <ListView.itemTemplate>
             <Label id="label1" text="{{ name }}"  />
         </ListView.itemTemplate>
     </ListView>
-{%endraw%}
+{% endraw %}
 </Page>
 ```
 
@@ -854,13 +854,13 @@ To show some inner collection items inside ```ListView.itemTemplate``` you can u
 
 ``` XML
 <Page>
-{%raw%}
+{% raw %}
   <ListView items="{{ myItems }}">
     <ListView.itemTemplate>
       <Repeater items="{{ mySubItems }}"  />
     </ListView.itemTemplate>
   </ListView>
-{%endraw%}
+{% endraw %}
 </Page>
 ```
 
@@ -873,10 +873,10 @@ To set an expression as a value of a property in the `XML`, you might as well go
 The following sample `main-page.xml` shows how to set an expression as the value for a label.
 
 ``` XML
-{%raw%}
+{% raw %}
 <Label text="{{ author ? 'by ' + author : '[no author]' }}" />
 <Label text="{{ author || '[no author]' }}" />
-{%endraw%}
+{% endraw %}
 ```
 
 **Complex property paths**:

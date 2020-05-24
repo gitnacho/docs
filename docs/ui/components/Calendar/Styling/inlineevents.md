@@ -9,6 +9,7 @@ publish: true
 ---
 
 # RadCalendar Inline Events Styling
+
 When working with Inline events, specifying a color for the event's cell indicator (i.e. the color is used for the shape that visualizes the event in the corresponding day cell) is done by using the `eventColor` property of `CalendarEvent` class. If `CalendarEventsViewMode.Inline` is chosen for events view mode, you can apply additional styling options to the cells of the table view shown for inline events.
 
 Since events are available for Month and Week views you should initialize the `inlineEventCellStyle` member of `CalendarMonthViewStyle` or `CalendarWeekViewStyle` with instance of `InlineEventCellStyle` class.
@@ -25,8 +26,8 @@ Since events are available for Month and Week views you should initialize the `i
 * `timeFontStyle` - Gets or sets the font style for time shown for inline event.
 * `timeTextSize` - defines the text size for time shown for inline event.
 
-
 ## Example
+
 Here's an example of using the styling properties mentioned above:
 
 <snippet id='calendar-inlineevents-styling'/>
@@ -36,6 +37,7 @@ and the visual result:
 ![Calendar year view styling](../../../img/ns_ui/calendar_styling_inline_events_ios.png "iOS")      ![Calendar year view styling](../../../img/ns_ui/calendar_styling_inline_events_android.png "Android")
 
 ## References
+
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
