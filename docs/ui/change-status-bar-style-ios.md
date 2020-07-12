@@ -85,7 +85,7 @@ import { EventData } from "tns-core-modules/data/observable";
 import { topmost } from "tns-core-modules/ui/frame";
 import { isIOS } from "tns-core-modules/platform";
 
-export function loaded(args: EventData){
+export function loaded(args: EventData) {
      if (isIOS) {
         let navigationBar = topmost().ios.controller.navigationBar;
         navigationBar.barStyle = UIBarStyle.Black;

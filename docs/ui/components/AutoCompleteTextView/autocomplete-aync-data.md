@@ -19,14 +19,11 @@ For the purpose of the example we will use json data containing description of a
 
 ## Implementation
 
-Populating the autocomplete asynchronously is quite straightforward task. All you need is a promise which should handle
-the data fetch and return a collection of **TokenModel** objects.
+Populating the autocomplete asynchronously is quite straightforward task. All you need is a promise which should handle the data fetch and return a collection of **TokenModel** objects.
 You should assign this promise to the `loadSuggestionsAsync` property of the **RadAutoCompleteTextView** object.
-The autocomplete executes this promise every time a symbol is typed and then generates
-suggestions based on the collection returned by the promise.
+The autocomplete executes this promise every time a symbol is typed and then generates suggestions based on the collection returned by the promise.
 
-Create a page with **RadAutoCompleteTextView** control. Setup the control in a way that suits you and bind it
-to source collection, which in our case is called dataItems.
+Create a page with **RadAutoCompleteTextView** control. Setup the control in a way that suits you and bind it to source collection, which in our case is called dataItems.
 Do not forget to provide a `suggestionItemTemplate` which will represent each suggestion.
 
 <snippet id='autocomplete-async-xml'/>
@@ -35,8 +32,7 @@ Retrieve the **RadAutoCompleteTextView** object that was initialized in the xml 
 property to e function which accepts one parameter (the typed text).
 In this function define a promise, load the remote data in it and then return the promise.
 
-Later on the autocomplete will invoke the `loadSuggestionsAsync` function and when the promise is resolved,
-it will use the returned items to complete it's population.
+Later on the autocomplete will invoke the `loadSuggestionsAsync` function and when the promise is resolved, it will use the returned items to complete it's population.
 
 <snippet id='autocomplete-async-model'/>
 

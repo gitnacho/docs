@@ -89,7 +89,7 @@ tns update 2.3.0
 >
 > **Note**: After updating the `nativescript-dev-webpack`, we must update our `webpack.config.js` as well. To do that we can execute the `update-ns-webpack`  automated script with the following line:
 
-``` YAML
+``` Shell
 ./node_modules/.bin/update-ns-webpack --deps --configs
 ```
 

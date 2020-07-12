@@ -131,7 +131,7 @@ import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.commo
 
 let clickListener: android.view.View.OnClickListener;
 
-// **Note**: ClickListenerImpl is in function instead of directly in the module because we
+// Note: ClickListenerImpl is in function instead of directly in the module because we
 // want this file to be compatible with V8 snapshot. When V8 snapshot is created
 // JS is loaded into memory, compiled & saved as binary file which is later loaded by
 // Android runtime. Thus when snapshot is created we don't have Android runtime and

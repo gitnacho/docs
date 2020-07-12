@@ -30,13 +30,14 @@ In the command above `tns-template-name` should be the template you wish to use.
 <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-blank/tools/assets/appTemplate-ios.png" style="height:400px;border:1px solid black"> <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-blank/tools/assets/appTemplate-android.png" style="height:400px;border:1px solid black">
 
 {% nativescript %}
+
 `tns-template-blank` - JavaScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank>
 `tns-template-blank-ts` - TypeScript
-Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ts>
-{% endnativescript %}{% angular %}
+Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ts>{% endnativescript %}{% angular %}
 `tns-template-blank-ng` - Angular with TypeScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ng>
+
 {% endangular %}
 
 A basic template with a single page and no custom styles. Useful for when minimal and clean code is needed.
@@ -46,13 +47,14 @@ A basic template with a single page and no custom styles. Useful for when minima
 <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-drawer-navigation/tools/assets/appTemplate-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-blank/tools/assets/appTemplate-android.png" style="height:400px">
 
 {% nativescript %}
+
 `tns-template-drawer-navigation` - JavaScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation>
 `tns-template-drawer-navigation-ts` - TypeScript
-Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ts>
-{% endnativescript %}{% angular %}
+Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ts>{% endnativescript %}{% angular %}
 `tns-template-drawer-navigation-ng` - Angular with TypeScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ng>
+
 {% endangular %}
 
 This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[SideDrawer]({% slug sidedrawer-overview-angular %}){% endangular %} component from [NativeScript UI's built-in components]({% slug components %}) with several pages.
@@ -62,13 +64,14 @@ This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug si
 <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-tab-navigation/tools/assets/phone-tab-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-tab-navigation/tools/assets/phone-tab-android.png" style="height:400px">
 
 {% nativescript %}
+
 `tns-template-tab-navigation` - JavaScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation>
 `tns-template-tab-navigation-ts` - TypeScript
-Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation-ts>
-{% endnativescript %}{% angular %}
+Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation-ts>{% endnativescript %}{% angular %}
 `tns-template-tab-navigation-ng` - Angular with TypeScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation-ng>
+
 {% endangular %}
 
 This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-view) component for navigation. It also includes several pages to show how to populate the tabs and perform the navigation.
@@ -78,13 +81,14 @@ This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-vie
 <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-master-detail-kinvey/tools/assets/phone-masterDetail-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-master-detail-kinvey/tools/assets/phone-masterDetail-detail-ios.png" style="height:400px">
 
 {% nativescript %}
+
 `tns-template-master-detail` - JavaScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail>
 `tns-template-master-detail-ts` - TypeScript
-Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts>
-{% endnativescript %}{% angular %}
+Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts>{% endnativescript %}{% angular %}
 `tns-template-master-detail-ng` - Angular with TypeScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ng>
+
 {% endangular %}
 
 This Master-Detail template is a fundamental building block for any app that displays a collection of objects and their details, which also need to work both in online and offline mode. It utilizes [Firebase](https://firebase.google.com/) as a backend.
@@ -94,13 +98,14 @@ This Master-Detail template is a fundamental building block for any app that dis
 <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-master-detail/tools/assets/phone-masterDetail-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/nativescript-app-templates/master/packages/template-master-detail/tools/assets/phone-masterDetail-detail-ios.png" style="height:400px">
 
 {% nativescript %}
+
 `tns-template-master-detail-kinvey` - JavaScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey>
 `tns-template-master-detail-kinvey-ts` - TypeScript
-Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey-ts>
-{% endnativescript %}{% angular %}
+Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey-ts>{% endnativescript %}{% angular %}
 `tns-template-master-detail-kinvey-ng` - Angular with TypeScript
 Github repo: <https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey-ng>
+
 {% endangular %}
 
 This template is functionally identical to [Master Detail with Firebase](#master-detail-with-firebase). The only difference is that it utilizes [Kinvey](https://www.kinvey.com/) as a backend.

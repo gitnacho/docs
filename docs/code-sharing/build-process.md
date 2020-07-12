@@ -13,8 +13,7 @@ The code-sharing project comes with a build process that is capable of using the
 
 ## Web Build
 
-To build a web app, it is business as usual — just use the Angular CLI to do the job.
-When you call **ng serve** or **ng build**, the Angular CLI will ignore all NativeScript-specific files, as none of the web files directly reference any **.tns** files.
+To build a web app, it is business as usual — just use the Angular CLI to do the job. When you call **ng serve** or **ng build**, the Angular CLI will ignore all NativeScript-specific files, as none of the web files directly reference any **.tns** files.
 
 > **ng serve -o** -> builds a web app from the code-sharing project and opens it in default browser
 

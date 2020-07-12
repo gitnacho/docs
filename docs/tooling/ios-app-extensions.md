@@ -24,9 +24,9 @@ Prerequisites
 * The created App Extension.
 * Existing NativeScript application. For testing purposes, you can build a base application using the `create` command
 
-``` Shell
-tns create today-extension --tsc
-```
+  ``` Shell
+  tns create today-extension --tsc
+  ```
 
 Steps to include the App Extension
 

@@ -46,38 +46,38 @@ The **--configs** flag will update the `webpack.config.js` and the **--deps** fl
 
 * **Run with Webpack and HMR**
 
-The Webpack bundling and Hot Module Replacement are enabled by default. That means that the known CLI commands like `run` and `build` won't need any additional flags.
+  The Webpack bundling and Hot Module Replacement are enabled by default. That means that the known CLI commands like `run` and `build` won't need any additional flags.
 
-``` Shell
-tns run
-```
+  ``` Shell
+  tns run
+  ```
 
-or
+  or
 
-``` Shell
-tns build
-```
+  ``` Shell
+  tns build
+  ```
 
-Both commands will execute your project with Webpack and HMR enabled.
+  Both commands will execute your project with Webpack and HMR enabled.
 
-> **Note**: If you need to disable the HMR experience, you can achieve that by adding the `--no-hmr` flag. With NativeScript 6.0.0 and above, Webpack is the primary developer workflow and can't be disabled.
+  > **Note**: If you need to disable the HMR experience, you can achieve that by adding the `--no-hmr` flag. With NativeScript 6.0.0 and above, Webpack is the primary developer workflow and can't be disabled.
 
 * **Pass Environment Variables**
 
-You can also provide environmental variables to the Webpack build:
+  You can also provide environmental variables to the Webpack build:
 
-``` Shell
-tns build android --env.development --env.property=value
-```
+  ``` Shell
+  tns build android --env.development --env.property=value
+  ```
 
-They can be accessed through the `env` object in the Webpack configuration:
+  They can be accessed through the `env` object in the Webpack configuration:
 
-``` JavaScript
-// webpack.config.js
-module.exports = env => {
-    console.dir(env); // { development: true, property: 'value' }
-}
-```
+  ``` JavaScript
+  // webpack.config.js
+  module.exports = env => {
+      console.dir(env); // { development: true, property: 'value' }
+  }
+  ```
 
 ### Publishing Application
 
@@ -102,9 +102,9 @@ Once the release build is ready, you have two options:
 * Open `<project/platforms/ios/<project>.xcodeproj>` (or `<project/platforms/ios/<project>.xcworkspace>` if present) in Xcode to configure project signing and upload the archive to App Store. This is the recommended option.
 * Specify your development team in `<project>/app/App_Resources/iOS/build.xcconfig` from the command line and execute
 
-``` Shell
-tns publish ios --ipa ipa-file-path-here
-```
+  ``` Shell
+  tns publish ios --ipa ipa-file-path-here
+  ```
 
 More options for publishing an iOS application can be found in the ["Publishing for iOS article"](https://docs.nativescript.org/publishing/publishing-ios-apps) article.
 

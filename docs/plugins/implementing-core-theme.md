@@ -25,7 +25,7 @@ We are using `.scss` files to define our plugin styles. So make sure you run the
 
 As we mentioned above, the starting point for this article is the repository showing how to [build UI plugin]((https://github.com/NativeScript/nativescript-ui-plugin-custom)). Before you start defining style definitions to the custom button created in the example, open `my-button.common.ts` and add the following constructor to `MyButtonBase` class:
 
-``` JavaScripts
+``` JavaScript
 function MyButtonBase() {
     var _this = _super.call(this) || this;
     _this.className = "mybtn";
@@ -54,7 +54,7 @@ Review [NativeScript Core Theme supported skins](https://github.com/NativeScript
 
 Add folder `scss` to your plugin source folder having the following structure:
 
-``` SCSS
+``` Shell
 scss
 ├── _mybutton.scss
 ├── _variables.scss
@@ -79,7 +79,6 @@ $mybtn-border-color: $btn-color;
 $mybtn-border-width: 10;
 $mybtn-border-radius: 10;
 $mybtn-opacity: 1;
-
 ```
 
 You can see that variables `$primary`, `#secondary` and `$btn-color` are used. They are defined in the NativeScript core theme.
@@ -139,7 +138,7 @@ $mybtn-color: $black;
 
 platforms\_mybutton.android.scss:
 
-```` SCSS
+``` SCSS
 // Variables overrides for Android
 
 $mybtn-border-width: 5;
@@ -149,7 +148,7 @@ $mybtn-border-radius: 5;
 @import '../mybutton';
 
 // Describe Android specific styles
-````
+```
 
 platforms\_mybutton.ios.scss:
 
@@ -187,7 +186,7 @@ Once you have all your styles defined per skin and platform, you're ready to com
 
 This will do the compilation and save the result css files in a `css` folder. There you can find one file for each combination of skin and platform. In our example there will be four files:
 
-``` CSS
+``` Shell
 css
 ├── mybutton.dark.android.css
 ├── mybutton.dark.ios.css

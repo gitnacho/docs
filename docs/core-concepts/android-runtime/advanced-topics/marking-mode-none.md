@@ -14,6 +14,7 @@ The code inside `tns-core-modules` and all plugins published by the NativeScript
 ## Benefits and drawbacks of using markingMode: none
 
 The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time.
+
 The main drawbacks are:
 
 * It is up to the plugin developer to manage the plugin-related memory correctly. There might be plugins that do not support the feature and could crash the app with a "cleared reference" exception.
@@ -84,21 +85,21 @@ Below are 2 possible solutions for some common cases:
 * [Monkey testing](https://developer.android.com/studio/test/monkey) - this is a CLI-based way of testing your apps by generating random events like clicks, gestures, etc. It is best to pin your app before starting the monkey test. Thus "the monkey" will interact only with the app and not with the whole OS.
 Example command to start testing:
 
-``` Shell
-adb shell monkey --throttle 200 40000
-```
+  ``` Shell
+  adb shell monkey --throttle 200 40000
+  ```
 
-To stop the monkey:
+  To stop the monkey:
 
-``` Shell
-adb shell ps | awk '/com\.android\.commands\.monkey/ { system("adb shell kill " $2) }'
-```
+  ``` Shell
+  adb shell ps | awk '/com\.android\.commands\.monkey/ { system("adb shell kill " $2) }'
+  ```
 
-In order to unpin a pinned app:
+  In order to unpin a pinned app:
 
-``` Shell
-adb shell am task lock stop
-```
+  ``` Shell
+  adb shell am task lock stop
+  ```
 
 ## Summary
 

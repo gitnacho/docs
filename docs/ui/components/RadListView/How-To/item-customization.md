@@ -7,6 +7,7 @@ tags: radlistview, customization, nativescript, professional, ui
 position: 2
 publish: true
 ---
+
 # RadListView Item Customization
 
 Providing item template for your **RadListView** with XML is quite easy and straightforward task. Even though this method allows you to create complicated and beautiful designs, it is not flexible enough if you want to have different design for some items.

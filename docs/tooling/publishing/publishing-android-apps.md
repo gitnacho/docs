@@ -22,11 +22,11 @@ You can publish a NativeScript app in *Google Play* the same way [you would rele
    tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password>
    ```
 
-> **Note**: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore.
->
-> Example(Windows): `tns build android --release --key-store-path C:\keystore\Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
->
-> Example(Mac): `tns build android --release --key-store-path ~/Desktop/keystore/Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
+   > **Note**: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore.
+   >
+   > Example(Windows): `tns build android --release --key-store-path C:\keystore\Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
+   >
+   > Example(Mac): `tns build android --release --key-store-path ~/Desktop/keystore/Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
 
 1. Obtain the release `.apk` located at `<app_name>/platforms/android/app/build/outputs/apk/<app_name>-release.apk`.
 1. Publish your Android app by uploading the `.apk` file to the Google Developer Console. For more information, see [How to publish an Android app?](http://developer.android.com/distribute/googleplay/start.html)
@@ -125,11 +125,8 @@ You will need a developer account and you will need to log into the [Google Play
 Go to the **All applications** section and click the **+ Add new application** button.
 
 * You will get prompted to provide the app title
-
 * You can then proceed with the store listings.
-
 * You can fill in app description, screenshots and so on.
-
 * You can also submit an APK. Read about how to obtain an APK from a NativeScript app.
 
 ## Builds

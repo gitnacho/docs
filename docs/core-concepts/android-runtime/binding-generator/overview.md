@@ -11,7 +11,7 @@ It is one thing to access native Android APIs and another to inherit existing cl
 
 ``` JavaScript
 var myObject = java.lang.Object.extend({
-    hashCode: function(){
+    hashCode: function() {
         return 10;
     }
 });
@@ -22,7 +22,7 @@ In this example we *extend* (or *inherit* in terms of [OOP](http://en.wikipedia.
 ``` Java
 public class MyObject { // implicit base class is java.lang.Object
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return 10;
     }
 }

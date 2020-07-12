@@ -126,10 +126,10 @@ If you only want to debug the Java part of the runtime, you're already all set u
 
 * If you encounter this error: `Error:Unable to find module with Gradle path ':runtime' (needed by module 'app'.)`
 
-![Known Issue 1](ki-1.png)
+  ![Known Issue 1](ki-1.png)
 
-Delete the `.gradle` and `.idea` folders
+  Delete the `.gradle` and `.idea` folders
 
-![Known Issue 1](ki-delete-folders.png)
+  ![Known Issue 1](ki-delete-folders.png)
 
-Click: `File -> Invalidate Caches/Restart -> Invalidate and Restart`
+  Click: `File -> Invalidate Caches/Restart -> Invalidate and Restart`

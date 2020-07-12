@@ -345,6 +345,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 _Example for column stretching_:
 
 Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
+
 {% nativescript %}
 
 ``` XML

@@ -54,7 +54,7 @@ Most of the content in this repository is shared between the two environments, b
 This paragraph appears in both environments.
 
 {% angular %}This appears only in the Angular NativeScript documentation{% endangular %}
- ```
+```
 
 ## Local Setup
 
@@ -101,6 +101,7 @@ git clone https://github.com/NativeScript/nativescript-ui-samples-vue.git
 ```
 
 > **Note**: `nativescript-ui-...` are private repositories used for building the API Reference for the NativeScript UI components.
+>
 > **Note**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
 
 Then, build the docker image by using the following command from the `ns-docs` folder:

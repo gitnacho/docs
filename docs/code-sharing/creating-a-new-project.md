@@ -67,13 +67,13 @@ By default, all projects will be generated with the [NativeScript Core Theme](..
 
 In case you don't want to use **NativeScript Core Theme** in your project, you can provide the **--no-theme** flag. That looks like this when using CSS.
 
-``` CSS
+``` Shell
 ng new -c=@nativescript/schematics no-theme-project --shared --no-theme
 ```
 
 And like this when using SASS.
 
-``` SCSS
+``` Shell
 ng new -c=@nativescript/schematics sass-no-theme-project --shared --style=scss --no-theme
 ```
 

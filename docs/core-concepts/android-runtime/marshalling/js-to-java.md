@@ -48,22 +48,22 @@ Java has several primitive numeric types while JavaScript has the [Number](http:
 
 ``` Java
 class MyObject extends java.lang.Object {
-    public void myMethod(byte value){
+    public void myMethod(byte value) {
     }
 
-    public void myMethod(short value){
+    public void myMethod(short value) {
     }
 
-    public void myMethod(int value){
+    public void myMethod(int value) {
     }
 
-    public void myMethod(long value){
+    public void myMethod(long value) {
     }
 
-    public void myMethod(float value){
+    public void myMethod(float value) {
     }
 
-    public void myMethod(double value){
+    public void myMethod(double value) {
     }
 }
 ```
@@ -127,7 +127,7 @@ A JavaScript [Array](http://www.w3schools.com/jsref/jsref_obj_array.asp) is impl
 
 ``` Java
 class MyObject extends java.lang.Object {
-    public void myMethod(java.lang.String[] items){
+    public void myMethod(java.lang.String[] items) {
     }
 }
 ```

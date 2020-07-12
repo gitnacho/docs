@@ -32,7 +32,7 @@ It is one thing to call Android APIs and another to allow type inheritance and i
 
 ``` JavaScript
 var myObject = java.lang.Object.extend({
-    hashCode: function(){
+    hashCode: function() {
         // Generate unique hash
         return 0;
     }

@@ -48,16 +48,16 @@ Examples:
 
 * JavaScript
 
-``` JavaScript
-__enableVerboseLogging();
-```
+  ``` JavaScript
+  __enableVerboseLogging();
+  ```
 
 * TypeScript
 
-``` TypeScript
-declare var __enableVerboseLogging : any;
-__enableVerboseLogging();
-```
+  ``` TypeScript
+  declare var __enableVerboseLogging : any;
+  __enableVerboseLogging();
+  ```
 
 Afterwards you should launch your application and reproduce the issue:
 

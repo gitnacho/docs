@@ -38,17 +38,17 @@ Complete the following steps to set up NativeScript on your Linux development ma
 
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 libstdc++6:i386
-    </code></pre>
-    If you encounter an error showing "Unable to locate package lib32bz2-1.0" then use
-    <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 libstdc++6:i386
-    </code></pre>
-    Package `lib32ncurses5` is only available as version 6 on Ubuntu >v.19.04, replace with `lib32ncurses6`.
+   <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 libstdc++6:i386
+   </code></pre>
+   If you encounter an error showing "Unable to locate package lib32bz2-1.0" then use
+   <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 libstdc++6:i386
+   </code></pre>
+   Package `lib32ncurses5` is only available as version 6 on Ubuntu >v.19.04, replace with `lib32ncurses6`.
 
 1. Install the G++ compiler.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install g++
-    </code></pre>
+   <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install g++
+   </code></pre>
 
 1. Set up [JDK 8] [JDK 8](https://openjdk.java.net/install/).
    1. Run the following commands.
@@ -114,8 +114,7 @@ If you see "No issues were detected" you are good to go!
 
 {% angular %}
 
-* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
-{% endangular %}{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics){% endangular %}{% nativescript %}
 * [Learn the Basics of the NativeScript CLI](/start/cli-basics)
 
 {% endnativescript %}

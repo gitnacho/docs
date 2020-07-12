@@ -19,13 +19,13 @@ As an open-source project NativeScript keeps not only its source code but its bu
 
 * Uninstall any existing NativeScript versions:
 
-  ```Console
+  ``` Shell
   npm uninstall -g nativescript
   ```
 
 * Install the latest development version of NativeScript CLI:
 
-  ```Console
+  ``` Shell
   npm install -g nativescript@next
   ```
 
@@ -51,7 +51,7 @@ As an open-source project NativeScript keeps not only its source code but its bu
 
   Instead of editing the package.json file by hand, you could run the following commands:
 
-  ```Console
+  ``` Shell
   tns platform add ios@next
   tns platform add android@next
   tns plugin add tns-core-modules@next
@@ -59,7 +59,7 @@ As an open-source project NativeScript keeps not only its source code but its bu
 
 * Run the `npm install` command to update the node modules:
 
-  ```Console
+  ``` Shell
   cd <your-project-folder>
   npm install
   ```
@@ -96,7 +96,7 @@ When the repo gets built, it outputs a bunch of packages (stripping the version-
 
 The repo gets built via the commands:
 
-```Console
+``` Shell
 npm install -g grunt-cli
 npm install
 grunt

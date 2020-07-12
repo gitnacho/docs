@@ -179,7 +179,7 @@ exports.onNavBtnTap = onNavBtnTap;
 ```
 
 ``` TypeScript
-export function onNavBtnTap(){
+export function onNavBtnTap() {
     // This code will be called only in Android.
     console.log("Navigation button tapped!");
 }
@@ -197,7 +197,7 @@ export function onNavBtnTap(){
 ``` TypeScript
 @Component({ ... })
 class MyComponent {
-    public onNavBtnTap(){
+    public onNavBtnTap() {
         // This code will be called only in Android.
         console.log("Navigation button tapped!");
     }
@@ -485,7 +485,6 @@ Here is an example of showing different action items when the app is in "editing
 ```
 
 ``` TypeScript
-
 @Component({ ... })
 class MyComponent {
     isEditing:boolean = false;

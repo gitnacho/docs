@@ -86,10 +86,10 @@ var jsDoubleValue = double.doubleValue(); // returns primitive double, converted
 
 ``` Java
 public class TestClass {
-    public long getLongNumber54Bits(){
+    public long getLongNumber54Bits() {
         return 1 << 54;
     }
-    public long getLongNumber53Bits(){
+    public long getLongNumber53Bits() {
         return 1 << 53;
     }
 }

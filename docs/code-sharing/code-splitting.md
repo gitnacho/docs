@@ -16,7 +16,7 @@ There is a simple naming convention that allows you to provide two versions of t
 
 The file with the **.tns** part, is designated as a NativeScript-specific file, while the file without **.tns** is designated to be a web-only file.
 
-> **Tip** You can use the naming convention with any file extension:
+> **Tip**: You can use the naming convention with any file extension:
 >
 > * **file.tns.ts**
 > * **file.tns.html**

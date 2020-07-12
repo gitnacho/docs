@@ -494,8 +494,8 @@ The custom component in `app/components/my-control.xml` defines a Button, a Labe
 <!-- app/components/my-control.xml -->
 <StackLayout class="p-20" loaded="onLoaded">
     <Label text="This custom component binding is coming from the parent page" textWrap="true" />
-    <Label text="Tap the button (custom component)" class="h1 text-center"/>
-{% raw %}    <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+    <Label text="Tap the button (custom component)" class="h1 text-center"/>{% raw %}
+    <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
     <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>{% endraw %}
 </StackLayout>
 ```

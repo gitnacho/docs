@@ -32,12 +32,12 @@ view.animate({
 
 ``` CSS
 .view {
-	animation-name: opacity;
-	animation-duration: 3;
+    animation-name: opacity;
+    animation-duration: 3;
 }
 @keyframes opacity {
-	from { opacity: 1; }
-	to { opacity: 0; }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 ```
 
@@ -63,12 +63,12 @@ view.animate({
 
 ``` CSS
 .view {
-	animation-name: backgroundColor;
-	animation-duration: 3;
+    animation-name: backgroundColor;
+    animation-duration: 3;
 }
 @keyframes backgroundColor {
-	from { background-color: white; }
-	to { background-color: #3D5AFE; }
+    from { background-color: white; }
+    to { background-color: #3D5AFE; }
 }
 ```
 
@@ -94,12 +94,12 @@ view.animate({
 
 ``` CSS
 .view {
-	animation-name: translate;
-	animation-duration: 3;
+    animation-name: translate;
+    animation-duration: 3;
 }
 @keyframes translate {
-	from { transform: translate(0, 0); }
-	to { transform: translate(100, 100); }
+    from { transform: translate(0, 0); }
+    to { transform: translate(100, 100); }
 }
 ```
 
@@ -125,12 +125,12 @@ view.animate({
 
 ``` CSS
 .view {
-	animation-name: scale;
-	animation-duration: 3;
+    animation-name: scale;
+    animation-duration: 3;
 }
 @keyframes scale {
-	from { transform: scale(1, 1); }
-	to { transform: scale(2, 2); }
+    from { transform: scale(1, 1); }
+    to { transform: scale(2, 2); }
 }
 ```
 
@@ -156,12 +156,12 @@ view.animate({
 
 ``` CSS
 .view {
-	animation-name: rotate;
-	animation-duration: 3;
+    animation-name: rotate;
+    animation-duration: 3;
 }
 @keyframes rotate {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 ```
 
@@ -388,6 +388,7 @@ animationSet.play().catch((e) => {
 ```
 
 ## Rotation using originX and originY
+
 __Example 5: Rotating a view around its center. Center of view is changed via `originX` and `originY` properties.__
 
 ![rotation_origin_x_y](./img/modules/animation/rotation_origin_x_y.gif "Rotation originX / originY")
@@ -398,7 +399,7 @@ const view = page.getViewById("myView");
 view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
 view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
 view.animate({
-	rotate: 360, // will take into account originX and originY
+    rotate: 360, // will take into account originX and originY
     duration: 1000
 }).then(() => {
     view.originX = 0;
@@ -418,7 +419,7 @@ const view = page.getViewById("myView");
 view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
 view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
 view.animate({
-	rotate: 360, // will take into account originX and originY
+    rotate: 360, // will take into account originX and originY
     duration: 1000
 }).then(() => {
     view.originX = 0;
@@ -432,9 +433,12 @@ view.animate({
 })
 ```
 
-## Animation -  View's Width and Height
+## Animation - View's Width and Height
+
 {% nativescript %}
+
 ### Width
+
 ``` JavaScript
 let label = page.getViewById("lblNS");
 let animation = new Animation([
@@ -462,7 +466,9 @@ let animation = new Animation([
     ]);
 animation.play();
 ```
+
 ### Height
+
 ``` JavaScript
 let label = page.getViewById("lblNS");
 let animation = new Animation([
@@ -490,11 +496,14 @@ let animation = new Animation([
     ]);
 animation.play();
 ```
+
 [Demo JavaScript](https://play.nativescript.org/?template=play-js&id=mOZv68)
 [Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=ckdYDS)
-{% endnativescript %}
-{% angular %}
-### Width
+
+{% endnativescript %}{% angular %}
+
+<h3 id="width-1">Width</h3>
+
 ``` TypeScript
 @ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
 private label: Label;
@@ -514,7 +523,9 @@ let animation = new Animation([
 ]);
 animation.play();
 ```
-### Height
+
+<h3 id="height-1">Height</h3>
+
 ``` TypeScript
 @ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
 private label: Label;
@@ -534,5 +545,7 @@ let animation = new Animation([
 ]);
 animation.play();
 ```
+
 [Demo](https://play.nativescript.org/?template=play-ng&id=cWAc2j)
+
 {% endangular %}

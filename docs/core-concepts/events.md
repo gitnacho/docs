@@ -22,7 +22,7 @@ To add an **event handler** means setting a function (method) that executes when
 
 The example below shows how to add an event listener by using the short (using `on`) and the full syntax (using `addEventListener`). There is a third optional parameter that represents the `this` argument. The code shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax, or you can declare the event handler in XML.
 
-> **Tip** All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
+> **Tip**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
 
 ``` JavaScript
 const Label = require("tns-core-modules/ui/label").Label;
@@ -235,7 +235,7 @@ The demo below shows how to subscribe to the `propertyChange` event.
 const Observable = require("tns-core-modules/data/observable").Observable;
 const observableObject = new Observable();
 
-observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData){
+observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData) {
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
@@ -244,7 +244,7 @@ observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData)
 import { Observable } from "tns-core-modules/data/observable";
 const observableObject = new Observable();
 
-observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData: PropertyChangeData){
+observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData: PropertyChangeData) {
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
@@ -333,7 +333,7 @@ The next step is to hook to this event:
 
 ``` JavaScript
 let myCustomObject = new MyClass();
-myCustomObject.on("myCustomEventName", function(eventData){
+myCustomObject.on("myCustomEventName", function(eventData) {
   console.log(eventData.eventName + " has been raised! by: " + eventData.object);
 })
 ```

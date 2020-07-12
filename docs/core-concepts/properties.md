@@ -294,21 +294,21 @@ exports.onNavigatedTo = onNavigatedTo;
 > <StackLayout #myNgStack id="myStackId">
 >     <Label text="Using ViewChild against getViewById" />
 > </StackLayout>
->  ```
+> ```
 >
->  ``` TypeScript
->  import { ViewChild, ElementRef } from "@angular/core";
->  export class MyComponent {
+> ``` TypeScript
+> import { ViewChild, ElementRef } from "@angular/core";
+> export class MyComponent {
 >     @ViewChild("myNgStack") stackRef: ElementRef;
->    myNativeStack: StackLayout;
+>     myNativeStack: StackLayout;
 >     constructor(private _page: Page) { }
 >     ngAfterViewInit() {
 >         this._page.getViewById("myStackId");
 >         this.myNativeStack = this.stackRef.nativeElement;
 >         // this._page.getViewById("myStack") === this.myNativeStack
 >     }
->  }
->  ```
+> }
+> ```
 
 * [`getActualSize`](/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](/api-reference/interfaces/_ui_core_view_.size).
 
@@ -316,7 +316,7 @@ exports.onNavigatedTo = onNavigatedTo;
   let stackSize: Size = stack.getActualSize();
   let stackWidth = stackSize.width; // e.g. 411.42857142857144 DIP
   let stackHeight = stackSize.height; // e.g. 603.4285714285714 DIP
-  `  ``
+  ```
 
   ``` JavaScript
   let stackSize = stack.getActualSize();

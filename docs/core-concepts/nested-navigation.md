@@ -7,7 +7,7 @@ slug: nested-navigation
 
 The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tabs, bottom navigation, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
 
-## Simple Rule
+# Simple Rule
 
 There is one simple rule when it comes to nesting navigation widgets.
 

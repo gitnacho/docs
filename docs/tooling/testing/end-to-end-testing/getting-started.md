@@ -17,11 +17,11 @@ The following steps will guide you through the process of setting up your projec
 
 * Add the nativescript-dev-appium plugin as a *devDependency* to your project:
 
-``` Shell
-npm install -D nativescript-dev-appium
-```
+  ``` Shell
+  npm install -D nativescript-dev-appium
+  ```
 
-> After completion of the installation, the plugin should have added an `e2e` folder containing predefined configs and samples.
+  > After completion of the installation, the plugin should have added an `e2e` folder containing predefined configs and samples.
 
 ### Folder Structure
 

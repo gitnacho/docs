@@ -62,17 +62,17 @@ For the plugin to work correctly you need to have:
   npm install -g ios-deploy
   ```
 
-> For detailed information on external dependencies, please, refer to the [XCUITest](https://github.com/appium/appium-xcuitest-driver/blob/master/README.md#external-dependencies) repository.
+  > For detailed information on external dependencies, please, refer to the [XCUITest](https://github.com/appium/appium-xcuitest-driver/blob/master/README.md#external-dependencies) repository.
 
 * Android Dependencies
 
   For correct functioning of the [mobile-devices-controller](https://github.com/NativeScript/mobile-devices-controller) for Android emulators, `telnet` is required to be available on your system.
 
-As `telnet` is removed from *macOS High Sierra*, it could be installed as follows:
+  As `telnet` is removed from *macOS High Sierra*, it could be installed as follows:
 
-``` Shell
-brew install telnet
-```
+  ``` Shell
+  brew install telnet
+  ```
 
 ## What's Next?
 

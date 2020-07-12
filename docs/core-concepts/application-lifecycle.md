@@ -40,25 +40,25 @@ Components are the fundamental building blocks of NativeScript applications buil
 * A component has a well-defined public API of input and output properties.
 * A component has a well-defined lifecycle.
 
-``` TypeScript
-import { Component } from "@angular/core";
+  ``` TypeScript
+  import { Component } from "@angular/core";
 
-@Component({
-    selector: "main-component",
-    template: `
-        <StackLayout>
-            <Label text="Hello {{ name }}"></Label>
-        </StackLayout>
-    `
-})
-export class MainComponent {
-    name: string;
+  @Component({
+      selector: "main-component",
+      template: `
+          <StackLayout>
+              <Label text="Hello {{ name }}"></Label>
+          </StackLayout>
+      `
+  })
+  export class MainComponent {
+      name: string;
 
-    constructor() {
-        this.name = "Angular!";
-    }
-}
-```
+      constructor() {
+          this.name = "Angular!";
+      }
+  }
+  ```
 
 ## Component metadata
 
@@ -66,9 +66,9 @@ The `@Component` decorator contains metadata describing how to create and presen
 
 * **selector** - a CSS selector that tells Angular to create and insert an instance of this component where it finds the selector in parent component's template. For example:
 
-``` HTML
-<main-component></main-component>
-```
+  ``` HTML
+  <main-component></main-component>
+  ```
 
 * **template** - A visual tree that represents the component view. Here you can use all NativeScript UI elements and custom defined UI components.
 * **templateUrl** - The address of a file where the component template is located.
@@ -121,23 +121,23 @@ The method `run` from the `application` module is required to start the applicat
 
 > **Note**: You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
 
-``` JavaScript
-/*
-iOS calls UIApplication and triggers the application main event loop.
-*/
+  ``` JavaScript
+  /*
+   * iOS calls UIApplication and triggers the application main event loop.
+   */
 
-const application = require("tns-core-modules/application");
-application.run({ moduleName: "app-root" });
-```
+  const application = require("tns-core-modules/application");
+  application.run({ moduleName: "app-root" });
+  ```
 
-``` TypeScript
-/*
-iOS calls UIApplication and triggers the application main event loop.
-*/
+  ``` TypeScript
+  /*
+   * iOS calls UIApplication and triggers the application main event loop.
+   */
 
-import * as application from "tns-core-modules/application";
-application.run({ moduleName: "app-root" });
-```
+  import * as application from "tns-core-modules/application";
+  application.run({ moduleName: "app-root" });
+  ```
 
 > **Note**: Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [navigation article](https://docs.nativescript.org/core-concepts/navigation)
 
@@ -594,9 +594,7 @@ applicationRun({ moduleName: "main-page" });
 
 ``` TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
-
 import { AppModule } from "./app.module";
-
 import { ios } from "tns-core-modules/application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
@@ -613,7 +611,6 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
 }
 ios.delegate = MyDelegate;
 platformNativeScriptDynamic().bootstrapModule(AppModule);
-
 ```
 
 {% endangular %}

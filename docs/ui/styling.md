@@ -14,10 +14,13 @@ You change the looks and appearance of views (elements) in a NativeScript applic
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
 
 {% nativescript %}
+
 > **Note**: If you are using Angular with NativeScript, refer to the [Styling docs for NativeScript with Angular](https://docs.nativescript.org/angular/ui/styling).
-{% endnativescript %}
-{% angular %}
+
+{% endnativescript %}{% angular %}
+
 > **Note**: If you are **not** using Angular with NativeScript, refer to the [Styling docs for NativeScript Core](https://docs.nativescript.org/ui/styling).
+
 {% endangular %}
 
 ## Applying CSS Styles
@@ -25,12 +28,17 @@ Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style
 The CSS styles can be set on 3 different levels:
 
 * [Application-wide CSS](#application-wide-css): Applies to every application page
+
 {% nativescript %}
+
 * [Page-specific CSS](#page-specific-css): Applies to the page's UI views
-{% endnativescript %}
-{% angular %}
+
+{% endnativescript %}{% angular %}
+
 * [Component-specific CSS](#component-specific-css): Applies for component only
+
 {% endangular %}
+
 * [Inline CSS](#inline-css): Applies directly to a UI view
 
 If there is CSS declared on different levels&mdash;all will be applied. The inline CSS will have the highest priority and the application CSS will have the lowest priority.
@@ -85,6 +93,7 @@ platformNativeScriptDynamic({ bootInExistingPage:false, cssFile:"style.css" });
 {% endangular %}
 
 > The path to the CSS file is relative to the application root folder.
+
 {% nativescript %}
 
 ### Page-specific CSS
@@ -202,7 +211,9 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 
 ### Platform-specific CSS
 
-NativeScript conventions make it easy to apply platform-specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **Note**: If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
+NativeScript conventions make it easy to apply platform-specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **Note**: If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.
+
+{% endangular %}
 
 There are 4 primary ways to target styles at iOS or Android:
 

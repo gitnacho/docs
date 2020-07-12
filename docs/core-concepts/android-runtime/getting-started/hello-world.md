@@ -32,19 +32,19 @@ The content in this document describes how to create a NativeScript Application 
 * Create a new `bootstrap.js` file within the `app` folder.
 * Open the `AndroidManifest.xml` file and edit the name of the application like:
 
-``` XML
-<application
-    android:name="com.tns.NativeScriptApplication"
-    ...
-```
+  ``` XML
+  <application
+      android:name="com.tns.NativeScriptApplication"
+      ...
+  ```
 
 * Open the `AndroidManifest.xml` file and edit the name of the activity like:
 
-``` XML
-<activity
-    android:name="com.tns.NativeScriptActivity"
-    ...
-```
+  ``` XML
+  <activity
+      android:name="com.tns.NativeScriptActivity"
+      ...
+  ```
 
 ## Setup Bootstrap.js
 
@@ -53,7 +53,7 @@ Now that the project is properly setup, we need to properly initialize the `boot
 ``` JavaScript
 // declare the extended NativeScriptActivity functionality
 let extendsObject = {
-    onCreate: function(savedState){
+    onCreate: function(savedState) {
         // call the base NativeScriptActivity.onCreate method
         // the "this" variable points to a NativeScriptActivity instance
         this.super.onCreate(savedState);

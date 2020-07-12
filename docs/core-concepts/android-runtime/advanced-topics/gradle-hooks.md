@@ -77,10 +77,9 @@ it will be too late for the plugin to receive it, as all plugins' `include.gradl
 
 ## buildscript.gradle
 
-When using a plugin like [this one](https://docs.embrace.io/docs/android-integration-guide) there are some **buildscript** configurations which need to be added in the application's **build.gradle** file. Unfortunately this cannot be achieved through the `app.gradle` file nor through plugin's `include.gradle` files. They are being applied too late in the build process and the changes in the **buildscript** do not have any effect.
-In this case a `buildscript.gradle` file needs to be used. These files can be placed either in `App_Resources/Android` folder in the NativeScript application, or in the `platforms/android` folder of a plugin. All such files will be applied to the **buildscript** of the application's `build.gradle`.
+When using a plugin like [this one](https://docs.embrace.io/docs/android-integration-guide) there are some **buildscript** configurations which need to be added in the application's **build.gradle** file. Unfortunately this cannot be achieved through the `app.gradle` file nor through plugin's `include.gradle` files. They are being applied too late in the build process and the changes in the **buildscript** do not have any effect. In this case a `buildscript.gradle` file needs to be used. These files can be placed either in `App_Resources/Android` folder in the NativeScript application, or in the `platforms/android` folder of a plugin. All such files will be applied to the **buildscript** of the application's `build.gradle`.
 
-```Gradle
+``` Gradle
 repositories {
     google()
     jcenter()

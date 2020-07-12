@@ -16,16 +16,15 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Confirm](#confirm)
 * [Prompt](#prompt)
 * [Login](#login)
-* [Action](#action)
-{% angular %}* [Custom dialog](#custom-dialog)
+* [Action](#action){% angular %}
+* [Custom dialog](#custom-dialog)
   + [Showing custom dialog](#showing-custom-dialog)
   + [Passing parameters](#passing-parameters)
-  + [Returning a result](#returning-a-result)
-{% endangular %}
+  + [Returning a result](#returning-a-result){% endangular %}
 
 > **Note**: You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
 >
-> **Tip** You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=zJ51uY) to see all of this article’s examples in action on your device.
+> **Tip**: You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=zJ51uY) to see all of this article’s examples in action on your device.
 
 ## Alert
 
@@ -376,7 +375,7 @@ this.modalService.showModal(DialogContent, options)
 
 Inside the `DialogContent` component, you can get the parameters by injecting a `ModalDialogParams`:
 
-``` Typescript
+``` TypeScript
 import { Component } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 
@@ -408,7 +407,7 @@ The `params.context` is the same object as `options.context` passed to the `show
 
 > **Note**: The component used for the modal content(`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
 >
-> ``` Typescript
+> ``` TypeScript
 > @NgModule({
 >     declarations: [CustomDialogTest, DialogContent],
 >     entryComponents: [DialogContent],

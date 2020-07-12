@@ -163,7 +163,7 @@ app
     └── my-name.component.ts
 ```
 
-#### Code-Sharing Project
+<h4 id="code-sharing-project-1">Code-Sharing Project</h4>
 
 In a Code-Sharing Project, this command:
 
@@ -232,7 +232,7 @@ app
     └── my-name.module.ts
 ```
 
-<h4 id="code-sharing-project-1">Code-Sharing Project</h4>
+<h4 id="code-sharing-project-2">Code-Sharing Project</h4>
 
 In a Code-Sharing Project, this command creates:
 

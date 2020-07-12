@@ -5,7 +5,7 @@ position: 50
 slug: docs-changelog
 ---
 
-## Thank you Community!
+# Thank you Community!
 
 Hats off to the community contributors in the NativeScript organization.
 Want to be the next NativeScript star? [Contribute](https://www.nativescript.org/contribute) to the open source repositories or join [the contribution contest](https://www.nativescript.org/blog/nativescript-first-time-contribution-contest-continued-and-extended)

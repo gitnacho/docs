@@ -362,7 +362,7 @@ Here’s a form with several different form control display options you can expe
 
 ![forms ios](/img/theme/forms-ios.png)
 
-> **TIP** The NativeScript theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="nt-input" isEnabled="false"></TextField>`.
+> **Tip**: The NativeScript theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="nt-input" isEnabled="false"></TextField>`.
 
 ### Images
 
@@ -409,7 +409,7 @@ The theme styles for NativeScript's progress and activity indicators are applied
 
 ### SideDrawers
 
-SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](./components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](./ng-components/ng-SideDrawer/overview) {% endangular %}.
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use{% nativescript %} [RadSideDrawer](./components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](./ng-components/ng-SideDrawer/overview){% endangular %}.
 
 > **Note**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
@@ -715,9 +715,7 @@ Also, several variables are mapped to the theme variables to support Kendo skins
 | | | $material-dark-complimentary, base-bg | $btn-color | $btn-color
 | | | | $ab-color | $complementary-color
 
-So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.telerik.com), get the contents of
-variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same
-single import underneath.
+So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.telerik.com), get the contents of variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same single import underneath.
 
 ``` SCSS
 $base-theme:Bootstrap;
@@ -792,8 +790,7 @@ _Example for supporting dark mode with SASS_:
 
 ### Using custom SASS file
 
-If you are using SASS in NativeScript Angular project and have a custom `.scss` file for a specific component, you should refer the path to the `.scss` file in `styleUrls` in the component typescript file as it is shown in the sample code snippet below.
-For example:
+If you are using SASS in NativeScript Angular project and have a custom `.scss` file for a specific component, you should refer the path to the `.scss` file in `styleUrls` in the component typescript file as it is shown in the sample code snippet below. For example:
 
 File structure:
 

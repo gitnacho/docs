@@ -51,7 +51,7 @@ Each authentication service requires a different set of values needed to make th
 
 After you’ve completed the authentication setup, your last step is to run your app and see your new authentication workflow in action.
 
-> **Tip** If you haven’t run an app on a device using NativeScript Sidekick before, check out our documentation on [running your app]({% slug deploy-on-device %}).
+> **Tip**: If you haven’t run an app on a device using NativeScript Sidekick before, check out our documentation on [running your app]({% slug deploy-on-device %}).
 
 After Sidekick deploys your new app to your device(s) you should see an app that looks like this.
 

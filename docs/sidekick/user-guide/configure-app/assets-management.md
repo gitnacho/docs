@@ -10,14 +10,14 @@ slug: assets-management
 
 You can quickly configure the icons and splash screens of your app by providing a single `PNG` source file. {{ site.sk }} uses this image to generate the image resources for all mobile platforms.
 
-> **Tip** You must provide separate image sources for the icons and splash screens.
+> **Tip**: You must provide separate image sources for the icons and splash screens.
 
 ## Prerequisites
 
 * The source image must be in `PNG` format.
 * The source image must be at least `1024x1024` pixels.
 
-> **Tip** If the splash screen source image contains a logo-like image, the logo must be centered. Otherwise, it might not be resized properly.
+> **Tip**: If the splash screen source image contains a logo-like image, the logo must be centered. Otherwise, it might not be resized properly.
 
 ## Procedure
 

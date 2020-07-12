@@ -85,8 +85,7 @@ If you see "No issues were detected" you are good to go!
 
 {% angular %}
 
-* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
-{% endangular %}{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics){% endangular %}{% nativescript %}
 * [Learn the Basics of the NativeScript CLI](/start/cli-basics)
 
 {% endnativescript %}

@@ -17,9 +17,9 @@ The following article assumes that you already have the latest version of Native
 * Open a console window and go to the root directory of your NativeScript application.
 * Install the package that contains the component that you want to use by typing nativescript command that adds a plugin. For example, if you want to use the chart, type
 
-  ```` Shell
+  ``` Shell
   tns plugin add nativescript-ui-chart
-  ````
+  ```
 
 * Then import/require the installed component in your app
 

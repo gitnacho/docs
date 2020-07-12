@@ -12,7 +12,7 @@ publish: true
 
 This article explains how to set the transition type of the **RadSideDrawer** with Vue.
 
-# Set transition with Vue
+## Set transition with Vue
 
 RadSideDrawer offers the following transition options:
 

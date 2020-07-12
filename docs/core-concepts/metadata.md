@@ -12,7 +12,7 @@ To allow JavaScript code to call into native iOS or Android code both NativeScri
 * [Android Runtime | Metadata | Metadata Overview]({% slug android-metadata-overview %})
 * [iOS Runtime | Overview]({% slug ios-runtime-overview %}#metadata)
 
-# Metadata Filtering
+## Metadata Filtering
 
 By default NativeScript includes all supported entities in the metadata. This allows app and plugin authors to freely call any native API from JavaScript. While it is benefitial during development, in some cases having metadata for all the APIs is undesirable. There could be security implications involved (mentioning names of entities that shouldn't be known in the metadata binary files for example); performance could be degraded at runtime (due to larger metabase which has to be consulted when an unknown entry is encountered or at startup); or app size could increase due to unnecessary metadata which is never used.
 

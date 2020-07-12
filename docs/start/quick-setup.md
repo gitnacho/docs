@@ -16,7 +16,7 @@ The NativeScript CLI allows you to build apps in two different ways.
 * The [**Quick Setup**](#quick-setup) allows you to build and develop NativeScript apps without installing any iOS or Android dependencies on your local machine, and is perfect for getting started.
 * The [**Full Setup**](#full-setup) walks you through installing the dependencies you need to compile iOS and Android apps locally. You’ll eventually need to complete the full setup to use certain NativeScript plugins, and to build apps for the App Store and Google Play.
 
-> **Tip** You can read about the limitations of the quick setup [below](#quick-setup-limitations).
+> **Tip**: You can read about the limitations of the quick setup [below](#quick-setup-limitations).
 
 ## Quick Setup
 
@@ -35,8 +35,7 @@ To check whether you have Node.js installed, open a terminal or command prompt a
 
 ### Step 2: Install the NativeScript CLI
 
-Open your terminal or command prompt and execute the following command to install the NativeScript CLI from
-[npm](https://www.npmjs.com/), which is the Node.js package manager:
+Open your terminal or command prompt and execute the following command to install the NativeScript CLI from [npm](https://www.npmjs.com/), which is the Node.js package manager:
 
 <pre class="add-copy-button"><code class="language-terminal">npm install -g nativescript</code></pre>
 
@@ -130,7 +129,7 @@ The two environment variables `JAVA_HOME` and `ANDROID_HOME` are required for An
 * execute `echo %JAVA_HOME%` and make sure a valid path is returned
 * execute `echo %ANDROID_HOME%` and make sure a valid path is returned
 
-> **Tip** You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
+> **Tip**: You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
 
 #### macOS
 

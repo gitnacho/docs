@@ -42,5 +42,4 @@ These tests demonstrate:
 
 2017 Sept 27th: [NativeScript testing with Appium](https://www.youtube.com/watch?v=Ns7boY6XNC0) @ [NativeScript Developer Day Europe 2017](https://www.nativescript.org/events/developer-day-europe-2017)
 
-2017 Sept 19th: [Introduction to Mobile UI Test Automation](https://www.youtube.com/watch?v=LjgIM4pvhsQ
-) @ [NativeScript Developer Day 2017](http://developerday.nativescript.org/)
+2017 Sept 19th: [Introduction to Mobile UI Test Automation](https://www.youtube.com/watch?v=LjgIM4pvhsQ) @ [NativeScript Developer Day 2017](http://developerday.nativescript.org/)

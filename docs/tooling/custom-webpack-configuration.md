@@ -5,7 +5,7 @@ position: 70
 slug: custom-webpack-config
 ---
 
-## What is webpack configuration
+# What is webpack configuration
 
 The webpack configuration file `webpack.config.js` is the file that contains all the configuration, plugins, loaders, etc. to build the JavaScript part of the NativeScript application. The file is located at the root of the NativeScript application. For each flavor (Angular, Vue.js, React, TypeScript, JavaScript) the content of the file is different as the way to process the files in the application differs.
 Currently the content is under user's control, but the default configuration file comes from `nativescript-dev-webpack` plugin during its postinstall step (or when you run the `update-ns-webpack --configs` script located in your `<project dir>/node_modules/.bin/` directory).

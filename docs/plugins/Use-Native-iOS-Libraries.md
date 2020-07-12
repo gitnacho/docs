@@ -36,16 +36,16 @@ With CocoaPods, you can remove the framework (with all the binary and header fil
 
 If there is no CocoaPod for the current library you can still use a plugin, but the framework must be dropped in the plugin folder (`{your-plugin}/platforms/ios/{MyFramework}.framework`) and you lose all the benefits of using a package manager.
 
-* Pros
+<h3 id="pros-1">Pros</h3>
 
 1. Can be included by NativeScript plugin.
 1. Can be included in the plugin by a `Podfile` (if a `pod` for the library exists).
 1. There is no need to manually edit the library before adding it.
 1. There is no need to manually edit the app after adding the library.
 
-* Cons
+<h3 id="cons-1">Cons</h3>
 
-* Shared frameworks can be used only in iOS 8 and above. This limitation is valid for pure native applications, too. If you are targeting iOS versions lower than 8.0 you must use static frameworks.
+1. Shared frameworks can be used only in iOS 8 and above. This limitation is valid for pure native applications, too. If you are targeting iOS versions lower than 8.0 you must use static frameworks.
 
 ## Static Frameworks
 
@@ -53,12 +53,12 @@ Most of the static frameworks don't contain `module.modulemap` file, so you have
 
 > In case you cannot modify the native framework (for example when it comes from a Pod) and must define its `module.modulemap` somewhere else in your plugin, take a look at the following sample for guidance: <https://github.com/NativeScript/plugin-ios-modulemap-sample>
 
-### Pros
+<h3 id="pros-2">Pros</h3>
 
 1. Can be included by NativeScript plugin.
 1. There is no need to manually edit the app after adding the library (but you have to manually edit the framework in order to add `module.modulemap` file).
 
-### Cons
+<h3 id="cons-2">Cons</h3>
 
 1. Manual changes of the framework are required (add `module.modulemap` file).
 1. Only Objective-C APIs are exposed (no C functions and C constants) from static frameworks. To work around this limitation, you can manually edit the Xcode project file. However, this workaround is not recommended.
@@ -69,13 +69,13 @@ The NativeScript CLI supports static libraries coming from plugins but the binar
 
 > If you cannot wrap your static library in a static framework with a `module.modulemap`, in cases such as when using Cocoapods, take a look at the following sample for guidance: <https://github.com/NativeScript/plugin-ios-modulemap-sample>
 
-* Pros
+<h3 id="pros-3">Pros</h3>
 
 1. Can be included by NativeScript plugin.
 1. It works without manual changes but not in all cases.
 1. It is trivial to wrap a static library in a static framework. Just put all the headers and binary files in the proper folder structure, add a `module.modulemap` and you have a static framework which works in all cases.
 
-* Cons
+<h3 id="cons-3">Cons</h3>
 
 1. Can't be included by a `Podfile`.
 1. In some cases, you must add a `module.modulemap` file manually.
@@ -135,33 +135,19 @@ If you have downloaded the [documentation set for iOS](https://developer.apple.c
 
 ### Metadata generator's parsing errors and warnings
 
-The `stderr` output of the metadata generator (including all errors and warnings emitted by the Objective-C parser) is redirected
-to a separate log file. It is located in **`platforms/ios/build/<configuration>-<target>/metadata-generation-stderr-<arch>.txt`**
-under the main project dir.
+The `stderr` output of the metadata generator (including all errors and warnings emitted by the Objective-C parser) is redirected to a separate log file. It is located in **`platforms/ios/build/<configuration>-<target>/metadata-generation-stderr-<arch>.txt`** under the main project dir.
 
-The reason behind this decision is that sometimes projects or plugins may have dependencies which are not
-designed to be fed to an Objective-C compiler. When attempting to generate the metadata for such projects, the metadata
-generator's error output would pollute Xcode's build output with lines which would look like compilation errors/warnings and
-would confuse both users and IDE parsers that the compiler emitted them. One example for such library is the [LevelDB CocoaPod](https://cocoapods.org/pods/leveldb-library)
-which is meant to be used in C++ context only. It is included in all projects using the [NativeScript Firebase plugin](https://www.npmjs.com/package/nativescript-plugin-firebase)
-because it's a dependency of the [FirebaseDatabase CocoaPod](https://cocoapods.org/pods/FirebaseDatabase). Generating metadata
-from this CocoaPod is expected to fail as the iOS Runtime doesn't parse and expose C++ entities to JS. So it's preferable to
-keep all these errors away from the actual application build output.
+The reason behind this decision is that sometimes projects or plugins may have dependencies which are not designed to be fed to an Objective-C compiler. When attempting to generate the metadata for such projects, the metadata generator's error output would pollute Xcode's build output with lines which would look like compilation errors/warnings and would confuse both users and IDE parsers that the compiler emitted them. One example for such library is the [LevelDB CocoaPod](https://cocoapods.org/pods/leveldb-library) which is meant to be used in C++ context only. It is included in all projects using the [NativeScript Firebase plugin](https://www.npmjs.com/package/nativescript-plugin-firebase) because it's a dependency of the [FirebaseDatabase CocoaPod](https://cocoapods.org/pods/FirebaseDatabase). Generating metadata from this CocoaPod is expected to fail as the iOS Runtime doesn't parse and expose C++ entities to JS. So it's preferable to keep all these errors away from the actual application build output.
 
-> **Important**: In cases where the metadata for some native entities is missing, this log file can turn out to be invaluable
-> in tracking down the reasons. It should be the first place to start looking for clues about what might have gone wrong.
+> **Important**: In cases where the metadata for some native entities is missing, this log file can turn out to be invaluable in tracking down the reasons. It should be the first place to start looking for clues about what might have gone wrong.
 >
-> Sometimes the reason may be an incorrect `#include` statement. In such cases, in order to see the real error you will
-> also have to run the metadata generator in [strict includes mode](#enabling-strict-includes-mode)
+> Sometimes the reason may be an incorrect `#include` statement. In such cases, in order to see the real error you will  also have to run the metadata generator in [strict includes mode](#enabling-strict-includes-mode)
 
 ### Enabling strict includes mode
 
-Starting with version 5.4 of {N} you can set the `TNS_DEBUG_METADATA_STRICT_INCLUDES` environment variable to diagnose the reasons for missing
-metadata entities when no errors related to their respective source files can be found in [metadata generator's *stderr* log]
-(#metadata-generators-parsing-errors-and-warnings).
+Starting with version 5.4 of {N} you can set the `TNS_DEBUG_METADATA_STRICT_INCLUDES` environment variable to diagnose the reasons for missing metadata entities when no errors related to their respective source files can be found in [metadata generator's *stderr* log](#metadata-generators-parsing-errors-and-warnings).
 
-When this setting is enabled, `#include` errors will be caught and logged in the *stderr* output ***but some Pod libraries might cause significantly less metadata
-being parsed and generated, so it really should be used only when debugging issues with missing metadata***.
+When this setting is enabled, `#include` errors will be caught and logged in the *stderr* output ***but some Pod libraries might cause significantly less metadata being parsed and generated, so it really should be used only when debugging issues with missing metadata***.
 
 ``` Shell
 TNS_DEBUG_METADATA_STRICT_INCLUDES="true" tns build ios [--for-device] [--release]

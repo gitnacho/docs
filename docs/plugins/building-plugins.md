@@ -56,7 +56,7 @@ There are a few things to note in this implementation.
 * NativeScript uses the [CommonJS format](http://wiki.commonjs.org/wiki/CommonJS) for defining JavaScript modules. In practical terms that just means you need to know the syntax for importing and exporting functionality (`require`, `export`, and `module.exports`). It's pretty straightforward, and you'll see several examples throughout this guide.
 * NativeScript plugins must have a "nativescript" key in their `package.json` file that specifies the minimum version of the iOS and Android runtimes that the plugin supports. Don't worry about this at the moment, other than to note that it's there.
 
-> **Tip** Other than the `"nativescript"` key, everything about your plugin's `package.json` file will be identical to any other npm package. Therefore, [the npm docs about the `package.json` file](https://docs.npmjs.com/files/package.json) are a great reference when tinkering with your NativeScript plugin's metadata during development.
+> **Tip**: Other than the `"nativescript"` key, everything about your plugin's `package.json` file will be identical to any other npm package. Therefore, [the npm docs about the `package.json` file](https://docs.npmjs.com/files/package.json) are a great reference when tinkering with your NativeScript plugin's metadata during development.
 
 To use the above plugin all you need to do is install it in one of your apps.
 
@@ -64,7 +64,7 @@ To use the above plugin all you need to do is install it in one of your apps.
 tns plugin add /path/to/nativescript-hello-world/src
 ```
 
-> **Tip** The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos, local folders, or .tgz archives. For details, run `tns plugin add --help` from your command line.
+> **Tip**: The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos, local folders, or .tgz archives. For details, run `tns plugin add --help` from your command line.
 
 With the plugin installed, you can use the CommonJS `require()` method to import your plugin and use its `helloWorld()` method.
 
@@ -198,7 +198,7 @@ The NativeScript plugin seed automatically sets up the necessary TypeScript conf
 
 ![VS Code IntelliSense](./img/plugins/vs-code-intellisense.png)
 
-> **Tip** If you're new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugins' source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
+> **Tip**: If you're new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugins' source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
 
 There are still a few more changes you need to make before your plugin is ready to test. Next, open your `src/version-number.android.ts` file and paste in the following code:
 
@@ -229,7 +229,7 @@ The `index.d.ts` file serves two purposes: first, it serves as a contract for an
 
 The NativeScript CLI does not generate your `index.d.ts` file, but in most situations you can copy the contents of your `.android.d.ts` file or your `.ios.d.ts` file into your `index.d.ts` file. (The only time you wouldn't want to do that is if your plugin had Android- or iOS-specific APIs that you wanted to expose.)
 
-> **Tip** For more detailed information on writing declaration files refer to [TypeScript's documentation on the topic](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
+> **Tip**: For more detailed information on writing declaration files refer to [TypeScript's documentation on the topic](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
 
 With that, your plugin is completely functional and can retrieve your app's version number on both iOS and Android. To test this out, head back to your demo app, open your `demo/app/main-view-model.ts` file, find the line of code that sets `this.message`, and change it to use the following line of code.
 

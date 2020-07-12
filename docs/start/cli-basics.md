@@ -40,7 +40,7 @@ Here you’re passing two things to the `create` command: `HelloWorld` which det
 
 {% endangular %}
 
-> **Tip** You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). To try other templates, run `tns create` _without_ the `--template` option; the NativeScript CLI will walk you through selecting a template using interactive prompts.
+> **Tip**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). To try other templates, run `tns create` _without_ the `--template` option; the NativeScript CLI will walk you through selecting a template using interactive prompts.
 
 The `create` command will take a minute to complete, as the NativeScript CLI needs to download a few dependencies while setting up your new app.
 
@@ -54,7 +54,7 @@ cd HelloWorld
 
 Now that you’ve created an app let’s look at how to get your new app up and running on a device.
 
-> **Tip** You can use the `tns help` command to view the NativeScript CLI’s help documentation in your web browser.
+> **Tip**: You can use the `tns help` command to view the NativeScript CLI’s help documentation in your web browser.
 
 ## Running Applications
 
@@ -84,7 +84,7 @@ tns preview
 
 You’ll see a QR code in your terminal that looks a little something like this.
 
-![terminal-0](/img/start/cli-basics/terminal-0.png)
+![terminal-0](../img/start/cli-basics/terminal-0.png)
 
 Next, open the **NativeScript Playground** app on your iOS or Android device.
 
@@ -92,18 +92,18 @@ Next, open the **NativeScript Playground** app on your iOS or Android device.
 
 In the Playground app, tap the **Scan QR code** option, and scan the QR code that appears in your terminal or commands prompt.
 
-![scan-qr-code](/img/start/cli-basics/scan-qr-code.png)
+![scan-qr-code](../img/start/cli-basics/scan-qr-code.png)
 
 After scanning, you should see your app on your device.
 
-![android-1](/img/start/cli-basics/android/1.png)
-![ios-1](/img/start/cli-basics/ios/1.png)
+![android-1](../img/start/cli-basics/android/1.png)
+![ios-1](../img/start/cli-basics/ios/1.png)
 
 <div class="exercise-end"></div>
 
 Now that you have the app on your device, you might notice that the `tns preview` command in your terminal or command prompt never finished. That is, you cannot type in your terminal.
 
-![terminal-1](/img/start/cli-basics/terminal-1.png)
+![terminal-1](../img/start/cli-basics/terminal-1.png)
 
 This happens because the `tns preview` command is now watching your project for changes. When the `tns preview` command detects a code change, the command automatically refreshes, or _livesyncs_, your app so you can see those changes immediately. Let’s make some updates to your code so you can see this in action.
 
@@ -113,9 +113,10 @@ This happens because the `tns preview` command is now watching your project for 
 
 Open your new project in your favorite text editor or IDE.
 
-> **Tip** You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix](#appendix-a-choosing-an-editor) for more information.
+> **Tip**: You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix](#appendix-a-choosing-an-editor) for more information.
 
 {% nativescript %}
+
 Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/main-page.xml` file, and replace its contents with the following code:
 
 ``` XML
@@ -150,8 +151,8 @@ export class HomeComponent {
 
 Your emulator should refresh and display the new image.
 
-![Apple on the iOS emulator](/img/start/cli-basics/ios/2.png)
-![Apple on the Android emulator](/img/start/cli-basics/android/2.png)
+![Apple on the iOS emulator](../img/start/cli-basics/ios/2.png)
+![Apple on the Android emulator](../img/start/cli-basics/android/2.png)
 
 Next, open your app’s `app/app.css` file and paste the following code at the bottom of the file. Again don’t worry about the details of what this code is doing right now.
 
@@ -170,8 +171,8 @@ Image {
 
 When your emulator refreshes, you should see a crazy spinning apple!
 
-![App with a blue action bar](/img/start/cli-basics/ios/3.gif)
-![Apple spinning on the Android emulator](/img/start/cli-basics/android/3.gif)
+![App with a blue action bar](../img/start/cli-basics/ios/3.gif)
+![Apple spinning on the Android emulator](../img/start/cli-basics/android/3.gif)
 
 Let’s make one final change.
 
@@ -185,8 +186,8 @@ Find the first line of your app’s `app/app.css` file, which imports a `core.li
 
 The emulator should refresh, and you should see a nice blue ActionBar color:
 
-![iOS app with a blue action bar](/img/start/cli-basics/ios/4.png)
-![Android app with a blue action bar](/img/start/cli-basics/android/4.png)
+![iOS app with a blue action bar](../img/start/cli-basics/ios/4.png)
+![Android app with a blue action bar](../img/start/cli-basics/android/4.png)
 
 <h4 class="exercise-start">
     <b>Challenge</b>: Pick a different color scheme
@@ -225,7 +226,7 @@ tns run android
 
 The `run` command will take a few seconds to complete, as the NativeScript CLI will be building and deploying a native Android application. When the command finishes the native emulator will open, and you will again see your app—only this time, the app is running on a local emulator.
 
-![Android app with a blue action bar](/img/start/cli-basics/android/4.png)
+![Android app with a blue action bar](../img/start/cli-basics/android/4.png)
 
 If you’re on macOS and would prefer to develop for iOS first, type `Ctrl` + `C` in your terminal to end the previous `tns run android` command and then execute the following command instead.
 
@@ -237,7 +238,7 @@ tns run ios
 
 The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native iOS application. When the command finishes the native simulator will open, and you will see your app:
 
-![iOS app with a blue action bar](/img/start/cli-basics/ios/4.png)
+![iOS app with a blue action bar](../img/start/cli-basics/ios/4.png)
 
 <div class="exercise-end"></div>
 
@@ -384,6 +385,7 @@ The `console.log()` and `console.dir()` functions are two of the many tools avai
 Errors happen, and when they do, it’s important to know how to handle them. Let’s mess up a few things in your new app.
 
 {% nativescript %}
+
 Find the line of code that declares an `<ActionBar>` (line 2 of your `app/main-page.xml` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML

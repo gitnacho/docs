@@ -4,6 +4,7 @@ description: Learn how to handle errors in NativeScript core modules, how to def
 position: 130
 slug: error-handling
 ---
+
 # Error Handling
 
 ## Handling errors in NativeScript core modules
